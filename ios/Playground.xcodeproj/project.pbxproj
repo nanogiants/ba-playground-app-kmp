@@ -50,6 +50,44 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		BD90F808236B44220055D773 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				BD90F80B236B445D0055D773 /* Pixelsort */,
+				BD90F80A236B444F0055D773 /* Nasa */,
+				BD90F809236B44470055D773 /* Settings */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		BD90F809236B44470055D773 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		BD90F80A236B444F0055D773 /* Nasa */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Nasa;
+			sourceTree = "<group>";
+		};
+		BD90F80B236B445D0055D773 /* Pixelsort */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pixelsort;
+			sourceTree = "<group>";
+		};
+		BD90F80C236B446F0055D773 /* App */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		BDB1B8FD23607C2F001F3529 = {
 			isa = PBXGroup;
 			children = (
@@ -69,11 +107,13 @@
 		BDB1B90823607C2F001F3529 /* Playground */ = {
 			isa = PBXGroup;
 			children = (
-				BD90F7FF236B1CF90055D773 /* Resources */,
+				BD90F80C236B446F0055D773 /* App */,
+				BD90F808236B44220055D773 /* UseCases */,
 				BDB1B90923607C2F001F3529 /* AppDelegate.swift */,
 				BDB1B90B23607C2F001F3529 /* SceneDelegate.swift */,
 				BDB1B90D23607C2F001F3529 /* ViewController.swift */,
 				BDB1B90F23607C2F001F3529 /* Main.storyboard */,
+				BD90F7FF236B1CF90055D773 /* Resources */,
 				BDB1B91223607C2F001F3529 /* Assets.xcassets */,
 				BDB1B91423607C2F001F3529 /* LaunchScreen.storyboard */,
 				BDB1B91723607C2F001F3529 /* Info.plist */,
