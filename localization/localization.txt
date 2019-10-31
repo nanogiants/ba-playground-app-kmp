@@ -1,0 +1,22 @@
+[[General]]
+	[yes]
+		en = Yes
+		de = ja
+	[no]
+		en = No
+		de = Nein
+
+[[Errors]]
+	[path_not_found_error]
+	  de = Pfad nicht gefunden
+		en = The file '%@' could not be found.
+		tags = app
+	[network_unavailable_error]
+	  de = Netzwork nicht verfügbar
+		en = The network is currently unavailable.
+		tags = app
+
+[[Specific]]
+  [test]
+    en = entest
+    de = detest

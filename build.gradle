@@ -1,8 +1,9 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
-//def androidProjectPath =  project.rootDir.getAbsolutPath()+"/android"
-//def iosProjectPath =  project.rootDir.getAbsolutPath()+"/ios"
-//def localizationPath =  project.rootDir.getAbsolutPath()+"localization"
+def androidProjectPath =  project.rootDir.absolutePath+"/android"
+def iosProjectPath =  project.rootDir.absolutePath+"/ios"
+def localizationPath =  project.rootDir.absolutePath+"/localization"
+def androidModules = ['app']
 
 buildscript {
     ext.kotlin_version = '1.3.50'
@@ -23,7 +24,6 @@ allprojects {
     repositories {
         google()
         jcenter()
-        
     }
 }
 
@@ -31,28 +31,27 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
+// Generates strings from twine for the project
 task generateProjectStrings {
-//    ['nasa', 'pixelsort'].each { moduleName ->
-//        println "Animal ${animalName}"
-//        def source = localizationPath+"/localization.txt"
-//        def destinationAndroid = androidProjectPath+"/"+moduleName+"/src/main/res"
-//        def destinationIos = iosProjectPath+"/Playground/UseCases/"+ moduleName
-//        def tag = modulename
-//        script = "twine generate-localization-file " + source + " " + destinationAndroid + "--tags "+ tag +" --format android;"
-//        script += "twine generate-localization-file " + source + " " + destinationIos + "--tags "+ tag +" --format android;"
-//        String script = 'if hash twine 2>/dev/null; '+ script+ ' fi'
-//        exec {
-//            executable "sh"
-//            args '-c', script
-//        }
-//    }
-}
+    def totalScript = ""
+    def source = localizationPath+"/localization.txt"
+    //android
+    androidModules.each { moduleName ->
+        def destinationAndroid = androidProjectPath+"/"+moduleName+"/src/main/res"
+        totalScript += "twine generate-all-localization-files " + source + " " + destinationAndroid +"--tags" + moduleName + " --validate --format android; "
+    }
+    //ios
+    def destinationIos = iosProjectPath+"/Playground/Resources"
+    totalScript += "twine generate-all-localization-files " + source + " " + destinationIos +" --validate --format apple; "
 
-task generateLocalizations {
-    String script = 'if hash twine 2>/dev/null; then twine generate-localization-file twine.txt ./src/main/res/values/generated_strings.xml; fi'
-    exec {
-        executable "sh"
-        args '-c', script
+    def script = 'if hash twine 2>/dev/null; then '+ totalScript+ ' fi'
+
+    doLast {
+        print(script)
+        exec {
+            executable "sh"
+            args '-c', script
+        }
     }
 }
 
