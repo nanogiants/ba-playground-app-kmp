@@ -6,7 +6,8 @@ def localizationPath = project.rootDir.absolutePath + "/localization"
 //def androidModules = ['app', 'nasa', 'pixelsort', 'settings']
 def androidModules = []
 // read android module names from file system
-file(androidProjectPath).listFiles().each{file -> if(file.isDirectory()) androidModules.add(file.name)}
+//file(androidProjectPath).listFiles().each{file -> if(file.isDirectory()) androidModules.add(file.name)}
+file(androidProjectPath).listFiles().grep{it.isDirectory()}.each{androidModules.add(it.name)}
 println("Projekt contains the android modules "+androidModules)
 
 
