@@ -1,5 +1,9 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
+//def androidProjectPath =  project.rootDir.getAbsolutPath()+"/android"
+//def iosProjectPath =  project.rootDir.getAbsolutPath()+"/ios"
+//def localizationPath =  project.rootDir.getAbsolutPath()+"localization"
+
 buildscript {
     ext.kotlin_version = '1.3.50'
     repositories {
@@ -8,7 +12,7 @@ buildscript {
         
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.0'
+        classpath 'com.android.tools.build:gradle:3.5.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -25,4 +29,33 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+task generateProjectStrings {
+//    ['nasa', 'pixelsort'].each { moduleName ->
+//        println "Animal ${animalName}"
+//        def source = localizationPath+"/localization.txt"
+//        def destinationAndroid = androidProjectPath+"/"+moduleName+"/src/main/res"
+//        def destinationIos = iosProjectPath+"/Playground/UseCases/"+ moduleName
+//        def tag = modulename
+//        script = "twine generate-localization-file " + source + " " + destinationAndroid + "--tags "+ tag +" --format android;"
+//        script += "twine generate-localization-file " + source + " " + destinationIos + "--tags "+ tag +" --format android;"
+//        String script = 'if hash twine 2>/dev/null; '+ script+ ' fi'
+//        exec {
+//            executable "sh"
+//            args '-c', script
+//        }
+//    }
+}
+
+task generateLocalizations {
+    String script = 'if hash twine 2>/dev/null; then twine generate-localization-file twine.txt ./src/main/res/values/generated_strings.xml; fi'
+    exec {
+        executable "sh"
+        args '-c', script
+    }
+}
+
+task generateMetrics() {
+    // TODO generate metrics for each module and save it to a file
 }

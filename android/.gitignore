@@ -1,1 +1,14 @@
-/build
+#
+# gitignore for android subproject
+#
+
+# Java class files
+*.class
+
+# Built application files
+*.apk
+*.ap_
+*.aab
+
+# Files for the ART/Dalvik VM
+*.dex

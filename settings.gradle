@@ -1,2 +1,10 @@
-include ':android'
+include ':app'
 rootProject.name='KmpPlayground'
+
+// move android app folder into android subdirectory
+//project(':app').projectDir = new File('android/app')
+
+// move all android specific modules into android folder
+file('android').eachDir { dir ->
+  project(":${dir.name}").projectDir = dir
+}
