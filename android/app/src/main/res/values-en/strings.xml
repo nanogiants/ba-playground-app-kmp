@@ -4,8 +4,16 @@
 <!-- Language: en -->
 <resources>
 	<!-- SECTION: General -->
-	<string name="yes">Yes</string>
-	<string name="no">No</string>
+	<string name="app_name">Playground</string>
+	<string name="about_title">About</string>
+	<string name="comparison_title">Comparison</string>
+	<string name="usecases_title">Use Cases</string>
+
+	<!-- SECTION: About faq -->
+	<string name="about_faq_usecase_q">What</string>
+	<string name="about_faq_usecase_a">Answer to what</string>
+	<string name="about_faq_legal_q">Rights</string>
+	<string name="about_faq_legal_a">Answer to rights</string>
 
 	<!-- SECTION: Errors -->
 	<string name="path_not_found_error">The file \'%s\' could not be found.</string>

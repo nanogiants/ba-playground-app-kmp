@@ -4,8 +4,16 @@
 <!-- Language: de -->
 <resources>
 	<!-- SECTION: General -->
-	<string name="yes">ja</string>
-	<string name="no">Nein</string>
+	<string name="app_name">Playground</string>
+	<string name="about_title">Über uns</string>
+	<string name="comparison_title">Vergleich</string>
+	<string name="usecases_title">Anwendung</string>
+
+	<!-- SECTION: About faq -->
+	<string name="about_faq_usecase_q">Was ist ein Use Case</string>
+	<string name="about_faq_usecase_a">in Use Case repräsentiert einen Anwendungsfall</string>
+	<string name="about_faq_legal_q">Rechtliche Hinweise</string>
+	<string name="about_faq_legal_a">Die Bachelorarbeit entsteht bei dem Unternehmen appcom interactive GmbH</string>
 
 	<!-- SECTION: Errors -->
 	<string name="path_not_found_error">Pfad nicht gefunden</string>

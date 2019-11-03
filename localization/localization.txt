@@ -1,10 +1,40 @@
 [[General]]
-	[yes]
-		en = Yes
-		de = ja
-	[no]
-		en = No
-		de = Nein
+  [app_name]
+    tags = app
+    en = Playground
+    de = Playground
+  [about_title]
+    tags = app
+    en = About
+    de = Über uns
+  [comparison_title]
+    tags = app
+    en = Comparison
+    de = Vergleich
+  [usecases_title]
+    tags = app
+    en = Use Cases
+    de = Anwendung
+
+[[About faq]]
+  [about_faq_usecase_q]
+    tags = app
+    en = What
+    de = Was ist ein Use Case
+  [about_faq_usecase_a]
+    tags = app
+    en = Answer to what
+    de = in Use Case repräsentiert einen Anwendungsfall
+  [about_faq_legal_q]
+    tags = app
+    en = Rights
+    de = Rechtliche Hinweise
+  [about_faq_legal_a]
+    tags = app
+    en = Answer to rights
+    de = Die Bachelorarbeit entsteht bei dem Unternehmen appcom interactive GmbH
+
+
 
 [[Errors]]
 	[path_not_found_error]

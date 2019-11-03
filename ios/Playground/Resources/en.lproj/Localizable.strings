@@ -6,9 +6,24 @@
 
 /********** General **********/
 
-"yes" = "Yes";
+"app_name" = "Playground";
 
-"no" = "No";
+"about_title" = "About";
+
+"comparison_title" = "Comparison";
+
+"usecases_title" = "Use Cases";
+
+
+/********** About faq **********/
+
+"about_faq_usecase_q" = "What";
+
+"about_faq_usecase_a" = "Answer to what";
+
+"about_faq_legal_q" = "Rights";
+
+"about_faq_legal_a" = "Answer to rights";
 
 
 /********** Errors **********/

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="toolbar_elevation">4dp</dimen>
+    <dimen name="toolbar_default_elevation">0dp</dimen>
+    <dimen name="usecases_cardview_radius">4dp</dimen>
+    <dimen name="usecases_bottom_spacing">8dp</dimen>
+    <dimen name="toolbar_scrolloffset">8dp</dimen>
+</resources>

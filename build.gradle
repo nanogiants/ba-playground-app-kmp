@@ -61,7 +61,7 @@ task generateProjectStrings {
         totalScript += "twine generate-all-localization-files " + source +
                 " " +
                 destinationAndroid +
-                "--tags" +
+                " --tags " +
                 moduleName +
                 " --validate --format android; "
     }
@@ -76,7 +76,7 @@ task generateProjectStrings {
 
     def script = 'if hash twine 2>/dev/null; then ' + totalScript + ' fi'
     doLast {
-        print(script)
+//        print(script)
         exec {
             executable "sh"
             args '-c', script
@@ -90,4 +90,8 @@ task generateMetrics() {
 
 task addUseCaseModule() {
     // TODO generate folders and modules for ios, android and shared
+}
+
+task checkForDependencyUpdates() {
+    // TODO
 }

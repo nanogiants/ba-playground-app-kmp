@@ -6,9 +6,24 @@
 
 /********** General **********/
 
-"yes" = "ja";
+"app_name" = "Playground";
 
-"no" = "Nein";
+"about_title" = "Über uns";
+
+"comparison_title" = "Vergleich";
+
+"usecases_title" = "Anwendung";
+
+
+/********** About faq **********/
+
+"about_faq_usecase_q" = "Was ist ein Use Case";
+
+"about_faq_usecase_a" = "in Use Case repräsentiert einen Anwendungsfall";
+
+"about_faq_legal_q" = "Rechtliche Hinweise";
+
+"about_faq_legal_a" = "Die Bachelorarbeit entsteht bei dem Unternehmen appcom interactive GmbH";
 
 
 /********** Errors **********/
