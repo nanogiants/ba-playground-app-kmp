@@ -1,0 +1,3 @@
+[submodule "localization"]
+	path = localization
+	url = https://github.com/HFabi/ba-playground-app-localization.git
