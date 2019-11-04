@@ -26,6 +26,13 @@
 "about_faq_legal_a" = "Die Bachelorarbeit entsteht bei dem Unternehmen appcom interactive GmbH";
 
 
+/********** Use Case Settings **********/
+
+"settings_explanation" = "Gib einen Text in das Textfeld ein. Dieser wird persistent im key-value Speicher des Geräts gespeichert.";
+
+"settings_placeholder" = "Dein Text";
+
+
 /********** Errors **********/
 
 "path_not_found_error" = "Pfad nicht gefunden";

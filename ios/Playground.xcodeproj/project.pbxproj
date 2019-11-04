@@ -25,9 +25,24 @@
 		BDBC58C52370438700F7E535 /* AboutTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBC58C42370438700F7E535 /* AboutTabCoordinator.swift */; };
 		BDBC58C72370439400F7E535 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBC58C62370439400F7E535 /* AboutViewController.swift */; };
 		BDBC58C92370450B00F7E535 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBC58C82370450B00F7E535 /* SettingsViewController.swift */; };
-		BDBC58CB2370454400F7E535 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDBC58CA2370454300F7E535 /* Settings.storyboard */; };
 		BDBC58D223704F2800F7E535 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BDBC58D423704F2800F7E535 /* Localizable.strings */; };
+		BDBC58D823706C8A00F7E535 /* SharedSettings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDBC58D723706C8A00F7E535 /* SharedSettings.framework */; };
+		BDBC58D923706C8A00F7E535 /* SharedSettings.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BDBC58D723706C8A00F7E535 /* SharedSettings.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BDBC58DA23706C8A00F7E535 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BDBC58D923706C8A00F7E535 /* SharedSettings.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		BDB1B90623607C2F001F3529 /* Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Playground.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,13 +65,13 @@
 		BDBC58C42370438700F7E535 /* AboutTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTabCoordinator.swift; sourceTree = "<group>"; };
 		BDBC58C62370439400F7E535 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		BDBC58C82370450B00F7E535 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Playground/Screens/About/SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
-		BDBC58CA2370454300F7E535 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Settings.storyboard; path = Playground/Screens/About/Settings.storyboard; sourceTree = SOURCE_ROOT; };
 		BDBC58CC23704E8800F7E535 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		BDBC58CD23704E8800F7E535 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/Main.strings"; sourceTree = "<group>"; };
 		BDBC58D023704ED900F7E535 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		BDBC58D123704ED900F7E535 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		BDBC58D323704F2800F7E535 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BDBC58D523704F3000F7E535 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BDBC58D723706C8A00F7E535 /* SharedSettings.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SharedSettings.framework; path = "../shared/sharedsettings/build/xcode-frameworks/SharedSettings.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDBC58D823706C8A00F7E535 /* SharedSettings.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,7 +109,6 @@
 			isa = PBXGroup;
 			children = (
 				BDBC58C82370450B00F7E535 /* SettingsViewController.swift */,
-				BDBC58CA2370454300F7E535 /* Settings.storyboard */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -128,6 +143,7 @@
 			children = (
 				BDB1B90823607C2F001F3529 /* Playground */,
 				BDB1B90723607C2F001F3529 /* Products */,
+				BDBC58D623706C8A00F7E535 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -210,6 +226,14 @@
 			path = Usecases;
 			sourceTree = "<group>";
 		};
+		BDBC58D623706C8A00F7E535 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BDBC58D723706C8A00F7E535 /* SharedSettings.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -217,9 +241,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BDB1B91A23607C2F001F3529 /* Build configuration list for PBXNativeTarget "Playground" */;
 			buildPhases = (
+				BDBC58DB23706E0100F7E535 /* ShellScript */,
 				BDB1B90223607C2F001F3529 /* Sources */,
 				BDB1B90323607C2F001F3529 /* Frameworks */,
 				BDB1B90423607C2F001F3529 /* Resources */,
+				BDBC58DA23706C8A00F7E535 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -274,11 +300,30 @@
 				BDB1B91623607C2F001F3529 /* LaunchScreen.storyboard in Resources */,
 				BDB1B91323607C2F001F3529 /* Assets.xcassets in Resources */,
 				BDB1B91123607C2F001F3529 /* Main.storyboard in Resources */,
-				BDBC58CB2370454400F7E535 /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BDBC58DB23706E0100F7E535 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncd \"$SRCROOT/../shared/sharedsettings/build/xcode-frameworks\"\n./gradlew :sharedsettings:packForXCode -PXCODE_CONFIGURATION=${CONFIGURATION}\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BDB1B90223607C2F001F3529 /* Sources */ = {
@@ -375,6 +420,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../shared/sharedsettings/build/xcode-frameworks";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -436,6 +482,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../shared/sharedsettings/build/xcode-frameworks";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

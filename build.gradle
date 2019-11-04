@@ -28,16 +28,17 @@ buildscript {
 
     // library versions
     ext.versions = [
-            "supportlib"      : "1.1.0",
-            "constraintlayout": "1.1.3",
-            "material"        : "1.2.0-alpha01",
-            "corektx"         : "1.1.0",
-            "timber"          : "4.7.1",
-            "navigation"      : "2.2.0-rc01",
-            "dagger"          : "2.25.2",
-            "junit"           : "4.12",
-            "runner"          : "1.2.0",
-            "espresso_core"    : "3.2.0"
+            "supportlib"            : "1.1.0",
+            "constraintlayout"      : "1.1.3",
+            "material"              : "1.2.0-alpha01",
+            "corektx"               : "1.1.0",
+            "timber"                : "4.7.1",
+            "navigation"            : "2.2.0-rc01",
+            "dagger"                : "2.25.2",
+            "junit"                 : "4.12",
+            "runner"                : "1.2.0",
+            "espresso_core"         : "3.2.0",
+            "multiplatform_settings": "0.3.3"
     ]
     // libraries
     ext.deps = [
@@ -46,7 +47,7 @@ buildscript {
             "material"                : "com.google.android.material:material:${versions.material}",
             "core_ktx"                : "androidx.core:core-ktx:${versions.corektx}",
             "timber"                  : "com.jakewharton.timber:timber:${versions.timber}",
-            "navigation_fragment_ktx"     : "androidx.navigation:navigation-fragment-ktx:${versions.navigation}",
+            "navigation_fragment_ktx" : "androidx.navigation:navigation-fragment-ktx:${versions.navigation}",
             "navigation_ui_ktx"       : "androidx.navigation:navigation-ui-ktx:${versions.navigation}",
             "dagger"                  : "com.google.dagger:dagger:${versions.dagger}",
             "dagger_compiler"         : "com.google.dagger:dagger-compiler:${versions.dagger}",
@@ -55,6 +56,11 @@ buildscript {
             "dagger_android_support"  : "com.google.dagger:dagger-android-support:${versions.dagger}"
 
     ]
+
+    ext.kmpDeps = [
+            "multiplatform_settings": "com.russhwolf:multiplatform-settings:${versions.multiplatform_settings}"
+    ]
+
     // test libraries
     ext.testDeps = [
             "junit"        : "junit:junit:${versions.junit}",
