@@ -45,7 +45,7 @@ dependencies {
     implementation deps.core_ktx
     implementation deps.constraintlayout
     implementation deps.material
-//
+
     // logging
     implementation deps.timber
 
@@ -60,9 +60,8 @@ dependencies {
     kapt deps.dagger_android_processor
     implementation deps.dagger_android_support
 
-//     test
+    // test
     testImplementation testDeps.junit
     androidTestImplementation testDeps.runner
     androidTestImplementation testDeps.espresso_core
-
 }

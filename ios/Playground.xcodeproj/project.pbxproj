@@ -7,28 +7,56 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BD90F802236B33DF0055D773 /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = BD90F804236B33DF0055D773 /* Localization.strings */; };
 		BDB1B90A23607C2F001F3529 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB1B90923607C2F001F3529 /* AppDelegate.swift */; };
 		BDB1B90C23607C2F001F3529 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB1B90B23607C2F001F3529 /* SceneDelegate.swift */; };
-		BDB1B90E23607C2F001F3529 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB1B90D23607C2F001F3529 /* ViewController.swift */; };
 		BDB1B91123607C2F001F3529 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDB1B90F23607C2F001F3529 /* Main.storyboard */; };
 		BDB1B91323607C2F001F3529 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDB1B91223607C2F001F3529 /* Assets.xcassets */; };
 		BDB1B91623607C2F001F3529 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDB1B91423607C2F001F3529 /* LaunchScreen.storyboard */; };
+		BDBC58AE237040AF00F7E535 /* AppTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBC58AD237040AF00F7E535 /* AppTabBarController.swift */; };
+		BDBC58B0237040D400F7E535 /* UIViewController+Instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBC58AF237040D400F7E535 /* UIViewController+Instantiate.swift */; };
+		BDBC58B22370416E00F7E535 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBC58B12370416E00F7E535 /* Coordinator.swift */; };
+		BDBC58B4237041BC00F7E535 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBC58B3237041BC00F7E535 /* UseCase.swift */; };
+		BDBC58B92370424900F7E535 /* UseCaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBC58B82370424900F7E535 /* UseCaseCell.swift */; };
+		BDBC58BB2370425C00F7E535 /* UseCasesTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBC58BA2370425C00F7E535 /* UseCasesTabCoordinator.swift */; };
+		BDBC58BD2370426F00F7E535 /* UseCasesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBC58BC2370426F00F7E535 /* UseCasesViewController.swift */; };
+		BDBC58BF2370428700F7E535 /* UseCasesViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBC58BE2370428700F7E535 /* UseCasesViewController+CollectionView.swift */; };
+		BDBC58C12370431500F7E535 /* ComparisonTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBC58C02370431500F7E535 /* ComparisonTabCoordinator.swift */; };
+		BDBC58C32370433300F7E535 /* ComparisonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBC58C22370433300F7E535 /* ComparisonViewController.swift */; };
+		BDBC58C52370438700F7E535 /* AboutTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBC58C42370438700F7E535 /* AboutTabCoordinator.swift */; };
+		BDBC58C72370439400F7E535 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBC58C62370439400F7E535 /* AboutViewController.swift */; };
+		BDBC58C92370450B00F7E535 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBC58C82370450B00F7E535 /* SettingsViewController.swift */; };
+		BDBC58CB2370454400F7E535 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDBC58CA2370454300F7E535 /* Settings.storyboard */; };
+		BDBC58D223704F2800F7E535 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BDBC58D423704F2800F7E535 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BD90F803236B33DF0055D773 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
-		BD90F805236B34070055D773 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
-		BD90F806236B34080055D773 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		BD90F807236B34080055D773 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localization.strings; sourceTree = "<group>"; };
 		BDB1B90623607C2F001F3529 /* Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Playground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB1B90923607C2F001F3529 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDB1B90B23607C2F001F3529 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BDB1B90D23607C2F001F3529 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BDB1B91023607C2F001F3529 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BDB1B91223607C2F001F3529 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BDB1B91523607C2F001F3529 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BDB1B91723607C2F001F3529 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDBC58AD237040AF00F7E535 /* AppTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBarController.swift; sourceTree = "<group>"; };
+		BDBC58AF237040D400F7E535 /* UIViewController+Instantiate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Instantiate.swift"; sourceTree = "<group>"; };
+		BDBC58B12370416E00F7E535 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		BDBC58B3237041BC00F7E535 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
+		BDBC58B82370424900F7E535 /* UseCaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseCell.swift; sourceTree = "<group>"; };
+		BDBC58BA2370425C00F7E535 /* UseCasesTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCasesTabCoordinator.swift; sourceTree = "<group>"; };
+		BDBC58BC2370426F00F7E535 /* UseCasesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCasesViewController.swift; sourceTree = "<group>"; };
+		BDBC58BE2370428700F7E535 /* UseCasesViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UseCasesViewController+CollectionView.swift"; sourceTree = "<group>"; };
+		BDBC58C02370431500F7E535 /* ComparisonTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparisonTabCoordinator.swift; sourceTree = "<group>"; };
+		BDBC58C22370433300F7E535 /* ComparisonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparisonViewController.swift; sourceTree = "<group>"; };
+		BDBC58C42370438700F7E535 /* AboutTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTabCoordinator.swift; sourceTree = "<group>"; };
+		BDBC58C62370439400F7E535 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		BDBC58C82370450B00F7E535 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Playground/Screens/About/SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
+		BDBC58CA2370454300F7E535 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Settings.storyboard; path = Playground/Screens/About/Settings.storyboard; sourceTree = SOURCE_ROOT; };
+		BDBC58CC23704E8800F7E535 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		BDBC58CD23704E8800F7E535 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/Main.strings"; sourceTree = "<group>"; };
+		BDBC58D023704ED900F7E535 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		BDBC58D123704ED900F7E535 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		BDBC58D323704F2800F7E535 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BDBC58D523704F3000F7E535 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +73,8 @@
 		BD90F7FF236B1CF90055D773 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BD90F804236B33DF0055D773 /* Localization.strings */,
+				BDB1B91223607C2F001F3529 /* Assets.xcassets */,
+				BDBC58D423704F2800F7E535 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -63,6 +92,8 @@
 		BD90F809236B44470055D773 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				BDBC58C82370450B00F7E535 /* SettingsViewController.swift */,
+				BDBC58CA2370454300F7E535 /* Settings.storyboard */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -84,6 +115,10 @@
 		BD90F80C236B446F0055D773 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				BDB1B90923607C2F001F3529 /* AppDelegate.swift */,
+				BDB1B90B23607C2F001F3529 /* SceneDelegate.swift */,
+				BDBC58AD237040AF00F7E535 /* AppTabBarController.swift */,
+				BDBC58AF237040D400F7E535 /* UIViewController+Instantiate.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -108,17 +143,71 @@
 			isa = PBXGroup;
 			children = (
 				BD90F80C236B446F0055D773 /* App */,
+				BDBC58AB23703F6500F7E535 /* Models */,
+				BDBC58AA23703F5700F7E535 /* Coordinator */,
+				BDBC58AC23703F7300F7E535 /* Screens */,
 				BD90F808236B44220055D773 /* UseCases */,
-				BDB1B90923607C2F001F3529 /* AppDelegate.swift */,
-				BDB1B90B23607C2F001F3529 /* SceneDelegate.swift */,
-				BDB1B90D23607C2F001F3529 /* ViewController.swift */,
-				BDB1B90F23607C2F001F3529 /* Main.storyboard */,
 				BD90F7FF236B1CF90055D773 /* Resources */,
-				BDB1B91223607C2F001F3529 /* Assets.xcassets */,
-				BDB1B91423607C2F001F3529 /* LaunchScreen.storyboard */,
 				BDB1B91723607C2F001F3529 /* Info.plist */,
 			);
 			path = Playground;
+			sourceTree = "<group>";
+		};
+		BDBC58AA23703F5700F7E535 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				BDBC58B12370416E00F7E535 /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		BDBC58AB23703F6500F7E535 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BDBC58B3237041BC00F7E535 /* UseCase.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BDBC58AC23703F7300F7E535 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				BDB1B91423607C2F001F3529 /* LaunchScreen.storyboard */,
+				BDB1B90F23607C2F001F3529 /* Main.storyboard */,
+				BDBC58B72370421100F7E535 /* Usecases */,
+				BDBC58B62370420700F7E535 /* Comparison */,
+				BDBC58B52370420000F7E535 /* About */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		BDBC58B52370420000F7E535 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				BDBC58C42370438700F7E535 /* AboutTabCoordinator.swift */,
+				BDBC58C62370439400F7E535 /* AboutViewController.swift */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		BDBC58B62370420700F7E535 /* Comparison */ = {
+			isa = PBXGroup;
+			children = (
+				BDBC58C02370431500F7E535 /* ComparisonTabCoordinator.swift */,
+				BDBC58C22370433300F7E535 /* ComparisonViewController.swift */,
+			);
+			path = Comparison;
+			sourceTree = "<group>";
+		};
+		BDBC58B72370421100F7E535 /* Usecases */ = {
+			isa = PBXGroup;
+			children = (
+				BDBC58B82370424900F7E535 /* UseCaseCell.swift */,
+				BDBC58BA2370425C00F7E535 /* UseCasesTabCoordinator.swift */,
+				BDBC58BC2370426F00F7E535 /* UseCasesViewController.swift */,
+				BDBC58BE2370428700F7E535 /* UseCasesViewController+CollectionView.swift */,
+			);
+			path = Usecases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +252,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"en-GB",
 				de,
 			);
 			mainGroup = BDB1B8FD23607C2F001F3529;
@@ -180,10 +270,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDBC58D223704F2800F7E535 /* Localizable.strings in Resources */,
 				BDB1B91623607C2F001F3529 /* LaunchScreen.storyboard in Resources */,
-				BD90F802236B33DF0055D773 /* Localization.strings in Resources */,
 				BDB1B91323607C2F001F3529 /* Assets.xcassets in Resources */,
 				BDB1B91123607C2F001F3529 /* Main.storyboard in Resources */,
+				BDBC58CB2370454400F7E535 /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,8 +285,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDB1B90E23607C2F001F3529 /* ViewController.swift in Sources */,
+				BDBC58BD2370426F00F7E535 /* UseCasesViewController.swift in Sources */,
+				BDBC58B0237040D400F7E535 /* UIViewController+Instantiate.swift in Sources */,
+				BDBC58C72370439400F7E535 /* AboutViewController.swift in Sources */,
+				BDBC58C12370431500F7E535 /* ComparisonTabCoordinator.swift in Sources */,
+				BDBC58B22370416E00F7E535 /* Coordinator.swift in Sources */,
+				BDBC58AE237040AF00F7E535 /* AppTabBarController.swift in Sources */,
+				BDBC58C92370450B00F7E535 /* SettingsViewController.swift in Sources */,
+				BDBC58B4237041BC00F7E535 /* UseCase.swift in Sources */,
+				BDBC58C32370433300F7E535 /* ComparisonViewController.swift in Sources */,
+				BDBC58C52370438700F7E535 /* AboutTabCoordinator.swift in Sources */,
+				BDBC58B92370424900F7E535 /* UseCaseCell.swift in Sources */,
 				BDB1B90A23607C2F001F3529 /* AppDelegate.swift in Sources */,
+				BDBC58BB2370425C00F7E535 /* UseCasesTabCoordinator.swift in Sources */,
+				BDBC58BF2370428700F7E535 /* UseCasesViewController+CollectionView.swift in Sources */,
 				BDB1B90C23607C2F001F3529 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,20 +306,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BD90F804236B33DF0055D773 /* Localization.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BD90F803236B33DF0055D773 /* en */,
-				BD90F807236B34080055D773 /* de */,
-			);
-			name = Localization.strings;
-			sourceTree = "<group>";
-		};
 		BDB1B90F23607C2F001F3529 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				BDB1B91023607C2F001F3529 /* Base */,
-				BD90F805236B34070055D773 /* de */,
+				BDBC58CD23704E8800F7E535 /* en-GB */,
+				BDBC58D123704ED900F7E535 /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -225,9 +320,19 @@
 			isa = PBXVariantGroup;
 			children = (
 				BDB1B91523607C2F001F3529 /* Base */,
-				BD90F806236B34080055D773 /* de */,
+				BDBC58CC23704E8800F7E535 /* en-GB */,
+				BDBC58D023704ED900F7E535 /* de */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		BDBC58D423704F2800F7E535 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BDBC58D323704F2800F7E535 /* en */,
+				BDBC58D523704F3000F7E535 /* de */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
