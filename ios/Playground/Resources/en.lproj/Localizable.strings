@@ -26,6 +26,13 @@
 "about_faq_legal_a" = "Answer to rights";
 
 
+/********** Use Case Settings **********/
+
+"settings_explanation" = "Enter a text in the textfield below. It is stored in the key value storage of the device.";
+
+"settings_placeholder" = "Your text";
+
+
 /********** Errors **********/
 
 "path_not_found_error" = "The file '%@' could not be found.";

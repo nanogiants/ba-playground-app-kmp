@@ -34,7 +34,15 @@
     en = Answer to rights
     de = Die Bachelorarbeit entsteht bei dem Unternehmen appcom interactive GmbH
 
-
+[[Use Case Settings]]
+  [settings_explanation]
+    tags = settings
+    en = Enter a text in the textfield below. It is stored in the key value storage of the device.
+    de = Gib einen Text in das Textfeld ein. Dieser wird persistent im key-value Speicher des Geräts gespeichert.
+  [settings_placeholder]
+    tags = settings
+    en = Your text
+    de = Dein Text
 
 [[Errors]]
 	[path_not_found_error]
