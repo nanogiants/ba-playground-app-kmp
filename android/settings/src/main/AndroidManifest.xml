@@ -1,2 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="de.appcom.settings" />
+    package="de.appcom.settings">
+
+    <application>
+        <activity android:name="de.appcom.kmpplayground.SettingsActivity" />
+    </application>
+
+</manifest>

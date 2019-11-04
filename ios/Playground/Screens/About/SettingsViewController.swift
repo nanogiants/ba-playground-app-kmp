@@ -8,26 +8,37 @@
 
 import Foundation
 import SwiftUI
+import SharedSettings
 
 struct ContentView: View {
     
-    @State private var message: String = ""
+    @State private var message: String = "" {
+        didSet {
+            print("didset")
+             self.localKeyValueStorage.writeText(text: self.message)
+        }
+    }
     
-//    private var userDefaultsService = UserDefaultsService()
+    private var localKeyValueStorage = LocalKeyValueStorageImpl(settings: AppleSettings(delegate: UserDefaults.standard))
     
     var body: some View {
         Form {
             Section(header: Text("Text persistent Speichern"), footer: Text("Hier steht eine ausführliche Anleitung, was man alles machen kann")) {
-                TextField("Enter a message", text: $message, onCommit: {
-//                    self.userDefaultsService.writeMessage(message: self.message)
+                TextField("Enter a message", text: $message, onEditingChanged: { changed in
+                    if changed == false {
+                        self.localKeyValueStorage.writeText(text: self.message)
+                    }
+                }, onCommit: {
+                    self.localKeyValueStorage.writeText(text: self.message)
                 })
             }
         }.onAppear(perform: getLastMessage)
     }
     
     func getLastMessage() {
-//        message = userDefaultsService.readMessage()
+        message = localKeyValueStorage.readText()
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

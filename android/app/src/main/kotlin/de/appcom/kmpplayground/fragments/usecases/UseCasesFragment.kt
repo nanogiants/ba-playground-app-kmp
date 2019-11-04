@@ -1,9 +1,11 @@
 package de.appcom.kmpplayground.fragments.usecases
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import de.appcom.kmpplayground.R
+import de.appcom.kmpplayground.SettingsActivity
 import de.appcom.kmpplayground.fragments.base.BaseFragment
 import de.appcom.kmpplayground.fragments.base.BasePresenter
 import de.appcom.kmpplayground.model.UseCasePreview
@@ -64,7 +66,7 @@ class UseCasesFragment : BaseFragment(R.layout.fragment_usecases), UseCasesView 
 //      0 -> startActivity(Intent(requireContext(), ExampleActivity::class.java))
 //      1 -> startActivity(Intent(requireContext(), PixelsortActivity::class.java))
 //      2 -> startActivity(Intent(requireContext(), NasaActivity::class.java))
-//      3 -> startActivity(Intent(requireContext(), SettingsActivity::class.java))
+      3 -> startActivity(Intent(requireContext(), SettingsActivity::class.java))
     }
   }
 
