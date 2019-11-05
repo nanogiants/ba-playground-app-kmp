@@ -1,4 +1,4 @@
-package de.appcom.kmpplayground.model
+package de.appcom.kmpplayground.models
 
 import androidx.annotation.StringRes
 

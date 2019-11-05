@@ -8,7 +8,8 @@ import de.appcom.kmpplayground.R
 import de.appcom.kmpplayground.SettingsActivity
 import de.appcom.kmpplayground.fragments.base.BaseFragment
 import de.appcom.kmpplayground.fragments.base.BasePresenter
-import de.appcom.kmpplayground.model.UseCasePreview
+import de.appcom.kmpplayground.models.UseCasePreview
+import de.appcom.kmpplayground.NasaActivity
 import kotlinx.android.synthetic.main.fragment_usecases.usecases_recyclerview
 import timber.log.Timber
 import javax.inject.Inject
@@ -65,7 +66,7 @@ class UseCasesFragment : BaseFragment(R.layout.fragment_usecases), UseCasesView 
     when (pos) {
 //      0 -> startActivity(Intent(requireContext(), ExampleActivity::class.java))
 //      1 -> startActivity(Intent(requireContext(), PixelsortActivity::class.java))
-//      2 -> startActivity(Intent(requireContext(), NasaActivity::class.java))
+      2 -> startActivity(Intent(requireContext(), NasaActivity::class.java))
       3 -> startActivity(Intent(requireContext(), SettingsActivity::class.java))
     }
   }

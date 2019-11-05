@@ -34,6 +34,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    // Fix Ktor prevents the build, nasa module
+    packagingOptions {
+        exclude 'META-INF/*.kotlin_module'
+    }
 }
 
 dependencies {
@@ -67,4 +71,5 @@ dependencies {
 
     // modules
     implementation project(':settings')
+    implementation project(':nasa')
 }

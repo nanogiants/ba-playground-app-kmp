@@ -38,7 +38,8 @@ buildscript {
             "junit"                 : "4.12",
             "runner"                : "1.2.0",
             "espresso_core"         : "3.2.0",
-            "multiplatform_settings": "0.3.3"
+            "multiplatform_settings": "0.3.3",
+            "glide"                 : "4.10.0"
     ]
     // libraries
     ext.deps = [
@@ -53,7 +54,9 @@ buildscript {
             "dagger_compiler"         : "com.google.dagger:dagger-compiler:${versions.dagger}",
             "dagger_android"          : "com.google.dagger:dagger-android:${versions.dagger}",
             "dagger_android_processor": "com.google.dagger:dagger-android-processor:${versions.dagger}",
-            "dagger_android_support"  : "com.google.dagger:dagger-android-support:${versions.dagger}"
+            "dagger_android_support"  : "com.google.dagger:dagger-android-support:${versions.dagger}",
+            "glide"                   : "com.github.bumptech.glide:glide:${versions.glide}",
+            "glide_compiler"          : "com.github.bumptech.glide:compiler:${versions.glide}"
 
     ]
 
@@ -73,8 +76,9 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.1'
+        classpath 'com.android.tools.build:gradle:3.5.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlin_version"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
