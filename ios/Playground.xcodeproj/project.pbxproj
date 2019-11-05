@@ -28,6 +28,10 @@
 		BDBC58D223704F2800F7E535 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BDBC58D423704F2800F7E535 /* Localizable.strings */; };
 		BDBC58D823706C8A00F7E535 /* SharedSettings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDBC58D723706C8A00F7E535 /* SharedSettings.framework */; };
 		BDBC58D923706C8A00F7E535 /* SharedSettings.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BDBC58D723706C8A00F7E535 /* SharedSettings.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BDFE596D2371DFE2002A1F94 /* NasaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFE596C2371DFE2002A1F94 /* NasaViewController.swift */; };
+		BDFE596F2371DFEF002A1F94 /* Nasa.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDFE596E2371DFEF002A1F94 /* Nasa.storyboard */; };
+		BDFE59742371E56D002A1F94 /* SharedNasa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDFE59732371E56D002A1F94 /* SharedNasa.framework */; };
+		BDFE59752371E56D002A1F94 /* SharedNasa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BDFE59732371E56D002A1F94 /* SharedNasa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +41,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				BDFE59752371E56D002A1F94 /* SharedNasa.framework in Embed Frameworks */,
 				BDBC58D923706C8A00F7E535 /* SharedSettings.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -72,6 +77,10 @@
 		BDBC58D323704F2800F7E535 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BDBC58D523704F3000F7E535 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BDBC58D723706C8A00F7E535 /* SharedSettings.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SharedSettings.framework; path = "../shared/sharedsettings/build/xcode-frameworks/SharedSettings.framework"; sourceTree = "<group>"; };
+		BDFE596C2371DFE2002A1F94 /* NasaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaViewController.swift; sourceTree = "<group>"; };
+		BDFE596E2371DFEF002A1F94 /* Nasa.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Nasa.storyboard; sourceTree = "<group>"; };
+		BDFE59702371E300002A1F94 /* SharedCodeNasa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SharedCodeNasa.framework; path = "../shared/sharednasa/build/xcode-frameworks/SharedCodeNasa.framework"; sourceTree = "<group>"; };
+		BDFE59732371E56D002A1F94 /* SharedNasa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SharedNasa.framework; path = "../shared/sharednasa/build/xcode-frameworks/SharedNasa.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDFE59742371E56D002A1F94 /* SharedNasa.framework in Frameworks */,
 				BDBC58D823706C8A00F7E535 /* SharedSettings.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,6 +207,8 @@
 		BDBC58D623706C8A00F7E535 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BDFE59732371E56D002A1F94 /* SharedNasa.framework */,
+				BDFE59702371E300002A1F94 /* SharedCodeNasa.framework */,
 				BDBC58D723706C8A00F7E535 /* SharedSettings.framework */,
 			);
 			name = Frameworks;
@@ -222,6 +234,8 @@
 		BDFE596A23719215002A1F94 /* Nasa */ = {
 			isa = PBXGroup;
 			children = (
+				BDFE596C2371DFE2002A1F94 /* NasaViewController.swift */,
+				BDFE596E2371DFEF002A1F94 /* Nasa.storyboard */,
 			);
 			path = Nasa;
 			sourceTree = "<group>";
@@ -299,6 +313,7 @@
 				BDBC58D223704F2800F7E535 /* Localizable.strings in Resources */,
 				BDB1B91623607C2F001F3529 /* LaunchScreen.storyboard in Resources */,
 				BDB1B91323607C2F001F3529 /* Assets.xcassets in Resources */,
+				BDFE596F2371DFEF002A1F94 /* Nasa.storyboard in Resources */,
 				BDB1B91123607C2F001F3529 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,7 +336,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncd \"$SRCROOT/../shared/sharedsettings/build/xcode-frameworks\"\n./gradlew :sharedsettings:packForXCode -PXCODE_CONFIGURATION=${CONFIGURATION}\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncd \"$SRCROOT/../shared/sharedsettings/build/xcode-frameworks\"\n./gradlew :sharedsettings:packForXCodeSettings -PXCODE_CONFIGURATION=${CONFIGURATION}\ncd \"$SRCROOT/../shared/sharednasa/build/xcode-frameworks\"\n./gradlew :sharednasa:packForXCodeNasa -PXCODE_CONFIGURATION=${CONFIGURATION}\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -335,6 +350,7 @@
 				BDBC58C72370439400F7E535 /* AboutViewController.swift in Sources */,
 				BDBC58C12370431500F7E535 /* ComparisonTabCoordinator.swift in Sources */,
 				BDBC58B22370416E00F7E535 /* Coordinator.swift in Sources */,
+				BDFE596D2371DFE2002A1F94 /* NasaViewController.swift in Sources */,
 				BDBC58AE237040AF00F7E535 /* AppTabBarController.swift in Sources */,
 				BDBC58C92370450B00F7E535 /* SettingsViewController.swift in Sources */,
 				BDBC58B4237041BC00F7E535 /* UseCase.swift in Sources */,
@@ -420,7 +436,10 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../shared/sharedsettings/build/xcode-frameworks";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/../shared/sharedsettings/build/xcode-frameworks",
+					"$(SRCROOT)/../shared/sharednasa/build/xcode-frameworks",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -482,7 +501,10 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../shared/sharedsettings/build/xcode-frameworks";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/../shared/sharedsettings/build/xcode-frameworks",
+					"$(SRCROOT)/../shared/sharednasa/build/xcode-frameworks",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

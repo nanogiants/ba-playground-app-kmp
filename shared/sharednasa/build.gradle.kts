@@ -18,7 +18,7 @@ kotlin {
     iOSTarget("ios") {
         binaries {
             framework {
-                baseName = "SharedCodeNasa"
+                baseName = "SharedNasa"
             }
         }
     }
@@ -66,7 +66,7 @@ kotlin {
     }
 }
 
-val packForXcode by tasks.creating(Sync::class) {
+val packForXcodeNasa by tasks.creating(Sync::class) {
     val targetDir = File(buildDir, "xcode-frameworks")
 
     /// selecting the right configuration for the iOS 
@@ -95,4 +95,4 @@ val packForXcode by tasks.creating(Sync::class) {
     }
 }
 
-tasks.getByName("build").dependsOn(packForXcode)
+tasks.getByName("build").dependsOn(packForXcodeNasa)

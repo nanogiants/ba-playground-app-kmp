@@ -6,7 +6,6 @@ import io.ktor.client.request.url
 import io.ktor.client.response.HttpResponse
 import io.ktor.client.response.readText
 import kotlinx.serialization.json.Json
-import kotlinx.serialization.json.JsonConfiguration
 
 @Suppress("EXPERIMENTAL_API_USAGE")
 class WebDataSourceImpl : WebDataSource {
@@ -28,8 +27,6 @@ class WebDataSourceImpl : WebDataSource {
 
         // close underlying engine
         client.close()
-
-        JsonConfiguration
 
         // parse http jsonBody to web entity
         val entity = Json.parse(PictureOfTheDayWebEntity.serializer(), response.readText())
