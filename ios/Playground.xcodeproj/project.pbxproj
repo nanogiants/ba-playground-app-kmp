@@ -64,7 +64,7 @@
 		BDBC58C22370433300F7E535 /* ComparisonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparisonViewController.swift; sourceTree = "<group>"; };
 		BDBC58C42370438700F7E535 /* AboutTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTabCoordinator.swift; sourceTree = "<group>"; };
 		BDBC58C62370439400F7E535 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		BDBC58C82370450B00F7E535 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Playground/Screens/About/SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
+		BDBC58C82370450B00F7E535 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Playground/UseCases/Settings/SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
 		BDBC58CC23704E8800F7E535 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		BDBC58CD23704E8800F7E535 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/Main.strings"; sourceTree = "<group>"; };
 		BDBC58D023704ED900F7E535 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -93,38 +93,6 @@
 				BDBC58D423704F2800F7E535 /* Localizable.strings */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		BD90F808236B44220055D773 /* UseCases */ = {
-			isa = PBXGroup;
-			children = (
-				BD90F80B236B445D0055D773 /* Pixelsort */,
-				BD90F80A236B444F0055D773 /* Nasa */,
-				BD90F809236B44470055D773 /* Settings */,
-			);
-			path = UseCases;
-			sourceTree = "<group>";
-		};
-		BD90F809236B44470055D773 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				BDBC58C82370450B00F7E535 /* SettingsViewController.swift */,
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
-		BD90F80A236B444F0055D773 /* Nasa */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Nasa;
-			sourceTree = "<group>";
-		};
-		BD90F80B236B445D0055D773 /* Pixelsort */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Pixelsort;
 			sourceTree = "<group>";
 		};
 		BD90F80C236B446F0055D773 /* App */ = {
@@ -162,8 +130,8 @@
 				BDBC58AB23703F6500F7E535 /* Models */,
 				BDBC58AA23703F5700F7E535 /* Coordinator */,
 				BDBC58AC23703F7300F7E535 /* Screens */,
-				BD90F808236B44220055D773 /* UseCases */,
 				BD90F7FF236B1CF90055D773 /* Resources */,
+				BDFE5968237191CA002A1F94 /* UseCases */,
 				BDB1B91723607C2F001F3529 /* Info.plist */,
 			);
 			path = Playground;
@@ -232,6 +200,38 @@
 				BDBC58D723706C8A00F7E535 /* SharedSettings.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BDFE5968237191CA002A1F94 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				BDFE596B2371921B002A1F94 /* Settings */,
+				BDFE596A23719215002A1F94 /* Nasa */,
+				BDFE59692371920C002A1F94 /* Pixelsort */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		BDFE59692371920C002A1F94 /* Pixelsort */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pixelsort;
+			sourceTree = "<group>";
+		};
+		BDFE596A23719215002A1F94 /* Nasa */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Nasa;
+			sourceTree = "<group>";
+		};
+		BDFE596B2371921B002A1F94 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				BDBC58C82370450B00F7E535 /* SettingsViewController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
