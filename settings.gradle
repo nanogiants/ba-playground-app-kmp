@@ -1,14 +1,9 @@
-include ':app', ':settings', ':nasa', ':pixelsort', ':sharednasa', ':sharedsettings', ':sharedpixelsort'
+include ':app', ':settings', ':nasa', ':pixelsort', ':shared'
 rootProject.name='KmpPlayground'
 
 //project(':app').projectDir = new File('android/app')
 
 // move all android specific modules into android folder
 file('android').eachDir { dir ->
-  project(":${dir.name}").projectDir = dir
-}
-
-// move all shared modules into shared folder
-file('shared').eachDir { dir ->
   project(":${dir.name}").projectDir = dir
 }

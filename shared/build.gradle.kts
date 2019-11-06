@@ -18,55 +18,63 @@ kotlin {
     iOSTarget("ios") {
         binaries {
             framework {
-                baseName = "SharedNasa"
+                baseName = "SharedPlayground"
+
+                // settings
+                export("com.russhwolf:multiplatform-settings:0.3.3")
+                if (isDevice) {
+                    export("com.russhwolf:multiplatform-settings-ios:0.3.3")
+                } else {
+                    export("com.russhwolf:multiplatform-settings-iossim:0.3.3")
+                }
             }
         }
     }
 
     val ktor_version = "1.2.5"
-    val coroutines_version = "1.3.2"
 
     jvm("android")
 
     sourceSets["commonMain"].dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
 
-        // ktor
+        // settings: settings
+        implementation("com.russhwolf:multiplatform-settings:0.3.3")
+
+        // nasa: ktor
         implementation("io.ktor:ktor-client-core:$ktor_version")
         implementation("io.ktor:ktor-client-json:$ktor_version")
         implementation("io.ktor:ktor-client-serialization:$ktor_version")
-
-        // coroutines
-//        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutines_version}")
     }
 
     sourceSets["androidMain"].dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib")
 
-        // ktor
+        // nasa: ktor
         implementation("io.ktor:ktor-client-android:$ktor_version")
         implementation("io.ktor:ktor-client-core-jvm:$ktor_version")
         implementation("io.ktor:ktor-client-json-jvm:$ktor_version")
         implementation("io.ktor:ktor-client-serialization-jvm:$ktor_version")
-
-        // coroutines
-//        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:${coroutines_version}")
     }
 
     sourceSets["iosMain"].dependencies {
-        // ktor
+        // settings: settings
+        if (isDevice) {
+            api("com.russhwolf:multiplatform-settings-ios:0.3.3")
+        } else {
+            api("com.russhwolf:multiplatform-settings-iossim:0.3.3")
+        }
+
+        // nasa: ktor
         implementation("io.ktor:ktor-client-ios:$ktor_version")
         implementation("io.ktor:ktor-client-core-native:$ktor_version")
         implementation("io.ktor:ktor-client-json-native:$ktor_version")
         implementation("io.ktor:ktor-client-serialization-native:$ktor_version") //?
         implementation("io.ktor:ktor-client-serialization-iosx64:${ktor_version}") //?
-
-        // coroutines
-//        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:${coroutines_version}")
     }
 }
 
-val packForXcodeNasa by tasks.creating(Sync::class) {
+val packForXcode by tasks.creating(Sync::class) {
     val targetDir = File(buildDir, "xcode-frameworks")
 
     /// selecting the right configuration for the iOS 
@@ -95,4 +103,4 @@ val packForXcodeNasa by tasks.creating(Sync::class) {
     }
 }
 
-tasks.getByName("build").dependsOn(packForXcodeNasa)
+tasks.getByName("build").dependsOn(packForXcode)

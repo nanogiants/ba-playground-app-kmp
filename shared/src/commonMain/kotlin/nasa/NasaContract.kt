@@ -11,4 +11,3 @@ interface NasaView {
     fun showError(message: String)
 }
 
-expect fun getUIDispatcher(): CoroutineDispatcher
