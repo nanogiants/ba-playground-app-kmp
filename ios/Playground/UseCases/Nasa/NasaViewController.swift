@@ -39,7 +39,7 @@ class NasaViewController: UIViewController, NasaView {
     }
     
     func showError(message: String) {
-        //TOdo
+        //Todo
         print("\(message)")
     }
     
