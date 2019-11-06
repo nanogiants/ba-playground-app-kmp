@@ -6,7 +6,7 @@ import android.view.View
 import de.appcom.kmpplayground.R
 import de.appcom.kmpplayground.fragments.base.BaseFragment
 import de.appcom.kmpplayground.fragments.base.BasePresenter
-import de.appcom.kmpplayground.model.AboutEntry
+import de.appcom.kmpplayground.models.AboutEntry
 import kotlinx.android.synthetic.main.about_fay_entry.view.about_entry_description
 import kotlinx.android.synthetic.main.about_fay_entry.view.about_entry_title
 import kotlinx.android.synthetic.main.fragment_about.about_faq_linearlayout

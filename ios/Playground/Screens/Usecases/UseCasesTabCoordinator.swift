@@ -50,11 +50,11 @@ class UseCasesTabCoordinator: Coordinator {
     }
     
     func navigateToNasa() {
-//        let viewController = NasaViewController.instantiate(from: "Nasa")
-//        viewController.tabBarItem = UITabBarItem(title: tabTitle, image: tabImage, tag: tabTag)
-//        viewController.coordinator = self
-//        navigationController.show(viewController, sender: self)
-//        navigationController.navigationBar.prefersLargeTitles = true
-//        navigationController.tabBarController?.tabBar.isHidden = true
+        let viewController = NasaViewController.instantiate(from: "Nasa")
+        viewController.tabBarItem = UITabBarItem(title: tabTitle, image: tabImage, tag: tabTag)
+        viewController.coordinator = self
+        navigationController.show(viewController, sender: self)
+        navigationController.navigationBar.prefersLargeTitles = false
+        navigationController.tabBarController?.tabBar.isHidden = true
     }
 }

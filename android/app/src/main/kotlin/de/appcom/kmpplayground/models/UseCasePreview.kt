@@ -1,4 +1,4 @@
-package de.appcom.kmpplayground.model
+package de.appcom.kmpplayground.models
 
 /**
  * Created by Fabian Heck on 2019-10-24.

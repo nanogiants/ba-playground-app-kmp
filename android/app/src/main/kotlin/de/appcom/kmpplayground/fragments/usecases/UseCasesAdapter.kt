@@ -7,7 +7,7 @@ import de.appcom.kmpplayground.R
 import de.appcom.kmpplayground.fragments.base.BaseAdapter
 import de.appcom.kmpplayground.fragments.base.BaseViewHolder
 import de.appcom.kmpplayground.fragments.usecases.UseCasesAdapter.UseCasesViewHolder
-import de.appcom.kmpplayground.model.UseCasePreview
+import de.appcom.kmpplayground.models.UseCasePreview
 import kotlinx.android.synthetic.main.usecases_item_layout.view.usecases_item_description_textview
 import kotlinx.android.synthetic.main.usecases_item_layout.view.usecases_item_title_textview
 

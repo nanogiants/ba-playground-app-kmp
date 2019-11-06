@@ -1,6 +1,11 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+
+def secretPropertiesFile = rootProject.file("secret.properties")
+def secretProperties = new Properties()
+secretProperties.load(new FileInputStream(secretPropertiesFile))
+
 android {
     compileSdkVersion rootProject.androidCompileSdkVersion
     buildToolsVersion rootProject.androidBuildToolsVersion
@@ -16,7 +21,15 @@ android {
     }
 
     buildTypes {
+//        release {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//        }
+        debug {
+            buildConfigField("String", "NasaApiKey", secretProperties['nasaApiKey'])
+        }
         release {
+            buildConfigField("String", "NasaApiKey", secretProperties['nasaApiKey'])
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -32,14 +45,33 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    // Fix Ktor prevents the build, nasa module
+    packagingOptions {
+        exclude 'META-INF/*.kotlin_module'
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.1.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.2.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation deps.appcompat
+    implementation deps.core_ktx
+    implementation deps.constraintlayout
+    implementation deps.material
+
+    // test
+    testImplementation testDeps.junit
+    androidTestImplementation testDeps.runner
+    androidTestImplementation testDeps.espresso_core
+
+    // coroutines
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0-rc01"
+
+    // glide
+    implementation deps.glide
+    annotationProcessor deps.glide_compiler
+
+    // modules
+    implementation project(":shared")
 }

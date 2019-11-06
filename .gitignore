@@ -87,3 +87,6 @@ captures/
 .idea/usage.statistics.xml
 .idea/contentModel.xml
 .idea/kotlinc.xml
+
+##
+secret.properties

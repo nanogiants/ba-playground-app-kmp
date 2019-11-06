@@ -49,6 +49,7 @@ dependencies {
     androidTestImplementation testDeps.espresso_core
 
     // modules
-    implementation project(':sharedsettings')
+    implementation project(":shared")
     implementation kmpDeps.multiplatform_settings
+
 }

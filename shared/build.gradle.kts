@@ -2,23 +2,25 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
     kotlin("multiplatform")
+    id("kotlinx-serialization")
 }
 
 kotlin {
-    // check if device or simulator
+    //select iOS target platform depending on the Xcode environment variables
     val isDevice = System.getenv("SDK_NAME")?.startsWith("iphoneos") == true
-    // select iOS target platform depending on the Xcode environment variables
+
     val iOSTarget: (String, KotlinNativeTarget.() -> Unit) -> KotlinNativeTarget =
         if (isDevice)
             ::iosArm64
         else
             ::iosX64
 
-    // create an ios target
     iOSTarget("ios") {
         binaries {
             framework {
-                baseName = "SharedSettings"
+                baseName = "SharedPlayground"
+
+                // settings
                 export("com.russhwolf:multiplatform-settings:0.3.3")
                 if (isDevice) {
                     export("com.russhwolf:multiplatform-settings-ios:0.3.3")
@@ -29,31 +31,50 @@ kotlin {
         }
     }
 
-    // create an android target
+    val ktor_version = "1.2.5"
+
     jvm("android")
 
-    // configure source set dependencies for common
     sourceSets["commonMain"].dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
+
+        // settings: settings
         implementation("com.russhwolf:multiplatform-settings:0.3.3")
+
+        // nasa: ktor
+        implementation("io.ktor:ktor-client-core:$ktor_version")
+        implementation("io.ktor:ktor-client-json:$ktor_version")
+        implementation("io.ktor:ktor-client-serialization:$ktor_version")
     }
 
-    // configure source set dependencies for android
     sourceSets["androidMain"].dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib")
+
+        // nasa: ktor
+        implementation("io.ktor:ktor-client-android:$ktor_version")
+        implementation("io.ktor:ktor-client-core-jvm:$ktor_version")
+        implementation("io.ktor:ktor-client-json-jvm:$ktor_version")
+        implementation("io.ktor:ktor-client-serialization-jvm:$ktor_version")
     }
 
-    // configure source set dependencies for ios
-    sourceSets["iosMain"].dependencies{
+    sourceSets["iosMain"].dependencies {
+        // settings: settings
         if (isDevice) {
             api("com.russhwolf:multiplatform-settings-ios:0.3.3")
         } else {
             api("com.russhwolf:multiplatform-settings-iossim:0.3.3")
         }
+
+        // nasa: ktor
+        implementation("io.ktor:ktor-client-ios:$ktor_version")
+        implementation("io.ktor:ktor-client-core-native:$ktor_version")
+        implementation("io.ktor:ktor-client-json-native:$ktor_version")
+        implementation("io.ktor:ktor-client-serialization-native:$ktor_version") //?
+        implementation("io.ktor:ktor-client-serialization-iosx64:${ktor_version}") //?
     }
 }
 
-val packForXcodeSettings by tasks.creating(Sync::class) {
+val packForXcode by tasks.creating(Sync::class) {
     val targetDir = File(buildDir, "xcode-frameworks")
 
     /// selecting the right configuration for the iOS 
@@ -82,4 +103,4 @@ val packForXcodeSettings by tasks.creating(Sync::class) {
     }
 }
 
-tasks.getByName("build").dependsOn(packForXcodeSettings)
+tasks.getByName("build").dependsOn(packForXcode)
