@@ -1,4 +1,4 @@
-include ':app', ':settings', ':nasa', ':pixelsort', ':shared'
+include ':app', ':settings', ':nasa', ':pixelsort', ':shared', ':notes'
 rootProject.name='KmpPlayground'
 
 //project(':app').projectDir = new File('android/app')
@@ -7,3 +7,7 @@ rootProject.name='KmpPlayground'
 file('android').eachDir { dir ->
   project(":${dir.name}").projectDir = dir
 }
+
+// notes
+// To use SQLDelight in kotlin multiplatform the gradle metadata feature is required
+enableFeaturePreview('GRADLE_METADATA')

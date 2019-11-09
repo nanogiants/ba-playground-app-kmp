@@ -49,15 +49,15 @@ class UseCasesFragment : BaseFragment(R.layout.fragment_usecases), UseCasesView 
     usecases_recyclerview.addItemDecoration(UseCasesItemDecorator(resources.getDimension(R.dimen.usecases_bottom_spacing)))
     adapter.replaceAll(
       listOf(
-        UseCasePreview(0, "Create an Image", "Description"),
-        UseCasePreview(1, "Image", "Description"),
-        UseCasePreview(2, "Title", "Description"),
-        UseCasePreview(3, "Art", "Description"),
-        UseCasePreview(4, "Test", "Description"),
-        UseCasePreview(5, "Design", "Description"),
-        UseCasePreview(6, "News", "Description"),
-        UseCasePreview(7, "Apple", "Description"),
-        UseCasePreview(8, "Image", "Description")
+        UseCasePreview(0, "-", "Description"),
+        UseCasePreview(1, "-", "Description"),
+        UseCasePreview(2, "Nasa", "Description"),
+        UseCasePreview(3, "Settings", "Description"),
+        UseCasePreview(4, "Notes", "Description"),
+        UseCasePreview(5, "-", "Description"),
+        UseCasePreview(6, "-", "Description"),
+        UseCasePreview(7, "-", "Description"),
+        UseCasePreview(8, "-", "Description")
       )
     )
   }

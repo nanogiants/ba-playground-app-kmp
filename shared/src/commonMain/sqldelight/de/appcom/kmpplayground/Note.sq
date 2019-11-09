@@ -1,0 +1,19 @@
+
+
+CREATE TABLE Notes (
+    id INTEGER NOT NULL PRIMARY KEY,
+    title TEXT NOT NULL,
+    content TEXT NOT NULL,
+    created_at INTEGER NOT NULL
+);
+
+addNote:
+INSERT OR REPLACE
+INTO Notes(id, title, content, created_at)VALUES(?,?,?,?);
+
+allNotes:
+SELECT * FROM Notes;
+
+removeNote:
+DELETE FROM Notes WHERE id=?;
+
