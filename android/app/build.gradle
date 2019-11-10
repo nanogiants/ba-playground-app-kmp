@@ -72,4 +72,5 @@ dependencies {
     // modules
     implementation project(':settings')
     implementation project(':nasa')
+    implementation project(':notes')
 }

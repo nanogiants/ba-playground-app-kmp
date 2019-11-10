@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD539240237826BD0046B659 /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD53923F237826BD0046B659 /* NotesView.swift */; };
+		BD53924223783DA60046B659 /* NotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD53924123783DA60046B659 /* NotesViewModel.swift */; };
 		BDB1B90A23607C2F001F3529 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB1B90923607C2F001F3529 /* AppDelegate.swift */; };
 		BDB1B90C23607C2F001F3529 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB1B90B23607C2F001F3529 /* SceneDelegate.swift */; };
 		BDB1B91123607C2F001F3529 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDB1B90F23607C2F001F3529 /* Main.storyboard */; };
@@ -47,6 +49,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BD53923F237826BD0046B659 /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
+		BD53924123783DA60046B659 /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
 		BDB1B90623607C2F001F3529 /* Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Playground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB1B90923607C2F001F3529 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDB1B90B23607C2F001F3529 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +97,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD53923E2378269E0046B659 /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				BD53923F237826BD0046B659 /* NotesView.swift */,
+				BD53924123783DA60046B659 /* NotesViewModel.swift */,
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
 		BD90F7FF236B1CF90055D773 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +228,7 @@
 		BDFE5968237191CA002A1F94 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				BD53923E2378269E0046B659 /* Notes */,
 				BDFE596B2371921B002A1F94 /* Settings */,
 				BDFE596A23719215002A1F94 /* Nasa */,
 				BDFE59692371920C002A1F94 /* Pixelsort */,
@@ -354,8 +368,10 @@
 				BDBC58B4237041BC00F7E535 /* UseCase.swift in Sources */,
 				BDBC58C32370433300F7E535 /* ComparisonViewController.swift in Sources */,
 				BDBC58C52370438700F7E535 /* AboutTabCoordinator.swift in Sources */,
+				BD539240237826BD0046B659 /* NotesView.swift in Sources */,
 				BDBC58B92370424900F7E535 /* UseCaseCell.swift in Sources */,
 				BDB1B90A23607C2F001F3529 /* AppDelegate.swift in Sources */,
+				BD53924223783DA60046B659 /* NotesViewModel.swift in Sources */,
 				BDBC58BB2370425C00F7E535 /* UseCasesTabCoordinator.swift in Sources */,
 				BDBC58BF2370428700F7E535 /* UseCasesViewController+CollectionView.swift in Sources */,
 				BDB1B90C23607C2F001F3529 /* SceneDelegate.swift in Sources */,

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+  <androidx.appcompat.widget.Toolbar
+      android:id="@+id/add_notes_toolbar"
+      style="@style/Playground.Toolbar"
+      android:layout_width="match_parent"
+      android:layout_height="?attr/actionBarSize"
+      />
+
+  <com.google.android.material.textfield.TextInputLayout
+      android:id="@+id/add_notes_title_textinputlayout"
+      style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="16dp"
+      android:layout_marginEnd="16dp"
+      android:hint="title"
+      android:nextFocusDown="@id/add_notes_content_textinputlayout"
+      >
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/add_notes_title_textinputedittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:imeOptions="actionNext"
+        android:lines="1"
+        android:singleLine="true"
+        tools:text="Example for title"
+        />
+  </com.google.android.material.textfield.TextInputLayout>
+
+  <com.google.android.material.textfield.TextInputLayout
+      android:id="@+id/add_notes_content_textinputlayout"
+      style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="16dp"
+      android:layout_marginEnd="16dp"
+      android:hint="Content"
+      >
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/add_notes_content_textinputedittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:imeOptions="actionDone"
+        android:maxLines="6"
+        tools:text="Example for content text"
+        />
+  </com.google.android.material.textfield.TextInputLayout>
+
+</LinearLayout>
