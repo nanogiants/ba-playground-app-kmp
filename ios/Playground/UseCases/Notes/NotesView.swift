@@ -39,7 +39,7 @@ struct NotesContentView: View {
     }
     
     func closeModal() {
-        // use this workaround because the onDismiss callback is not called
+        // use this workaround because the onDismiss callback is not working
         UIApplication.shared.windows[0].rootViewController?.dismiss(animated: true, completion: { })
     }
     

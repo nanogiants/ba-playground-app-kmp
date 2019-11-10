@@ -52,14 +52,11 @@ class NotesViewModel: ObservableObject, NotesView, AddNoteView {
     }
     
     func onNoteDeleted() {
-              fetch()
-        print("onDeleteNote")
+        fetch()
     }
     
     func onNoteAdded() {
         fetch()
-//        view?.closeModal()
-        print("onAddNote")
     }
     
     func showError(message: String) {

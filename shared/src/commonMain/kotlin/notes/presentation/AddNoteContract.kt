@@ -10,4 +10,3 @@ interface AddNoteView {
 interface AddNotePresenter {
   fun addNote(note: Note)
 }
-
