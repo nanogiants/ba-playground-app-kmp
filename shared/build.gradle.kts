@@ -67,6 +67,9 @@ kotlin {
         implementation("io.ktor:ktor-client-core:${versions["ktor"]}")
         implementation("io.ktor:ktor-client-json:${versions["ktor"]}")
         implementation("io.ktor:ktor-client-serialization:${versions["ktor"]}")
+
+        // coroutines
+//        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.2")// change ??
     }
 
     sourceSets["androidMain"].dependencies {
@@ -108,7 +111,7 @@ sqldelight {
         sourceFolders = listOf("sqldelight") // root for all pathes is src/main, e.g. src/main/sqldelight
         schemaOutputDirectory = file("build/dbs")
     }
-    linkSqlite = false
+    linkSqlite = true // was false
 }
 
 android {

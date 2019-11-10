@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SwiftUI
+import SharedPlayground
 
 class UseCasesTabCoordinator: Coordinator {
     
@@ -35,12 +36,12 @@ class UseCasesTabCoordinator: Coordinator {
     }
     
     func navigateToPixelsort() {
-//        let viewController = PixelsortViewController.instantiate(from: "Pixelsort")
-//        viewController.coordinator = self
-//        navigationController.show(viewController, sender: self)
-//        navigationController.tabBarController?.tabBar.isHidden = true
-//        //        navigationController.tabBarController?.hidesBottomBarWhenPushed = false
-//        // childCoordinator -> PixelsortCoordinator
+        //        let viewController = PixelsortViewController.instantiate(from: "Pixelsort")
+        //        viewController.coordinator = self
+        //        navigationController.show(viewController, sender: self)
+        //        navigationController.tabBarController?.tabBar.isHidden = true
+        //        //        navigationController.tabBarController?.hidesBottomBarWhenPushed = false
+        //        // childCoordinator -> PixelsortCoordinator
     }
     
     func navigateToSettings() {
@@ -56,5 +57,17 @@ class UseCasesTabCoordinator: Coordinator {
         navigationController.show(viewController, sender: self)
         navigationController.navigationBar.prefersLargeTitles = false
         navigationController.tabBarController?.tabBar.isHidden = true
+    }
+    
+    func navigateToNotes() {
+        // inject presenter
+        let viewModel = NotesViewModel()
+        let notesContentView = NotesContentView(viewModel: viewModel)
+        viewModel.view = notesContentView
+        // UIHostingController is an adapter between UIKit and SwiftUI
+        let viewController = UIHostingController(rootView: notesContentView)
+        navigationController.show(viewController, sender: self)
+        navigationController.tabBarController?.tabBar.isHidden = true
+        navigationController.navigationBar.prefersLargeTitles = false
     }
 }

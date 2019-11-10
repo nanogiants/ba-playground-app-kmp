@@ -24,6 +24,7 @@ extension UseCasesViewController : UICollectionViewDelegate {
             coordinator?.navigateToNasa()
             break
         case .Notes:
+             coordinator?.navigateToNotes()
             break
         case .Settings:
             coordinator?.navigateToSettings()

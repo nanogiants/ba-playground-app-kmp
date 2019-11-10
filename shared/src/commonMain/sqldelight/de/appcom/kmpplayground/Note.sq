@@ -1,6 +1,6 @@
 
 
-CREATE TABLE Notes (
+CREATE TABLE NoteDB (
     id INTEGER NOT NULL PRIMARY KEY,
     title TEXT NOT NULL,
     content TEXT NOT NULL,
@@ -9,11 +9,11 @@ CREATE TABLE Notes (
 
 addNote:
 INSERT OR REPLACE
-INTO Notes(id, title, content, created_at)VALUES(?,?,?,?);
+INTO NoteDB(id, title, content, created_at)VALUES(?,?,?,?);
 
 allNotes:
-SELECT * FROM Notes;
+SELECT * FROM NoteDB;
 
 removeNote:
-DELETE FROM Notes WHERE id=?;
+DELETE FROM NoteDB WHERE id=?;
 
