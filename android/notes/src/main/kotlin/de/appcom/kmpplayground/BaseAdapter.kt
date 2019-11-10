@@ -1,6 +1,5 @@
 package de.appcom.kmpplayground
 
-import android.util.Log
 import androidx.recyclerview.widget.RecyclerView
 
 /**
@@ -40,7 +39,6 @@ abstract class BaseAdapter<T, V : RecyclerView.ViewHolder> : RecyclerView.Adapte
   }
 
   fun removeItem(position: Int) {
-    Log.d("Base", "in Baseadapter ${itemList.size}  will remove at $position   ref $this")
     itemList.removeAt(position)
     notifyItemRemoved(position)
   }

@@ -46,11 +46,11 @@ kotlin {
     )
 
     // dependency
-    val deps = mapOf(
+    val commonDeps = mapOf(
         "ktor_client_core" to "io.ktor:ktor-client-core:${versions["ktor"]}",
         "ktor_client_json" to "io.ktor:ktor-client-json:${versions["ktor"]}",
         "ktor_client_serialization" to "io.ktor:ktor-client-serialization:${versions["ktor"]}",
-        "sqldelight" to "io.ktor:ktor-client-json:${versions["ktor"]}",
+        "multiplatform_settings" to "com.russhwolf:multiplatform-settings:${versions["multiplatform_settings"]}",
         "sqldelight" to "io.ktor:ktor-client-json:${versions["ktor"]}",
         "sqldelight" to "io.ktor:ktor-client-json:${versions["ktor"]}"
     )
@@ -106,12 +106,14 @@ kotlin {
 }
 
 sqldelight {
-    database("NotesDatabase") { // name of generated database class NotesDatabase.kt
+    database("NotesDatabase") {
+        // name of generated database class NotesDatabase.kt
         packageName = "de.appcom.kmpplayground" // package name for generated files
-        sourceFolders = listOf("sqldelight") // root for all pathes is src/main, e.g. src/main/sqldelight
+        sourceFolders =
+            listOf("sqldelight") // root for all paths is src/main, e.g. src/main/sqldelight
         schemaOutputDirectory = file("build/dbs")
     }
-    linkSqlite = true // was false
+    linkSqlite = true
 }
 
 android {
