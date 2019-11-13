@@ -29,6 +29,9 @@ extension UseCasesViewController : UICollectionViewDelegate {
         case .Settings:
             coordinator?.navigateToSettings()
             break
+        case .Fibonacci:
+            coordinator?.navigateToFibonacci()
+            break
         }
     }
 }

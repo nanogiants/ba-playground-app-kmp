@@ -14,6 +14,8 @@
 		BDB1B91123607C2F001F3529 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDB1B90F23607C2F001F3529 /* Main.storyboard */; };
 		BDB1B91323607C2F001F3529 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDB1B91223607C2F001F3529 /* Assets.xcassets */; };
 		BDB1B91623607C2F001F3529 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDB1B91423607C2F001F3529 /* LaunchScreen.storyboard */; };
+		BDBAE370237C673D000FBAB5 /* Fibonacci.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDBAE36F237C673D000FBAB5 /* Fibonacci.storyboard */; };
+		BDBAE372237C674B000FBAB5 /* FibonacciViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBAE371237C674B000FBAB5 /* FibonacciViewController.swift */; };
 		BDBC58AE237040AF00F7E535 /* AppTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBC58AD237040AF00F7E535 /* AppTabBarController.swift */; };
 		BDBC58B0237040D400F7E535 /* UIViewController+Instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBC58AF237040D400F7E535 /* UIViewController+Instantiate.swift */; };
 		BDBC58B22370416E00F7E535 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBC58B12370416E00F7E535 /* Coordinator.swift */; };
@@ -58,6 +60,8 @@
 		BDB1B91223607C2F001F3529 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BDB1B91523607C2F001F3529 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BDB1B91723607C2F001F3529 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDBAE36F237C673D000FBAB5 /* Fibonacci.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Fibonacci.storyboard; sourceTree = "<group>"; };
+		BDBAE371237C674B000FBAB5 /* FibonacciViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FibonacciViewController.swift; sourceTree = "<group>"; };
 		BDBC58AD237040AF00F7E535 /* AppTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBarController.swift; sourceTree = "<group>"; };
 		BDBC58AF237040D400F7E535 /* UIViewController+Instantiate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Instantiate.swift"; sourceTree = "<group>"; };
 		BDBC58B12370416E00F7E535 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -225,9 +229,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BDE747F0237B085300922271 /* Fibonacci */ = {
+			isa = PBXGroup;
+			children = (
+				BDBAE371237C674B000FBAB5 /* FibonacciViewController.swift */,
+				BDBAE36F237C673D000FBAB5 /* Fibonacci.storyboard */,
+			);
+			path = Fibonacci;
+			sourceTree = "<group>";
+		};
 		BDFE5968237191CA002A1F94 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				BDE747F0237B085300922271 /* Fibonacci */,
 				BD53923E2378269E0046B659 /* Notes */,
 				BDFE596B2371921B002A1F94 /* Settings */,
 				BDFE596A23719215002A1F94 /* Nasa */,
@@ -325,6 +339,7 @@
 				BDBC58D223704F2800F7E535 /* Localizable.strings in Resources */,
 				BDB1B91623607C2F001F3529 /* LaunchScreen.storyboard in Resources */,
 				BDB1B91323607C2F001F3529 /* Assets.xcassets in Resources */,
+				BDBAE370237C673D000FBAB5 /* Fibonacci.storyboard in Resources */,
 				BDFE596F2371DFEF002A1F94 /* Nasa.storyboard in Resources */,
 				BDB1B91123607C2F001F3529 /* Main.storyboard in Resources */,
 			);
@@ -348,7 +363,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncd \"$SRCROOT/../shared/build/xcode-frameworks\"\n./gradlew :shared:packForXCode -PXCODE_CONFIGURATION=${CONFIGURATION}\n\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncd \"$SRCROOT/../shared/build/xcode-frameworks\"\n./gradlew :shared:packForXcode -PXCODE_CONFIGURATION=${CONFIGURATION}\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -370,6 +385,7 @@
 				BDBC58C52370438700F7E535 /* AboutTabCoordinator.swift in Sources */,
 				BD539240237826BD0046B659 /* NotesView.swift in Sources */,
 				BDBC58B92370424900F7E535 /* UseCaseCell.swift in Sources */,
+				BDBAE372237C674B000FBAB5 /* FibonacciViewController.swift in Sources */,
 				BDB1B90A23607C2F001F3529 /* AppDelegate.swift in Sources */,
 				BD53924223783DA60046B659 /* NotesViewModel.swift in Sources */,
 				BDBC58BB2370425C00F7E535 /* UseCasesTabCoordinator.swift in Sources */,

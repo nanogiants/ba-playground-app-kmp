@@ -24,7 +24,8 @@ class UseCasesViewController: UIViewController {
         UseCase(id: .Pixelsort,title: "Create a dream image", description: "Camera, FileSystem", imageName: ""),
         UseCase(id: .Nasa, title: "Information about the Earth", description: "REST-Api, Data handling", imageName: ""),
         UseCase(id: .Notes ,title: "Take Notes", description: "Database", imageName: ""),
-        UseCase(id: .Settings ,title: "Settings", description: "Preferences storage", imageName: "")
+        UseCase(id: .Settings ,title: "Settings", description: "Preferences storage", imageName: ""),
+        UseCase(id: .Fibonacci ,title: "Fibonacci", description: "Threads, Generics", imageName: "")
     ]
     
     override func viewDidLoad() {

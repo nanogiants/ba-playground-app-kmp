@@ -26,6 +26,8 @@ kotlin {
     iOSTarget("ios") {
         binaries {
             framework {
+                // name of the framework
+                // used e.g. in swift import SharedPlayground
                 baseName = "SharedPlayground"
 
                 // use-case-settings
@@ -35,6 +37,10 @@ kotlin {
                 } else {
                     export("com.russhwolf:multiplatform-settings-iossim:0.3.3")
                 }
+
+                // adds type information for generic parameters to Kotlin/Native
+                // added in 1.3.40, currently experimental
+                freeCompilerArgs.add("-Xobjc-generics")
             }
         }
     }
@@ -67,6 +73,7 @@ kotlin {
         implementation("io.ktor:ktor-client-core:${versions["ktor"]}")
         implementation("io.ktor:ktor-client-json:${versions["ktor"]}")
         implementation("io.ktor:ktor-client-serialization:${versions["ktor"]}")
+
 
         // coroutines
 //        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.2")// change ??

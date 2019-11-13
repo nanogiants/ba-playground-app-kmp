@@ -22,5 +22,6 @@ struct UseCase {
         case Notes
         case Locating
         case Settings
+        case Fibonacci
     }
 }

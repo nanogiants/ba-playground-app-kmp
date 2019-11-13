@@ -8,139 +8,135 @@ def androidModules = []
 file(androidProjectPath).listFiles().grep { it.isDirectory() }.each { androidModules.add(it.name) }
 println("Projekt contains the android modules " + androidModules)
 
-
 buildscript {
-    // gradle plugins
-    ext.kotlin_version = "1.3.50"
-    ext.sqldelight_version = "1.2.0"
+  // gradle plugins
+  ext.kotlin_version = "1.3.50"
+  ext.sqldelight_version = "1.2.0"
 
-    // android build property extensions
-    ext.androidCompileSdkVersion = 29
-    ext.androidBuildToolsVersion = "29.0.2"
-    ext.androidApplicationId = "de.appcom.kmpplayground"
-    ext.androidMinSdkVersion = 22
-    ext.androidTargetSdkVersion = 29
-    ext.androidVersionCode = 1
-    ext.androidVersionName = "1.0"
+  // android build property extensions
+  ext.androidCompileSdkVersion = 29
+  ext.androidBuildToolsVersion = "29.0.2"
+  ext.androidApplicationId = "de.appcom.kmpplayground"
+  ext.androidMinSdkVersion = 22
+  ext.androidTargetSdkVersion = 29
+  ext.androidVersionCode = 1
+  ext.androidVersionName = "1.0"
 
-    // ios build property extensions
-    // -
+  // ios build property extensions
+  // -
 
+  // library versions
+  ext.versions = [
+      "supportlib": "1.1.0",
+      "constraintlayout": "1.1.3",
+      "material": "1.2.0-alpha01",
+      "corektx": "1.1.0",
+      "timber": "4.7.1",
+      "navigation": "2.2.0-rc01",
+      "dagger": "2.25.2",
+      "junit": "4.12",
+      "runner": "1.2.0",
+      "espresso_core": "3.2.0",
+      "multiplatform_settings": "0.3.3",
+      "glide": "4.10.0"
+  ]
+  // libraries
+  ext.deps = [
+      "appcompat": "androidx.appcompat:appcompat:${versions.supportlib}",
+      "constraintlayout": "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}",
+      "material": "com.google.android.material:material:${versions.material}",
+      "core_ktx": "androidx.core:core-ktx:${versions.corektx}",
+      "timber": "com.jakewharton.timber:timber:${versions.timber}",
+      "navigation_fragment_ktx": "androidx.navigation:navigation-fragment-ktx:${versions.navigation}",
+      "navigation_ui_ktx": "androidx.navigation:navigation-ui-ktx:${versions.navigation}",
+      "dagger": "com.google.dagger:dagger:${versions.dagger}",
+      "dagger_compiler": "com.google.dagger:dagger-compiler:${versions.dagger}",
+      "dagger_android": "com.google.dagger:dagger-android:${versions.dagger}",
+      "dagger_android_processor": "com.google.dagger:dagger-android-processor:${versions.dagger}",
+      "dagger_android_support": "com.google.dagger:dagger-android-support:${versions.dagger}",
+      "glide": "com.github.bumptech.glide:glide:${versions.glide}",
+      "glide_compiler": "com.github.bumptech.glide:compiler:${versions.glide}"
 
-    // library versions
-    ext.versions = [
-            "supportlib"            : "1.1.0",
-            "constraintlayout"      : "1.1.3",
-            "material"              : "1.2.0-alpha01",
-            "corektx"               : "1.1.0",
-            "timber"                : "4.7.1",
-            "navigation"            : "2.2.0-rc01",
-            "dagger"                : "2.25.2",
-            "junit"                 : "4.12",
-            "runner"                : "1.2.0",
-            "espresso_core"         : "3.2.0",
-            "multiplatform_settings": "0.3.3",
-            "glide"                 : "4.10.0"
-    ]
-    // libraries
-    ext.deps = [
-            "appcompat"               : "androidx.appcompat:appcompat:${versions.supportlib}",
-            "constraintlayout"        : "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}",
-            "material"                : "com.google.android.material:material:${versions.material}",
-            "core_ktx"                : "androidx.core:core-ktx:${versions.corektx}",
-            "timber"                  : "com.jakewharton.timber:timber:${versions.timber}",
-            "navigation_fragment_ktx" : "androidx.navigation:navigation-fragment-ktx:${versions.navigation}",
-            "navigation_ui_ktx"       : "androidx.navigation:navigation-ui-ktx:${versions.navigation}",
-            "dagger"                  : "com.google.dagger:dagger:${versions.dagger}",
-            "dagger_compiler"         : "com.google.dagger:dagger-compiler:${versions.dagger}",
-            "dagger_android"          : "com.google.dagger:dagger-android:${versions.dagger}",
-            "dagger_android_processor": "com.google.dagger:dagger-android-processor:${versions.dagger}",
-            "dagger_android_support"  : "com.google.dagger:dagger-android-support:${versions.dagger}",
-            "glide"                   : "com.github.bumptech.glide:glide:${versions.glide}",
-            "glide_compiler"          : "com.github.bumptech.glide:compiler:${versions.glide}"
+  ]
 
-    ]
+  ext.kmpDeps = [
+      "multiplatform_settings": "com.russhwolf:multiplatform-settings:${versions.multiplatform_settings}"
+  ]
 
-    ext.kmpDeps = [
-            "multiplatform_settings": "com.russhwolf:multiplatform-settings:${versions.multiplatform_settings}"
-    ]
+  // test libraries
+  ext.testDeps = [
+      "junit": "junit:junit:${versions.junit}",
+      "runner": "androidx.test:runner:${versions.runner}",
+      "espresso_core": "androidx.test.espresso:espresso-core:${versions.espresso_core}",
+  ]
 
-    // test libraries
-    ext.testDeps = [
-            "junit"        : "junit:junit:${versions.junit}",
-            "runner"       : "androidx.test:runner:${versions.runner}",
-            "espresso_core": "androidx.test.espresso:espresso-core:${versions.espresso_core}",
-    ]
-
-    repositories {
-        google()
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.2'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlin_version"
-        classpath "com.squareup.sqldelight:gradle-plugin:$sqldelight_version"
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-    }
-
-
+  repositories {
+    google()
+    jcenter()
+  }
+  dependencies {
+    classpath 'com.android.tools.build:gradle:3.5.2'
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlin_version"
+    classpath "com.squareup.sqldelight:gradle-plugin:$sqldelight_version"
+    // NOTE: Do not place your application dependencies here; they belong
+    // in the individual module build.gradle files
+  }
 }
 
 allprojects {
-    repositories {
-        google()
-        jcenter()
-    }
+  repositories {
+    google()
+    jcenter()
+  }
 }
 
 task clean(type: Delete) {
-    delete rootProject.buildDir
+  delete rootProject.buildDir
 }
 
 // Generates strings from twine for the project
 task generateProjectStrings {
-    def totalScript = ""
-    def source = localizationPath + "/localization.txt"
-    // android
-    // Strings for android are added to the specific submodule, according to the given tag
-    androidModules.each { moduleName ->
-        def destinationAndroid = androidProjectPath + "/" + moduleName + "/src/main/res"
-        totalScript += "twine generate-all-localization-files " + source +
-                " " +
-                destinationAndroid +
-                " --tags " +
-                moduleName +
-                " --validate --format android; "
-    }
-
-    // ios
-    // ios Strings are added to an resource folder
-    def destinationIos = iosProjectPath + "/Playground/Resources"
+  def totalScript = ""
+  def source = localizationPath + "/localization.txt"
+  // android
+  // Strings for android are added to the specific submodule, according to the given tag
+  androidModules.each { moduleName ->
+    def destinationAndroid = androidProjectPath + "/" + moduleName + "/src/main/res"
     totalScript += "twine generate-all-localization-files " + source +
-            " " +
-            destinationIos +
-            " --validate --format apple; "
+        " " +
+        destinationAndroid +
+        " --tags " +
+        moduleName +
+        " --validate --format android; "
+  }
 
-    def script = 'if hash twine 2>/dev/null; then ' + totalScript + ' fi'
-    doLast {
-//        print(script)
-        exec {
-            executable "sh"
-            args '-c', script
-        }
+  // ios
+  // ios Strings are added to an resource folder
+  def destinationIos = iosProjectPath + "/Playground/Resources"
+  totalScript += "twine generate-all-localization-files " + source +
+      " " +
+      destinationIos +
+      " --validate --format apple; "
+
+  def script = 'if hash twine 2>/dev/null; then ' + totalScript + ' fi'
+  doLast {
+    //        print(script)
+    exec {
+      executable "sh"
+      args '-c', script
     }
+  }
 }
 
 task generateMetrics() {
-    // TODO generate metrics for each module and save it to a file
+  // TODO generate metrics for each module and save it to a file
 }
 
 task addUseCaseModule() {
-    // TODO generate folders and modules for ios, android and shared
+  // TODO generate folders and modules for ios, android and shared
 }
 
 task checkForDependencyUpdates() {
-    // TODO
+  // TODO
 }
