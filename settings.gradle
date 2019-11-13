@@ -1,4 +1,4 @@
-include ':app', ':settings', ':nasa', ':pixelsort', ':shared', ':notes'
+include ':app', ':settings', ':nasa', ':pixelsort', ':shared', ':notes', ':fibonacci'
 rootProject.name='KmpPlayground'
 
 //project(':app').projectDir = new File('android/app')

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
+import de.appcom.kmpplayground.FibonacciActivity
 import de.appcom.kmpplayground.NasaActivity
 import de.appcom.kmpplayground.NotesActivity
 import de.appcom.kmpplayground.R
@@ -55,12 +56,10 @@ class UseCasesFragment : BaseFragment(R.layout.fragment_usecases), UseCasesView 
     )
     adapter.replaceAll(
         listOf(
-            UseCasePreview(0, "-", "Description"),
-            UseCasePreview(1, "-", "Description"),
-            UseCasePreview(2, "Nasa", "Description"),
-            UseCasePreview(3, "Settings", "Description"),
-            UseCasePreview(4, "Notes", "Description"),
-            UseCasePreview(5, "-", "Description"),
+            UseCasePreview(0, "Nasa", "Description"),
+            UseCasePreview(1, "Settings", "Description"),
+            UseCasePreview(2, "Notes", "Description"),
+            UseCasePreview(3, "Fibonacci", "Description"),
             UseCasePreview(6, "-", "Description"),
             UseCasePreview(7, "-", "Description"),
             UseCasePreview(8, "-", "Description")
@@ -70,11 +69,10 @@ class UseCasesFragment : BaseFragment(R.layout.fragment_usecases), UseCasesView 
 
   private fun navigateToUseCase(pos: Int) {
     when (pos) {
-//      0 -> startActivity(Intent(requireContext(), ExampleActivity::class.java))
-//      1 -> startActivity(Intent(requireContext(), PixelsortActivity::class.java))
-      2 -> startActivity(Intent(requireContext(), NasaActivity::class.java))
-      3 -> startActivity(Intent(requireContext(), SettingsActivity::class.java))
-      4 -> startActivity(Intent(requireContext(), NotesActivity::class.java))
+      0 -> startActivity(Intent(requireContext(), NasaActivity::class.java))
+      1 -> startActivity(Intent(requireContext(), SettingsActivity::class.java))
+      2 -> startActivity(Intent(requireContext(), NotesActivity::class.java))
+      3 -> startActivity(Intent(requireContext(), FibonacciActivity::class.java))
     }
   }
 

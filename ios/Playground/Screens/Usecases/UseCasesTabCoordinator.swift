@@ -50,7 +50,7 @@ class UseCasesTabCoordinator: Coordinator {
         // navigationController.navigationBar.prefersLargeTitles = true -> results in a bug in the animation
         navigationController.show(viewController, sender: self)
         navigationController.tabBarController?.tabBar.isHidden = true
-
+        
     }
     
     func navigateToNasa() {
@@ -70,6 +70,13 @@ class UseCasesTabCoordinator: Coordinator {
         // UIHostingController is an adapter between UIKit and SwiftUI
         let viewController = UIHostingController(rootView: notesContentView)
         viewController.navigationItem.largeTitleDisplayMode = .never // title small
+        navigationController.show(viewController, sender: self)
+        navigationController.tabBarController?.tabBar.isHidden = true
+    }
+    
+    func navigateToFibonacci() {
+        let viewController = UIHostingController(rootView: FibonacciContentView())
+        viewController.navigationItem.largeTitleDisplayMode = .never // small title
         navigationController.show(viewController, sender: self)
         navigationController.tabBarController?.tabBar.isHidden = true
     }
