@@ -35,7 +35,9 @@ actual class WorkHelper {
     val future = backgroundWorker.execute(
       TransferMode.SAFE,
       { Task(param, task).freeze() },
-      { workerTask -> workerTask.execute(workerTask.param) }
+      { workerTask ->
+        workerTask.execute(workerTask.param)
+      }
     )
     onResult(future.result)
   }

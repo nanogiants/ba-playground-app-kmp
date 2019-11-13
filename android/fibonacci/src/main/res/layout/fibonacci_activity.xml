@@ -17,6 +17,19 @@
       app:layout_constraintTop_toTopOf="parent"
       />
 
+  <TextView
+      android:id="@+id/fibonacci_description_textview"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="16dp"
+      android:layout_marginEnd="16dp"
+      android:text="Berechnung der n-ten Zahl der Fibonacci Reihe. Als Eingabe für n sind Zahlen zwischen 0 und 35 möglich."
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/fibonacci_toolbar"
+      />
+
 
   <com.google.android.material.textfield.TextInputLayout
       android:id="@+id/fibonacci_textinputlayout"
@@ -24,12 +37,12 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginStart="16dp"
-      android:layout_marginTop="32dp"
+      android:layout_marginTop="16dp"
       android:layout_marginEnd="16dp"
-      android:hint="Enter a number"
+      android:hint="n"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/fibonacci_toolbar"
+      app:layout_constraintTop_toBottomOf="@+id/fibonacci_description_textview"
       >
 
     <com.google.android.material.textfield.TextInputEditText
@@ -41,11 +54,13 @@
   </com.google.android.material.textfield.TextInputLayout>
 
   <TextView
-      android:id="@+id/fibonacci_result1_textview"
+      android:id="@+id/fibonacci_result_textview"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
       android:layout_marginStart="16dp"
-      android:layout_marginTop="16dp"
+      android:layout_marginTop="24dp"
+      android:textColor="@android:color/black"
+      android:textSize="16sp"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/fibonacci_textinputlayout"
@@ -53,27 +68,40 @@
       />
 
   <TextView
-      android:id="@+id/fibonacci_result2_textview"
+      android:id="@+id/fibonacci_time1_textview"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
       android:layout_marginStart="16dp"
-      android:layout_marginTop="16dp"
+      android:layout_marginTop="8dp"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.501"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/fibonacci_result1_textview"
+      app:layout_constraintTop_toBottomOf="@+id/fibonacci_result_textview"
       tools:text="122"
       />
   <TextView
-      android:id="@+id/fibonacci_result3_textview"
+      android:id="@+id/fibonacci_time2_textview"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
       android:layout_marginStart="16dp"
-      android:layout_marginTop="16dp"
+      android:layout_marginTop="8dp"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.501"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/fibonacci_result2_textview"
+      app:layout_constraintTop_toBottomOf="@+id/fibonacci_time1_textview"
+      tools:text="122"
+      />
+
+  <TextView
+      android:id="@+id/fibonacci_time3_textview"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="8dp"
+      android:layout_marginEnd="16dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/fibonacci_time2_textview"
       tools:text="122"
       />
 

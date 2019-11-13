@@ -1,6 +1,5 @@
 package de.appcom.kmpplayground
 
-import android.os.AsyncTask
 import android.os.Bundle
 import android.os.SystemClock
 import android.util.Log
@@ -11,10 +10,12 @@ import fibonacci.Fibonacci
 import fibonacci.WorkHelper
 import fibonacci.runOnCallerThread
 import fibonacci.runWithCoroutinesOnUiDispatcher
-import kotlinx.android.synthetic.main.fibonacci_activity.fibonacci_result1_textview
-import kotlinx.android.synthetic.main.fibonacci_activity.fibonacci_result2_textview
-import kotlinx.android.synthetic.main.fibonacci_activity.fibonacci_result3_textview
+import kotlinx.android.synthetic.main.fibonacci_activity.fibonacci_result_textview
 import kotlinx.android.synthetic.main.fibonacci_activity.fibonacci_textinputedittext
+import kotlinx.android.synthetic.main.fibonacci_activity.fibonacci_textinputlayout
+import kotlinx.android.synthetic.main.fibonacci_activity.fibonacci_time1_textview
+import kotlinx.android.synthetic.main.fibonacci_activity.fibonacci_time2_textview
+import kotlinx.android.synthetic.main.fibonacci_activity.fibonacci_time3_textview
 import kotlinx.android.synthetic.main.fibonacci_activity.fibonacci_toolbar
 
 class FibonacciActivity : AppCompatActivity() {
@@ -30,7 +31,6 @@ class FibonacciActivity : AppCompatActivity() {
     supportActionBar?.setDisplayHomeAsUpEnabled(true)
     supportActionBar?.title = "fibonacci"
 
-//    fibonacciController = FibonacciControllerImpl()
     workHelper = WorkHelper()
   }
 
@@ -39,36 +39,49 @@ class FibonacciActivity : AppCompatActivity() {
 
     fibonacci_textinputedittext.doAfterTextChanged {
       val textString = it.toString()
+      fibonacci_textinputlayout.error = ""
       if (textString.contains(Regex("^[0-9]+$"))) {
-        Log.d("", "checking ok $textString")
-        runFibonacci(textString.toInt())
+        val inputInt = textString.toInt()
+        if (inputInt > 0 && inputInt <= 35) {
+          runFibonacci(textString.toInt())
+        } else {
+          fibonacci_textinputlayout.error = "Bitte n zwischen 0 und 35"
+          resetUI()
+        }
       } else {
-        Log.d("", "checking false $textString")
-        fibonacci_result1_textview.text = ""
-        fibonacci_result2_textview.text = ""
-        fibonacci_result3_textview.text = ""
+        resetUI()
       }
     }
+  }
 
+  fun resetUI() {
+    fibonacci_result_textview.text = ""
+    fibonacci_time1_textview.text = ""
+    fibonacci_time2_textview.text = ""
+    fibonacci_time3_textview.text = ""
   }
 
   fun runFibonacci(n: Int) {
     if (n > 0 && n <= 35) {
 
-      // 1
-      // AsyncTask ??
+      val resultString: String = ""
       val task = Fibonacci()::calculate
       val param = n
 
+      // 1
+      // AsyncTask ??
+      val startTime1 = SystemClock.elapsedRealtime()
       val result1 = workHelper?.runOnCallerThread(task, param)
-      fibonacci_result1_textview.text = result1.toString()
+      val endTime = SystemClock.elapsedRealtime() - startTime1
+      fibonacci_result_textview.text = "F($n) = ${result1.toString()}"
+      fibonacci_time1_textview.text = "Platform Api $endTime ms"
 
       // 2
       val startTime2 = SystemClock.elapsedRealtime()
       workHelper?.runOnBackgroundThread(task, param,
         { result ->
           val endTime = SystemClock.elapsedRealtime() - startTime2
-          fibonacci_result2_textview.text = "Ergebnis:" +result.toString() + " Berechnungszeit: " + endTime + " ms"
+          fibonacci_time2_textview.text = "Jvm Thread $endTime ms"
         }
       )
 
@@ -77,19 +90,17 @@ class FibonacciActivity : AppCompatActivity() {
       workHelper?.runWithCoroutinesOnUiDispatcher(task, param,
         { result ->
           val endTime = SystemClock.elapsedRealtime() - startTime4
+          fibonacci_time3_textview.text = "Coroutines $endTime ms"
         })
 
       // RxJava/Kotlin/Swift/Native
       // in common kann man das in common verwenden?
       // kann man hier das normale threading von rxjava verwenden?
-
-      // RxJAva/Kotlin/Swift/NAtive
       // kann man das von swift aus verwenden oder sogar zu rxswift übersetzen
-      
+
     } else {
       Log.d("d", "input not in ragne 0 to 35, stacktrace problem could happen ???")
     }
-
   }
 
   override fun onOptionsItemSelected(item: MenuItem): Boolean {

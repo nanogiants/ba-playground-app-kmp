@@ -75,8 +75,10 @@ class UseCasesTabCoordinator: Coordinator {
     }
     
     func navigateToFibonacci() {
-        let viewController = UIHostingController(rootView: FibonacciContentView())
-        viewController.navigationItem.largeTitleDisplayMode = .never // small title
+        let viewController = FibonacciViewController.instantiate(from: "Fibonacci")
+        viewController.tabBarItem = UITabBarItem(title: tabTitle, image: tabImage, tag: tabTag)
+        viewController.coordinator = self
+        viewController.navigationItem.largeTitleDisplayMode = .never // title small
         navigationController.show(viewController, sender: self)
         navigationController.tabBarController?.tabBar.isHidden = true
     }
