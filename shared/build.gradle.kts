@@ -14,7 +14,14 @@ plugins {
 }
 
 kotlin {
-    //select iOS target platform depending on the Xcode environment variables
+
+    // dependency versions
+    val ktorVersion = "1.2.5"
+    val sqldelightVersion = "1.2.0"
+    val multiplatformSettingsVersion = "0.4.1"
+
+    // target configurations
+    // select iOS target platform depending on the Xcode environment variables
     val isDevice = System.getenv("SDK_NAME")?.startsWith("iphoneos") == true
 
     val iOSTarget: (String, KotlinNativeTarget.() -> Unit) -> KotlinNativeTarget =
@@ -31,49 +38,34 @@ kotlin {
                 baseName = "SharedPlayground"
 
                 // use-case-settings
-                export("com.russhwolf:multiplatform-settings:0.3.3")
+                export("com.russhwolf:multiplatform-settings:$multiplatformSettingsVersion")
                 if (isDevice) {
-                    export("com.russhwolf:multiplatform-settings-ios:0.3.3")
+                    export("com.russhwolf:multiplatform-settings-ios:$multiplatformSettingsVersion")
                 } else {
-                    export("com.russhwolf:multiplatform-settings-iossim:0.3.3")
+                    export("com.russhwolf:multiplatform-settings-iossim:$multiplatformSettingsVersion")
                 }
 
                 // adds type information for generic parameters to Kotlin/Native
                 // added in 1.3.40, currently experimental
-                freeCompilerArgs.add("-Xobjc-generics")
+
+//                freeCompilerArgs.add("-Xobjc-generics")
             }
         }
     }
 
-    // dependency versions
-    val versions = mapOf(
-        "ktor" to "1.2.5",
-        "sqldelight" to "1.2.0"
-    )
-
-    // dependency
-    val commonDeps = mapOf(
-        "ktor_client_core" to "io.ktor:ktor-client-core:${versions["ktor"]}",
-        "ktor_client_json" to "io.ktor:ktor-client-json:${versions["ktor"]}",
-        "ktor_client_serialization" to "io.ktor:ktor-client-serialization:${versions["ktor"]}",
-        "multiplatform_settings" to "com.russhwolf:multiplatform-settings:${versions["multiplatform_settings"]}",
-        "sqldelight" to "io.ktor:ktor-client-json:${versions["ktor"]}",
-        "sqldelight" to "io.ktor:ktor-client-json:${versions["ktor"]}"
-    )
-
     android("android")
 
+    // source set configurations
     sourceSets["commonMain"].dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
 
         // use-case-settings: settings
-        implementation("com.russhwolf:multiplatform-settings:0.3.3")
+        implementation("com.russhwolf:multiplatform-settings:$multiplatformSettingsVersion")
 
         // use-case-nasa: ktor
-        implementation("io.ktor:ktor-client-core:${versions["ktor"]}")
-        implementation("io.ktor:ktor-client-json:${versions["ktor"]}")
-        implementation("io.ktor:ktor-client-serialization:${versions["ktor"]}")
-
+        implementation("io.ktor:ktor-client-core:$ktorVersion")
+        implementation("io.ktor:ktor-client-json:$ktorVersion")
+        implementation("io.ktor:ktor-client-serialization:$ktorVersion")
 
         // coroutines
 //        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.2")// change ??
@@ -83,32 +75,32 @@ kotlin {
         implementation("org.jetbrains.kotlin:kotlin-stdlib")
 
         // use-case-nasa: ktor
-        implementation("io.ktor:ktor-client-android:${versions["ktor"]}")
-        implementation("io.ktor:ktor-client-core-jvm:${versions["ktor"]}")
-        implementation("io.ktor:ktor-client-json-jvm:${versions["ktor"]}")
-        implementation("io.ktor:ktor-client-serialization-jvm:${versions["ktor"]}")
+        implementation("io.ktor:ktor-client-android:$ktorVersion")
+        implementation("io.ktor:ktor-client-core-jvm:$ktorVersion")
+        implementation("io.ktor:ktor-client-json-jvm:$ktorVersion")
+        implementation("io.ktor:ktor-client-serialization-jvm:$ktorVersion")
 
         // use-case-notes: sqldelight
-        implementation("com.squareup.sqldelight:android-driver:${versions["sqldelight"]}")
+        implementation("com.squareup.sqldelight:android-driver:$sqldelightVersion")
     }
 
     sourceSets["iosMain"].dependencies {
         // use-case-settings: settings
         if (isDevice) {
-            api("com.russhwolf:multiplatform-settings-ios:0.3.3")
+            api("com.russhwolf:multiplatform-settings-ios:$multiplatformSettingsVersion")
         } else {
-            api("com.russhwolf:multiplatform-settings-iossim:0.3.3")
+            api("com.russhwolf:multiplatform-settings-iossim:$multiplatformSettingsVersion")
         }
 
         // use-case-nasa: ktor
-        implementation("io.ktor:ktor-client-ios:${versions["ktor"]}")
-        implementation("io.ktor:ktor-client-core-native:${versions["ktor"]}")
-        implementation("io.ktor:ktor-client-json-native:${versions["ktor"]}")
-        implementation("io.ktor:ktor-client-serialization-native:${versions["ktor"]}") //?
-        implementation("io.ktor:ktor-client-serialization-iosx64:${versions["ktor"]}") //?
+        implementation("io.ktor:ktor-client-ios:$ktorVersion")
+        implementation("io.ktor:ktor-client-core-native:$ktorVersion")
+        implementation("io.ktor:ktor-client-json-native:$ktorVersion")
+        implementation("io.ktor:ktor-client-serialization-native:$ktorVersion") //?
+        implementation("io.ktor:ktor-client-serialization-iosx64:$ktorVersion") //?
 
         // use-case-notes: sqldelight
-        implementation("com.squareup.sqldelight:ios-driver:${versions["sqldelight"]}")
+        implementation("com.squareup.sqldelight:ios-driver:$sqldelightVersion")
     }
 }
 
@@ -125,7 +117,7 @@ sqldelight {
 
 android {
     defaultConfig {
-        compileSdkVersion(28)
+        compileSdkVersion(29)
     }
 }
 

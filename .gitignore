@@ -90,3 +90,4 @@ captures/
 
 ##
 secret.properties
+**/commonMain/kotlin/secrets.kt
