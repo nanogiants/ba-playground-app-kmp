@@ -1,52 +1,21 @@
 
-# BA Playground KMP
-TODO: description
+# Kotlin Multiplatform - Analyse und Vergleich zur nativen App-Entwicklung
 
-## Usage
-TODO: android app
-TODO: ios app
-TODO: task to generate strings
+## Kotlin
+Die Programmiersprache Kotlin wird von JetBrains entwickelt, die erste Version erschien im Jahr 2016. 
+Eine vorläufige Unterstützung für Multiplattform-Projekte (auch Kotlin Multiplatform genannt) ist seit Version 1.2 Bestandteil der Sprache, befindet sich zurzeit noch in der Entwicklung. Sie ermöglicht es, die Sprache für eine plattformübergreifende Anwendungsentwicklung einzusetzen. 
+Programmcode kann einmal geschrieben und zwischen Android, iOS, Web, Desktop oder Backend geteilt werden.
 
+Grundlage für den Cross-Plattform-Einsatz von Kotlin ist, dass die Sprache zu JVM Bytecode, JavaScript und mit der 
+Technologie Kotlin/Native zu nativen Binärdateien (z.B. für iOS arm32, arm64) kompiliert werden kann. 
 
-## Usage from iOS
+## Das Projekt
+In diesem Repository wird eine App entwickelt, um die Technologie zu untersuchen. Sie besteht aus einer Vielzahl an Use-Cases, die vom Nutzer ausgeführt werden können. Unter einem Use-Case ist eine typische Funktionalität mobiler Anwendungen zu verstehen, z.B. die Verwendung der Camera oder das Speichern eines Eintrags in der Datenbank.
 
+Die App entsteht im Rahmen meiner Bachelorarbeit *"Kotlin Multiplatform - Analyse und Vergleich zur nativen App-Entwicklung"*. Wer Interesse an der Thematik hat kann gerne auf mich (Fabian Heck) zukommen. Ich freue mich über Anmerkungen, Tipps und Kritik.
 
-## Usage from Android
+## Weiterführende Links
+[Kotlin Multiplatform](https://kotlinlang.org/docs/reference/building-mpp-with-gradle.html)
 
+[Kotlin/Native](https://github.com/JetBrains/kotlin-native)
 
-## Project structure/architecture
-
-
-## 
-
-## Changelog
-
-In diesem Bereich werden wichtige Veränderungen am Projekt dokumentiert.
-
-
-### Sa, 09.11.2019
-
-Problem: in androidMain besthet kein Zugriff auf android spezifische Klassen wie z.B. Context.
-Lösung: Es darf nicht als target jvm verwendet werden sondern auch android als preset. Auch wenn dies im offiziellen JetBrains Tutorial nicht gemacht wird.
-Änderungen:
-
-```
-// build.gradle.kts
-
-id("com.android.library") 
-id("kotlin-android-extensions")
-
-...
-
-//  jvm("android")
-    android("android")
-
-...
-android {
-    defaultConfig {
-        compileSdkVersion(28)
-    }
-}
-
-```
-Es wurde ein Ordner "main" erstellt, dieser enthält ein leeres AndroidManifest. Diese Datei wird anscheined benötigt, da aus ihr das package ausgelesen wird.
