@@ -1,2 +1,26 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="de.appcom.pixelsort" />
+    package="de.appcom.pixelsort">
+
+  <uses-feature
+      android:name="android.hardware.camera"
+      android:required="true" />
+
+  <uses-permission
+      android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+      android:maxSdkVersion="18" />
+
+  <uses-permission android:name="android.permission.CAMERA" />
+
+  <application>
+    <provider
+        android:name="androidx.core.content.FileProvider"
+        android:authorities="de.appcom.kmpplayground.provider"
+        android:exported="false"
+        android:grantUriPermissions="true">
+      <meta-data
+          android:name="android.support.FILE_PROVIDER_PATHS"
+          android:resource="@xml/file_paths"></meta-data>
+    </provider>
+    <activity android:name=".PixelsortActivity" />
+  </application>
+</manifest>

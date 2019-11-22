@@ -73,5 +73,6 @@ dependencies {
     implementation project(':settings')
     implementation project(':nasa')
     implementation project(':notes')
-    implementation project(":fibonacci")
+    implementation project(':fibonacci')
+    implementation project(':pixelsort')
 }

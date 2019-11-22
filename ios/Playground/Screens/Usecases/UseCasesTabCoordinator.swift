@@ -36,12 +36,11 @@ class UseCasesTabCoordinator: Coordinator {
     }
     
     func navigateToPixelsort() {
-        //        let viewController = PixelsortViewController.instantiate(from: "Pixelsort")
-        //        viewController.coordinator = self
-        //        navigationController.show(viewController, sender: self)
-        //        navigationController.tabBarController?.tabBar.isHidden = true
-        //        //        navigationController.tabBarController?.hidesBottomBarWhenPushed = false
-        //        // childCoordinator -> PixelsortCoordinator
+        let viewController = PixelsortViewController.instantiate(from: "Pixelsort")
+        viewController.coordinator = self
+        navigationController.show(viewController, sender: self)
+        navigationController.tabBarController?.tabBar.isHidden = true
+        viewController.navigationItem.largeTitleDisplayMode = .never // small title
     }
     
     func navigateToSettings() {
@@ -50,7 +49,6 @@ class UseCasesTabCoordinator: Coordinator {
         // navigationController.navigationBar.prefersLargeTitles = true -> results in a bug in the animation
         navigationController.show(viewController, sender: self)
         navigationController.tabBarController?.tabBar.isHidden = true
-        
     }
     
     func navigateToNasa() {

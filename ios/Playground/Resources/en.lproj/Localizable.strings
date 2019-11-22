@@ -42,6 +42,19 @@
 "fibonacci_title" = "Fibonacci";
 
 
+/********** Use Case Pixelsort **********/
+
+"pixelsort_explanation" = "Choose a picture";
+
+"pixelsort_error" = "Something went wrong";
+
+"pixelsort_title" = "Pixelsort";
+
+"pixelsort_camera" = "Camera";
+
+"pixelsort_album" = "Album";
+
+
 /********** Errors **********/
 
 "path_not_found_error" = "The file '%@' could not be found.";

@@ -12,6 +12,7 @@ import de.appcom.kmpplayground.SettingsActivity
 import de.appcom.kmpplayground.fragments.base.BaseFragment
 import de.appcom.kmpplayground.fragments.base.BasePresenter
 import de.appcom.kmpplayground.models.UseCasePreview
+import de.appcom.pixelsort.PixelsortActivity
 import kotlinx.android.synthetic.main.fragment_usecases.usecases_recyclerview
 import timber.log.Timber
 import javax.inject.Inject
@@ -60,7 +61,7 @@ class UseCasesFragment : BaseFragment(R.layout.fragment_usecases), UseCasesView 
             UseCasePreview(1, "Settings", "Description"),
             UseCasePreview(2, "Notes", "Description"),
             UseCasePreview(3, "Fibonacci", "Description"),
-            UseCasePreview(6, "-", "Description"),
+            UseCasePreview(4, "Pixelsort", "Description"),
             UseCasePreview(7, "-", "Description"),
             UseCasePreview(8, "-", "Description")
         )
@@ -73,6 +74,7 @@ class UseCasesFragment : BaseFragment(R.layout.fragment_usecases), UseCasesView 
       1 -> startActivity(Intent(requireContext(), SettingsActivity::class.java))
       2 -> startActivity(Intent(requireContext(), NotesActivity::class.java))
       3 -> startActivity(Intent(requireContext(), FibonacciActivity::class.java))
+      4 -> startActivity(Intent(requireContext(), PixelsortActivity::class.java))
     }
   }
 
