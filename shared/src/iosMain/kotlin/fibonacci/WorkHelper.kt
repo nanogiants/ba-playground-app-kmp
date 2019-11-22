@@ -11,7 +11,7 @@ import kotlin.native.concurrent.freeze
 
 actual class WorkHelper {
 
-  private class Task<T1: Any, T2: Any>(
+  private class Task<T1 : Any, T2 : Any>(
     val param: T1,
     val execute: (T1) -> T2
   )
@@ -26,7 +26,7 @@ actual class WorkHelper {
     }
   }
 
-  actual fun <T1: Any, T2: Any> runOnBackgroundThread(
+  actual fun <T1 : Any, T2 : Any> runOnBackgroundThread(
     task: (T1) -> T2,
     param: T1,
     onResult: (T2) -> Unit
@@ -45,6 +45,5 @@ actual class WorkHelper {
   actual fun getUIDispatcher(): CoroutineDispatcher {
     return MainDispatcher()
   }
-
 }
 

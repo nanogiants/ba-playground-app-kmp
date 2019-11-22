@@ -33,6 +33,15 @@
 "settings_placeholder" = "Your text";
 
 
+/********** Use Case Fibonacci **********/
+
+"fibonacci_explanation" = "Calculation of the nth number of the fibonacci swquence. Please enter a number between 0 and 35.";
+
+"fibonacci_error" = "The number should be between 0 and 35.";
+
+"fibonacci_title" = "Fibonacci";
+
+
 /********** Errors **********/
 
 "path_not_found_error" = "The file '%@' could not be found.";

@@ -18,7 +18,7 @@ kotlin {
     // dependency versions
     val ktorVersion = "1.2.5"
     val sqldelightVersion = "1.2.0"
-    val multiplatformSettingsVersion = "0.4.1"
+    val multiplatformSettingsVersion = "0.4"
 
     // target configurations
     // select iOS target platform depending on the Xcode environment variables

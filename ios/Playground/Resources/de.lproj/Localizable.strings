@@ -33,6 +33,15 @@
 "settings_placeholder" = "Dein Text";
 
 
+/********** Use Case Fibonacci **********/
+
+"fibonacci_explanation" = "Berechnung der n-ten Zahl der Fibonacci Folge. Als Eingabe sind Zahlen zwischen 0 und 35 zugelassen.";
+
+"fibonacci_error" = "Die Eingabe muss zwischen 0 und 35 sein.";
+
+"fibonacci_title" = "Fibonacci";
+
+
 /********** Errors **********/
 
 "path_not_found_error" = "Pfad nicht gefunden";

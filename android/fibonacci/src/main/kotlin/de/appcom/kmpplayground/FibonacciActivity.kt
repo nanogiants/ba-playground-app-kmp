@@ -1,15 +1,17 @@
 package de.appcom.kmpplayground
 
+import android.os.AsyncTask
 import android.os.Bundle
-import android.os.SystemClock
-import android.util.Log
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doAfterTextChanged
 import fibonacci.Fibonacci
+import fibonacci.Timer
 import fibonacci.WorkHelper
 import fibonacci.runOnCallerThread
 import fibonacci.runWithCoroutinesOnUiDispatcher
+import fibonacci.start
+import fibonacci.stop
 import kotlinx.android.synthetic.main.fibonacci_activity.fibonacci_result_textview
 import kotlinx.android.synthetic.main.fibonacci_activity.fibonacci_textinputedittext
 import kotlinx.android.synthetic.main.fibonacci_activity.fibonacci_textinputlayout
@@ -29,7 +31,7 @@ class FibonacciActivity : AppCompatActivity() {
     setSupportActionBar(fibonacci_toolbar)
     supportActionBar?.setDisplayShowHomeEnabled(true)
     supportActionBar?.setDisplayHomeAsUpEnabled(true)
-    supportActionBar?.title = "fibonacci"
+    supportActionBar?.title = getString(R.string.fibonacci_title)
 
     workHelper = WorkHelper()
   }
@@ -42,10 +44,10 @@ class FibonacciActivity : AppCompatActivity() {
       fibonacci_textinputlayout.error = ""
       if (textString.contains(Regex("^[0-9]+$"))) {
         val inputInt = textString.toInt()
-        if (inputInt > 0 && inputInt <= 35) {
+        if (inputInt in (0..35)) {
           runFibonacci(textString.toInt())
         } else {
-          fibonacci_textinputlayout.error = "Bitte n zwischen 0 und 35"
+          fibonacci_textinputlayout.error = getString(R.string.fibonacci_error)
           resetUI()
         }
       } else {
@@ -54,52 +56,37 @@ class FibonacciActivity : AppCompatActivity() {
     }
   }
 
-  fun resetUI() {
+  private fun resetUI() {
     fibonacci_result_textview.text = ""
     fibonacci_time1_textview.text = ""
     fibonacci_time2_textview.text = ""
     fibonacci_time3_textview.text = ""
   }
 
-  fun runFibonacci(n: Int) {
-    if (n > 0 && n <= 35) {
+  private fun runFibonacci(n: Int) {
+    if (n in (0..35)) {
 
-      val resultString: String = ""
       val task = Fibonacci()::calculate
-      val param = n
 
-      // 1
-      // AsyncTask ??
-      val startTime1 = SystemClock.elapsedRealtime()
-      val result1 = workHelper?.runOnCallerThread(task, param)
-      val endTime = SystemClock.elapsedRealtime() - startTime1
-      fibonacci_result_textview.text = "F($n) = ${result1.toString()}"
-      fibonacci_time1_textview.text = "Platform Api $endTime ms"
+      // 1 async task in activity
+      Async(task, n).execute()
 
-      // 2
-      val startTime2 = SystemClock.elapsedRealtime()
-      workHelper?.runOnBackgroundThread(task, param,
+      // 2 background thread in shared
+      val timer2 = Timer().apply { start() }
+      workHelper?.runOnBackgroundThread(task, n,
         { result ->
-          val endTime = SystemClock.elapsedRealtime() - startTime2
-          fibonacci_time2_textview.text = "Jvm Thread $endTime ms"
+          timer2.stop()
+          fibonacci_time2_textview.text = "Jvm Thread ${timer2.endTime} ms"
         }
       )
 
-      // 3
-      val startTime4 = SystemClock.elapsedRealtime()
-      workHelper?.runWithCoroutinesOnUiDispatcher(task, param,
+      // 3 coroutines in shared
+      val timer3 = Timer().apply { start() }
+      workHelper?.runWithCoroutinesOnUiDispatcher(task, n,
         { result ->
-          val endTime = SystemClock.elapsedRealtime() - startTime4
-          fibonacci_time3_textview.text = "Coroutines $endTime ms"
+          timer3.stop()
+          fibonacci_time3_textview.text = "Coroutines ${timer3.endTime} ms"
         })
-
-      // RxJava/Kotlin/Swift/Native
-      // in common kann man das in common verwenden?
-      // kann man hier das normale threading von rxjava verwenden?
-      // kann man das von swift aus verwenden oder sogar zu rxswift übersetzen
-
-    } else {
-      Log.d("d", "input not in ragne 0 to 35, stacktrace problem could happen ???")
     }
   }
 
@@ -108,6 +95,22 @@ class FibonacciActivity : AppCompatActivity() {
       android.R.id.home -> onBackPressed()
     }
     return super.onOptionsItemSelected(item)
+  }
+
+  private inner class Async(val task: (Int) -> Int, val n: Int) : AsyncTask<Int, Int, Int>() {
+
+    var timer = Timer()
+
+    override fun doInBackground(vararg p0: Int?): Int {
+      timer.start()
+      return workHelper?.runOnCallerThread(task, n) ?: -1
+    }
+
+    override fun onPostExecute(result: Int?) {
+      timer.stop()
+      fibonacci_result_textview.text = "F($n) = ${result.toString()}"
+      fibonacci_time1_textview.text = "Platform Api ${timer.endTime} ms"
+    }
   }
 
 }

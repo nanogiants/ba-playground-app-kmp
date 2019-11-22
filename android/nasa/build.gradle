@@ -2,9 +2,9 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
-def secretPropertiesFile = rootProject.file("secret.properties")
-def secretProperties = new Properties()
-secretProperties.load(new FileInputStream(secretPropertiesFile))
+//def secretPropertiesFile = rootProject.file("secret.properties")
+//def secretProperties = new Properties()
+//secretProperties.load(new FileInputStream(secretPropertiesFile))
 
 android {
     compileSdkVersion rootProject.androidCompileSdkVersion
@@ -26,10 +26,10 @@ android {
 //            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 //        }
         debug {
-            buildConfigField("String", "NasaApiKey", secretProperties['nasaApiKey'])
+//            buildConfigField("String", "NasaApiKey", secretProperties['nasaApiKey'])
         }
         release {
-            buildConfigField("String", "NasaApiKey", secretProperties['nasaApiKey'])
+//            buildConfigField("String", "NasaApiKey", secretProperties['nasaApiKey'])
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }

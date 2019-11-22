@@ -14,6 +14,7 @@ class FibonacciViewController : UIViewController {
     
     weak var coordinator: UseCasesTabCoordinator?
     
+    @IBOutlet weak var explanationLabel: UILabel!
     @IBOutlet weak var inputTextView: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
@@ -28,12 +29,11 @@ class FibonacciViewController : UIViewController {
                 // is number and in range
                 runFibonacci(n: input)
             } else {
-                // not in range
-                showError(message: "n should be between 0 and 35")
+                showError(message: NSLocalizedString("fibonacci_error", comment:""))
             }
         } else {
             if !sender.text!.isEmpty {
-                showError(message: "n should be between 0 and 35")
+                showError(message: NSLocalizedString("fibonacci_error", comment:""))
             }
         }
     }
@@ -41,7 +41,7 @@ class FibonacciViewController : UIViewController {
     private var workHelper: WorkHelper = WorkHelper()
     
     override func viewDidLoad() {
-        
+        explanationLabel.text = NSLocalizedString("fibonacci_explanation", comment:"")
     }
     
     func showError(message: String) {
@@ -54,7 +54,7 @@ class FibonacciViewController : UIViewController {
             Fibonacci().calculate(n: input as! Int32)  as Any
         }
         
-        // 1 alleine check
+        // 1
         DispatchQueue.global(qos: .userInteractive).async {
             let start1 = DispatchTime.now()
             let result: Any = WorkHelper().runOnCallerThread(task: task, param: n)
@@ -64,13 +64,13 @@ class FibonacciViewController : UIViewController {
             }
         }
         
-//        // 2
+        // 2
         let start2 = DispatchTime.now()
         workHelper.runOnBackgroundThread(task: task, param: n, onResult: { result in
             self.time2Label.text = self.createLog("Kotlin/Native Worker", start: start2, end: DispatchTime.now())
         })
 
-//        // 3
+        // 3
         let start3 = DispatchTime.now()
         workHelper.runWithCoroutinesOnUiDispatcher(task: task, param: n, onResult: { result in
             self.time3Label.text  = self.createLog("Coroutines", start: start3, end: DispatchTime.now())
