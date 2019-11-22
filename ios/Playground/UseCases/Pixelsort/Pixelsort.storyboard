@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pixelsort View Controller-->
+        <scene sceneID="iVq-8H-M5c">
+            <objects>
+                <viewController storyboardIdentifier="PixelsortViewController" id="B8t-6V-cLj" customClass="PixelsortViewController" customModule="Playground" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Obl-Qa-5XU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNy-B1-wna">
+                                <rect key="frame" x="186" y="64" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="AWa-IS-NQZ">
+                                <rect key="frame" x="138" y="124.5" width="138" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZz-pY-CKH">
+                                        <rect key="frame" x="0.0" y="0.0" width="44" height="30"/>
+                                        <state key="normal" title="Album"/>
+                                        <connections>
+                                            <action selector="onStartGalleryClicked:" destination="B8t-6V-cLj" eventType="touchUpInside" id="xpb-Yr-Xcd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nao-ml-J8Q">
+                                        <rect key="frame" x="84" y="0.0" width="54" height="30"/>
+                                        <state key="normal" title="Camera"/>
+                                        <connections>
+                                            <action selector="onStartCameraClicked:" destination="B8t-6V-cLj" eventType="touchUpInside" id="CeM-Ck-oXW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mwr-LN-dR0">
+                                <rect key="frame" x="20" y="64" width="374" height="778"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="VNy-B1-wna" firstAttribute="top" secondItem="HKp-y3-w4a" secondAttribute="top" constant="20" id="80J-qd-YL8"/>
+                            <constraint firstItem="AWa-IS-NQZ" firstAttribute="top" secondItem="VNy-B1-wna" secondAttribute="bottom" constant="40" id="V8r-Mn-rOC"/>
+                            <constraint firstItem="Mwr-LN-dR0" firstAttribute="top" secondItem="HKp-y3-w4a" secondAttribute="top" constant="20" id="gfU-Zr-Hmi"/>
+                            <constraint firstItem="HKp-y3-w4a" firstAttribute="trailing" secondItem="Mwr-LN-dR0" secondAttribute="trailing" constant="20" id="jIM-KM-Hrg"/>
+                            <constraint firstItem="VNy-B1-wna" firstAttribute="centerX" secondItem="HKp-y3-w4a" secondAttribute="centerX" id="kOr-MO-tzF"/>
+                            <constraint firstItem="HKp-y3-w4a" firstAttribute="bottom" secondItem="Mwr-LN-dR0" secondAttribute="bottom" constant="20" id="lF7-Wf-n2R"/>
+                            <constraint firstItem="AWa-IS-NQZ" firstAttribute="centerX" secondItem="Mwr-LN-dR0" secondAttribute="centerX" id="oU2-tO-foI"/>
+                            <constraint firstItem="Mwr-LN-dR0" firstAttribute="leading" secondItem="HKp-y3-w4a" secondAttribute="leading" constant="20" id="tBU-VN-sq4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HKp-y3-w4a"/>
+                    </view>
+                    <connections>
+                        <outlet property="explanationLabel" destination="VNy-B1-wna" id="rRl-7P-0VV"/>
+                        <outlet property="resultImageView" destination="Mwr-LN-dR0" id="I5i-Nl-1jI"/>
+                        <outlet property="startCameraButton" destination="nao-ml-J8Q" id="mCF-Xv-QzJ"/>
+                        <outlet property="startGalleryButton" destination="SZz-pY-CKH" id="UZi-XJ-daW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dGh-FU-Xi9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-157.97101449275362" y="21.428571428571427"/>
+        </scene>
+    </scenes>
+</document>
