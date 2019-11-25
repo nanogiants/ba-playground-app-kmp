@@ -3,6 +3,7 @@ package de.appcom.kmpplayground.fragments.usecases
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import app.UseCase
 import de.appcom.kmpplayground.R
 import de.appcom.kmpplayground.fragments.base.BaseAdapter
 import de.appcom.kmpplayground.fragments.base.BaseViewHolder
@@ -15,8 +16,8 @@ import kotlinx.android.synthetic.main.usecases_item_layout.view.usecases_item_ti
  * Created by Fabian Heck on 2019-10-24.
  * Copyright (c) 2019 appcom interactive GmbH. All rights reserved.
  */
-class UseCasesAdapter(var onItemClickListener: (UseCasePreview) -> Unit) :
-  BaseAdapter<UseCasePreview, UseCasesViewHolder>() {
+class UseCasesAdapter(var onItemClickListener: (UseCase) -> Unit) :
+  BaseAdapter<UseCase, UseCasesViewHolder>() {
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UseCasesViewHolder {
     val view =
@@ -32,8 +33,8 @@ class UseCasesAdapter(var onItemClickListener: (UseCasePreview) -> Unit) :
     return itemList.size
   }
 
-  inner class UseCasesViewHolder(var view: View) : BaseViewHolder<UseCasePreview>(view) {
-    override fun bindTo(item: UseCasePreview) {
+  inner class UseCasesViewHolder(var view: View) : BaseViewHolder<UseCase>(view) {
+    override fun bindTo(item: UseCase) {
       view.usecases_item_title_textview.text = item.title
       view.usecases_item_description_textview.text = item.description
       view.setOnClickListener {

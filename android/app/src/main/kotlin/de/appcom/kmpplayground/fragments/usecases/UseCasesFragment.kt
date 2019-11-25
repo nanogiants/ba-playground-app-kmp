@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
+import app.UseCase
+import app.appUseCases
 import de.appcom.kmpplayground.FibonacciActivity
 import de.appcom.kmpplayground.NasaActivity
 import de.appcom.kmpplayground.NotesActivity
@@ -44,9 +46,9 @@ class UseCasesFragment : BaseFragment(R.layout.fragment_usecases), UseCasesView 
 
   fun setUpUseCasesList() {
     val onUseCaseItemClickListener =
-      { useCasePreview: UseCasePreview ->
-        Timber.d("You clicked on ${useCasePreview.toString()}")
-        navigateToUseCase(useCasePreview.id)
+      { useCase: UseCase ->
+        Timber.d("You clicked on ${useCase.toString()}")
+        navigateToUseCase(useCase.id)
 
       }
     val adapter = UseCasesAdapter(onUseCaseItemClickListener)
@@ -55,26 +57,17 @@ class UseCasesFragment : BaseFragment(R.layout.fragment_usecases), UseCasesView 
     usecases_recyclerview.addItemDecoration(
         UseCasesItemDecorator(resources.getDimension(R.dimen.usecases_bottom_spacing))
     )
-    adapter.replaceAll(
-        listOf(
-            UseCasePreview(0, "Nasa", "Description"),
-            UseCasePreview(1, "Settings", "Description"),
-            UseCasePreview(2, "Notes", "Description"),
-            UseCasePreview(3, "Fibonacci", "Description"),
-            UseCasePreview(4, "Pixelsort", "Description"),
-            UseCasePreview(7, "-", "Description"),
-            UseCasePreview(8, "-", "Description")
-        )
-    )
+    val a =
+    adapter.replaceAll(appUseCases)
   }
 
-  private fun navigateToUseCase(pos: Int) {
-    when (pos) {
-      0 -> startActivity(Intent(requireContext(), NasaActivity::class.java))
-      1 -> startActivity(Intent(requireContext(), SettingsActivity::class.java))
-      2 -> startActivity(Intent(requireContext(), NotesActivity::class.java))
-      3 -> startActivity(Intent(requireContext(), FibonacciActivity::class.java))
-      4 -> startActivity(Intent(requireContext(), PixelsortActivity::class.java))
+  private fun navigateToUseCase(id: UseCase.Identifier) {
+    when (id) {
+      UseCase.Identifier.NASA -> startActivity(Intent(requireContext(), NasaActivity::class.java))
+      UseCase.Identifier.SETTINGS -> startActivity(Intent(requireContext(), SettingsActivity::class.java))
+      UseCase.Identifier.NOTES -> startActivity(Intent(requireContext(), NotesActivity::class.java))
+      UseCase.Identifier.FIBONACCI -> startActivity(Intent(requireContext(), FibonacciActivity::class.java))
+      UseCase.Identifier.PIXELSORT -> startActivity(Intent(requireContext(), PixelsortActivity::class.java))
     }
   }
 
