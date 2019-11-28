@@ -17,6 +17,8 @@ kotlin {
 
     // dependency versions
     val ktorVersion = "1.2.5"
+    val ktorSerializationVersion = "1.2.5"
+    val ktorJsonVersion = "1.2.5"
     val sqldelightVersion = "1.2.0"
     val multiplatformSettingsVersion = "0.4"
 
@@ -64,11 +66,9 @@ kotlin {
 
         // use-case-nasa: ktor
         implementation("io.ktor:ktor-client-core:$ktorVersion")
-        implementation("io.ktor:ktor-client-json:$ktorVersion")
-        implementation("io.ktor:ktor-client-serialization:$ktorVersion")
-
-        // coroutines
-//        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.2")// change ??
+        implementation("io.ktor:ktor-client-json:$ktorJsonVersion")
+        implementation("io.ktor:ktor-client-serialization:$ktorSerializationVersion")
+        
     }
 
     sourceSets["androidMain"].dependencies {
@@ -77,8 +77,8 @@ kotlin {
         // use-case-nasa: ktor
         implementation("io.ktor:ktor-client-android:$ktorVersion")
         implementation("io.ktor:ktor-client-core-jvm:$ktorVersion")
-        implementation("io.ktor:ktor-client-json-jvm:$ktorVersion")
-        implementation("io.ktor:ktor-client-serialization-jvm:$ktorVersion")
+        implementation("io.ktor:ktor-client-json-jvm:$ktorJsonVersion")
+        implementation("io.ktor:ktor-client-serialization-jvm:$ktorSerializationVersion")
 
         // use-case-notes: sqldelight
         implementation("com.squareup.sqldelight:android-driver:$sqldelightVersion")
@@ -95,9 +95,13 @@ kotlin {
         // use-case-nasa: ktor
         implementation("io.ktor:ktor-client-ios:$ktorVersion")
         implementation("io.ktor:ktor-client-core-native:$ktorVersion")
-        implementation("io.ktor:ktor-client-json-native:$ktorVersion")
+        implementation("io.ktor:ktor-client-json-native:$ktorJsonVersion")
         implementation("io.ktor:ktor-client-serialization-native:$ktorVersion") //?
-        implementation("io.ktor:ktor-client-serialization-iosx64:$ktorVersion") //?
+        if (isDevice) {
+            implementation("io.ktor:ktor-client-serialization-iosarm64:$ktorSerializationVersion")
+        } else {
+            implementation("io.ktor:ktor-client-serialization-iosx64:$ktorSerializationVersion")
+        }
 
         // use-case-notes: sqldelight
         implementation("com.squareup.sqldelight:ios-driver:$sqldelightVersion")

@@ -6,6 +6,7 @@
 //  Copyright © 2019 appcom interactive GmbH. All rights reserved.
 //
 
+import AVFoundation
 import Foundation
 import UIKit
 
@@ -20,7 +21,7 @@ class PixelsortViewController: UIViewController {
     @IBOutlet weak var resultImageView: UIImageView!
     
     @IBAction func onStartCameraClicked(_ sender: UIButton) {
-        camera()
+        startCameraWithPermission()
     }
     
     @IBAction func onStartGalleryClicked(_ sender: UIButton) {
@@ -55,4 +56,34 @@ class PixelsortViewController: UIViewController {
         }
     }
     
+    func startCameraWithPermission() {
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+        case .authorized:
+            self.camera()
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: .video) { granted in
+                if granted {
+                    DispatchQueue.main.async {
+                        self.camera()
+                    }
+                }
+            }
+        case .denied:
+            showError()
+            return
+        case .restricted:
+            return
+        }
+    }
+    
+    func showError() {
+           let alert = UIAlertController(title: "No Permission", message: "You need to allow Camera access",         preferredStyle: .alert)
+
+           alert.addAction(UIAlertAction(title: "Settings", style: .default, handler: { _ in
+            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+           }))
+           alert.addAction(UIAlertAction(title: "ok", style: .default, handler: {(_: UIAlertAction!) in
+           }))
+           self.present(alert, animated: true, completion: nil)
+    }
 }
