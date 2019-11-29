@@ -51,6 +51,9 @@ kotlin {
                 // added in 1.3.40, currently experimental
 
 //                freeCompilerArgs.add("-Xobjc-generics")
+//                debuggable = true
+//                freeCompilerArgs.add("-Xembed-bitcode-marker")
+//                freeCompilerArgs.add("-g")
             }
         }
     }
