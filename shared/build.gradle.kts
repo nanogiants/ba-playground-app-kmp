@@ -21,6 +21,8 @@ kotlin {
     val ktorJsonVersion = "1.2.5"
     val sqldelightVersion = "1.2.0"
     val multiplatformSettingsVersion = "0.4"
+    val coroutinesVersion = "1.3.2-1.3.60"//"1.3.2" only temporary https://github.com/Kotlin/kotlinx.coroutines/issues/1690
+
 
     // target configurations
     // select iOS target platform depending on the Xcode environment variables
@@ -71,6 +73,9 @@ kotlin {
         implementation("io.ktor:ktor-client-core:$ktorVersion")
         implementation("io.ktor:ktor-client-json:$ktorJsonVersion")
         implementation("io.ktor:ktor-client-serialization:$ktorSerializationVersion")
+
+        // coroutines
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$coroutinesVersion")
         
     }
 
@@ -85,6 +90,9 @@ kotlin {
 
         // use-case-notes: sqldelight
         implementation("com.squareup.sqldelight:android-driver:$sqldelightVersion")
+
+        // coroutines
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion")
     }
 
     sourceSets["iosMain"].dependencies {
@@ -108,6 +116,9 @@ kotlin {
 
         // use-case-notes: sqldelight
         implementation("com.squareup.sqldelight:ios-driver:$sqldelightVersion")
+
+        // coroutines
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:$coroutinesVersion")
     }
 }
 
@@ -124,7 +135,9 @@ sqldelight {
 
 android {
     defaultConfig {
-        compileSdkVersion(29)
+        val androidCompileSdkVersion: Int by rootProject.extra
+//        val androidCompileSdkVersion: Int = rootProject.extra.properties["androidCompileSdkVersion"] as Int
+        compileSdkVersion(androidCompileSdkVersion)
     }
 }
 
