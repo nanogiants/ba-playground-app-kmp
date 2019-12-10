@@ -8,6 +8,11 @@
 	<string name="about_title">About</string>
 	<string name="comparison_title">Comparison</string>
 	<string name="usecases_title">Use Cases</string>
+	<string name="nasa_title">Nasa</string>
+	<string name="fibonacci_title">Fibonacci</string>
+	<string name="notes_title">Notes</string>
+	<string name="pixelsort_title">Pixelsort</string>
+	<string name="settings_title">Settings</string>
 
 	<!-- SECTION: About faq -->
 	<string name="about_faq_usecase_q">What</string>

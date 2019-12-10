@@ -1,4 +1,4 @@
-package de.appcom.pixelsort
+package de.appcom.kmpplayground
 
 import android.app.Activity
 import android.content.Intent
@@ -22,7 +22,8 @@ import kotlinx.android.synthetic.main.activity_pixelsort.pixelsort_toolbar
  * Created by appcom interactive GmbH on 2019-11-22.
  * Copyright (c) 2019 appcom interactive GmbH. All rights reserved.
  */
-class PixelsortActivity : AppCompatActivity(), PixelsortView {
+class PixelsortActivity : AppCompatActivity(),
+  PixelsortView {
 
   lateinit var presenter: PixelsortPresenter
 

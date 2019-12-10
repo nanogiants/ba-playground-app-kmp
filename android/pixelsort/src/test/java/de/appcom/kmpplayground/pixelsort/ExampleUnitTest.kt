@@ -1,4 +1,4 @@
-package de.appcom.pixelsort
+package de.appcom.kmpplayground.pixelsort
 
 import org.junit.Test
 

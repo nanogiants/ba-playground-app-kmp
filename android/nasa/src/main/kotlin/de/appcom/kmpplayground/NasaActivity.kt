@@ -7,11 +7,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_nasa.*
-import nasa.NasaPresenter
-import nasa.NasaPresenterImpl
-import nasa.NasaView
-import nasa.PictureOfTheDay
-import nasa.WebDataSourceImpl
+import nasa.presentation.NasaPresenter
+import nasa.presentation.NasaPresenterImpl
+import nasa.presentation.NasaView
+import nasa.domain.PictureOfTheDay
+import nasa.data.WebDataSourceImpl
 
 class NasaActivity : AppCompatActivity(), NasaView {
 
@@ -32,7 +32,7 @@ class NasaActivity : AppCompatActivity(), NasaView {
 
   fun setUpToolbar() {
     setSupportActionBar(nasa_toolbar)
-    supportActionBar?.title = ""
+    supportActionBar?.title = getString(R.string.nasa_title)
     supportActionBar?.setDisplayShowHomeEnabled(true)
     supportActionBar?.setDisplayHomeAsUpEnabled(true)
   }

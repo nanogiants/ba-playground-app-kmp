@@ -2,7 +2,7 @@ package notes.presentation
 
 import kotlinx.coroutines.launch
 import notes.data.NotesDataSource
-import notes.models.Note
+import notes.domain.Note
 
 class AddNotePresenterImpl(
   val view: AddNoteView,

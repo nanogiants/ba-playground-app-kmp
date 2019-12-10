@@ -1,4 +1,6 @@
-package nasa
+package nasa.presentation
+
+import nasa.domain.PictureOfTheDay
 
 interface NasaPresenter {
   fun initializeView()

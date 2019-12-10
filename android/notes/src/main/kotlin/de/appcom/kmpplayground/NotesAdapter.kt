@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.notes_item_layout.view.notes_content_textview
 import kotlinx.android.synthetic.main.notes_item_layout.view.notes_title_textview
-import notes.models.Note
+import notes.domain.Note
 
 /**
  * Created by appcom interactive GmbH on 2019-11-07.

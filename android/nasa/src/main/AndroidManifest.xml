@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="de.appcom.kmpplayground.nasa">
+    package="de.appcom.kmpplayground">
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application>
-        <activity android:name="de.appcom.kmpplayground.NasaActivity"/>
+        <activity android:name=".NasaActivity"/>
     </application>
 </manifest>

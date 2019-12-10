@@ -1,4 +1,4 @@
-package nasa
+package nasa.domain
 
 data class PictureOfTheDay(
   val date: String,

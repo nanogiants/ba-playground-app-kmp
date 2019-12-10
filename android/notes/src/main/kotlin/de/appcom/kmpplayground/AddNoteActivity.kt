@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.activity_add_note.add_notes_title_textinpu
 import kotlinx.android.synthetic.main.activity_add_note.add_notes_toolbar
 import notes.data.NotesDataSourceImpl
 import notes.data.NotesDatabaseHelper
-import notes.models.Note
+import notes.domain.Note
 import notes.presentation.AddNotePresenter
 import notes.presentation.AddNotePresenterImpl
 import notes.presentation.AddNoteView

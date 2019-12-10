@@ -1,6 +1,6 @@
 package notes.data
 
-import notes.models.Note
+import notes.domain.Note
 
 interface NotesDataSource {
 

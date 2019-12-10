@@ -1,9 +1,11 @@
-package nasa
+package nasa.presentation
 
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
+import nasa.data.WebDataSource
+import nasa.getUIDispatcher
 import kotlin.coroutines.CoroutineContext
 
 class NasaPresenterImpl(

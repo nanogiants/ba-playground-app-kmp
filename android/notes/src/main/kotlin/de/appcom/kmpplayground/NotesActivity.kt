@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.activity_notes.notes_recyclerview
 import kotlinx.android.synthetic.main.activity_notes.notes_toolbar
 import notes.data.NotesDataSourceImpl
 import notes.data.NotesDatabaseHelper
-import notes.models.Note
+import notes.domain.Note
 import notes.presentation.NotesPresenter
 import notes.presentation.NotesPresenterImpl
 import notes.presentation.NotesView

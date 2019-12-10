@@ -4,8 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
-import app.UseCase
-import app.appUseCases
+import app.domain.UseCase
+import app.domain.appUseCases
 import de.appcom.kmpplayground.FibonacciActivity
 import de.appcom.kmpplayground.NasaActivity
 import de.appcom.kmpplayground.NotesActivity
@@ -13,8 +13,7 @@ import de.appcom.kmpplayground.R
 import de.appcom.kmpplayground.SettingsActivity
 import de.appcom.kmpplayground.fragments.base.BaseFragment
 import de.appcom.kmpplayground.fragments.base.BasePresenter
-import de.appcom.kmpplayground.models.UseCasePreview
-import de.appcom.pixelsort.PixelsortActivity
+import de.appcom.kmpplayground.PixelsortActivity
 import kotlinx.android.synthetic.main.fragment_usecases.usecases_recyclerview
 import timber.log.Timber
 import javax.inject.Inject
@@ -57,7 +56,6 @@ class UseCasesFragment : BaseFragment(R.layout.fragment_usecases), UseCasesView 
     usecases_recyclerview.addItemDecoration(
         UseCasesItemDecorator(resources.getDimension(R.dimen.usecases_bottom_spacing))
     )
-    val a =
     adapter.replaceAll(appUseCases)
   }
 

@@ -1,4 +1,4 @@
-package fibonacci
+package fibonacci.domain
 
 import android.os.SystemClock
 

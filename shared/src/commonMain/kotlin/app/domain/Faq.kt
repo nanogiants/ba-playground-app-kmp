@@ -1,4 +1,4 @@
-package app
+package app.domain
 
 data class FaqEntry(
   val titleStringRes: String,

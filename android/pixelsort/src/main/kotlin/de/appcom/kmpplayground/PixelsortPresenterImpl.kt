@@ -1,4 +1,4 @@
-package de.appcom.pixelsort
+package de.appcom.kmpplayground
 
 import android.Manifest
 import android.app.Activity
@@ -23,7 +23,8 @@ import java.util.Date
  * Created by appcom interactive GmbH on 2019-11-22.
  * Copyright (c) 2019 appcom interactive GmbH. All rights reserved.
  */
-class PixelsortPresenterImpl : PixelsortPresenter {
+class PixelsortPresenterImpl :
+  PixelsortPresenter {
 
   lateinit var view: PixelsortView
   lateinit var context: Context

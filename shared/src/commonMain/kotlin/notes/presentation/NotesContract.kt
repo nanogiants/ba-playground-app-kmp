@@ -1,6 +1,6 @@
 package notes.presentation
 
-import notes.models.Note
+import notes.domain.Note
 
 interface NotesView {
   fun showNotes(notes: List<Note>)

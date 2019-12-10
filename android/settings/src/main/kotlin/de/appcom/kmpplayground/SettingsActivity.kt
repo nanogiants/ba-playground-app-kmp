@@ -8,7 +8,6 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doAfterTextChanged
 import com.russhwolf.settings.AndroidSettings
-import de.appcom.settings.R
 import kotlinx.android.synthetic.main.activity_settings.settings_textinputedittext
 import kotlinx.android.synthetic.main.activity_settings.settings_toolbar
 
@@ -39,7 +38,7 @@ class SettingsActivity : AppCompatActivity() {
     setSupportActionBar(settings_toolbar)
     supportActionBar?.setDisplayHomeAsUpEnabled(true)
     supportActionBar?.setDisplayShowHomeEnabled(true)
-    supportActionBar?.title = "Settings"
+    supportActionBar?.title = getString(R.string.settings_title)
   }
 
   override fun onOptionsItemSelected(item: MenuItem): Boolean {

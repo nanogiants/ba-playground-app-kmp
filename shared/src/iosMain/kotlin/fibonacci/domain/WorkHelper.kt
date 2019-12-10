@@ -1,4 +1,4 @@
-package fibonacci
+package fibonacci.domain
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Runnable

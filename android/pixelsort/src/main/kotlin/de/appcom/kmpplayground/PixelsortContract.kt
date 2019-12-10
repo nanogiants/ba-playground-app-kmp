@@ -1,4 +1,4 @@
-package de.appcom.pixelsort
+package de.appcom.kmpplayground
 
 import android.net.Uri
 import androidx.lifecycle.LifecycleObserver

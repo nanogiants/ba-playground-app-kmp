@@ -1,8 +1,7 @@
-package fibonacci
+package fibonacci.domain
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 expect class WorkHelper() {

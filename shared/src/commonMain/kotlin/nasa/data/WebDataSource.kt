@@ -1,4 +1,6 @@
-package nasa
+package nasa.data
+
+import nasa.domain.PictureOfTheDay
 
 interface WebDataSource {
 

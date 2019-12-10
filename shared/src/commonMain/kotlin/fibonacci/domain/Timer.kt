@@ -1,4 +1,4 @@
-package fibonacci
+package fibonacci.domain
 
 /**
  * Created by appcom interactive GmbH on 2019-11-22.

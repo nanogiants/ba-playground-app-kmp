@@ -1,4 +1,4 @@
-package nasa
+package nasa.domain
 
 import kotlinx.serialization.Serializable
 

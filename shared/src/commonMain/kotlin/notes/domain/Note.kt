@@ -1,4 +1,4 @@
-package notes.models
+package notes.domain
 
 data class Note(
   var id: Long,

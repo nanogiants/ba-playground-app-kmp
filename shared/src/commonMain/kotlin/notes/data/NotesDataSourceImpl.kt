@@ -2,7 +2,7 @@ package notes.data
 
 import de.appcom.kmpplayground.NoteQueries
 import de.appcom.kmpplayground.NotesDatabase
-import notes.models.Note
+import notes.domain.Note
 
 expect class NotesDatabaseHelper {
 

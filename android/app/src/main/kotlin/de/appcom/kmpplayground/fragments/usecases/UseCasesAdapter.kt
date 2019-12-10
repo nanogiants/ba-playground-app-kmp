@@ -3,7 +3,7 @@ package de.appcom.kmpplayground.fragments.usecases
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import nasa.app.domain.UseCase
+import app.domain.UseCase
 import de.appcom.kmpplayground.R
 import de.appcom.kmpplayground.fragments.base.BaseAdapter
 import de.appcom.kmpplayground.fragments.base.BaseViewHolder
