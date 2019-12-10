@@ -14,7 +14,6 @@ class WebDataSourceImpl : WebDataSource {
 
   val baseUrl: String = "https://api.nasa.gov/planetary/"
   val pictureOfTheDayPath = "apod"
-//  val apiKey = "DEMO_KEY"
   val apiKey = nasaApiKey
 
   override suspend fun getPictureOfTheDay(): PictureOfTheDay {
@@ -35,7 +34,13 @@ class WebDataSourceImpl : WebDataSource {
     val entity = Json.parse(PictureOfTheDayWebEntity.serializer(), response.readText())
 
     // transform web entity to model
-    return PictureOfTheDay(entity.date, entity.explanation, entity.title, entity.url, entity.media_type)
+    return PictureOfTheDay(
+      entity.date,
+      entity.explanation,
+      entity.title,
+      entity.url,
+      entity.media_type == "image"
+    )
   }
 }
 

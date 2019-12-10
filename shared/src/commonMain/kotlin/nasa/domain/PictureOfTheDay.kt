@@ -5,5 +5,5 @@ data class PictureOfTheDay(
   val explanation: String,
   val title: String,
   val url: String,
-  val mediaType: String
+  val hasImage: Boolean
 )

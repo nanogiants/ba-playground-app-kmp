@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 //def secretPropertiesFile = rootProject.file("secret.properties")
 //def secretProperties = new Properties()
@@ -70,7 +71,7 @@ dependencies {
 
     // glide
     implementation deps.glide
-    annotationProcessor deps.glide_compiler
+    kapt deps.glide_compiler
 
     // modules
     implementation project(":shared")

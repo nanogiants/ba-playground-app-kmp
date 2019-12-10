@@ -47,8 +47,10 @@ class AboutFragment : BaseFragment(R.layout.fragment_about), AboutView {
         LayoutInflater.from(requireContext())
           .inflate(R.layout.about_fay_entry, null, false)
           .apply {
-            this.about_entry_title.text = getString(faqEntry.titleStringRes)
-            this.about_entry_description.text = getString(faqEntry.descriptionStringRes)
+            this.about_entry_title?.text = getString(faqEntry.titleStringRes)
+            this.about_entry_description?.text = getString(faqEntry.descriptionStringRes)
+//            this.about_entry_title.text = getString(faqEntry.titleStringRes)
+//            this.about_entry_description.text = getString(faqEntry.descriptionStringRes)
           }
       )
     }

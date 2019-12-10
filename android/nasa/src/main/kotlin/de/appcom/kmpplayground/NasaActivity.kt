@@ -6,7 +6,6 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
-import de.appcom.kmpplayground.nasa.R
 import kotlinx.android.synthetic.main.activity_nasa.*
 import nasa.NasaPresenter
 import nasa.NasaPresenterImpl
@@ -41,9 +40,11 @@ class NasaActivity : AppCompatActivity(), NasaView {
   override fun showPictureOfTheDay(pictureOfTheDay: PictureOfTheDay) {
     nasa_title_textview.text = pictureOfTheDay.title
     nasa_explanation_textview.text = pictureOfTheDay.explanation
-    Glide.with(this)
+    if(pictureOfTheDay.hasImage) {
+      Glide.with(this)
         .load(pictureOfTheDay.url)
         .into(nasa_imageview)
+    }
   }
 
   override fun showError(message: String) {
