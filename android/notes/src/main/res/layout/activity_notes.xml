@@ -32,16 +32,29 @@
         />
 
   </androidx.constraintlayout.widget.ConstraintLayout>
-  <com.google.android.material.floatingactionbutton.FloatingActionButton
+<!--  <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--      android:id="@+id/notes_floatingactionbutton"-->
+<!--      style="@style/Widget.MaterialComponents.FloatingActionButton"-->
+<!--      android:layout_width="wrap_content"-->
+<!--      android:layout_height="wrap_content"-->
+<!--      android:layout_gravity="end|bottom"-->
+<!--      android:layout_margin="16dp"-->
+<!--      app:backgroundTint="@color/colorFloatingActionButton"-->
+<!--      app:srcCompat="@drawable/ic_add"-->
+<!--      app:tint="@android:color/white"-->
+<!--      />-->
+
+  <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
       android:id="@+id/notes_floatingactionbutton"
-      style="@style/Widget.MaterialComponents.FloatingActionButton"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="end|bottom"
       android:layout_margin="16dp"
+      android:contentDescription="content description"
+      android:text="hinzufügen"
+      android:textColor="@android:color/white"
       app:backgroundTint="@color/colorFloatingActionButton"
-      app:srcCompat="@drawable/ic_add"
-      app:tint="@android:color/white"
-      />
+      app:icon="@drawable/ic_add"
+      app:iconTint="@android:color/white"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

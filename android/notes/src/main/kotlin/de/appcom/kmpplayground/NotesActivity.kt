@@ -2,11 +2,15 @@ package de.appcom.kmpplayground
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.util.Log
 import android.view.MenuItem
+import android.widget.AbsListView.OnScrollListener
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_notes.notes_floatingactionbutton
 import kotlinx.android.synthetic.main.activity_notes.notes_recyclerview
 import kotlinx.android.synthetic.main.activity_notes.notes_toolbar
@@ -60,6 +64,21 @@ class NotesActivity : AppCompatActivity(), NotesView {
     )
     itemTouchHelper.attachToRecyclerView(notes_recyclerview)
     presenter?.loadNotes()
+
+//    Handler().postDelayed({
+//      notes_floatingactionbutton?.shrink()
+//    }, 2000)
+
+    notes_recyclerview.addOnScrollListener( object : RecyclerView.OnScrollListener() {
+      override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+        super.onScrollStateChanged(recyclerView, newState)
+        if(newState==OnScrollListener.SCROLL_STATE_TOUCH_SCROLL) {
+          notes_floatingactionbutton?.shrink()
+        } else {
+          notes_floatingactionbutton?.extend()
+        }
+      }
+    })
   }
 
 
