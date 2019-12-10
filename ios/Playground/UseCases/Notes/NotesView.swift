@@ -27,7 +27,9 @@ struct NotesContentView: View {
             Button("Add", action: {
                 print("bar is clicked")
                 self.modalIsShown = true})
-        ).sheet(isPresented: $modalIsShown, onDismiss: { }) {
+        )
+        .navigationBarTitle(NSLocalizedString("notes_title", comment: ""))
+        .sheet(isPresented: $modalIsShown, onDismiss: { }) {
             AddNoteModal(
                 onModalCancel: { self.closeModal() },
                 onModalDone: { title, content in

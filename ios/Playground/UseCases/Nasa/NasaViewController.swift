@@ -21,6 +21,7 @@ class NasaViewController: UIViewController, NasaView {
     @IBOutlet weak var imageSpinner: UIActivityIndicatorView!
     
     override func viewDidLoad() {
+        self.title = NSLocalizedString("nasa_title", comment: "")
         var presenter: NasaPresenter = NasaPresenterImpl(webDataSource: WebDataSourceImpl(), view: self )
         presenter.initializeView()
         imageSpinner.isHidden = true

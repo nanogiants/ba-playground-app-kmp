@@ -41,6 +41,7 @@ class FibonacciViewController : UIViewController {
     private var workHelper: WorkHelper = WorkHelper()
     
     override func viewDidLoad() {
+        self.title = NSLocalizedString("fibonacci_title", comment: "")
         explanationLabel.text = NSLocalizedString("fibonacci_explanation", comment:"")
     }
     

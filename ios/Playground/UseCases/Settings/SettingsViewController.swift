@@ -28,6 +28,7 @@ struct ContentView: View {
                 })
             }
         }.onAppear(perform: getLastMessage)
+        .navigationBarTitle(NSLocalizedString("settings_title", comment: ""))
     }
     
     func getLastMessage() {

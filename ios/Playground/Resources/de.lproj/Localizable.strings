@@ -14,6 +14,16 @@
 
 "usecases_title" = "Anwendung";
 
+"nasa_title" = "Nasa";
+
+"fibonacci_title" = "Fibonacci";
+
+"notes_title" = "Notizen";
+
+"pixelsort_title" = "Pixelsort";
+
+"settings_title" = "Settings";
+
 
 /********** About faq **********/
 
@@ -39,16 +49,12 @@
 
 "fibonacci_error" = "Die Eingabe muss zwischen 0 und 35 sein.";
 
-"fibonacci_title" = "Fibonacci";
-
 
 /********** Use Case Pixelsort **********/
 
 "pixelsort_explanation" = "Wähle ein Bild aus";
 
 "pixelsort_error" = "Es ist ein Fehler aufgetreten";
-
-"pixelsort_title" = "Pixelsort";
 
 "pixelsort_camera" = "Camera";
 
@@ -60,8 +66,6 @@
 "notes_hint_title" = "Title";
 
 "notes_hint_content" = "Inhalt";
-
-"notes_title" = "Notizen";
 
 "notes_title_add" = "Notiz hinzufügen";
 
