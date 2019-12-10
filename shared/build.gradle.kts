@@ -15,14 +15,17 @@ plugins {
 
 kotlin {
 
+    // versions from parent project
+    val kotlin_version: String by rootProject.extra
+
     // dependency versions
     val ktorVersion = "1.2.5"
     val ktorSerializationVersion = "1.2.5"
     val ktorJsonVersion = "1.2.5"
     val sqldelightVersion = "1.2.0"
     val multiplatformSettingsVersion = "0.4"
-    val coroutinesVersion = "1.3.2-1.3.60"//"1.3.2" only temporary https://github.com/Kotlin/kotlinx.coroutines/issues/1690
-
+//    val coroutinesVersion = "1.3.2-1.3.60"// only temporary https://github.com/Kotlin/kotlinx.coroutines/issues/1690
+    val coroutinesVersion = "1.3.2"
 
     // target configurations
     // select iOS target platform depending on the Xcode environment variables
@@ -37,11 +40,10 @@ kotlin {
     iOSTarget("ios") {
         binaries {
             framework {
-                // name of the framework
-                // used e.g. in swift import SharedPlayground
+                // name, is used in swift to import the framework
                 baseName = "SharedPlayground"
 
-                // use-case-settings
+                // dependencies
                 export("com.russhwolf:multiplatform-settings:$multiplatformSettingsVersion")
                 if (isDevice) {
                     export("com.russhwolf:multiplatform-settings-ios:$multiplatformSettingsVersion")
@@ -51,7 +53,6 @@ kotlin {
 
                 // adds type information for generic parameters to Kotlin/Native
                 // added in 1.3.40, currently experimental
-
 //                freeCompilerArgs.add("-Xobjc-generics")
 //                debuggable = true
 //                freeCompilerArgs.add("-Xembed-bitcode-marker")
@@ -65,45 +66,29 @@ kotlin {
     // source set configurations
     sourceSets["commonMain"].dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
-
-        // use-case-settings: settings
-        implementation("com.russhwolf:multiplatform-settings:$multiplatformSettingsVersion")
-
-        // use-case-nasa: ktor
+        // multiplatform-settings
+        api("com.russhwolf:multiplatform-settings:$multiplatformSettingsVersion")
+        // ktor
         implementation("io.ktor:ktor-client-core:$ktorVersion")
         implementation("io.ktor:ktor-client-json:$ktorJsonVersion")
         implementation("io.ktor:ktor-client-serialization:$ktorSerializationVersion")
-
         // coroutines
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$coroutinesVersion")
-        
     }
-
     sourceSets["androidMain"].dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib")
-
-        // use-case-nasa: ktor
+        // ktor
         implementation("io.ktor:ktor-client-android:$ktorVersion")
         implementation("io.ktor:ktor-client-core-jvm:$ktorVersion")
         implementation("io.ktor:ktor-client-json-jvm:$ktorJsonVersion")
         implementation("io.ktor:ktor-client-serialization-jvm:$ktorSerializationVersion")
-
-        // use-case-notes: sqldelight
+        // sqldelight
         implementation("com.squareup.sqldelight:android-driver:$sqldelightVersion")
-
         // coroutines
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion")
     }
-
     sourceSets["iosMain"].dependencies {
-        // use-case-settings: settings
-        if (isDevice) {
-            api("com.russhwolf:multiplatform-settings-ios:$multiplatformSettingsVersion")
-        } else {
-            api("com.russhwolf:multiplatform-settings-iossim:$multiplatformSettingsVersion")
-        }
-
-        // use-case-nasa: ktor
+        // ktor
         implementation("io.ktor:ktor-client-ios:$ktorVersion")
         implementation("io.ktor:ktor-client-core-native:$ktorVersion")
         implementation("io.ktor:ktor-client-json-native:$ktorJsonVersion")
@@ -113,12 +98,24 @@ kotlin {
         } else {
             implementation("io.ktor:ktor-client-serialization-iosx64:$ktorSerializationVersion")
         }
-
-        // use-case-notes: sqldelight
+        // sqldelight
         implementation("com.squareup.sqldelight:ios-driver:$sqldelightVersion")
-
         // coroutines
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:$coroutinesVersion")
+    }
+    sourceSets["commonTest"].dependencies{
+        // kotlin.test
+        // placeholder for test frameworks
+        implementation("org.jetbrains.kotlin:kotlin-test-common:$kotlin_version")
+        implementation("org.jetbrains.kotlin:kotlin-test-annotations-common:$kotlin_version")
+    }
+    sourceSets["androidTest"].dependencies{
+        // specific implementation of test framework
+        implementation("org.jetbrains.kotlin:kotlin-test:$kotlin_version")
+        implementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
+    }
+    sourceSets["iosTest"].dependencies{
+        // no dependencies required. kotlin.test implementation is build in kotlin/native
     }
 }
 
@@ -135,8 +132,7 @@ sqldelight {
 
 android {
     defaultConfig {
-        val androidCompileSdkVersion: Int by rootProject.extra
-//        val androidCompileSdkVersion: Int = rootProject.extra.properties["androidCompileSdkVersion"] as Int
+        val androidCompileSdkVersion: Int by rootProject.extra // rootProject.extra.properties["androidCompileSdkVersion"] as Int
         compileSdkVersion(androidCompileSdkVersion)
     }
 }
@@ -171,3 +167,32 @@ val packForXcode by tasks.creating(Sync::class) {
 }
 
 tasks.getByName("build").dependsOn(packForXcode)
+
+
+// https://github.com/Kotlin/mpp-example/blob/master/greeting/build.gradle#L80
+val iosTest by tasks.registering {
+    // other tasks that need to be executed before this one
+    dependsOn("linkDebugTestIos")
+
+    // general information about this task
+    group = JavaBasePlugin.VERIFICATION_GROUP // folder/organize gradle tasks
+    description = "Runs tests for target 'ios' on an iOS simulator" // description
+
+    // it is possible to pass a specific device as property, when calling this task, default is iPhone 11
+    val device = project.findProperty("iosDevice")?.toString() ?: "iPhone 11"
+
+    doLast {
+        // get location where linkDebugTestIos put binaries
+        val binary = kotlin.targets.getByName<KotlinNativeTarget>("ios").binaries.getTest("DEBUG").outputFile
+        exec {
+            // xcrun xCode commandLine tools
+            // simctl is used to interact with iOS simulator from commandLine, similar to adb in android
+            // xcrun simctl list    show all available simulators
+            // xcrun simctl spawn   spawn a process by executing a given executable on a device
+            // xcrun simctl help    show all possible sub-commands
+            // For sub-commands that require a <device> argument, you may specify a device UDID
+            // or the special "booted" string which will cause simctl to pick a booted device.
+            commandLine("xcrun", "simctl", "spawn", "--standalone", device, binary.absolutePath)
+        }
+    }
+}

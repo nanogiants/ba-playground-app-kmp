@@ -30,8 +30,10 @@ class NasaViewController: UIViewController, NasaView {
         self.titleLabel.text = pictureOfTheDay.title
 //        self.contentLabel.text = pictureOfTheDay.explanation
         setAttributedContentLabel(text: pictureOfTheDay.explanation)
-        load(pathToImage: URL(string: pictureOfTheDay.url))
-        // TODO download and show image
+        if pictureOfTheDay.mediaType == "image" {
+            load(pathToImage: URL(string: pictureOfTheDay.url))
+            // TODO download and show image
+        }
     }
     
     func setIsLoading(isLoading: Bool) {

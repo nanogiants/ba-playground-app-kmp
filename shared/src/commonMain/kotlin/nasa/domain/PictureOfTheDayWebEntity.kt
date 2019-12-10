@@ -10,6 +10,6 @@ data class PictureOfTheDayWebEntity(
   val url: String,
   val service_version: String,
   val media_type: String,
-  val hdurl: String,
+  val hdurl: String = "",
   val copyright: String = ""
 )

@@ -35,7 +35,7 @@ class WebDataSourceImpl : WebDataSource {
     val entity = Json.parse(PictureOfTheDayWebEntity.serializer(), response.readText())
 
     // transform web entity to model
-    return PictureOfTheDay(entity.date, entity.explanation, entity.title, entity.url)
+    return PictureOfTheDay(entity.date, entity.explanation, entity.title, entity.url, entity.media_type)
   }
 }
 
