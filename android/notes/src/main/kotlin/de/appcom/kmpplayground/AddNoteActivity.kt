@@ -30,7 +30,7 @@ class AddNoteActivity : AppCompatActivity(), AddNoteView {
     setContentView(R.layout.activity_add_note)
     setSupportActionBar(add_notes_toolbar)
     buildDependencies()
-    supportActionBar?.title = "Add Note"
+    supportActionBar?.title = getString(R.string.notes_title_add)
     supportActionBar?.setDisplayShowHomeEnabled(true)
     supportActionBar?.setDisplayHomeAsUpEnabled(true)
   }

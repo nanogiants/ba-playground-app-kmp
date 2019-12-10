@@ -3,6 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
   <item
       android:id="@+id/note_action_add"
-      android:title="add"
+      android:title="@string/notes_add"
       app:showAsAction="always|withText" />
 </menu>

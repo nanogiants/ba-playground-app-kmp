@@ -55,6 +55,19 @@
 "pixelsort_album" = "Album";
 
 
+/********** Use Case Notes **********/
+
+"notes_hint_title" = "title";
+
+"notes_hint_content" = "content";
+
+"notes_title" = "Notes";
+
+"notes_title_add" = "Add note";
+
+"notes_add" = "add";
+
+
 /********** Errors **********/
 
 "path_not_found_error" = "The file '%@' could not be found.";

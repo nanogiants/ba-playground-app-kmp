@@ -55,6 +55,19 @@
 "pixelsort_album" = "Album";
 
 
+/********** Use Case Notes **********/
+
+"notes_hint_title" = "Title";
+
+"notes_hint_content" = "Inhalt";
+
+"notes_title" = "Notizen";
+
+"notes_title_add" = "Notiz hinzufügen";
+
+"notes_add" = "hinzufügen";
+
+
 /********** Errors **********/
 
 "path_not_found_error" = "Pfad nicht gefunden";

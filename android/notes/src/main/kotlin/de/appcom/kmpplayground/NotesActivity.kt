@@ -28,7 +28,7 @@ class NotesActivity : AppCompatActivity(), NotesView {
     setContentView(R.layout.activity_notes)
     buildDependencies()
     setSupportActionBar(notes_toolbar)
-    supportActionBar?.title = "Notes"
+    supportActionBar?.title = getString(R.string.notes_title)
     supportActionBar?.setDisplayShowHomeEnabled(true)
     supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
