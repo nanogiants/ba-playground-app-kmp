@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProgressDataView" customModule="Playground" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="c4Z-4u-oqG"/>
+                <outlet property="progressBar" destination="e42-lf-n77" id="aJv-HC-kPU"/>
+                <outlet property="progressLabel" destination="7Uh-jp-Rvw" id="aO0-eJ-CF3"/>
+                <outlet property="titleLabel" destination="Gid-AM-p8d" id="Cr2-GP-gCr"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gid-AM-p8d">
+                    <rect key="frame" x="20" y="54" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e42-lf-n77" customClass="ProgressBar" customModule="Playground" customModuleProvider="target">
+                    <rect key="frame" x="20" y="75" width="374" height="20"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="CS6-aB-Ve5"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Uh-jp-Rvw">
+                    <rect key="frame" x="352" y="54" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Gid-AM-p8d" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="1m1-lG-O3G"/>
+                <constraint firstItem="Gid-AM-p8d" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="9rP-ck-lwG"/>
+                <constraint firstItem="7Uh-jp-Rvw" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="DIb-RU-CUm"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="e42-lf-n77" secondAttribute="trailing" constant="20" id="Dcn-6Z-fb8"/>
+                <constraint firstItem="7Uh-jp-Rvw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Gid-AM-p8d" secondAttribute="trailing" constant="20" id="Dnc-dX-cQ4"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="7Uh-jp-Rvw" secondAttribute="trailing" constant="20" id="Hmc-V5-z8D"/>
+                <constraint firstItem="e42-lf-n77" firstAttribute="top" secondItem="Gid-AM-p8d" secondAttribute="bottom" id="fiJ-PT-F9T"/>
+                <constraint firstItem="e42-lf-n77" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="pwo-hv-JXi"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="131.8840579710145" y="130.58035714285714"/>
+        </view>
+    </objects>
+</document>
