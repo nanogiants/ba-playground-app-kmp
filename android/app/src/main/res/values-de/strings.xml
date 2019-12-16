@@ -14,6 +14,12 @@
 	<string name="pixelsort_title">Pixelsort</string>
 	<string name="settings_title">Settings</string>
 
+	<!-- SECTION: Compare -->
+	<string name="compare_explanation">Anteil an Codezeilen in %, die Kotlin Multiplatform gegenüber der nativen Entwicklung einsparen kann.</string>
+	<string name="compare_title_average">Mittelwert</string>
+	<string name="compare_title_usecases">Use-Cases</string>
+	<string name="compare_average">Alle Use-Cases</string>
+
 	<!-- SECTION: About faq -->
 	<string name="about_faq_usecase_q">Was ist ein Use Case</string>
 	<string name="about_faq_usecase_a">in Use Case repräsentiert einen Anwendungsfall</string>

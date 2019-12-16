@@ -25,6 +25,17 @@
 "settings_title" = "Settings";
 
 
+/********** Compare **********/
+
+"compare_explanation" = "Anteil an Codezeilen in %, die Kotlin Multiplatform gegenüber der nativen Entwicklung einsparen kann.";
+
+"compare_title_average" = "Mittelwert";
+
+"compare_title_usecases" = "Use-Cases";
+
+"compare_average" = "Alle Use-Cases";
+
+
 /********** About faq **********/
 
 "about_faq_usecase_q" = "Was ist ein Use Case";

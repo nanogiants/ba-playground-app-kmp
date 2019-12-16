@@ -19,8 +19,9 @@
   <style name="Playground.TextView"/>
 
   <style name="Playground.TextView.Title">
-    <item name="android:textSize">12sp</item>
-    <item name="android:textColor">@android:color/darker_gray</item>
+    <item name="android:textSize">17sp</item>
+    <item name="android:textColor">@android:color/black</item>
+    <item name="android:textStyle">bold</item>
   </style>
 
   <style name="Playground.TextView.Title.Light">
@@ -28,4 +29,10 @@
     <item name="android:textColor">@android:color/darker_gray</item>
   </style>
 
+  <style name="Playground.TextView.Text">
+    <item name="android:textSize">14sp</item>
+    <item name="android:textColor">@android:color/black</item>
+    <item name="android:lineSpacingExtra">1dp</item>
+    <item name="android:lineSpacingMultiplier">1.2</item>
+  </style>
 </resources>

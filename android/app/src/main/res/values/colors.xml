@@ -8,7 +8,11 @@
   <color name="colorAppBackground">@color/colorWhite</color>
   <color name="colorToolbar">@color/colorWhite</color>
   <color name="colorStatusBar">@android:color/darker_gray</color>
+  <color name="colorProgressViewBackground">@color/colorLightGray</color>
+  <color name="colorProgressViewBar">@color/colorBlue</color>
 
   <!-- color palette -->
   <color name="colorWhite">#FFFFFF</color>
+  <color name="colorLightGray">#E5E5E5</color>
+  <color name="colorBlue">#3F94F9</color>
 </resources>
