@@ -3,14 +3,14 @@
 
   <item
       android:id="@+id/usecasesFragment"
-      android:icon="@drawable/ic_info_outline_24"
-      android:title="Use Cases"/>
+      android:icon="@drawable/ic_category"
+      android:title="@string/usecases_title"/>
   <item
       android:id="@+id/comparisonFragment"
-      android:icon="@drawable/ic_info_outline_24"
-      android:title="Vergleich"/>
+      android:icon="@drawable/ic_chart"
+      android:title="@string/comparison_title"/>
   <item
       android:id="@+id/aboutFragment"
       android:icon="@drawable/ic_info_outline_24"
-      android:title="About"/>
+      android:title="@string/about_title"/>
 </menu>

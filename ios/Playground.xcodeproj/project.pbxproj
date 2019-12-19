@@ -96,14 +96,11 @@
 		BDBC58D123704ED900F7E535 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		BDBC58D323704F2800F7E535 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BDBC58D523704F3000F7E535 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		BDBC58D723706C8A00F7E535 /* SharedSettings.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SharedSettings.framework; path = "../shared/sharedsettings/build/xcode-frameworks/SharedSettings.framework"; sourceTree = "<group>"; };
 		BDDEF2AC23A80F55002F89B5 /* ProgressDataView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressDataView.xib; sourceTree = "<group>"; };
 		BDDEF2AE23A80F63002F89B5 /* ProgressDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressDataView.swift; sourceTree = "<group>"; };
 		BDDEF2B023A80FA0002F89B5 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		BDFE596C2371DFE2002A1F94 /* NasaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaViewController.swift; sourceTree = "<group>"; };
 		BDFE596E2371DFEF002A1F94 /* Nasa.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Nasa.storyboard; sourceTree = "<group>"; };
-		BDFE59702371E300002A1F94 /* SharedCodeNasa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SharedCodeNasa.framework; path = "../shared/sharednasa/build/xcode-frameworks/SharedCodeNasa.framework"; sourceTree = "<group>"; };
-		BDFE59732371E56D002A1F94 /* SharedNasa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SharedNasa.framework; path = "../shared/sharednasa/build/xcode-frameworks/SharedNasa.framework"; sourceTree = "<group>"; };
 		BDFE597623722DDE002A1F94 /* SharedPlayground.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SharedPlayground.framework; path = "../shared/build/xcode-frameworks/SharedPlayground.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -246,9 +243,6 @@
 			isa = PBXGroup;
 			children = (
 				BDFE597623722DDE002A1F94 /* SharedPlayground.framework */,
-				BDFE59732371E56D002A1F94 /* SharedNasa.framework */,
-				BDFE59702371E300002A1F94 /* SharedCodeNasa.framework */,
-				BDBC58D723706C8A00F7E535 /* SharedSettings.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

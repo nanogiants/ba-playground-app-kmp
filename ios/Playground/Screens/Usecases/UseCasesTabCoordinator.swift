@@ -14,7 +14,7 @@ import SharedPlayground
 class UseCasesTabCoordinator: Coordinator {
     
     let tabTitle = NSLocalizedString("usecases_title", comment:"")
-    let tabImage = UIImage(named: "ic_info")
+    let tabImage = UIImage(named: "ic_category")
     let tabTag = 0
     
     var navigationController: UINavigationController
@@ -53,7 +53,7 @@ class UseCasesTabCoordinator: Coordinator {
     
     func navigateToNasa() {
         let viewController = NasaViewController.instantiate(from: "Nasa")
-        viewController.tabBarItem = UITabBarItem(title: tabTitle, image: tabImage, tag: tabTag)
+//        viewController.tabBarItem = UITabBarItem(title: tabTitle, image: tabImage, tag: tabTag)
         viewController.coordinator = self
         viewController.navigationItem.largeTitleDisplayMode = .never // title small
         navigationController.show(viewController, sender: self)

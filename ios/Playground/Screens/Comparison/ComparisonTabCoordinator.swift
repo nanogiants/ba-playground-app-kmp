@@ -12,7 +12,7 @@ import UIKit
 class ComparisonTabCoordinator: Coordinator {
     
     let tabTitle = NSLocalizedString("comparison_title", comment:"")
-    let tabImage = UIImage(named: "ic_info")
+    let tabImage = UIImage(named: "ic_chart")
     let tabTag = 1
     
     var navigationController: UINavigationController
