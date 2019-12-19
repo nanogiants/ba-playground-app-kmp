@@ -21,11 +21,11 @@ class UseCasesViewController: UIViewController {
     @IBOutlet weak var useCasesCollectionView: UICollectionView!
     
     var items: [UseCase] = [
-        UseCase(id: .Pixelsort,title: "Create a dream image", description: "Camera, FileSystem", imageName: ""),
-        UseCase(id: .Nasa, title: "Information about the Earth", description: "REST-Api, Data handling", imageName: ""),
-        UseCase(id: .Notes ,title: "Take Notes", description: "Database", imageName: ""),
-        UseCase(id: .Settings ,title: "Settings", description: "Preferences storage", imageName: ""),
-        UseCase(id: .Fibonacci ,title: "Fibonacci", description: "Threads, Generics", imageName: "")
+        UseCase(id: .Nasa, title: NSLocalizedString("nasa_title", comment:""), description: NSLocalizedString("nasa_description", comment:""), imageName:""),
+        UseCase(id: .Settings, title: NSLocalizedString("settings_title", comment:""), description: NSLocalizedString("settings_description", comment:""), imageName:""),
+        UseCase(id: .Notes, title: NSLocalizedString("notes_title", comment:""), description: NSLocalizedString("notes_description", comment:""), imageName:""),
+        UseCase(id: .Fibonacci, title: NSLocalizedString("fibonacci_title", comment:""), description: NSLocalizedString("fibonacci_description", comment:""), imageName:""),
+        UseCase(id: .Pixelsort,title: NSLocalizedString("pixelsort_title", comment:""), description: NSLocalizedString("pixelsort_description", comment:""), imageName: "")
     ]
     
     override func viewDidLoad() {

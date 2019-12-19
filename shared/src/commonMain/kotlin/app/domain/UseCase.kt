@@ -8,9 +8,9 @@ import app.domain.UseCase.Identifier.SETTINGS
 
 data class UseCase(
   val id: Identifier,
-  val title: String,
+  val titleRes: Int,
 //  val color: Color,
-  val description: String = ""
+  val descriptionRes: Int
 ) {
   enum class Identifier {
     PIXELSORT,
@@ -20,31 +20,3 @@ data class UseCase(
     FIBONACCI
   }
 }
-
-val appUseCases = listOf(
-  UseCase(
-    NASA,
-    "Nasa",
-    "Description"
-  ),
-  UseCase(
-    SETTINGS,
-    "Settings",
-    "Description"
-  ),
-  UseCase(
-    NOTES,
-    "Notes",
-    "Description"
-  ),
-  UseCase(
-    FIBONACCI,
-    "Fibonacci",
-    "Description"
-  ),
-  UseCase(
-    PIXELSORT,
-    "Pixelsort",
-    "Description"
-  )
-)

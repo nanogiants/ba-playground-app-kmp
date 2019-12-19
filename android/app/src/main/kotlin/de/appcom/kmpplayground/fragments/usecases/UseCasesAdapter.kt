@@ -34,8 +34,8 @@ class UseCasesAdapter(var onItemClickListener: (UseCase) -> Unit) :
 
   inner class UseCasesViewHolder(var view: View) : BaseViewHolder<UseCase>(view) {
     override fun bindTo(item: UseCase) {
-      view.usecases_item_title_textview.text = item.title
-      view.usecases_item_description_textview.text = item.description
+      view.usecases_item_title_textview.text = view.context.getString(item.titleRes)
+      view.usecases_item_description_textview.text = view.context.getString(item.descriptionRes)
       view.setOnClickListener {
         onItemClickListener.invoke(item)
       }

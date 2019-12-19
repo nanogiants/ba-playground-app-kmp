@@ -63,19 +63,26 @@ extension UseCasesViewController: UICollectionViewDataSource {
     
     func bindView(_ useCase: UseCase, to useCaseCell: UseCaseCell) -> UseCaseCell {
         //        useCaseCell.contentView.backgroundColor = UIColor(named: String)
-        useCaseCell.contentView.backgroundColor = UIColor.gray
+//        useCaseCell.contentView.backgroundColor = UIColor.gray
+        useCaseCell.contentView.backgroundColor = UIColor.white
         useCaseCell.titleLabel.text = useCase.title
         useCaseCell.descriptionLabel.text = useCase.description
+        
+        // TODO
+        useCaseCell.titleLabel.preferredMaxLayoutWidth = 290
+        useCaseCell.descriptionLabel.preferredMaxLayoutWidth = 290
+
+        
         return useCaseCell
     }
     
     func styleCell(uiCollectionCell: UICollectionViewCell) {
         uiCollectionCell.contentView.layer.cornerRadius = 8.0
         uiCollectionCell.contentView.layer.masksToBounds = true
-        uiCollectionCell.layer.shadowColor = UIColor.gray.cgColor
+        uiCollectionCell.layer.shadowColor = UIColor.lightGray.cgColor
         uiCollectionCell.layer.shadowOffset = .zero
-        uiCollectionCell.layer.shadowRadius = 6.0 // how wide
-        uiCollectionCell.layer.shadowOpacity = 1.0
+        uiCollectionCell.layer.shadowRadius = 7.0 // how wide
+        uiCollectionCell.layer.shadowOpacity = 0.4
         uiCollectionCell.layer.masksToBounds = false
         // generating shadow dynamically is expensive
         uiCollectionCell.layer.shadowPath = UIBezierPath(roundedRect: uiCollectionCell.bounds, cornerRadius: uiCollectionCell.contentView.layer.cornerRadius).cgPath
@@ -90,7 +97,7 @@ extension UseCasesViewController: UICollectionViewDelegateFlowLayout {
         //2
         let paddingSpace = sectionInsets.left + sectionInsets.right
         let availableWidth = collectionView.frame.width - paddingSpace
-        return CGSize(width: availableWidth, height: 100)
+        return CGSize(width: availableWidth, height: 140)
     }
     
     // tells the layout the spacing between the cells, headers, footers

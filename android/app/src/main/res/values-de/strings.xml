@@ -5,14 +5,21 @@
 <resources>
 	<!-- SECTION: General -->
 	<string name="app_name">Playground</string>
-	<string name="about_title">Über uns</string>
+	<string name="about_title">Info</string>
 	<string name="comparison_title">Vergleich</string>
 	<string name="usecases_title">Anwendung</string>
-	<string name="nasa_title">Nasa</string>
-	<string name="fibonacci_title">Fibonacci</string>
-	<string name="notes_title">Notizen</string>
-	<string name="pixelsort_title">Pixelsort</string>
-	<string name="settings_title">Settings</string>
+	<string name="nasa_title">Web</string>
+	<string name="fibonacci_title">Logik</string>
+	<string name="notes_title">Datenbank</string>
+	<string name="pixelsort_title">Gerät und Hardware</string>
+	<string name="settings_title">Schlüssel-Wert-Speicher</string>
+
+	<!-- SECTION: Usecases -->
+	<string name="pixelsort_description">Nehme ein Foto auf oder wähle ein Bild aus dem Album</string>
+	<string name="nasa_description">Siehe dir das Bild des Tages der NASA an</string>
+	<string name="fibonacci_description">Berechne die n-te Zahl aus der Fibonacci-Folge</string>
+	<string name="settings_description">Speichere einen beliebigen Text</string>
+	<string name="notes_description">Erstelle und verwalte Notizen</string>
 
 	<!-- SECTION: Compare -->
 	<string name="compare_explanation">Anteil an Codezeilen in %, die Kotlin Multiplatform gegenüber der nativen Entwicklung einsparen kann.</string>

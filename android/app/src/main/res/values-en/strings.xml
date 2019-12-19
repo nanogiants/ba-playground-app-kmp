@@ -8,11 +8,18 @@
 	<string name="about_title">About</string>
 	<string name="comparison_title">Comparison</string>
 	<string name="usecases_title">Use Cases</string>
-	<string name="nasa_title">Nasa</string>
-	<string name="fibonacci_title">Fibonacci</string>
-	<string name="notes_title">Notes</string>
-	<string name="pixelsort_title">Pixelsort</string>
-	<string name="settings_title">Settings</string>
+	<string name="nasa_title">Web</string>
+	<string name="fibonacci_title">Logic</string>
+	<string name="notes_title">Database</string>
+	<string name="pixelsort_title">Device and Hardware</string>
+	<string name="settings_title">Key-Value Storage</string>
+
+	<!-- SECTION: Usecases -->
+	<string name="pixelsort_description">Nehme ein Foto auf oder wähle ein Bild aus dem Album</string>
+	<string name="nasa_description">Siehe dir das Bild des Tages der NASA an</string>
+	<string name="fibonacci_description">Berechne die n-te Zahl aus der Fibonacci-Folge</string>
+	<string name="settings_description">Speichere einen beliebigen Text</string>
+	<string name="notes_description">Erstelle und verwalte Notizen</string>
 
 	<!-- SECTION: Compare -->
 	<string name="compare_explanation">Percentage of lines of code, Kotlin Multiplatform can save compared to native development.</string>

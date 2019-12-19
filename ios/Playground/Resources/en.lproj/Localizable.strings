@@ -14,15 +14,28 @@
 
 "usecases_title" = "Use Cases";
 
-"nasa_title" = "Nasa";
+"nasa_title" = "Web";
 
-"fibonacci_title" = "Fibonacci";
+"fibonacci_title" = "Logic";
 
-"notes_title" = "Notes";
+"notes_title" = "Database";
 
-"pixelsort_title" = "Pixelsort";
+"pixelsort_title" = "Device and Hardware";
 
-"settings_title" = "Settings";
+"settings_title" = "Key-Value Storage";
+
+
+/********** Usecases **********/
+
+"pixelsort_description" = "Nehme ein Foto auf oder wähle ein Bild aus dem Album";
+
+"nasa_description" = "Siehe dir das Bild des Tages der NASA an";
+
+"fibonacci_description" = "Berechne die n-te Zahl aus der Fibonacci-Folge";
+
+"settings_description" = "Speichere einen beliebigen Text";
+
+"notes_description" = "Erstelle und verwalte Notizen";
 
 
 /********** Compare **********/

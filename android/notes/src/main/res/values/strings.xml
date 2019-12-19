@@ -4,7 +4,7 @@
 <!-- Language: en -->
 <resources>
 	<!-- SECTION: General -->
-	<string name="notes_title">Notes</string>
+	<string name="notes_title">Database</string>
 
 	<!-- SECTION: Use Case Notes -->
 	<string name="notes_hint_title">title</string>

@@ -8,21 +8,34 @@
 
 "app_name" = "Playground";
 
-"about_title" = "Über uns";
+"about_title" = "Info";
 
 "comparison_title" = "Vergleich";
 
 "usecases_title" = "Anwendung";
 
-"nasa_title" = "Nasa";
+"nasa_title" = "Web";
 
-"fibonacci_title" = "Fibonacci";
+"fibonacci_title" = "Logik";
 
-"notes_title" = "Notizen";
+"notes_title" = "Datenbank";
 
-"pixelsort_title" = "Pixelsort";
+"pixelsort_title" = "Gerät und Hardware";
 
-"settings_title" = "Settings";
+"settings_title" = "Schlüssel-Wert-Speicher";
+
+
+/********** Usecases **********/
+
+"pixelsort_description" = "Nehme ein Foto auf oder wähle ein Bild aus dem Album";
+
+"nasa_description" = "Siehe dir das Bild des Tages der NASA an";
+
+"fibonacci_description" = "Berechne die n-te Zahl aus der Fibonacci-Folge";
+
+"settings_description" = "Speichere einen beliebigen Text";
+
+"notes_description" = "Erstelle und verwalte Notizen";
 
 
 /********** Compare **********/

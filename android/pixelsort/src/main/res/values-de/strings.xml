@@ -4,7 +4,7 @@
 <!-- Language: de -->
 <resources>
 	<!-- SECTION: General -->
-	<string name="pixelsort_title">Pixelsort</string>
+	<string name="pixelsort_title">Gerät und Hardware</string>
 
 	<!-- SECTION: Use Case Pixelsort -->
 	<string name="pixelsort_explanation">Wähle ein Bild aus</string>
