@@ -21,10 +21,16 @@
 	<string name="compare_average">Alle Use-Cases</string>
 
 	<!-- SECTION: About faq -->
-	<string name="about_faq_usecase_q">Was ist ein Use Case</string>
-	<string name="about_faq_usecase_a">in Use Case repräsentiert einen Anwendungsfall</string>
-	<string name="about_faq_legal_q">Rechtliche Hinweise</string>
-	<string name="about_faq_legal_a">Die Bachelorarbeit entsteht bei dem Unternehmen appcom interactive GmbH</string>
+	<string name="about_faq_q1">Was macht diese App?</string>
+	<string name="about_faq_a1">Die App ermöglicht es Nutzern, verschiedene Use-Cases auszuprobieren.</string>
+	<string name="about_faq_q2">Was ist ein Use-Case?</string>
+	<string name="about_faq_a2">Ein Use-Case (engl. Anwendungsfall) repräsentiert eine Funktion, die typischerweise in Apps enthalten ist. Beispiele sind das verwenden der Kamera, das persistente Speichern von Daten oder das Laden von Inhalten mittels HTTP.</string>
+	<string name="about_faq_q3">Wie wurden Use-Cases ermittelt?</string>
+	<string name="about_faq_a3">Es wurden Apps von der Firma appcom interactive, sowie beliebte Anwendungen aus den Charts im Apple AppStore und Google PlayStore betrachtet.</string>
+	<string name="about_faq_q4">Was ist das Konzept hinter der App?</string>
+	<string name="about_faq_a4">Die App dient als Grundlage, anhand der die Technologie Kotlin Multiplatform untersucht und mit der nativen Entwicklung verglichen wird. Die Strukturierung in Use-Cases ermöglicht es, unterschiedliche Aspekte der Entwicklung, Funktionen oder Technologien innerhalb einer Anwendung auszuprobieren.</string>
+	<string name="about_faq_q5">Warum ist die App entstanden?</string>
+	<string name="about_faq_a5">Die App entsteht im Rahmen der Bachelorarbeit „Kotlin Multiplatform – Analyse und Vergleich zur nativen App-Entwicklung“.</string>
 
 	<!-- SECTION: Errors -->
 	<string name="path_not_found_error">Pfad nicht gefunden</string>

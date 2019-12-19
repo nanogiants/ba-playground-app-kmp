@@ -38,13 +38,25 @@
 
 /********** About faq **********/
 
-"about_faq_usecase_q" = "What";
+"about_faq_q1" = "Was macht diese App?";
 
-"about_faq_usecase_a" = "Answer to what";
+"about_faq_a1" = "Die App ermöglicht es Nutzern, verschiedene Use-Cases auszuprobieren.";
 
-"about_faq_legal_q" = "Rights";
+"about_faq_q2" = "Was ist ein Use-Case?";
 
-"about_faq_legal_a" = "Answer to rights";
+"about_faq_a2" = "Ein Use-Case (engl. Anwendungsfall) repräsentiert eine Funktion, die typischerweise in Apps enthalten ist. Beispiele sind das verwenden der Kamera, das persistente Speichern von Daten oder das Laden von Inhalten mittels HTTP.";
+
+"about_faq_q3" = "Wie wurden Use-Cases ermittelt?";
+
+"about_faq_a3" = "Es wurden Apps von der Firma appcom interactive, sowie beliebte Anwendungen aus den Charts im Apple AppStore und Google PlayStore betrachtet.";
+
+"about_faq_q4" = "Was ist das Konzept hinter der App?";
+
+"about_faq_a4" = "Die App dient als Grundlage, anhand der die Technologie Kotlin Multiplatform untersucht und mit der nativen Entwicklung verglichen wird. Die Strukturierung in Use-Cases ermöglicht es, unterschiedliche Aspekte der Entwicklung, Funktionen oder Technologien innerhalb einer Anwendung auszuprobieren.";
+
+"about_faq_q5" = "Warum ist die App entstanden?";
+
+"about_faq_a5" = "Die App entsteht im Rahmen der Bachelorarbeit „Kotlin Multiplatform – Analyse und Vergleich zur nativen App-Entwicklung“.";
 
 
 /********** Use Case Settings **********/

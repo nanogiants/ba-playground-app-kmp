@@ -40,8 +40,11 @@ class AboutFragment : BaseFragment(R.layout.fragment_about), AboutView {
 
   private fun createFaqFromContent() {
     listOf(
-      AboutEntry(R.string.about_faq_usecase_q, R.string.about_faq_usecase_a),
-      AboutEntry(R.string.about_faq_legal_q, R.string.about_faq_legal_a)
+      AboutEntry(R.string.about_faq_q1, R.string.about_faq_a1),
+      AboutEntry(R.string.about_faq_q2, R.string.about_faq_a2),
+      AboutEntry(R.string.about_faq_q3, R.string.about_faq_a3),
+      AboutEntry(R.string.about_faq_q4, R.string.about_faq_a4),
+      AboutEntry(R.string.about_faq_q5, R.string.about_faq_a5)
     ).forEach { faqEntry ->
       about_faq_linearlayout.addView(
         LayoutInflater.from(requireContext())

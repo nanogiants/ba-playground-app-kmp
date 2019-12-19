@@ -12,6 +12,9 @@
 		BD64D0C723884C0700304565 /* Pixelsort.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD64D0C623884C0700304565 /* Pixelsort.storyboard */; };
 		BD64D0C923884C1B00304565 /* PixelsortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD64D0C823884C1B00304565 /* PixelsortViewController.swift */; };
 		BD64D0CB23884C3600304565 /* PixelsortViewController+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD64D0CA23884C3600304565 /* PixelsortViewController+ImagePicker.swift */; };
+		BD94C21423ABC41B0063BA7E /* AboutViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD94C21323ABC41B0063BA7E /* AboutViewController+TableView.swift */; };
+		BD94C21623ABC42B0063BA7E /* FaqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD94C21523ABC42B0063BA7E /* FaqTableViewCell.swift */; };
+		BD94C21823ABC4A90063BA7E /* FaqEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD94C21723ABC4A90063BA7E /* FaqEntry.swift */; };
 		BDB1B90A23607C2F001F3529 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB1B90923607C2F001F3529 /* AppDelegate.swift */; };
 		BDB1B90C23607C2F001F3529 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB1B90B23607C2F001F3529 /* SceneDelegate.swift */; };
 		BDB1B91123607C2F001F3529 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDB1B90F23607C2F001F3529 /* Main.storyboard */; };
@@ -62,6 +65,9 @@
 		BD64D0C623884C0700304565 /* Pixelsort.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pixelsort.storyboard; sourceTree = "<group>"; };
 		BD64D0C823884C1B00304565 /* PixelsortViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelsortViewController.swift; sourceTree = "<group>"; };
 		BD64D0CA23884C3600304565 /* PixelsortViewController+ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PixelsortViewController+ImagePicker.swift"; sourceTree = "<group>"; };
+		BD94C21323ABC41B0063BA7E /* AboutViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AboutViewController+TableView.swift"; sourceTree = "<group>"; };
+		BD94C21523ABC42B0063BA7E /* FaqTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqTableViewCell.swift; sourceTree = "<group>"; };
+		BD94C21723ABC4A90063BA7E /* FaqEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqEntry.swift; sourceTree = "<group>"; };
 		BDB1B90623607C2F001F3529 /* Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Playground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB1B90923607C2F001F3529 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDB1B90B23607C2F001F3529 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -185,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				BDBC58B3237041BC00F7E535 /* UseCase.swift */,
+				BD94C21723ABC4A90063BA7E /* FaqEntry.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -206,6 +213,8 @@
 			children = (
 				BDBC58C42370438700F7E535 /* AboutTabCoordinator.swift */,
 				BDBC58C62370439400F7E535 /* AboutViewController.swift */,
+				BD94C21323ABC41B0063BA7E /* AboutViewController+TableView.swift */,
+				BD94C21523ABC42B0063BA7E /* FaqTableViewCell.swift */,
 			);
 			path = About;
 			sourceTree = "<group>";
@@ -396,8 +405,10 @@
 				BDBC58B0237040D400F7E535 /* UIViewController+Instantiate.swift in Sources */,
 				BDBC58C72370439400F7E535 /* AboutViewController.swift in Sources */,
 				BDBC58C12370431500F7E535 /* ComparisonTabCoordinator.swift in Sources */,
+				BD94C21623ABC42B0063BA7E /* FaqTableViewCell.swift in Sources */,
 				BDBC58B22370416E00F7E535 /* Coordinator.swift in Sources */,
 				BDFE596D2371DFE2002A1F94 /* NasaViewController.swift in Sources */,
+				BD94C21423ABC41B0063BA7E /* AboutViewController+TableView.swift in Sources */,
 				BDBC58AE237040AF00F7E535 /* AppTabBarController.swift in Sources */,
 				BDBC58C92370450B00F7E535 /* SettingsViewController.swift in Sources */,
 				BDDEF2B123A80FA0002F89B5 /* ProgressBar.swift in Sources */,
@@ -409,6 +420,7 @@
 				BD64D0C923884C1B00304565 /* PixelsortViewController.swift in Sources */,
 				BDBAE372237C674B000FBAB5 /* FibonacciViewController.swift in Sources */,
 				BDDEF2AF23A80F63002F89B5 /* ProgressDataView.swift in Sources */,
+				BD94C21823ABC4A90063BA7E /* FaqEntry.swift in Sources */,
 				BDB1B90A23607C2F001F3529 /* AppDelegate.swift in Sources */,
 				BD53924223783DA60046B659 /* NotesViewModel.swift in Sources */,
 				BDBC58BB2370425C00F7E535 /* UseCasesTabCoordinator.swift in Sources */,

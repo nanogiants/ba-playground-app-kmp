@@ -32,13 +32,14 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBF-hQ-VsG">
-                                        <rect key="frame" x="20" y="259.5" width="0.0" height="0.0"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                        <rect key="frame" x="20" y="239.5" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fb-ip-uvb">
-                                        <rect key="frame" x="20" y="279.5" width="0.0" height="0.0"/>
+                                        <rect key="frame" x="20" y="249.5" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -53,8 +54,8 @@
                                     </activityIndicatorView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="8fb-ip-uvb" firstAttribute="top" secondItem="DBF-hQ-VsG" secondAttribute="bottom" constant="20" id="1aM-C8-nPn"/>
-                                    <constraint firstItem="DBF-hQ-VsG" firstAttribute="top" secondItem="fBL-0E-Ens" secondAttribute="bottom" constant="40" id="6OT-Hx-Ma4"/>
+                                    <constraint firstItem="8fb-ip-uvb" firstAttribute="top" secondItem="DBF-hQ-VsG" secondAttribute="bottom" constant="10" id="1aM-C8-nPn"/>
+                                    <constraint firstItem="DBF-hQ-VsG" firstAttribute="top" secondItem="fBL-0E-Ens" secondAttribute="bottom" constant="20" id="6OT-Hx-Ma4"/>
                                     <constraint firstItem="fBL-0E-Ens" firstAttribute="top" secondItem="Ltb-mw-agO" secondAttribute="top" constant="20" id="6cJ-ZO-frn"/>
                                     <constraint firstItem="DBF-hQ-VsG" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Ltb-mw-agO" secondAttribute="trailing" constant="-20" id="7fN-97-aic"/>
                                     <constraint firstItem="Ltb-mw-agO" firstAttribute="height" secondItem="OLt-7l-XL6" secondAttribute="height" priority="250" id="BFI-z8-0ls"/>

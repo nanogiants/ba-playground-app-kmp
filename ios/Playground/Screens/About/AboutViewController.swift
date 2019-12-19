@@ -11,10 +11,15 @@ import UIKit
 
 class AboutViewController : UIViewController {
     
+    var faqEntries: [FaqEntry] = [
+        FaqEntry(question: NSLocalizedString("about_faq_q1", comment:""), answer: NSLocalizedString("about_faq_a1", comment:"")),
+        FaqEntry(question: NSLocalizedString("about_faq_q2", comment:""), answer: NSLocalizedString("about_faq_a2", comment:"")),
+        FaqEntry(question: NSLocalizedString("about_faq_q3", comment:""), answer: NSLocalizedString("about_faq_a3", comment:"")),
+        FaqEntry(question: NSLocalizedString("about_faq_q4", comment:""), answer: NSLocalizedString("about_faq_a4", comment:"")),
+        FaqEntry(question: NSLocalizedString("about_faq_q5", comment:""), answer: NSLocalizedString("about_faq_a5", comment:""))
+    ]
+    
     weak var coordinator: AboutTabCoordinator?
-        
-    @IBOutlet var faqTitleLabels: [UILabel]!
-    @IBOutlet var faqDescriptionLabels: [UILabel]!
     
     @IBOutlet weak var faqTableView: UITableView!
     
@@ -25,9 +30,9 @@ class AboutViewController : UIViewController {
     }
     
     func createFaq() {
-        faqTitleLabels[0].text = NSLocalizedString("about_faq_usecase_q", comment: "")
-        faqDescriptionLabels[0].text = NSLocalizedString("about_faq_usecase_a", comment: "")
-        faqTitleLabels[1].text = NSLocalizedString("about_faq_legal_q", comment: "")
-        faqDescriptionLabels[1].text = NSLocalizedString("about_faq_legal_a", comment: "")
+        faqTableView.delegate = self
+        faqTableView.dataSource = self
+        faqTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        faqTableView.allowsSelection = false
     }
 }
