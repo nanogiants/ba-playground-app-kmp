@@ -134,7 +134,7 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		BD90F80C236B446F0055D773 /* App */ = {
+		BD90F80C236B446F0055D773 /* Application */ = {
 			isa = PBXGroup;
 			children = (
 				BDB1B90923607C2F001F3529 /* AppDelegate.swift */,
@@ -142,7 +142,7 @@
 				BDBC58AD237040AF00F7E535 /* AppTabBarController.swift */,
 				BDBC58AF237040D400F7E535 /* UIViewController+Instantiate.swift */,
 			);
-			path = App;
+			path = Application;
 			sourceTree = "<group>";
 		};
 		BDB1B8FD23607C2F001F3529 = {
@@ -165,10 +165,7 @@
 		BDB1B90823607C2F001F3529 /* Playground */ = {
 			isa = PBXGroup;
 			children = (
-				BD90F80C236B446F0055D773 /* App */,
-				BDBC58AB23703F6500F7E535 /* Models */,
-				BDBC58AA23703F5700F7E535 /* Coordinator */,
-				BDBC58AC23703F7300F7E535 /* Screens */,
+				BDC25B3923ACCE5A0090E9AB /* App */,
 				BD90F7FF236B1CF90055D773 /* Resources */,
 				BDFE5968237191CA002A1F94 /* UseCases */,
 				BDB1B91723607C2F001F3529 /* Info.plist */,
@@ -245,6 +242,17 @@
 				BDFE597623722DDE002A1F94 /* SharedPlayground.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BDC25B3923ACCE5A0090E9AB /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BDBC58AC23703F7300F7E535 /* Screens */,
+				BDBC58AA23703F5700F7E535 /* Coordinator */,
+				BDBC58AB23703F6500F7E535 /* Models */,
+				BD90F80C236B446F0055D773 /* Application */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 		BDE747F0237B085300922271 /* Fibonacci */ = {
