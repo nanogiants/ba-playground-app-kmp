@@ -1,8 +1,10 @@
-package de.appcom.kmpplayground
+package de.appcom.kmpplayground.presentation
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import de.appcom.kmpplayground.R
+import de.appcom.kmpplayground.presentation.NotesAdapter.NotesViewHolder
 import kotlinx.android.synthetic.main.notes_item_layout.view.notes_content_textview
 import kotlinx.android.synthetic.main.notes_item_layout.view.notes_title_textview
 import notes.domain.Note
@@ -11,7 +13,7 @@ import notes.domain.Note
  * Created by appcom interactive GmbH on 2019-11-07.
  * Copyright (c) 2019 appcom interactive GmbH. All rights reserved.
  */
-class NotesAdapter : BaseAdapter<Note, NotesAdapter.NotesViewHolder>() {
+class NotesAdapter : BaseAdapter<Note, NotesViewHolder>() {
 
   override fun onCreateViewHolder(
     parent: ViewGroup,

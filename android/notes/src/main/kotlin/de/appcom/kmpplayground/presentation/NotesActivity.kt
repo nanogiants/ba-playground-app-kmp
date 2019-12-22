@@ -1,4 +1,4 @@
-package de.appcom.kmpplayground
+package de.appcom.kmpplayground.presentation
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import dagger.android.support.DaggerAppCompatActivity
+import de.appcom.kmpplayground.presentation.NotesAdapter.NotesViewHolder
+import de.appcom.kmpplayground.R
 import kotlinx.android.synthetic.main.activity_notes.notes_floatingactionbutton
 import kotlinx.android.synthetic.main.activity_notes.notes_recyclerview
 import kotlinx.android.synthetic.main.activity_notes.notes_toolbar
@@ -17,16 +20,18 @@ import notes.domain.Note
 import notes.presentation.NotesPresenter
 import notes.presentation.NotesPresenterImpl
 import notes.presentation.NotesView
+import javax.inject.Inject
 
-class NotesActivity : AppCompatActivity(), NotesView {
+class NotesActivity : DaggerAppCompatActivity(), NotesView {
+
+  @Inject
+  lateinit var presenter: NotesPresenter
 
   var adapter: NotesAdapter? = null
-  var presenter: NotesPresenter? = null
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_notes)
-    buildDependencies()
     setSupportActionBar(notes_toolbar)
     supportActionBar?.title = getString(R.string.notes_title)
     supportActionBar?.setDisplayShowHomeEnabled(true)
@@ -37,30 +42,24 @@ class NotesActivity : AppCompatActivity(), NotesView {
     }
   }
 
-  private fun buildDependencies() {
-    // TODO use Dependency Injection
-    presenter =
-      NotesPresenterImpl(this, NotesDataSourceImpl(NotesDatabaseHelper(this).createDatabase()))
-  }
-
   override fun onResume() {
     super.onResume()
     adapter = NotesAdapter()
     notes_recyclerview.layoutManager = LinearLayoutManager(this)
     notes_recyclerview.adapter = adapter
     val itemTouchHelper = ItemTouchHelper(
-      SwipeToDeleteCallback<Note, NotesAdapter.NotesViewHolder>(
+      SwipeToDeleteCallback<Note, NotesViewHolder>(
         this,
         { position ->
           adapter?.let {
             val item = it.itemList[position]
             it.removeItem(position)
-            presenter?.deleteNote(item)
+            presenter.deleteNote(item)
           }
         })
     )
     itemTouchHelper.attachToRecyclerView(notes_recyclerview)
-    presenter?.loadNotes()
+    presenter.loadNotes()
 
     notes_recyclerview.addOnScrollListener(object : RecyclerView.OnScrollListener() {
       override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {

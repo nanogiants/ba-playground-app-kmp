@@ -1,17 +1,19 @@
-package de.appcom.kmpplayground
+package de.appcom.kmpplayground.presentation
 
-import LocalKeyValueStorage
-import LocalKeyValueStorageImpl
-import android.content.Context
 import android.os.Bundle
 import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doAfterTextChanged
-import com.russhwolf.settings.AndroidSettings
+import dagger.android.support.DaggerAppCompatActivity
+import de.appcom.kmpplayground.R
 import kotlinx.android.synthetic.main.activity_settings.settings_textinputedittext
 import kotlinx.android.synthetic.main.activity_settings.settings_toolbar
+import settings.data.LocalKeyValueStorage
+import javax.inject.Inject
 
-class SettingsActivity : AppCompatActivity() {
+class SettingsActivity : DaggerAppCompatActivity() {
+
+  @Inject
+  lateinit var localKeyValueStorage: LocalKeyValueStorage
 
   var lastText: String = ""
 
@@ -23,8 +25,7 @@ class SettingsActivity : AppCompatActivity() {
 
   override fun onResume() {
     super.onResume()
-    val localKeyValueStorage: LocalKeyValueStorage =
-      LocalKeyValueStorageImpl(AndroidSettings(getPreferences(Context.MODE_PRIVATE)))
+
     lastText = localKeyValueStorage.readText()
     settings_textinputedittext.setText(lastText)
     settings_textinputedittext.doAfterTextChanged {

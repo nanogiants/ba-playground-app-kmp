@@ -19,7 +19,10 @@ import javax.inject.Singleton
     ApplicationModule::class,
     ActivityBindingModule::class,
     FibonacciBindingModule::class,
-    NasaBindingModule::class
+    NasaBindingModule::class,
+    NotesBindingModule::class,
+    PixelsortBindingModule::class,
+    SettingsBindingModule::class
   ]
 )
 @Singleton

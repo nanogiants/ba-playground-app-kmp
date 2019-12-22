@@ -1,4 +1,4 @@
-package de.appcom.kmpplayground
+package de.appcom.kmpplayground.presentation
 
 import android.content.Context
 import android.graphics.Canvas
@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat
+import de.appcom.kmpplayground.R
 
 class SwipeToDeleteCallback<T, V : RecyclerView.ViewHolder>(
   val context: Context,
