@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import app.domain.UseCase
-import de.appcom.kmpplayground.FibonacciActivity
-import de.appcom.kmpplayground.NasaActivity
+import de.appcom.kmpplayground.presentation.FibonacciActivity
+import de.appcom.kmpplayground.presentation.NasaActivity
 import de.appcom.kmpplayground.NotesActivity
 import de.appcom.kmpplayground.R
 import de.appcom.kmpplayground.SettingsActivity

@@ -1,4 +1,4 @@
-package de.appcom.kmpplayground
+package de.appcom.kmpplayground.presentation
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -6,21 +6,28 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import dagger.android.support.DaggerAppCompatActivity
+import de.appcom.kmpplayground.R.layout
+import de.appcom.kmpplayground.R.string
 import kotlinx.android.synthetic.main.activity_nasa.*
 import nasa.presentation.NasaPresenter
 import nasa.presentation.NasaPresenterImpl
 import nasa.presentation.NasaView
 import nasa.domain.PictureOfTheDay
 import nasa.data.WebDataSourceImpl
+import javax.inject.Inject
 
-class NasaActivity : AppCompatActivity(), NasaView {
+class NasaActivity : DaggerAppCompatActivity(), NasaView {
 
-  var presenter: NasaPresenter =
-    NasaPresenterImpl(WebDataSourceImpl(), this)
+  @Inject
+  lateinit var presenter: NasaPresenter
+
+//  var presenter: NasaPresenter =
+//    NasaPresenterImpl(WebDataSourceImpl(), this)
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_nasa)
+    setContentView(layout.activity_nasa)
     setUpToolbar()
 //        lifecycle.addObserver(presenter)
   }
@@ -32,7 +39,7 @@ class NasaActivity : AppCompatActivity(), NasaView {
 
   fun setUpToolbar() {
     setSupportActionBar(nasa_toolbar)
-    supportActionBar?.title = getString(R.string.nasa_title)
+    supportActionBar?.title = getString(string.nasa_title)
     supportActionBar?.setDisplayShowHomeEnabled(true)
     supportActionBar?.setDisplayHomeAsUpEnabled(true)
   }
