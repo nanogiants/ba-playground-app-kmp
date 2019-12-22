@@ -1,4 +1,4 @@
-package de.appcom.kmpplayground
+package de.appcom.kmpplayground.presentation
 
 import android.app.Activity
 import android.content.Intent
@@ -10,21 +10,23 @@ import android.provider.MediaStore.Images
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import dagger.android.support.DaggerAppCompatActivity
+import de.appcom.kmpplayground.R
 import kotlinx.android.synthetic.main.activity_pixelsort.pixelsort_album_button
 import kotlinx.android.synthetic.main.activity_pixelsort.pixelsort_camera_button
 import kotlinx.android.synthetic.main.activity_pixelsort.pixelsort_imageview
 import kotlinx.android.synthetic.main.activity_pixelsort.pixelsort_textView
 import kotlinx.android.synthetic.main.activity_pixelsort.pixelsort_toolbar
+import javax.inject.Inject
 
 /**
  * Created by appcom interactive GmbH on 2019-11-22.
  * Copyright (c) 2019 appcom interactive GmbH. All rights reserved.
  */
-class PixelsortActivity : AppCompatActivity(),
-  PixelsortView {
+class PixelsortActivity : DaggerAppCompatActivity(), PixelsortView {
 
+  @Inject
   lateinit var presenter: PixelsortPresenter
 
   val REQUEST_IMAGE_CAPTURE = 1
@@ -33,23 +35,11 @@ class PixelsortActivity : AppCompatActivity(),
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_pixelsort)
-    buildDependencies()
+    lifecycle.addObserver(presenter)
     setSupportActionBar(pixelsort_toolbar)
     supportActionBar?.title = getString(R.string.pixelsort_title)
     supportActionBar?.setDisplayShowHomeEnabled(true)
     supportActionBar?.setDisplayHomeAsUpEnabled(true)
-  }
-
-  /**
-   * This method needs to be called before any dependency of this class is used.
-   */
-  private fun buildDependencies() {
-    presenter = PixelsortPresenterImpl().also {
-      it.view = this
-      it.context = this
-      it.activity = this
-      this.lifecycle.addObserver(it)
-    }
   }
 
   override fun onResume() {

@@ -1,4 +1,4 @@
-package de.appcom.kmpplayground
+package de.appcom.kmpplayground.presentation
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView

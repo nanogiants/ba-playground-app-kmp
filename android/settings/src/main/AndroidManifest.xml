@@ -2,7 +2,7 @@
     package="de.appcom.kmpplayground">
 
     <application>
-        <activity android:name=".SettingsActivity" />
+        <activity android:name=".presentation.SettingsActivity" />
     </application>
 
 </manifest>

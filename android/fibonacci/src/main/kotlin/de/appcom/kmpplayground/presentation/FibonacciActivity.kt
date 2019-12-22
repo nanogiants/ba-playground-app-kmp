@@ -1,10 +1,12 @@
-package de.appcom.kmpplayground
+package de.appcom.kmpplayground.presentation
 
 import android.os.AsyncTask
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doAfterTextChanged
+import dagger.android.support.DaggerAppCompatActivity
+import de.appcom.kmpplayground.R
 import fibonacci.domain.Fibonacci
 import fibonacci.domain.Timer
 import fibonacci.domain.WorkHelper
@@ -19,10 +21,14 @@ import kotlinx.android.synthetic.main.fibonacci_activity.fibonacci_time1_textvie
 import kotlinx.android.synthetic.main.fibonacci_activity.fibonacci_time2_textview
 import kotlinx.android.synthetic.main.fibonacci_activity.fibonacci_time3_textview
 import kotlinx.android.synthetic.main.fibonacci_activity.fibonacci_toolbar
+import javax.inject.Inject
 
-class FibonacciActivity : AppCompatActivity() {
+class FibonacciActivity : DaggerAppCompatActivity() {
 
-  var workHelper: WorkHelper? = null
+  @Inject
+  lateinit var workHelper: WorkHelper
+//
+//  var workHelper: WorkHelper? = null
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -33,7 +39,7 @@ class FibonacciActivity : AppCompatActivity() {
     supportActionBar?.setDisplayHomeAsUpEnabled(true)
     supportActionBar?.title = getString(R.string.fibonacci_title)
 
-    workHelper = WorkHelper()
+//    workHelper = WorkHelper()
   }
 
   override fun onResume() {

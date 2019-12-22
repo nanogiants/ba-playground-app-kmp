@@ -14,7 +14,16 @@ import javax.inject.Singleton
  */
 
 @Component(
-  modules = [AndroidInjectionModule::class, ApplicationModule::class, ActivityBindingModule::class]
+  modules = [
+    AndroidInjectionModule::class,
+    ApplicationModule::class,
+    ActivityBindingModule::class,
+    FibonacciBindingModule::class,
+    NasaBindingModule::class,
+    NotesBindingModule::class,
+    PixelsortBindingModule::class,
+    SettingsBindingModule::class
+  ]
 )
 @Singleton
 interface ApplicationComponent : AndroidInjector<PlaygroundApplication> {

@@ -1,49 +1,37 @@
-package de.appcom.kmpplayground
+package de.appcom.kmpplayground.presentation
 
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
+import dagger.android.support.DaggerAppCompatActivity
+import de.appcom.kmpplayground.R
 import kotlinx.android.synthetic.main.activity_add_note.add_notes_content_textinputedittext
 import kotlinx.android.synthetic.main.activity_add_note.add_notes_title_textinputedittext
 import kotlinx.android.synthetic.main.activity_add_note.add_notes_toolbar
-import notes.data.NotesDataSourceImpl
-import notes.data.NotesDatabaseHelper
 import notes.domain.Note
 import notes.presentation.AddNotePresenter
-import notes.presentation.AddNotePresenterImpl
 import notes.presentation.AddNoteView
 import java.util.Date
+import javax.inject.Inject
 
 /**
  * Created by appcom interactive GmbH on 2019-11-07.
  * Copyright (c) 2019 appcom interactive GmbH. All rights reserved.
  */
-class AddNoteActivity : AppCompatActivity(), AddNoteView {
+class AddNoteActivity : DaggerAppCompatActivity(), AddNoteView {
 
-  var presenter: AddNotePresenter? = null
+  @Inject
+  lateinit var presenter: AddNotePresenter
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_add_note)
     setSupportActionBar(add_notes_toolbar)
-    buildDependencies()
     supportActionBar?.title = getString(R.string.notes_title_add)
     supportActionBar?.setDisplayShowHomeEnabled(true)
     supportActionBar?.setDisplayHomeAsUpEnabled(true)
-  }
-
-  /**
-   * This method needs to be called before any dependency of this class is used.
-   */
-  private fun buildDependencies() {
-    presenter = AddNotePresenterImpl(
-        this, NotesDataSourceImpl(
-        NotesDatabaseHelper(this).createDatabase()
-    )
-    )
   }
 
   override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -66,19 +54,19 @@ class AddNoteActivity : AppCompatActivity(), AddNoteView {
   }
 
   fun addNote() {
-    presenter?.addNote(
-        Note(
-            Date().time,
-            add_notes_title_textinputedittext.text.toString(),
-            add_notes_content_textinputedittext.text.toString(),
-            Date().time
-        )
+    presenter.addNote(
+      Note(
+        Date().time,
+        add_notes_title_textinputedittext.text.toString(),
+        add_notes_content_textinputedittext.text.toString(),
+        Date().time
+      )
     )
   }
 
   override fun showError(message: String) {
     Toast.makeText(this, message, Toast.LENGTH_LONG)
-        .show()
+      .show()
   }
 
   override fun onNoteAdded() {

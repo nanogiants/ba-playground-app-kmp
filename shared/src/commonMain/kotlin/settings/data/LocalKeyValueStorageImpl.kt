@@ -1,3 +1,5 @@
+package settings.data
+
 import com.russhwolf.settings.Settings
 
 class LocalKeyValueStorageImpl(val settings: Settings) : LocalKeyValueStorage {

@@ -1,7 +1,6 @@
-package de.appcom.kmpplayground
+package de.appcom.kmpplayground.presentation
 
 import android.Manifest
-import android.app.Activity
 import android.content.Context
 import android.content.pm.PackageManager
 import android.net.Uri
@@ -18,17 +17,17 @@ import java.io.InputStream
 import java.io.OutputStream
 import java.text.SimpleDateFormat
 import java.util.Date
+import javax.inject.Inject
 
 /**
  * Created by appcom interactive GmbH on 2019-11-22.
  * Copyright (c) 2019 appcom interactive GmbH. All rights reserved.
  */
-class PixelsortPresenterImpl :
-  PixelsortPresenter {
-
-  lateinit var view: PixelsortView
-  lateinit var context: Context
-  lateinit var activity: Activity
+class PixelsortPresenterImpl @Inject constructor(
+  var view: PixelsortView,
+  var context: Context,
+  var activity: PixelsortActivity
+) : PixelsortPresenter {
 
   private var imagePath: String = ""
   val PERMISSION_CAMERA_REQUEST_ID = 0

@@ -1,4 +1,4 @@
-package de.appcom.kmpplayground
+package de.appcom.kmpplayground.presentation
 
 import android.net.Uri
 import androidx.lifecycle.LifecycleObserver
