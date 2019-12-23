@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:minHeight="120dp"
     android:layout_height="wrap_content"
     android:layout_marginStart="16dp"
     android:layout_marginEnd="16dp"
+    android:minHeight="80dp"
     app:cardBackgroundColor="@android:color/white"
     app:cardCornerRadius="@dimen/usecases_cardview_radius"
     >
@@ -16,32 +16,73 @@
       android:layout_height="wrap_content"
       >
 
+    <ImageView
+        android:id="@+id/usecases_item_icon_bg_imageview"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <ImageView
+        android:id="@+id/usecases_item_icon_fg_imageview"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:background="@android:color/holo_blue_bright"
+        app:layout_constraintBottom_toBottomOf="@+id/usecases_item_icon_bg_imageview"
+        app:layout_constraintEnd_toEndOf="@+id/usecases_item_icon_bg_imageview"
+        app:layout_constraintStart_toStartOf="@+id/usecases_item_icon_bg_imageview"
+        app:layout_constraintTop_toTopOf="@+id/usecases_item_icon_bg_imageview"
+        />
+
     <TextView
         android:id="@+id/usecases_item_title_textview"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@android:color/black"
         android:textSize="17sp"
         android:textStyle="bold"
-        android:textColor="@android:color/black"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/usecases_item_icon_bg_imageview"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Create a photo"
         />
 
     <TextView
-        android:id="@+id/usecases_item_description_textview"
-        android:layout_width="wrap_content"
+        android:id="@+id/usecases_item_tag_textview"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/usecases_item_title_textview"
+        app:layout_constraintTop_toBottomOf="@+id/usecases_item_title_textview"
+        tools:text="tag, tag, tag"
+        />
+
+    <TextView
+        android:id="@+id/usecases_item_description_textview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:lineSpacingExtra="1dp"
+        android:lineSpacingMultiplier="1.2"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/usecases_item_tag_textview"
         app:layout_constraintTop_toBottomOf="@+id/usecases_item_title_textview"
         tools:text="Camera api, file system"
         />
+
 
   </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -5,13 +5,14 @@
   <color name="colorPrimaryDark">#0008ca</color>
   <color name="colorAccent">#1a73e8</color>
 
-  <color name="colorAppBackground">@color/colorWhite</color>
-  <color name="colorToolbar">@color/colorWhite</color>
+  <color name="colorAppBackground">@color/colorDarkWhite</color>
+  <color name="colorToolbar">@color/colorDarkWhite</color>
   <color name="colorStatusBar">@android:color/darker_gray</color>
   <color name="colorProgressViewBackground">@color/colorLightGray</color>
   <color name="colorProgressViewBar">@color/colorBlue</color>
 
   <!-- color palette -->
+  <color name="colorDarkWhite">#FAFAFA</color>
   <color name="colorWhite">#FFFFFF</color>
   <color name="colorLightGray">#E5E5E5</color>
   <color name="colorBlue">#3F94F9</color>

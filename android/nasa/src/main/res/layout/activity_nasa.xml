@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FAFAFA"
     android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -17,7 +18,7 @@
             android:id="@+id/nasa_collapstingtoolbarlayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:contentScrim="@android:color/white"
+            app:contentScrim="#FAFAFA"
             app:expandedTitleGravity="top"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
             app:title=""

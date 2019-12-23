@@ -35,8 +35,8 @@ class ComparisonDataView : FrameLayout {
     comparison_data_view_title_textview.text = title
     comparison_data_view_progress_textview.text = "${(progress * 100).toInt()}%"
     comparison_data_view_progressview.progress = progress
-//    animateSetLabel((progress * 100).toInt())
-//    comparison_data_view_progressview.animateSetProgress(progress)
+    // animateSetLabel((progress * 100).toInt())
+    // comparison_data_view_progressview.animateSetProgress(progress)
   }
 
   fun animateSetLabel(progress: Int) {

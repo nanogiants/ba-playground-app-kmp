@@ -16,26 +16,36 @@ val appUseCases = listOf(
   UseCase(
     NASA,
     R.string.nasa_title,
-    R.string.nasa_description
+    "#FFAF4C",
+    R.string.nasa_description,
+    R.drawable.uc_cloud
   ),
   UseCase(
     SETTINGS,
     R.string.settings_title,
-    R.string.settings_description
+    "#ED765A",
+    R.string.settings_description,
+    R.drawable.uc_storage
   ),
   UseCase(
     NOTES,
     R.string.notes_title,
-    R.string.notes_description
+    "#A9D1E6",
+    R.string.notes_description,
+    R.drawable.uc_storage
   ),
   UseCase(
     FIBONACCI,
     R.string.fibonacci_title,
-    R.string.fibonacci_description
+    "#201C3D",
+    R.string.fibonacci_description,
+    R.drawable.uc_callsplit
   ),
   UseCase(
     PIXELSORT,
     R.string.pixelsort_title,
-    R.string.pixelsort_description
+    "#C39265",
+    R.string.pixelsort_description,
+    R.drawable.uc_camera
   )
 )
