@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -53,24 +53,16 @@
                                 <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSG-Pn-JfU">
-                                <rect key="frame" x="20" y="170" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="nD7-e2-6nz" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8QW-Ch-Wa4" secondAttribute="trailing" constant="25" id="4H4-WR-cRx"/>
-                            <constraint firstItem="hSG-Pn-JfU" firstAttribute="top" secondItem="chl-9K-yrQ" secondAttribute="bottom" constant="8" symbolic="YES" id="7MC-Rv-VF2"/>
                             <constraint firstItem="8QW-Ch-Wa4" firstAttribute="top" secondItem="eWt-bk-pBI" secondAttribute="bottom" constant="8" symbolic="YES" id="7cN-Y7-8BH"/>
                             <constraint firstItem="8JV-Lg-8vf" firstAttribute="leading" secondItem="nD7-e2-6nz" secondAttribute="leading" constant="20" id="GPG-lu-vba"/>
                             <constraint firstItem="8JV-Lg-8vf" firstAttribute="top" secondItem="nD7-e2-6nz" secondAttribute="top" constant="20" id="HHK-pC-maF"/>
                             <constraint firstItem="eWt-bk-pBI" firstAttribute="leading" secondItem="nD7-e2-6nz" secondAttribute="leading" constant="20" id="HbW-UP-YT6"/>
                             <constraint firstItem="UQ8-jO-jiH" firstAttribute="leading" secondItem="nD7-e2-6nz" secondAttribute="leading" constant="20" id="Jup-m0-l0P"/>
                             <constraint firstItem="8QW-Ch-Wa4" firstAttribute="leading" secondItem="nD7-e2-6nz" secondAttribute="leading" constant="25" id="Jxo-yB-0uQ"/>
-                            <constraint firstItem="hSG-Pn-JfU" firstAttribute="leading" secondItem="nD7-e2-6nz" secondAttribute="leading" constant="20" id="MDm-7g-IQU"/>
                             <constraint firstItem="UQ8-jO-jiH" firstAttribute="top" secondItem="Nft-jw-9kF" secondAttribute="bottom" constant="20" id="Pq0-gt-QkD"/>
                             <constraint firstItem="eWt-bk-pBI" firstAttribute="top" secondItem="8JV-Lg-8vf" secondAttribute="bottom" constant="8" symbolic="YES" id="VJb-kW-Qrh"/>
                             <constraint firstItem="chl-9K-yrQ" firstAttribute="leading" secondItem="nD7-e2-6nz" secondAttribute="leading" constant="20" id="Vdv-dW-fTf"/>
@@ -89,7 +81,6 @@
                         <outlet property="resultLabel" destination="Nft-jw-9kF" id="hwd-Y3-47A"/>
                         <outlet property="time1Label" destination="UQ8-jO-jiH" id="8hm-Ik-a32"/>
                         <outlet property="time2Label" destination="chl-9K-yrQ" id="olR-nh-YkA"/>
-                        <outlet property="time3Label" destination="hSG-Pn-JfU" id="1Gn-jo-Y5g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgP-Qr-Luk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

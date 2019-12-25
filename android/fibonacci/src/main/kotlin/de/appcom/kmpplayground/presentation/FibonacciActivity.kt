@@ -3,7 +3,6 @@ package de.appcom.kmpplayground.presentation
 import android.os.AsyncTask
 import android.os.Bundle
 import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doAfterTextChanged
 import dagger.android.support.DaggerAppCompatActivity
 import de.appcom.kmpplayground.R
@@ -19,7 +18,6 @@ import kotlinx.android.synthetic.main.fibonacci_activity.fibonacci_textinputedit
 import kotlinx.android.synthetic.main.fibonacci_activity.fibonacci_textinputlayout
 import kotlinx.android.synthetic.main.fibonacci_activity.fibonacci_time1_textview
 import kotlinx.android.synthetic.main.fibonacci_activity.fibonacci_time2_textview
-import kotlinx.android.synthetic.main.fibonacci_activity.fibonacci_time3_textview
 import kotlinx.android.synthetic.main.fibonacci_activity.fibonacci_toolbar
 import javax.inject.Inject
 
@@ -66,7 +64,6 @@ class FibonacciActivity : DaggerAppCompatActivity() {
     fibonacci_result_textview.text = ""
     fibonacci_time1_textview.text = ""
     fibonacci_time2_textview.text = ""
-    fibonacci_time3_textview.text = ""
   }
 
   private fun runFibonacci(n: Int) {
@@ -77,21 +74,12 @@ class FibonacciActivity : DaggerAppCompatActivity() {
       // 1 async task in activity
       Async(task, n).execute()
 
-      // 2 background thread in shared
+      // 2 coroutines in shared
       val timer2 = Timer().apply { start() }
-      workHelper?.runOnBackgroundThread(task, n,
+      workHelper.runWithCoroutinesOnUiDispatcher(task, n,
         { result ->
           timer2.stop()
-          fibonacci_time2_textview.text = "Jvm Thread ${timer2.endTime} ms"
-        }
-      )
-
-      // 3 coroutines in shared
-      val timer3 = Timer().apply { start() }
-      workHelper?.runWithCoroutinesOnUiDispatcher(task, n,
-        { result ->
-          timer3.stop()
-          fibonacci_time3_textview.text = "Coroutines ${timer3.endTime} ms"
+          fibonacci_time2_textview.text = "Coroutines ${timer2.endTime} ms"
         })
     }
   }
@@ -109,7 +97,7 @@ class FibonacciActivity : DaggerAppCompatActivity() {
 
     override fun doInBackground(vararg p0: Int?): Int {
       timer.start()
-      return workHelper?.runOnCallerThread(task, n) ?: -1
+      return workHelper.runOnCallerThread(task, n) ?: -1
     }
 
     override fun onPostExecute(result: Int?) {

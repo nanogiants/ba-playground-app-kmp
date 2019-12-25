@@ -57,6 +57,6 @@ actual class Timer {
   // time.h is part of this library
   // this solution is inspired by
   // https://github.com/ktorio/ktor/blob/master/ktor-utils/posix/src/io/ktor/util/date/DateNative.kt
-  actual fun currentTime(): Long = NSDate().timeIntervalSince1970().toLong()
+  actual fun currentTime(): Long = ((NSDate().timeIntervalSince1970())*1000).toLong()
 
 }

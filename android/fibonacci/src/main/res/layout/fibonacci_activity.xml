@@ -93,17 +93,4 @@
       tools:text="122"
       />
 
-  <TextView
-      android:id="@+id/fibonacci_time3_textview"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="16dp"
-      android:layout_marginTop="8dp"
-      android:layout_marginEnd="16dp"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/fibonacci_time2_textview"
-      tools:text="122"
-      />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

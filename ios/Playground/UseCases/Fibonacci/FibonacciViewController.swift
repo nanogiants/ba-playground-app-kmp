@@ -13,6 +13,7 @@ import SharedPlayground
 class FibonacciViewController : UIViewController {
     
     weak var coordinator: UseCasesTabCoordinator?
+    private var workHelper: WorkHelper = WorkHelper()
     
     @IBOutlet weak var explanationLabel: UILabel!
     @IBOutlet weak var inputTextView: UITextField!
@@ -20,7 +21,6 @@ class FibonacciViewController : UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var time1Label: UILabel!
     @IBOutlet weak var time2Label: UILabel!
-    @IBOutlet weak var time3Label: UILabel!
     
     @IBAction func onEditingChanged(_ sender: UITextField) {
         resetUI()
@@ -38,8 +38,6 @@ class FibonacciViewController : UIViewController {
         }
     }
     
-    private var workHelper: WorkHelper = WorkHelper()
-    
     override func viewDidLoad() {
         self.title = NSLocalizedString("fibonacci_title", comment: "")
         explanationLabel.text = NSLocalizedString("fibonacci_explanation", comment:"")
@@ -49,44 +47,42 @@ class FibonacciViewController : UIViewController {
         errorLabel.text = message
     }
     
-    
     func runFibonacci(n: Int) {
         let task: (Any)-> Any = { input in
-            Fibonacci().calculate(n: input as! Int32)  as Any
+            let inputCast: Int = input as! Int
+            let castedN: Int32 = Int32(inputCast)
+            return Fibonacci().calculate(n: castedN) as Any
         }
         
-        // 1
+        //let task: (Any)-> Any = { input in
+        //           let castedN: Int32 =
+        //           Fibonacci().calculate(n: input as! Int32)  as Any
+        //       }
+        
         DispatchQueue.global(qos: .userInteractive).async {
-            let start1 = DispatchTime.now()
+            let timer1 = Timer()
+            timer1.start()
             let result: Any = WorkHelper().runOnCallerThread(task: task, param: n)
+            timer1.stop()
+            let endTime = timer1.endTime
             DispatchQueue.main.async {
-                self.time1Label.text = self.createLog("Platform Api", start: start1, end: DispatchTime.now())
+                self.time1Label.text = "Platform Api \(endTime) ms"
                 self.resultLabel.text = "F(\(n)) = \(result as! Int)"
             }
         }
         
-        // 2
-        let start2 = DispatchTime.now()
-        workHelper.runOnBackgroundThread(task: task, param: n, onResult: { result in
-            self.time2Label.text = self.createLog("Kotlin/Native Worker", start: start2, end: DispatchTime.now())
-        })
-
-        // 3
-        let start3 = DispatchTime.now()
+        let timer2 = Timer()
+        timer2.start()
         workHelper.runWithCoroutinesOnUiDispatcher(task: task, param: n, onResult: { result in
-            self.time3Label.text  = self.createLog("Coroutines", start: start3, end: DispatchTime.now())
+            timer2.stop()
+            self.time2Label.text  = "Coroutines \(timer2.endTime) ms"
         })
-    }
-    
-    func createLog(_ text: String, start: DispatchTime, end: DispatchTime)-> String {
-        return "\(text) \((end.uptimeNanoseconds - start.uptimeNanoseconds)/1000/1000) ms"
     }
     
     func resetUI() {
         resultLabel.text = ""
         time1Label.text = ""
         time2Label.text = ""
-        time3Label.text = ""
         errorLabel.text = ""
     }
 }
