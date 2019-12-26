@@ -10,6 +10,7 @@ import kotlinx.android.synthetic.main.fragment_comparison.comparision_data_view_
 import kotlinx.android.synthetic.main.fragment_comparison.comparision_data_view_uc3
 import kotlinx.android.synthetic.main.fragment_comparison.comparision_data_view_uc4
 import kotlinx.android.synthetic.main.fragment_comparison.comparision_data_view_uc5
+import kotlinx.android.synthetic.main.fragment_comparison.comparision_data_view_uc6
 import kotlinx.android.synthetic.main.fragment_comparison.comparison_scrollview
 import javax.inject.Inject
 
@@ -38,5 +39,6 @@ class ComparisonFragment : BaseFragment(R.layout.fragment_comparison), Compariso
     comparision_data_view_uc3.setData(0.6f, getString(R.string.settings_title))
     comparision_data_view_uc4.setData(0.7f, getString(R.string.fibonacci_title))
     comparision_data_view_uc5.setData(0.3f, getString(R.string.pixelsort_title))
+    comparision_data_view_uc6.setData(0.3f, getString(R.string.game_title))
   }
 }

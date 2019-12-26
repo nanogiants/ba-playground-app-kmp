@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/comparison_scrollview"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAppBackground"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     >
   <androidx.constraintlayout.widget.ConstraintLayout
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:background="@color/colorAppBackground"
       android:orientation="vertical"
+      android:paddingBottom="32dp"
       >
 
     <TextView
@@ -101,10 +102,18 @@
         android:id="@+id/comparision_data_view_uc5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/comparision_data_view_uc4"
+        />
+
+    <de.appcom.kmpplayground.views.ComparisonDataView
+        android:id="@+id/comparision_data_view_uc6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/comparision_data_view_uc5"
         />
 
   </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,6 +12,7 @@ data class UseCase(
     NASA,
     NOTES,
     SETTINGS,
-    FIBONACCI
+    FIBONACCI,
+    GAME
   }
 }

@@ -4,7 +4,7 @@
 <!-- Language: en -->
 <resources>
 	<!-- SECTION: General -->
-	<string name="fibonacci_title">Logic</string>
+	<string name="fibonacci_title">Multithreading</string>
 
 	<!-- SECTION: Use Case Fibonacci -->
 	<string name="fibonacci_explanation">Calculation of the nth number of the fibonacci sequence. Please enter a number between 0 and 35.</string>

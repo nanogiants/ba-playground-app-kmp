@@ -17,9 +17,10 @@ class ComparisonViewController : UIViewController {
         NSLocalizedString("fibonacci_title", comment: ""),
         NSLocalizedString("notes_title", comment: ""),
         NSLocalizedString("pixelsort_title", comment: ""),
-        NSLocalizedString("settings_title", comment: "")
+        NSLocalizedString("settings_title", comment: ""),
+        NSLocalizedString("game_title", comment: "")
     ]
-    let useCaseValues: [Float] = [0.1, 0.2, 0.3, 0.4, 0.4]
+    let useCaseValues: [Float] = [0.1, 0.2, 0.3, 0.4, 0.4, 0.5]
     
     @IBOutlet weak var progressDataViewAll: ProgressDataView!
     @IBOutlet weak var progressDataViewUc1: ProgressDataView!
@@ -27,10 +28,11 @@ class ComparisonViewController : UIViewController {
     @IBOutlet weak var progressDataViewUc3: ProgressDataView!
     @IBOutlet weak var progressDataViewUc4: ProgressDataView!
     @IBOutlet weak var progressDataViewUc5: ProgressDataView!
+    @IBOutlet weak var progressDataViewUc6: ProgressDataView!
     @IBOutlet weak var averageTitleLabel: UILabel!
     @IBOutlet weak var usecasesTitleLabel: UILabel!
     @IBOutlet weak var explanationLabel: UILabel!
-    
+  
     weak var coordinator: ComparisonTabCoordinator?
     
     override func viewDidLoad() {
@@ -58,5 +60,8 @@ class ComparisonViewController : UIViewController {
         
         progressDataViewUc5.titleLabel.text = useCaseNames[4]
         progressDataViewUc5.progress = useCaseValues[4]
+        
+        progressDataViewUc6.titleLabel.text = useCaseNames[5]
+        progressDataViewUc6.progress = useCaseValues[5]
     }
 }

@@ -53,7 +53,7 @@ class UseCasesTabCoordinator: Coordinator {
     
     func navigateToNasa() {
         let viewController = NasaViewController.instantiate(from: "Nasa")
-//        viewController.tabBarItem = UITabBarItem(title: tabTitle, image: tabImage, tag: tabTag)
+        //        viewController.tabBarItem = UITabBarItem(title: tabTitle, image: tabImage, tag: tabTag)
         viewController.coordinator = self
         viewController.navigationItem.largeTitleDisplayMode = .never // title small
         navigationController.show(viewController, sender: self)
@@ -74,6 +74,15 @@ class UseCasesTabCoordinator: Coordinator {
     
     func navigateToFibonacci() {
         let viewController = FibonacciViewController.instantiate(from: "Fibonacci")
+        viewController.tabBarItem = UITabBarItem(title: tabTitle, image: tabImage, tag: tabTag)
+        viewController.coordinator = self
+        viewController.navigationItem.largeTitleDisplayMode = .never // title small
+        navigationController.show(viewController, sender: self)
+        navigationController.tabBarController?.tabBar.isHidden = true
+    }
+    
+    func navigateToGame() {
+      let viewController = GameViewController.instantiate(from: "Game")
         viewController.tabBarItem = UITabBarItem(title: tabTitle, image: tabImage, tag: tabTag)
         viewController.coordinator = self
         viewController.navigationItem.largeTitleDisplayMode = .never // title small

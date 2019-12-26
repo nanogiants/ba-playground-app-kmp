@@ -75,5 +75,6 @@ dependencies {
     implementation project(':notes')
     implementation project(':fibonacci')
     implementation project(':pixelsort')
+    implementation project(':game')
     implementation project(':shared')
 }

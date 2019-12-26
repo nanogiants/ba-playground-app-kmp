@@ -12,6 +12,8 @@
 		BD64D0C723884C0700304565 /* Pixelsort.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD64D0C623884C0700304565 /* Pixelsort.storyboard */; };
 		BD64D0C923884C1B00304565 /* PixelsortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD64D0C823884C1B00304565 /* PixelsortViewController.swift */; };
 		BD64D0CB23884C3600304565 /* PixelsortViewController+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD64D0CA23884C3600304565 /* PixelsortViewController+ImagePicker.swift */; };
+		BD66D40E23B50D8D00D261DE /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD66D40D23B50D8D00D261DE /* Game.storyboard */; };
+		BD66D41023B50D9C00D261DE /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD66D40F23B50D9C00D261DE /* GameViewController.swift */; };
 		BD94C21423ABC41B0063BA7E /* AboutViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD94C21323ABC41B0063BA7E /* AboutViewController+TableView.swift */; };
 		BD94C21623ABC42B0063BA7E /* FaqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD94C21523ABC42B0063BA7E /* FaqTableViewCell.swift */; };
 		BD94C21823ABC4A90063BA7E /* FaqEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD94C21723ABC4A90063BA7E /* FaqEntry.swift */; };
@@ -65,6 +67,8 @@
 		BD64D0C623884C0700304565 /* Pixelsort.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pixelsort.storyboard; sourceTree = "<group>"; };
 		BD64D0C823884C1B00304565 /* PixelsortViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelsortViewController.swift; sourceTree = "<group>"; };
 		BD64D0CA23884C3600304565 /* PixelsortViewController+ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PixelsortViewController+ImagePicker.swift"; sourceTree = "<group>"; };
+		BD66D40D23B50D8D00D261DE /* Game.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Game.storyboard; sourceTree = "<group>"; };
+		BD66D40F23B50D9C00D261DE /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		BD94C21323ABC41B0063BA7E /* AboutViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AboutViewController+TableView.swift"; sourceTree = "<group>"; };
 		BD94C21523ABC42B0063BA7E /* FaqTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqTableViewCell.swift; sourceTree = "<group>"; };
 		BD94C21723ABC4A90063BA7E /* FaqEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqEntry.swift; sourceTree = "<group>"; };
@@ -123,6 +127,15 @@
 				BD53924123783DA60046B659 /* NotesViewModel.swift */,
 			);
 			path = Notes;
+			sourceTree = "<group>";
+		};
+		BD66D40A23B5026400D261DE /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				BD66D40D23B50D8D00D261DE /* Game.storyboard */,
+				BD66D40F23B50D9C00D261DE /* GameViewController.swift */,
+			);
+			path = Game;
 			sourceTree = "<group>";
 		};
 		BD90F7FF236B1CF90055D773 /* Resources */ = {
@@ -267,6 +280,7 @@
 		BDFE5968237191CA002A1F94 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				BD66D40A23B5026400D261DE /* Game */,
 				BDE747F0237B085300922271 /* Fibonacci */,
 				BD53923E2378269E0046B659 /* Notes */,
 				BDFE596B2371921B002A1F94 /* Settings */,
@@ -369,6 +383,7 @@
 				BDB1B91623607C2F001F3529 /* LaunchScreen.storyboard in Resources */,
 				BDB1B91323607C2F001F3529 /* Assets.xcassets in Resources */,
 				BDBAE370237C673D000FBAB5 /* Fibonacci.storyboard in Resources */,
+				BD66D40E23B50D8D00D261DE /* Game.storyboard in Resources */,
 				BDFE596F2371DFEF002A1F94 /* Nasa.storyboard in Resources */,
 				BD64D0C723884C0700304565 /* Pixelsort.storyboard in Resources */,
 				BDB1B91123607C2F001F3529 /* Main.storyboard in Resources */,
@@ -403,6 +418,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD66D41023B50D9C00D261DE /* GameViewController.swift in Sources */,
 				BDBC58BD2370426F00F7E535 /* UseCasesViewController.swift in Sources */,
 				BDBC58B0237040D400F7E535 /* UIViewController+Instantiate.swift in Sources */,
 				BDBC58C72370439400F7E535 /* AboutViewController.swift in Sources */,
