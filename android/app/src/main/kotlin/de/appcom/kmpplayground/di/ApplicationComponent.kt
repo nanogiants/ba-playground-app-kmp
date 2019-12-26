@@ -22,7 +22,8 @@ import javax.inject.Singleton
     NasaBindingModule::class,
     NotesBindingModule::class,
     PixelsortBindingModule::class,
-    SettingsBindingModule::class
+    SettingsBindingModule::class,
+    GameBindingsModule::class
   ]
 )
 @Singleton

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA"
+    android:orientation="vertical"
+    >
+
+  <androidx.appcompat.widget.Toolbar
+      android:id="@+id/game_toolbar"
+      style="@style/Playground.Toolbar"
+      android:layout_width="match_parent"
+      android:layout_height="?attr/actionBarSize"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      />
+
+  <TextView
+      android:id="@+id/game_description_textview"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="16dp"
+      android:layout_marginEnd="16dp"
+      android:text="@string/game_explanation"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/game_toolbar"
+      />
+
+  <GridLayout
+      android:id="@+id/game_gridlayout"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="16dp"
+      android:layout_marginEnd="8dp"
+      android:columnCount="3"
+      android:rowCount="3"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/game_description_textview"
+      >
+    <Button
+        android:id="@+id/game_1_button"
+        style="@style/Playground.Game.Button"
+        />
+    <Button
+        android:id="@+id/game_2_button"
+        style="@style/Playground.Game.Button"
+        />
+    <Button
+        android:id="@+id/game_3_button"
+        style="@style/Playground.Game.Button"
+        />
+    <Button
+        android:id="@+id/game_4_button"
+        style="@style/Playground.Game.Button"
+        />
+    <Button
+        android:id="@+id/game_5_button"
+        style="@style/Playground.Game.Button"
+        />
+    <Button
+        android:id="@+id/game_6_button"
+        style="@style/Playground.Game.Button"
+        />
+    <Button
+        android:id="@+id/game_7_button"
+        style="@style/Playground.Game.Button"
+        />
+    <Button
+        android:id="@+id/game_8_button"
+        style="@style/Playground.Game.Button"
+        />
+    <Button
+        android:id="@+id/game_9_button"
+        style="@style/Playground.Game.Button"
+        />
+
+  </GridLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

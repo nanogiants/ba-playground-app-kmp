@@ -2,6 +2,7 @@ package de.appcom.kmpplayground.models
 
 import app.domain.UseCase
 import app.domain.UseCase.Identifier.FIBONACCI
+import app.domain.UseCase.Identifier.GAME
 import app.domain.UseCase.Identifier.NASA
 import app.domain.UseCase.Identifier.NOTES
 import app.domain.UseCase.Identifier.PIXELSORT
@@ -47,5 +48,12 @@ val appUseCases = listOf(
     "#C39265",
     R.string.pixelsort_description,
     R.drawable.uc_camera
+  ),
+  UseCase(
+    GAME,
+    R.string.game_title,
+    "#d18d45",
+    R.string.game_description,
+    R.drawable.uc_game
   )
 )

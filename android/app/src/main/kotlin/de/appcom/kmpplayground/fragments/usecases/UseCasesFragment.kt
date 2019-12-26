@@ -5,15 +5,16 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import app.domain.UseCase
-import de.appcom.kmpplayground.presentation.FibonacciActivity
-import de.appcom.kmpplayground.presentation.NasaActivity
-import de.appcom.kmpplayground.presentation.NotesActivity
 import de.appcom.kmpplayground.R
-import de.appcom.kmpplayground.presentation.SettingsActivity
 import de.appcom.kmpplayground.fragments.base.BaseFragment
 import de.appcom.kmpplayground.fragments.base.BasePresenter
-import de.appcom.kmpplayground.presentation.PixelsortActivity
 import de.appcom.kmpplayground.models.appUseCases
+import de.appcom.kmpplayground.presentation.FibonacciActivity
+import de.appcom.kmpplayground.presentation.GameActivity
+import de.appcom.kmpplayground.presentation.NasaActivity
+import de.appcom.kmpplayground.presentation.NotesActivity
+import de.appcom.kmpplayground.presentation.PixelsortActivity
+import de.appcom.kmpplayground.presentation.SettingsActivity
 import kotlinx.android.synthetic.main.fragment_usecases.usecases_recyclerview
 import timber.log.Timber
 import javax.inject.Inject
@@ -54,18 +55,47 @@ class UseCasesFragment : BaseFragment(R.layout.fragment_usecases), UseCasesView 
     usecases_recyclerview.layoutManager = LinearLayoutManager(requireContext())
     usecases_recyclerview.adapter = adapter
     usecases_recyclerview.addItemDecoration(
-        UseCasesItemDecorator(resources.getDimension(R.dimen.usecases_bottom_spacing))
+      UseCasesItemDecorator(resources.getDimension(R.dimen.usecases_bottom_spacing))
     )
     adapter.replaceAll(appUseCases)
   }
 
   private fun navigateToUseCase(id: UseCase.Identifier) {
     when (id) {
-      UseCase.Identifier.NASA -> startActivity(Intent(requireContext(), NasaActivity::class.java))
-      UseCase.Identifier.SETTINGS -> startActivity(Intent(requireContext(), SettingsActivity::class.java))
-      UseCase.Identifier.NOTES -> startActivity(Intent(requireContext(), NotesActivity::class.java))
-      UseCase.Identifier.FIBONACCI -> startActivity(Intent(requireContext(), FibonacciActivity::class.java))
-      UseCase.Identifier.PIXELSORT -> startActivity(Intent(requireContext(), PixelsortActivity::class.java))
+      UseCase.Identifier.NASA -> startActivity(
+        Intent(
+          requireContext(),
+          NasaActivity::class.java)
+      )
+      UseCase.Identifier.SETTINGS -> startActivity(
+        Intent(
+          requireContext(),
+          SettingsActivity::class.java
+        )
+      )
+      UseCase.Identifier.NOTES -> startActivity(
+        Intent(
+          requireContext(),
+          NotesActivity::class.java)
+      )
+      UseCase.Identifier.FIBONACCI -> startActivity(
+        Intent(
+          requireContext(),
+          FibonacciActivity::class.java
+        )
+      )
+      UseCase.Identifier.PIXELSORT -> startActivity(
+        Intent(
+          requireContext(),
+          PixelsortActivity::class.java
+        )
+      )
+      UseCase.Identifier.GAME -> startActivity(
+        Intent(
+          requireContext(),
+          GameActivity::class.java
+        )
+      )
     }
   }
 

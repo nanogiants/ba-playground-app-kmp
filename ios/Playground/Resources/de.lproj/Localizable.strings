@@ -16,13 +16,15 @@
 
 "nasa_title" = "Web";
 
-"fibonacci_title" = "Logik";
+"fibonacci_title" = "Nebenläufigkeit";
 
 "notes_title" = "Datenbank";
 
 "pixelsort_title" = "Gerät und Hardware";
 
 "settings_title" = "Schlüssel-Wert-Speicher";
+
+"game_title" = "Logik";
 
 
 /********** Usecases **********/
@@ -36,6 +38,8 @@
 "settings_description" = "Speichere einen beliebigen Text";
 
 "notes_description" = "Erstelle und verwalte Notizen";
+
+"game_description" = "Spiele Tic Tac Toe";
 
 
 /********** Compare **********/
@@ -106,6 +110,17 @@
 "notes_title_add" = "Notiz hinzufügen";
 
 "notes_add" = "hinzufügen";
+
+
+/********** Use Case Game **********/
+
+"game_explanation" = "Spiele Tic Tac Toe";
+
+"game_win" = "Du hast gewonnen";
+
+"game_lose" = "Du hast verloren";
+
+"game_player" = "hat das Spiel gewonnen";
 
 
 /********** Errors **********/

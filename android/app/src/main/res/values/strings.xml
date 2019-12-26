@@ -9,10 +9,11 @@
 	<string name="comparison_title">Comparison</string>
 	<string name="usecases_title">Use Cases</string>
 	<string name="nasa_title">Web</string>
-	<string name="fibonacci_title">Logic</string>
+	<string name="fibonacci_title">Multithreading</string>
 	<string name="notes_title">Database</string>
 	<string name="pixelsort_title">Device and Hardware</string>
 	<string name="settings_title">Key-Value Storage</string>
+	<string name="game_title">Logic</string>
 
 	<!-- SECTION: Usecases -->
 	<string name="pixelsort_description">Nehme ein Foto auf oder wähle ein Bild aus dem Album</string>
@@ -20,6 +21,7 @@
 	<string name="fibonacci_description">Berechne die n-te Zahl aus der Fibonacci-Folge</string>
 	<string name="settings_description">Speichere einen beliebigen Text</string>
 	<string name="notes_description">Erstelle und verwalte Notizen</string>
+	<string name="game_description">Spiele Tic Tac Toe</string>
 
 	<!-- SECTION: Compare -->
 	<string name="compare_explanation">Percentage of lines of code, Kotlin Multiplatform can save compared to native development.</string>

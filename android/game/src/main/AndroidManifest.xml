@@ -1,0 +1,7 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="de.appcom.kmpplayground">
+
+  <application>
+    <activity android:name=".presentation.GameActivity" />
+  </application>
+</manifest>
