@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="9cp-sP-WWa">
+            <objects>
+                <viewController storyboardIdentifier="GameViewController" id="oNS-u6-fRj" customClass="GameViewController" customModule="PlayKMP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mop-eB-ROe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AfS-FF-2rs">
+                                <rect key="frame" x="20" y="64" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="76b-hT-6Fr">
+                                <rect key="frame" x="40" y="286" width="334" height="334"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="l5k-SI-4Yn">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="104.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9Y-oL-wuc">
+                                                <rect key="frame" x="0.0" y="0.0" width="104.5" height="104.5"/>
+                                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcN-XU-cu2">
+                                                <rect key="frame" x="114.5" y="0.0" width="105" height="104.5"/>
+                                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cqg-5b-2Jp">
+                                                <rect key="frame" x="229.5" y="0.0" width="104.5" height="104.5"/>
+                                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nel-Fp-pfg">
+                                        <rect key="frame" x="0.0" y="114.5" width="334" height="105"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUP-pd-aE2">
+                                                <rect key="frame" x="0.0" y="0.0" width="104.5" height="105"/>
+                                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rA-mE-o3J">
+                                                <rect key="frame" x="114.5" y="0.0" width="105" height="105"/>
+                                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbw-Vq-h26">
+                                                <rect key="frame" x="229.5" y="0.0" width="104.5" height="105"/>
+                                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bqQ-z8-cNz">
+                                        <rect key="frame" x="0.0" y="229.5" width="334" height="104.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2uP-VE-1lM">
+                                                <rect key="frame" x="0.0" y="0.0" width="104.5" height="104.5"/>
+                                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhB-dT-g9m">
+                                                <rect key="frame" x="114.5" y="0.0" width="105" height="104.5"/>
+                                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dc-RN-s9J">
+                                                <rect key="frame" x="229.5" y="0.0" width="104.5" height="104.5"/>
+                                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="76b-hT-6Fr" secondAttribute="height" multiplier="1:1" id="XdV-PW-c6M"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="76b-hT-6Fr" firstAttribute="centerY" secondItem="hnJ-xO-0M6" secondAttribute="centerY" id="0jR-0F-Le6"/>
+                            <constraint firstItem="AfS-FF-2rs" firstAttribute="leading" secondItem="hnJ-xO-0M6" secondAttribute="leading" constant="20" id="M9D-dD-O0f"/>
+                            <constraint firstItem="76b-hT-6Fr" firstAttribute="leading" secondItem="hnJ-xO-0M6" secondAttribute="leading" constant="40" id="XU8-rb-RmM"/>
+                            <constraint firstItem="76b-hT-6Fr" firstAttribute="centerX" secondItem="hnJ-xO-0M6" secondAttribute="centerX" id="cuB-Fu-FtR"/>
+                            <constraint firstItem="AfS-FF-2rs" firstAttribute="top" secondItem="hnJ-xO-0M6" secondAttribute="top" constant="20" id="h0Q-eP-VbI"/>
+                            <constraint firstItem="hnJ-xO-0M6" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="76b-hT-6Fr" secondAttribute="trailing" constant="40" id="mWI-VV-tjG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hnJ-xO-0M6"/>
+                    </view>
+                    <connections>
+                        <outlet property="gameExplanationLabel" destination="AfS-FF-2rs" id="iba-ED-DvE"/>
+                        <outletCollection property="gameButtonCollection" destination="b9Y-oL-wuc" collectionClass="NSMutableArray" id="cJD-Uk-iDF"/>
+                        <outletCollection property="gameButtonCollection" destination="rcN-XU-cu2" collectionClass="NSMutableArray" id="BqA-T6-tur"/>
+                        <outletCollection property="gameButtonCollection" destination="Cqg-5b-2Jp" collectionClass="NSMutableArray" id="Djl-uJ-7jH"/>
+                        <outletCollection property="gameButtonCollection" destination="NUP-pd-aE2" collectionClass="NSMutableArray" id="gpV-7k-qcF"/>
+                        <outletCollection property="gameButtonCollection" destination="1rA-mE-o3J" collectionClass="NSMutableArray" id="j4h-hp-8q7"/>
+                        <outletCollection property="gameButtonCollection" destination="nbw-Vq-h26" collectionClass="NSMutableArray" id="fFN-f8-CPm"/>
+                        <outletCollection property="gameButtonCollection" destination="2uP-VE-1lM" collectionClass="NSMutableArray" id="yR9-xr-dQm"/>
+                        <outletCollection property="gameButtonCollection" destination="hhB-dT-g9m" collectionClass="NSMutableArray" id="hIo-ta-p8a"/>
+                        <outletCollection property="gameButtonCollection" destination="2dc-RN-s9J" collectionClass="NSMutableArray" id="iNU-QD-75N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s6I-aC-qnR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="108.69565217391305" y="15.401785714285714"/>
+        </scene>
+    </scenes>
+</document>

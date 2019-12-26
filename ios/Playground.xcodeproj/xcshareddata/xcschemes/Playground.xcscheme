@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BDB1B90523607C2F001F3529"
-               BuildableName = "Playground.app"
+               BuildableName = "PlayKMP.app"
                BlueprintName = "Playground"
                ReferencedContainer = "container:Playground.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BDB1B90523607C2F001F3529"
-            BuildableName = "Playground.app"
+            BuildableName = "PlayKMP.app"
             BlueprintName = "Playground"
             ReferencedContainer = "container:Playground.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BDB1B90523607C2F001F3529"
-            BuildableName = "Playground.app"
+            BuildableName = "PlayKMP.app"
             BlueprintName = "Playground"
             ReferencedContainer = "container:Playground.xcodeproj">
          </BuildableReference>

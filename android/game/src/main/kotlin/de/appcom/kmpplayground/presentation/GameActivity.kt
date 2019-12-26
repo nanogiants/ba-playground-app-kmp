@@ -6,10 +6,10 @@ import android.view.MenuItem
 import androidx.appcompat.app.AlertDialog
 import dagger.android.support.DaggerAppCompatActivity
 import de.appcom.kmpplayground.R
+import game.domain.Game
+import game.presentation.GameView
 import kotlinx.android.synthetic.main.activity_game.game_gridlayout
 import kotlinx.android.synthetic.main.activity_game.game_toolbar
-import nasa.game.domain.Game
-import nasa.game.presentation.GameView
 import javax.inject.Inject
 
 class GameActivity : DaggerAppCompatActivity(), GameView {

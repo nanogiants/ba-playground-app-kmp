@@ -3,8 +3,8 @@ package de.appcom.kmpplayground.di
 import dagger.Module
 import dagger.Provides
 import de.appcom.kmpplayground.presentation.GameActivity
-import nasa.game.domain.Game
-import nasa.game.presentation.GameView
+import game.domain.Game
+import game.presentation.GameView
 
 @Module
 object GameModule {

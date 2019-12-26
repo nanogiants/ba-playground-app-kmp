@@ -24,5 +24,6 @@ struct UseCase {
         case Locating
         case Settings
         case Fibonacci
+        case Game
     }
 }

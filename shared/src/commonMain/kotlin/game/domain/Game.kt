@@ -1,11 +1,11 @@
-package nasa.game.domain
+package game.domain
 
-import nasa.game.domain.Game.Mode.Multiplayer
-import nasa.game.domain.Game.Mode.SinglePlayer
-import nasa.game.domain.Game.Player.Human1
-import nasa.game.domain.Game.Player.Human2
-import nasa.game.domain.Game.Player.KI2
-import nasa.game.presentation.GameView
+import game.domain.Game.Mode.Multiplayer
+import game.domain.Game.Mode.SinglePlayer
+import game.domain.Game.Player.Human1
+import game.domain.Game.Player.Human2
+import game.domain.Game.Player.KI2
+import game.presentation.GameView
 import kotlin.random.Random
 
 class Game(

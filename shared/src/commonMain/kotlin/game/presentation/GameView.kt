@@ -1,4 +1,4 @@
-package nasa.game.presentation
+package game.presentation
 
 interface GameView {
   fun invalidateBoard(board: Array<Int>)

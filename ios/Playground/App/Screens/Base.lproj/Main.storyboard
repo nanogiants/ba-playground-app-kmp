@@ -11,7 +11,7 @@
         <!--Use Cases View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="UseCasesViewController" id="BYZ-38-t0r" customClass="UseCasesViewController" customModule="Playground" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UseCasesViewController" id="BYZ-38-t0r" customClass="UseCasesViewController" customModule="PlayKMP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,7 +26,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UseCaseCell" id="Z6V-iT-j6S" customClass="UseCaseCell" customModule="Playground" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UseCaseCell" id="Z6V-iT-j6S" customClass="UseCaseCell" customModule="PlayKMP" customModuleProvider="target">
                                         <rect key="frame" x="24.5" y="0.0" width="365" height="216"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="w5b-Ir-I9Z">
@@ -94,7 +94,7 @@
         <!--About View Controller-->
         <scene sceneID="89w-i6-0jR">
             <objects>
-                <viewController storyboardIdentifier="AboutViewController" id="hhI-f7-Oqe" customClass="AboutViewController" customModule="Playground" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutViewController" id="hhI-f7-Oqe" customClass="AboutViewController" customModule="PlayKMP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y6K-ul-785">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -103,7 +103,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FaqTableViewCell" rowHeight="100" id="elb-lU-z2i" customClass="FaqTableViewCell" customModule="Playground" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FaqTableViewCell" rowHeight="100" id="elb-lU-z2i" customClass="FaqTableViewCell" customModule="PlayKMP" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="elb-lU-z2i" id="jih-wA-2oD">
@@ -161,40 +161,40 @@
         <!--Comparison View Controller-->
         <scene sceneID="CsP-Gr-RN1">
             <objects>
-                <viewController storyboardIdentifier="ComparisonViewController" id="qNz-A1-EOS" customClass="ComparisonViewController" customModule="Playground" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ComparisonViewController" id="qNz-A1-EOS" customClass="ComparisonViewController" customModule="PlayKMP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0VW-0H-Hmb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ir-yj-z6u" customClass="ProgressDataView" customModule="Playground" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ir-yj-z6u" customClass="ProgressDataView" customModule="PlayKMP" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="148.5" width="414" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="clw-TD-uHD"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hMz-wm-uEZ" customClass="ProgressDataView" customModule="Playground" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hMz-wm-uEZ" customClass="ProgressDataView" customModule="PlayKMP" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="262.5" width="414" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="O9J-Bz-ToM"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cIW-Fl-rp7" customClass="ProgressDataView" customModule="Playground" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cIW-Fl-rp7" customClass="ProgressDataView" customModule="PlayKMP" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="322.5" width="414" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Ahs-ce-BkY"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iME-Qb-tqR" customClass="ProgressDataView" customModule="Playground" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iME-Qb-tqR" customClass="ProgressDataView" customModule="PlayKMP" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="382.5" width="414" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="0BZ-Ik-ceI"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o5M-4f-XLT" customClass="ProgressDataView" customModule="Playground" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o5M-4f-XLT" customClass="ProgressDataView" customModule="PlayKMP" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="442.5" width="414" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
@@ -219,11 +219,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xUS-Ph-bHP" customClass="ProgressDataView" customModule="Playground" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xUS-Ph-bHP" customClass="ProgressDataView" customModule="PlayKMP" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="502.5" width="414" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="sV5-AG-o9Q"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BVV-6y-eCp" customClass="ProgressDataView" customModule="PlayKMP" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="562.5" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Peu-XN-ZuC"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -235,6 +242,7 @@
                             <constraint firstItem="o5M-4f-XLT" firstAttribute="top" secondItem="iME-Qb-tqR" secondAttribute="bottom" constant="10" id="6Yz-hZ-jgU"/>
                             <constraint firstItem="BYA-zw-5EH" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uoz-0p-5AE" secondAttribute="trailing" symbolic="YES" id="7ZW-QL-N3r"/>
                             <constraint firstItem="lth-7R-89A" firstAttribute="leading" secondItem="BYA-zw-5EH" secondAttribute="leading" constant="20" id="8Pu-iO-NcS"/>
+                            <constraint firstItem="BYA-zw-5EH" firstAttribute="trailing" secondItem="BVV-6y-eCp" secondAttribute="trailing" id="9a1-6X-POH"/>
                             <constraint firstItem="BYA-zw-5EH" firstAttribute="trailing" secondItem="cIW-Fl-rp7" secondAttribute="trailing" id="A7F-3m-xlv"/>
                             <constraint firstItem="xUS-Ph-bHP" firstAttribute="leading" secondItem="BYA-zw-5EH" secondAttribute="leading" id="B0w-y1-MhJ"/>
                             <constraint firstItem="BYA-zw-5EH" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lth-7R-89A" secondAttribute="trailing" constant="20" id="G2C-VL-5Zd"/>
@@ -249,8 +257,10 @@
                             <constraint firstItem="cIW-Fl-rp7" firstAttribute="leading" secondItem="BYA-zw-5EH" secondAttribute="leading" id="Vb9-YN-uBP"/>
                             <constraint firstItem="BYA-zw-5EH" firstAttribute="trailing" secondItem="o5M-4f-XLT" secondAttribute="trailing" id="WPL-fO-P3t"/>
                             <constraint firstItem="uoz-0p-5AE" firstAttribute="leading" secondItem="BYA-zw-5EH" secondAttribute="leading" constant="20" id="XsN-DX-Nr1"/>
+                            <constraint firstItem="BVV-6y-eCp" firstAttribute="leading" secondItem="BYA-zw-5EH" secondAttribute="leading" id="Z3w-M2-4Md"/>
                             <constraint firstItem="BYA-zw-5EH" firstAttribute="trailing" secondItem="iME-Qb-tqR" secondAttribute="trailing" id="ZbQ-mK-GpS"/>
                             <constraint firstItem="5Ir-yj-z6u" firstAttribute="leading" secondItem="BYA-zw-5EH" secondAttribute="leading" id="abw-LV-0kB"/>
+                            <constraint firstItem="BVV-6y-eCp" firstAttribute="top" secondItem="xUS-Ph-bHP" secondAttribute="bottom" constant="10" id="h2x-0A-6lr"/>
                             <constraint firstItem="hMz-wm-uEZ" firstAttribute="top" secondItem="uoz-0p-5AE" secondAttribute="bottom" id="j0h-BK-9o0"/>
                             <constraint firstItem="FFf-B7-1CZ" firstAttribute="leading" secondItem="BYA-zw-5EH" secondAttribute="leading" constant="20" id="j8n-T1-crX"/>
                             <constraint firstItem="cIW-Fl-rp7" firstAttribute="top" secondItem="hMz-wm-uEZ" secondAttribute="bottom" constant="10" id="tWG-yb-Q7F"/>
@@ -268,6 +278,7 @@
                         <outlet property="progressDataViewUc3" destination="iME-Qb-tqR" id="i8S-nE-fHa"/>
                         <outlet property="progressDataViewUc4" destination="o5M-4f-XLT" id="0AM-GW-gRB"/>
                         <outlet property="progressDataViewUc5" destination="xUS-Ph-bHP" id="CxI-SO-K4m"/>
+                        <outlet property="progressDataViewUc6" destination="BVV-6y-eCp" id="rp4-ZA-hAx"/>
                         <outlet property="usecasesTitleLabel" destination="uoz-0p-5AE" id="dDd-eS-qxU"/>
                     </connections>
                 </viewController>
