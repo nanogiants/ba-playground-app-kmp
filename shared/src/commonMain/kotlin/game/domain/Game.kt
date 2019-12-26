@@ -120,6 +120,41 @@ class Game(
     // show if win
   }
 
+  private fun kiPlayNextRoundDoubleOptimized() {
+    val freePositions = freePositionIndexes()
+
+    var nextPosition = freePositions[Random.nextInt(0, freePositions.size)]
+    // for each position
+    if (freePositions.size > 1) {
+      val kiWinningPos = winningPosition(board,freePositions, KI2)
+      if(kiWinningPos != -1) {
+        nextPosition = kiWinningPos
+      } else {
+        val playerWinningPos = winningPosition(board,freePositions, players[0])
+        if(playerWinningPos != -1) {
+          nextPosition = playerWinningPos
+        }
+      }
+    }
+    onNewStonePlaced(nextPosition)
+  }
+
+  private fun winningPosition(board: Array<Int>, possiblePositions: List<Int>, player: Player): Int {
+    var winningPosition: Int = -1
+    possiblePositions.forEach { possiblePosition ->
+      // create a temporary board
+      val boardInFuture = board.copyOf()
+      // place a stone at the possible position
+      putStoneAt(boardInFuture, possiblePosition, player)
+      // provide a score for the position
+      if(playerHasWon(boardInFuture, player)) {
+        winningPosition = possiblePosition
+        return@forEach
+      }
+    }
+    return winningPosition
+  }
+
   fun notifyUserWon(winner: Player) {
     val message = when {
       mode == SinglePlayer && winner == Human1 -> "You won the game"
@@ -159,7 +194,8 @@ class Game(
         activePlayerIndex = nextPlayerIndex()
         if (mode == SinglePlayer && activePlayer == KI2) {
           //kiPlayNextRound()
-          kiPlayNextRoundOptimized()
+          //kiPlayNextRoundOptimized()
+          kiPlayNextRoundDoubleOptimized()
         }
       }
     }
