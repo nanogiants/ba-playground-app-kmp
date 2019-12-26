@@ -24,7 +24,7 @@ extension UseCasesViewController : UICollectionViewDelegate {
             coordinator?.navigateToNasa()
             break
         case .Notes:
-             coordinator?.navigateToNotes()
+            coordinator?.navigateToNotes()
             break
         case .Settings:
             coordinator?.navigateToSettings()
@@ -63,15 +63,16 @@ extension UseCasesViewController: UICollectionViewDataSource {
     
     func bindView(_ useCase: UseCase, to useCaseCell: UseCaseCell) -> UseCaseCell {
         //        useCaseCell.contentView.backgroundColor = UIColor(named: String)
-//        useCaseCell.contentView.backgroundColor = UIColor.gray
-        useCaseCell.contentView.backgroundColor = UIColor.white
+        //        useCaseCell.contentView.backgroundColor = UIColor.gray
+        useCaseCell.contentView.backgroundColor = useCase.color
         useCaseCell.titleLabel.text = useCase.title
         useCaseCell.descriptionLabel.text = useCase.description
         
+        useCaseCell.imageView.image = UIImage(named: useCase.imageName)
         // TODO
         useCaseCell.titleLabel.preferredMaxLayoutWidth = 290
         useCaseCell.descriptionLabel.preferredMaxLayoutWidth = 290
-
+        
         
         return useCaseCell
     }
@@ -97,7 +98,7 @@ extension UseCasesViewController: UICollectionViewDelegateFlowLayout {
         //2
         let paddingSpace = sectionInsets.left + sectionInsets.right
         let availableWidth = collectionView.frame.width - paddingSpace
-        return CGSize(width: availableWidth, height: 140)
+        return CGSize(width: availableWidth, height: 120)
     }
     
     // tells the layout the spacing between the cells, headers, footers

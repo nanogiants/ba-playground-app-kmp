@@ -68,7 +68,7 @@
 		BD94C21323ABC41B0063BA7E /* AboutViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AboutViewController+TableView.swift"; sourceTree = "<group>"; };
 		BD94C21523ABC42B0063BA7E /* FaqTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqTableViewCell.swift; sourceTree = "<group>"; };
 		BD94C21723ABC4A90063BA7E /* FaqEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqEntry.swift; sourceTree = "<group>"; };
-		BDB1B90623607C2F001F3529 /* Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Playground.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDB1B90623607C2F001F3529 /* PlayKMP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayKMP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB1B90923607C2F001F3529 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDB1B90B23607C2F001F3529 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BDB1B91023607C2F001F3529 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 		BDB1B90723607C2F001F3529 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BDB1B90623607C2F001F3529 /* Playground.app */,
+				BDB1B90623607C2F001F3529 /* PlayKMP.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -322,7 +322,7 @@
 			);
 			name = Playground;
 			productName = Playground;
-			productReference = BDB1B90623607C2F001F3529 /* Playground.app */;
+			productReference = BDB1B90623607C2F001F3529 /* PlayKMP.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -596,8 +596,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.appcom.Playground1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = de.appcom.KMPPlayground1;
+				PRODUCT_NAME = PlayKMP;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -614,8 +614,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.appcom.Playground1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = de.appcom.KMPPlayground1;
+				PRODUCT_NAME = PlayKMP;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

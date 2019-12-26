@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct UseCase {
     
@@ -14,7 +15,7 @@ struct UseCase {
     var title: String = ""
     var description: String = ""
     var imageName: String = ""
-    var colorString = ""
+    var color: UIColor
     
     enum Identifier {
         case Pixelsort

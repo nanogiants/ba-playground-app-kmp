@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jMw-PC-zJ1">
-                                <rect key="frame" x="0.0" y="64" width="414" height="798"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IJT-Vh-eyy">
                                     <size key="itemSize" width="365" height="216"/>
@@ -36,28 +36,38 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWJ-NU-FVV">
                                                     <rect key="frame" x="20" y="20" width="37" height="24"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kmw-Id-UwT">
-                                                    <rect key="frame" x="20" y="52" width="86" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <rect key="frame" x="20" y="52" width="81.5" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PFK-bo-OrO">
+                                                    <rect key="frame" x="315" y="20" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="4bq-eL-fvF"/>
+                                                        <constraint firstAttribute="height" constant="30" id="ADX-NT-Ijg"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Kmw-Id-UwT" firstAttribute="leading" secondItem="w5b-Ir-I9Z" secondAttribute="leading" constant="20" symbolic="YES" id="6rj-lf-AIY"/>
+                                                <constraint firstAttribute="trailing" secondItem="PFK-bo-OrO" secondAttribute="trailing" constant="20" id="8ui-Bk-zK7"/>
                                                 <constraint firstItem="tWJ-NU-FVV" firstAttribute="top" secondItem="w5b-Ir-I9Z" secondAttribute="top" constant="20" symbolic="YES" id="DbF-sB-bzF"/>
                                                 <constraint firstItem="tWJ-NU-FVV" firstAttribute="leading" secondItem="w5b-Ir-I9Z" secondAttribute="leading" constant="20" symbolic="YES" id="Dx8-f5-tvG"/>
                                                 <constraint firstItem="Kmw-Id-UwT" firstAttribute="top" secondItem="tWJ-NU-FVV" secondAttribute="bottom" constant="8" symbolic="YES" id="SPo-nQ-VWU"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tWJ-NU-FVV" secondAttribute="trailing" constant="20" id="nqP-l5-eJ7"/>
+                                                <constraint firstItem="PFK-bo-OrO" firstAttribute="top" secondItem="w5b-Ir-I9Z" secondAttribute="top" constant="20" id="tbJ-u3-Cc6"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Kmw-Id-UwT" secondAttribute="trailing" constant="20" id="uZB-oc-vP7"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="365" height="216"/>
                                         <connections>
                                             <outlet property="descriptionLabel" destination="Kmw-Id-UwT" id="LFF-vA-ad4"/>
+                                            <outlet property="imageView" destination="PFK-bo-OrO" id="f4h-RF-fMq"/>
                                             <outlet property="titleLabel" destination="tWJ-NU-FVV" id="JMR-Cg-YjV"/>
                                         </connections>
                                     </collectionViewCell>
@@ -66,7 +76,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="jMw-PC-zJ1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="YRe-jo-rhC"/>
+                            <constraint firstItem="jMw-PC-zJ1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="YRe-jo-rhC"/>
                             <constraint firstItem="jMw-PC-zJ1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="asy-Ag-15p"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jMw-PC-zJ1" secondAttribute="trailing" id="fPT-tD-6UH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jMw-PC-zJ1" secondAttribute="bottom" id="ljp-oW-dUS"/>
