@@ -41,11 +41,7 @@ class Game(
   }
 
   private fun putStoneAt(board: Array<Int>, position: Int, player: Player) {
-    if (boardIsFreeAt(position)) {
       board[position] = player.value
-    } else {
-      print("Error in game, putStoneAt position should be empty")
-    }
   }
 
   /**

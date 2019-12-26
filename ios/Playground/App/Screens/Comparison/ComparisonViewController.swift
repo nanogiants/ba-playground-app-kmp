@@ -20,7 +20,7 @@ class ComparisonViewController : UIViewController {
         NSLocalizedString("settings_title", comment: ""),
         NSLocalizedString("game_title", comment: "")
     ]
-    let useCaseValues: [Float] = [0.1, 0.2, 0.3, 0.4, 0.4]
+    let useCaseValues: [Float] = [0.1, 0.2, 0.3, 0.4, 0.4, 0.5]
     
     @IBOutlet weak var progressDataViewAll: ProgressDataView!
     @IBOutlet weak var progressDataViewUc1: ProgressDataView!
