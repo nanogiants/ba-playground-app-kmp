@@ -44,7 +44,8 @@ class AboutFragment : BaseFragment(R.layout.fragment_about), AboutView {
       AboutEntry(R.string.about_faq_q2, R.string.about_faq_a2),
       AboutEntry(R.string.about_faq_q3, R.string.about_faq_a3),
       AboutEntry(R.string.about_faq_q4, R.string.about_faq_a4),
-      AboutEntry(R.string.about_faq_q5, R.string.about_faq_a5)
+      AboutEntry(R.string.about_faq_q5, R.string.about_faq_a5),
+      AboutEntry(R.string.about_faq_q6, R.string.about_faq_a6)
     ).forEach { faqEntry ->
       about_faq_linearlayout.addView(
         LayoutInflater.from(requireContext())

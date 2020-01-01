@@ -11,16 +11,16 @@ import UIKit
 
 class ComparisonViewController : UIViewController {
     
-    let averageValue: Float = 0.2
+    let averageValue: Float = 0.29
     let useCaseNames: [String] = [
         NSLocalizedString("nasa_title", comment: ""),
-        NSLocalizedString("fibonacci_title", comment: ""),
         NSLocalizedString("notes_title", comment: ""),
-        NSLocalizedString("pixelsort_title", comment: ""),
         NSLocalizedString("settings_title", comment: ""),
+        NSLocalizedString("fibonacci_title", comment: ""),
+        NSLocalizedString("pixelsort_title", comment: ""),
         NSLocalizedString("game_title", comment: "")
     ]
-    let useCaseValues: [Float] = [0.1, 0.2, 0.3, 0.4, 0.4, 0.5]
+    let useCaseValues: [Float] = [0.47, 0.26, 0.1, 0.36, 0.0, 0.54]
     
     @IBOutlet weak var progressDataViewAll: ProgressDataView!
     @IBOutlet weak var progressDataViewUc1: ProgressDataView!

@@ -16,7 +16,8 @@ class AboutViewController : UIViewController {
         FaqEntry(question: NSLocalizedString("about_faq_q2", comment:""), answer: NSLocalizedString("about_faq_a2", comment:"")),
         FaqEntry(question: NSLocalizedString("about_faq_q3", comment:""), answer: NSLocalizedString("about_faq_a3", comment:"")),
         FaqEntry(question: NSLocalizedString("about_faq_q4", comment:""), answer: NSLocalizedString("about_faq_a4", comment:"")),
-        FaqEntry(question: NSLocalizedString("about_faq_q5", comment:""), answer: NSLocalizedString("about_faq_a5", comment:""))
+        FaqEntry(question: NSLocalizedString("about_faq_q5", comment:""), answer: NSLocalizedString("about_faq_a5", comment:"")),
+        FaqEntry(question: NSLocalizedString("about_faq_q6", comment:""), answer: NSLocalizedString("about_faq_a6", comment:""))
     ]
     
     weak var coordinator: AboutTabCoordinator?

@@ -22,17 +22,17 @@ val appUseCases = listOf(
     R.drawable.uc_cloud
   ),
   UseCase(
-    SETTINGS,
-    R.string.settings_title,
-    "#ED765A",
-    R.string.settings_description,
-    R.drawable.uc_storage
-  ),
-  UseCase(
     NOTES,
     R.string.notes_title,
     "#A9D1E6",
     R.string.notes_description,
+    R.drawable.uc_storage
+  ),
+  UseCase(
+    SETTINGS,
+    R.string.settings_title,
+    "#ED765A",
+    R.string.settings_description,
     R.drawable.uc_storage
   ),
   UseCase(

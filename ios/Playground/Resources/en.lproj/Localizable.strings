@@ -20,7 +20,7 @@
 
 "notes_title" = "Database";
 
-"pixelsort_title" = "Device and Hardware";
+"pixelsort_title" = "Medien und Hardware";
 
 "settings_title" = "Key-Value Storage";
 
@@ -31,7 +31,7 @@
 
 "pixelsort_description" = "Nehme ein Foto auf oder wähle ein Bild aus dem Album";
 
-"nasa_description" = "Siehe dir das Bild des Tages der NASA an";
+"nasa_description" = "Betrachte das Bild des Tages der NASA";
 
 "fibonacci_description" = "Berechne die n-te Zahl aus der Fibonacci-Folge";
 
@@ -44,7 +44,7 @@
 
 /********** Compare **********/
 
-"compare_explanation" = "Percentage of lines of code, Kotlin Multiplatform can save compared to native development.";
+"compare_explanation" = "Anteil an Code, der in Kotlin Multiplatform zwischen Android und iOS geteilt wird.";
 
 "compare_title_average" = "Average";
 
@@ -57,23 +57,27 @@
 
 "about_faq_q1" = "Was macht diese App?";
 
-"about_faq_a1" = "Die App ermöglicht es Nutzern, verschiedene Use-Cases auszuprobieren.";
+"about_faq_a1" = "Die App ermöglicht das Ausprobieren verschiedener Use-Cases.";
 
 "about_faq_q2" = "Was ist ein Use-Case?";
 
-"about_faq_a2" = "Ein Use-Case (engl. Anwendungsfall) repräsentiert eine Funktion, die typischerweise in Apps enthalten ist. Beispiele sind das verwenden der Kamera, das persistente Speichern von Daten oder das Laden von Inhalten mittels HTTP.";
+"about_faq_a2" = "Ein Use-Case (engl. Anwendungsfall) repräsentiert eine Funktion, die typischerweise in mobilen Anwendungen enthalten ist. Beispiele sind das Verwenden der Kamera, das persistente Speichern von Daten oder das Laden von Inhalten mittels HTTP.";
 
 "about_faq_q3" = "Wie wurden Use-Cases ermittelt?";
 
-"about_faq_a3" = "Es wurden Apps von der Firma appcom interactive, sowie beliebte Anwendungen aus den Charts im Apple AppStore und Google PlayStore betrachtet.";
+"about_faq_a3" = "Es wurden Apps von der Firma appcom interactive sowie beliebte Anwendungen aus App Store und Play Store analysiert.";
 
 "about_faq_q4" = "Was ist das Konzept hinter der App?";
 
-"about_faq_a4" = "Die App dient als Grundlage, anhand der die Technologie Kotlin Multiplatform untersucht und mit der nativen Entwicklung verglichen wird. Die Strukturierung in Use-Cases ermöglicht es, unterschiedliche Aspekte der Entwicklung, Funktionen oder Technologien innerhalb einer Anwendung auszuprobieren.";
+"about_faq_a4" = "Die App dient als Grundlage, anhand der die Technologie Kotlin Multiplatform untersucht und mit der nativen Entwicklung verglichen wird. Die Strukturierung in Use-Cases ermöglicht es, unterschiedliche Funktionen und Aspekte der Entwicklung innerhalb einer einzigen Anwendung zu Testen.";
 
 "about_faq_q5" = "Warum ist die App entstanden?";
 
 "about_faq_a5" = "Die App entsteht im Rahmen der Bachelorarbeit „Kotlin Multiplatform – Analyse und Vergleich zur nativen App-Entwicklung“.";
+
+"about_faq_q6" = "Rechtliche Hinweise";
+
+"about_faq_a6" = "Die in Use-Case „Web“ dargestellten Informationen sind von der öffentlichen NASA API „Astronomy Picture of the Day“ (APOD, https://api.nasa.gov/planetary/apod).";
 
 
 /********** Use Case Settings **********/

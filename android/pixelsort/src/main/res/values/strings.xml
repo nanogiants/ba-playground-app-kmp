@@ -4,7 +4,7 @@
 <!-- Language: en -->
 <resources>
 	<!-- SECTION: General -->
-	<string name="pixelsort_title">Device and Hardware</string>
+	<string name="pixelsort_title">Medien und Hardware</string>
 
 	<!-- SECTION: Use Case Pixelsort -->
 	<string name="pixelsort_explanation">Choose a picture</string>

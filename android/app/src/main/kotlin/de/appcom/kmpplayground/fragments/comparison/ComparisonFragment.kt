@@ -33,12 +33,12 @@ class ComparisonFragment : BaseFragment(R.layout.fragment_comparison), Compariso
 
   override fun onResume() {
     super.onResume()
-    comparision_data_view_all.setData(0.3f, getString(R.string.compare_average))
-    comparision_data_view_uc1.setData(0.4f, getString(R.string.about_title))
-    comparision_data_view_uc2.setData(0.5f, getString(R.string.nasa_title))
-    comparision_data_view_uc3.setData(0.6f, getString(R.string.settings_title))
-    comparision_data_view_uc4.setData(0.7f, getString(R.string.fibonacci_title))
-    comparision_data_view_uc5.setData(0.3f, getString(R.string.pixelsort_title))
-    comparision_data_view_uc6.setData(0.3f, getString(R.string.game_title))
+    comparision_data_view_all.setData(0.29f, getString(R.string.compare_average))
+    comparision_data_view_uc1.setData(0.47f, getString(R.string.nasa_title))
+    comparision_data_view_uc2.setData(0.26f, getString(R.string.notes_title))
+    comparision_data_view_uc3.setData(0.1f, getString(R.string.settings_title))
+    comparision_data_view_uc4.setData(0.36f, getString(R.string.fibonacci_title))
+    comparision_data_view_uc5.setData(0.0f, getString(R.string.pixelsort_title))
+    comparision_data_view_uc6.setData(0.54f, getString(R.string.game_title))
   }
 }

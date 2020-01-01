@@ -4,11 +4,11 @@
 <!-- Language: de -->
 <resources>
 	<!-- SECTION: General -->
-	<string name="pixelsort_title">Gerät und Hardware</string>
+	<string name="pixelsort_title">Medien und Hardware</string>
 
 	<!-- SECTION: Use Case Pixelsort -->
 	<string name="pixelsort_explanation">Wähle ein Bild aus</string>
 	<string name="pixelsort_error">Es ist ein Fehler aufgetreten</string>
-	<string name="pixelsort_camera">Camera</string>
+	<string name="pixelsort_camera">Kamera</string>
 	<string name="pixelsort_album">Album</string>
 </resources>

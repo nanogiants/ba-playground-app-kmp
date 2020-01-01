@@ -11,35 +11,37 @@
 	<string name="nasa_title">Web</string>
 	<string name="fibonacci_title">Multithreading</string>
 	<string name="notes_title">Database</string>
-	<string name="pixelsort_title">Device and Hardware</string>
+	<string name="pixelsort_title">Medien und Hardware</string>
 	<string name="settings_title">Key-Value Storage</string>
 	<string name="game_title">Logic</string>
 
 	<!-- SECTION: Usecases -->
 	<string name="pixelsort_description">Nehme ein Foto auf oder wähle ein Bild aus dem Album</string>
-	<string name="nasa_description">Siehe dir das Bild des Tages der NASA an</string>
+	<string name="nasa_description">Betrachte das Bild des Tages der NASA</string>
 	<string name="fibonacci_description">Berechne die n-te Zahl aus der Fibonacci-Folge</string>
 	<string name="settings_description">Speichere einen beliebigen Text</string>
 	<string name="notes_description">Erstelle und verwalte Notizen</string>
 	<string name="game_description">Spiele Tic Tac Toe</string>
 
 	<!-- SECTION: Compare -->
-	<string name="compare_explanation">Percentage of lines of code, Kotlin Multiplatform can save compared to native development.</string>
+	<string name="compare_explanation">Anteil an Code, der in Kotlin Multiplatform zwischen Android und iOS geteilt wird.</string>
 	<string name="compare_title_average">Average</string>
 	<string name="compare_title_usecases">Use-Cases</string>
 	<string name="compare_average">All use-cases</string>
 
 	<!-- SECTION: About faq -->
 	<string name="about_faq_q1">Was macht diese App?</string>
-	<string name="about_faq_a1">Die App ermöglicht es Nutzern, verschiedene Use-Cases auszuprobieren.</string>
+	<string name="about_faq_a1">Die App ermöglicht das Ausprobieren verschiedener Use-Cases.</string>
 	<string name="about_faq_q2">Was ist ein Use-Case?</string>
-	<string name="about_faq_a2">Ein Use-Case (engl. Anwendungsfall) repräsentiert eine Funktion, die typischerweise in Apps enthalten ist. Beispiele sind das verwenden der Kamera, das persistente Speichern von Daten oder das Laden von Inhalten mittels HTTP.</string>
+	<string name="about_faq_a2">Ein Use-Case (engl. Anwendungsfall) repräsentiert eine Funktion, die typischerweise in mobilen Anwendungen enthalten ist. Beispiele sind das Verwenden der Kamera, das persistente Speichern von Daten oder das Laden von Inhalten mittels HTTP.</string>
 	<string name="about_faq_q3">Wie wurden Use-Cases ermittelt?</string>
-	<string name="about_faq_a3">Es wurden Apps von der Firma appcom interactive, sowie beliebte Anwendungen aus den Charts im Apple AppStore und Google PlayStore betrachtet.</string>
+	<string name="about_faq_a3">Es wurden Apps von der Firma appcom interactive sowie beliebte Anwendungen aus App Store und Play Store analysiert.</string>
 	<string name="about_faq_q4">Was ist das Konzept hinter der App?</string>
-	<string name="about_faq_a4">Die App dient als Grundlage, anhand der die Technologie Kotlin Multiplatform untersucht und mit der nativen Entwicklung verglichen wird. Die Strukturierung in Use-Cases ermöglicht es, unterschiedliche Aspekte der Entwicklung, Funktionen oder Technologien innerhalb einer Anwendung auszuprobieren.</string>
+	<string name="about_faq_a4">Die App dient als Grundlage, anhand der die Technologie Kotlin Multiplatform untersucht und mit der nativen Entwicklung verglichen wird. Die Strukturierung in Use-Cases ermöglicht es, unterschiedliche Funktionen und Aspekte der Entwicklung innerhalb einer einzigen Anwendung zu Testen.</string>
 	<string name="about_faq_q5">Warum ist die App entstanden?</string>
 	<string name="about_faq_a5">Die App entsteht im Rahmen der Bachelorarbeit „Kotlin Multiplatform – Analyse und Vergleich zur nativen App-Entwicklung“.</string>
+	<string name="about_faq_q6">Rechtliche Hinweise</string>
+	<string name="about_faq_a6">Die in Use-Case „Web“ dargestellten Informationen sind von der öffentlichen NASA API „Astronomy Picture of the Day“ (APOD, https://api.nasa.gov/planetary/apod).</string>
 
 	<!-- SECTION: Errors -->
 	<string name="path_not_found_error">The file \'%s\' could not be found.</string>
