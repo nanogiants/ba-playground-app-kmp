@@ -157,8 +157,8 @@ class Game(
 
   fun notifyUserWon(winner: Player) {
     val message = when {
-      mode == SinglePlayer && winner == Human1 -> "You won the game"
-      mode == SinglePlayer && winner == KI2 -> "You lost the game"
+      mode == SinglePlayer && winner == Human1 -> "Du hast gewonnen!"
+      mode == SinglePlayer && winner == KI2 -> "Du hast verloren!"
       mode == Multiplayer && winner == Human1 -> "Player blue won"
       else -> "Player orange won"
     }
@@ -166,7 +166,7 @@ class Game(
   }
 
   fun notifyBoardFull() {
-    gameView.notify("Game over. Nobody won")
+    gameView.notify("Keiner hat gewonnen!")
   }
 
   private fun nextPlayerIndex() = (activePlayerIndex + 1) % players.size
