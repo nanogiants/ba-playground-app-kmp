@@ -159,132 +159,159 @@
             <point key="canvasLocation" x="1589.8550724637682" y="138.61607142857142"/>
         </scene>
         <!--Comparison View Controller-->
-        <scene sceneID="CsP-Gr-RN1">
-            <objects>
-                <viewController storyboardIdentifier="ComparisonViewController" id="qNz-A1-EOS" customClass="ComparisonViewController" customModule="PlayKMP" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0VW-0H-Hmb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ir-yj-z6u" customClass="ProgressDataView" customModule="PlayKMP" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="148.5" width="414" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="clw-TD-uHD"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hMz-wm-uEZ" customClass="ProgressDataView" customModule="PlayKMP" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="262.5" width="414" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="O9J-Bz-ToM"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cIW-Fl-rp7" customClass="ProgressDataView" customModule="PlayKMP" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="322.5" width="414" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Ahs-ce-BkY"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iME-Qb-tqR" customClass="ProgressDataView" customModule="PlayKMP" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="382.5" width="414" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="0BZ-Ik-ceI"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o5M-4f-XLT" customClass="ProgressDataView" customModule="PlayKMP" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="442.5" width="414" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="9rm-WM-Abc"/>
-                                </constraints>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFf-B7-1CZ">
-                                <rect key="frame" x="20" y="64" width="42" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lth-7R-89A">
-                                <rect key="frame" x="20" y="124.5" width="52" height="24"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uoz-0p-5AE">
-                                <rect key="frame" x="20" y="238.5" width="52" height="24"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xUS-Ph-bHP" customClass="ProgressDataView" customModule="PlayKMP" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="502.5" width="414" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="sV5-AG-o9Q"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BVV-6y-eCp" customClass="ProgressDataView" customModule="PlayKMP" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="562.5" width="414" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Peu-XN-ZuC"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="xUS-Ph-bHP" firstAttribute="top" secondItem="o5M-4f-XLT" secondAttribute="bottom" constant="10" id="2DU-Sf-Kho"/>
-                            <constraint firstItem="uoz-0p-5AE" firstAttribute="top" secondItem="5Ir-yj-z6u" secondAttribute="bottom" constant="40" id="2aL-yL-4MU"/>
-                            <constraint firstItem="iME-Qb-tqR" firstAttribute="top" secondItem="cIW-Fl-rp7" secondAttribute="bottom" constant="10" id="3mx-TG-nkY"/>
-                            <constraint firstItem="o5M-4f-XLT" firstAttribute="top" secondItem="iME-Qb-tqR" secondAttribute="bottom" constant="10" id="6Yz-hZ-jgU"/>
-                            <constraint firstItem="BYA-zw-5EH" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uoz-0p-5AE" secondAttribute="trailing" symbolic="YES" id="7ZW-QL-N3r"/>
-                            <constraint firstItem="lth-7R-89A" firstAttribute="leading" secondItem="BYA-zw-5EH" secondAttribute="leading" constant="20" id="8Pu-iO-NcS"/>
-                            <constraint firstItem="BYA-zw-5EH" firstAttribute="trailing" secondItem="BVV-6y-eCp" secondAttribute="trailing" id="9a1-6X-POH"/>
-                            <constraint firstItem="BYA-zw-5EH" firstAttribute="trailing" secondItem="cIW-Fl-rp7" secondAttribute="trailing" id="A7F-3m-xlv"/>
-                            <constraint firstItem="xUS-Ph-bHP" firstAttribute="leading" secondItem="BYA-zw-5EH" secondAttribute="leading" id="B0w-y1-MhJ"/>
-                            <constraint firstItem="BYA-zw-5EH" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lth-7R-89A" secondAttribute="trailing" constant="20" id="G2C-VL-5Zd"/>
-                            <constraint firstItem="BYA-zw-5EH" firstAttribute="trailing" secondItem="5Ir-yj-z6u" secondAttribute="trailing" id="KCn-Vj-rr3"/>
-                            <constraint firstItem="BYA-zw-5EH" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FFf-B7-1CZ" secondAttribute="trailing" constant="20" id="NC1-vd-QcV"/>
-                            <constraint firstItem="o5M-4f-XLT" firstAttribute="leading" secondItem="BYA-zw-5EH" secondAttribute="leading" id="NDl-Fu-ae2"/>
-                            <constraint firstItem="FFf-B7-1CZ" firstAttribute="top" secondItem="BYA-zw-5EH" secondAttribute="top" constant="20" id="Ofp-uQ-xkC"/>
-                            <constraint firstItem="hMz-wm-uEZ" firstAttribute="trailing" secondItem="BYA-zw-5EH" secondAttribute="trailing" id="SOY-XU-s7K"/>
-                            <constraint firstItem="5Ir-yj-z6u" firstAttribute="top" secondItem="lth-7R-89A" secondAttribute="bottom" id="Sa9-pp-swR"/>
-                            <constraint firstItem="lth-7R-89A" firstAttribute="top" secondItem="FFf-B7-1CZ" secondAttribute="bottom" constant="40" id="VGn-0I-VkW"/>
-                            <constraint firstItem="xUS-Ph-bHP" firstAttribute="trailing" secondItem="BYA-zw-5EH" secondAttribute="trailing" id="VaE-uP-7Ob"/>
-                            <constraint firstItem="cIW-Fl-rp7" firstAttribute="leading" secondItem="BYA-zw-5EH" secondAttribute="leading" id="Vb9-YN-uBP"/>
-                            <constraint firstItem="BYA-zw-5EH" firstAttribute="trailing" secondItem="o5M-4f-XLT" secondAttribute="trailing" id="WPL-fO-P3t"/>
-                            <constraint firstItem="uoz-0p-5AE" firstAttribute="leading" secondItem="BYA-zw-5EH" secondAttribute="leading" constant="20" id="XsN-DX-Nr1"/>
-                            <constraint firstItem="BVV-6y-eCp" firstAttribute="leading" secondItem="BYA-zw-5EH" secondAttribute="leading" id="Z3w-M2-4Md"/>
-                            <constraint firstItem="BYA-zw-5EH" firstAttribute="trailing" secondItem="iME-Qb-tqR" secondAttribute="trailing" id="ZbQ-mK-GpS"/>
-                            <constraint firstItem="5Ir-yj-z6u" firstAttribute="leading" secondItem="BYA-zw-5EH" secondAttribute="leading" id="abw-LV-0kB"/>
-                            <constraint firstItem="BVV-6y-eCp" firstAttribute="top" secondItem="xUS-Ph-bHP" secondAttribute="bottom" constant="10" id="h2x-0A-6lr"/>
-                            <constraint firstItem="hMz-wm-uEZ" firstAttribute="top" secondItem="uoz-0p-5AE" secondAttribute="bottom" id="j0h-BK-9o0"/>
-                            <constraint firstItem="FFf-B7-1CZ" firstAttribute="leading" secondItem="BYA-zw-5EH" secondAttribute="leading" constant="20" id="j8n-T1-crX"/>
-                            <constraint firstItem="cIW-Fl-rp7" firstAttribute="top" secondItem="hMz-wm-uEZ" secondAttribute="bottom" constant="10" id="tWG-yb-Q7F"/>
-                            <constraint firstItem="hMz-wm-uEZ" firstAttribute="leading" secondItem="BYA-zw-5EH" secondAttribute="leading" id="x7O-zT-Zae"/>
-                            <constraint firstItem="iME-Qb-tqR" firstAttribute="leading" secondItem="BYA-zw-5EH" secondAttribute="leading" id="zUO-Xj-Yhj"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="BYA-zw-5EH"/>
-                    </view>
-                    <connections>
-                        <outlet property="averageTitleLabel" destination="lth-7R-89A" id="CCS-mL-V3u"/>
-                        <outlet property="explanationLabel" destination="FFf-B7-1CZ" id="dAg-Uy-4vr"/>
-                        <outlet property="progressDataViewAll" destination="5Ir-yj-z6u" id="bQP-zw-acK"/>
-                        <outlet property="progressDataViewUc1" destination="hMz-wm-uEZ" id="Zub-pG-JK0"/>
-                        <outlet property="progressDataViewUc2" destination="cIW-Fl-rp7" id="iPB-I0-taP"/>
-                        <outlet property="progressDataViewUc3" destination="iME-Qb-tqR" id="i8S-nE-fHa"/>
-                        <outlet property="progressDataViewUc4" destination="o5M-4f-XLT" id="0AM-GW-gRB"/>
-                        <outlet property="progressDataViewUc5" destination="xUS-Ph-bHP" id="CxI-SO-K4m"/>
-                        <outlet property="progressDataViewUc6" destination="BVV-6y-eCp" id="rp4-ZA-hAx"/>
-                        <outlet property="usecasesTitleLabel" destination="uoz-0p-5AE" id="dDd-eS-qxU"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="q0u-9j-Ryl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="842.02898550724649" y="138.61607142857142"/>
-        </scene>
+         <scene sceneID="CsP-Gr-RN1">
+                   <objects>
+                       <viewController storyboardIdentifier="ComparisonViewController" id="qNz-A1-EOS" customClass="ComparisonViewController" customModule="Play" customModuleProvider="target" sceneMemberID="viewController">
+                           <view key="view" contentMode="scaleToFill" id="0VW-0H-Hmb">
+                               <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                               <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                               <subviews>
+                                   <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vsi-q0-dVO">
+                                       <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                       <subviews>
+                                           <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9jy-MS-ZpG" userLabel="Content View">
+                                               <rect key="frame" x="0.0" y="0.0" width="414" height="628.5"/>
+                                               <subviews>
+                                                   <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFf-B7-1CZ">
+                                                       <rect key="frame" x="20" y="20" width="42" height="20.5"/>
+                                                       <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                       <nil key="textColor"/>
+                                                       <nil key="highlightedColor"/>
+                                                   </label>
+                                                   <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lth-7R-89A">
+                                                       <rect key="frame" x="20" y="80.5" width="52" height="24"/>
+                                                       <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                       <nil key="textColor"/>
+                                                       <nil key="highlightedColor"/>
+                                                   </label>
+                                                   <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ir-yj-z6u" customClass="ProgressDataView" customModule="Play" customModuleProvider="target">
+                                                       <rect key="frame" x="0.0" y="104.5" width="414" height="50"/>
+                                                       <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                       <constraints>
+                                                           <constraint firstAttribute="height" constant="50" id="clw-TD-uHD"/>
+                                                       </constraints>
+                                                   </view>
+                                                   <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uoz-0p-5AE">
+                                                       <rect key="frame" x="20" y="194.5" width="52" height="24"/>
+                                                       <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                       <nil key="textColor"/>
+                                                       <nil key="highlightedColor"/>
+                                                   </label>
+                                                   <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hMz-wm-uEZ" customClass="ProgressDataView" customModule="Play" customModuleProvider="target">
+                                                       <rect key="frame" x="0.0" y="218.5" width="414" height="50"/>
+                                                       <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                       <constraints>
+                                                           <constraint firstAttribute="height" constant="50" id="O9J-Bz-ToM"/>
+                                                       </constraints>
+                                                   </view>
+                                                   <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cIW-Fl-rp7" customClass="ProgressDataView" customModule="Play" customModuleProvider="target">
+                                                       <rect key="frame" x="0.0" y="278.5" width="414" height="50"/>
+                                                       <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                       <constraints>
+                                                           <constraint firstAttribute="height" constant="50" id="Ahs-ce-BkY"/>
+                                                       </constraints>
+                                                   </view>
+                                                   <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iME-Qb-tqR" customClass="ProgressDataView" customModule="Play" customModuleProvider="target">
+                                                       <rect key="frame" x="0.0" y="338.5" width="414" height="50"/>
+                                                       <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                       <constraints>
+                                                           <constraint firstAttribute="height" constant="50" id="0BZ-Ik-ceI"/>
+                                                       </constraints>
+                                                   </view>
+                                                   <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o5M-4f-XLT" customClass="ProgressDataView" customModule="Play" customModuleProvider="target">
+                                                       <rect key="frame" x="0.0" y="398.5" width="414" height="50"/>
+                                                       <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                       <constraints>
+                                                           <constraint firstAttribute="height" constant="50" id="9rm-WM-Abc"/>
+                                                       </constraints>
+                                                   </view>
+                                                   <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xUS-Ph-bHP" customClass="ProgressDataView" customModule="Play" customModuleProvider="target">
+                                                       <rect key="frame" x="0.0" y="458.5" width="414" height="50"/>
+                                                       <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                       <constraints>
+                                                           <constraint firstAttribute="height" constant="50" id="sV5-AG-o9Q"/>
+                                                       </constraints>
+                                                   </view>
+                                                   <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s9g-VB-ziL" customClass="ProgressDataView" customModule="Play" customModuleProvider="target">
+                                                       <rect key="frame" x="0.0" y="518.5" width="414" height="50"/>
+                                                       <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                       <constraints>
+                                                           <constraint firstAttribute="height" constant="50" id="Zut-d8-VU7"/>
+                                                       </constraints>
+                                                   </view>
+                                               </subviews>
+                                               <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                               <constraints>
+                                                   <constraint firstItem="5Ir-yj-z6u" firstAttribute="top" secondItem="lth-7R-89A" secondAttribute="bottom" id="0yG-dB-rPW"/>
+                                                   <constraint firstItem="uoz-0p-5AE" firstAttribute="leading" secondItem="9jy-MS-ZpG" secondAttribute="leading" constant="20" id="43N-8v-Sws"/>
+                                                   <constraint firstAttribute="trailing" secondItem="hMz-wm-uEZ" secondAttribute="trailing" id="4kA-Vb-IJq"/>
+                                                   <constraint firstAttribute="trailing" secondItem="iME-Qb-tqR" secondAttribute="trailing" id="8OA-BM-ABl"/>
+                                                   <constraint firstItem="o5M-4f-XLT" firstAttribute="leading" secondItem="9jy-MS-ZpG" secondAttribute="leading" id="8Xu-dF-yAu"/>
+                                                   <constraint firstItem="xUS-Ph-bHP" firstAttribute="top" secondItem="o5M-4f-XLT" secondAttribute="bottom" constant="10" id="9UM-9y-oNi"/>
+                                                   <constraint firstAttribute="trailing" secondItem="o5M-4f-XLT" secondAttribute="trailing" id="AQL-hp-tSy"/>
+                                                   <constraint firstItem="lth-7R-89A" firstAttribute="leading" secondItem="9jy-MS-ZpG" secondAttribute="leading" constant="20" id="KJK-fM-ikK"/>
+                                                   <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FFf-B7-1CZ" secondAttribute="trailing" constant="20" id="LIF-7A-UkR"/>
+                                                   <constraint firstAttribute="trailing" secondItem="s9g-VB-ziL" secondAttribute="trailing" id="Lyd-SY-OJ2"/>
+                                                   <constraint firstItem="cIW-Fl-rp7" firstAttribute="leading" secondItem="9jy-MS-ZpG" secondAttribute="leading" id="RDj-ed-m0Z"/>
+                                                   <constraint firstAttribute="trailing" secondItem="cIW-Fl-rp7" secondAttribute="trailing" id="Rdq-Kf-xqo"/>
+                                                   <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uoz-0p-5AE" secondAttribute="trailing" constant="20" id="SSR-yx-TF2"/>
+                                                   <constraint firstAttribute="trailing" secondItem="xUS-Ph-bHP" secondAttribute="trailing" id="Uih-1f-znt"/>
+                                                   <constraint firstAttribute="bottom" secondItem="s9g-VB-ziL" secondAttribute="bottom" constant="60" id="ZPB-lL-Ddz"/>
+                                                   <constraint firstItem="hMz-wm-uEZ" firstAttribute="leading" secondItem="9jy-MS-ZpG" secondAttribute="leading" id="bX5-Le-9J9"/>
+                                                   <constraint firstItem="FFf-B7-1CZ" firstAttribute="top" secondItem="9jy-MS-ZpG" secondAttribute="top" constant="20" id="c4I-nk-3KL"/>
+                                                   <constraint firstItem="xUS-Ph-bHP" firstAttribute="leading" secondItem="9jy-MS-ZpG" secondAttribute="leading" id="cIk-5t-9b8"/>
+                                                   <constraint firstItem="uoz-0p-5AE" firstAttribute="top" secondItem="5Ir-yj-z6u" secondAttribute="bottom" constant="40" id="eYR-5a-8vf"/>
+                                                   <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lth-7R-89A" secondAttribute="trailing" constant="20" id="i3Y-Ki-jvX"/>
+                                                   <constraint firstItem="lth-7R-89A" firstAttribute="top" secondItem="FFf-B7-1CZ" secondAttribute="bottom" constant="40" id="lSd-bV-d2i"/>
+                                                   <constraint firstItem="FFf-B7-1CZ" firstAttribute="leading" secondItem="9jy-MS-ZpG" secondAttribute="leading" constant="20" id="nqQ-Gg-74U"/>
+                                                   <constraint firstItem="5Ir-yj-z6u" firstAttribute="leading" secondItem="9jy-MS-ZpG" secondAttribute="leading" id="pJZ-zW-f3b"/>
+                                                   <constraint firstItem="hMz-wm-uEZ" firstAttribute="top" secondItem="uoz-0p-5AE" secondAttribute="bottom" id="qXe-Ec-rZk"/>
+                                                   <constraint firstItem="iME-Qb-tqR" firstAttribute="top" secondItem="cIW-Fl-rp7" secondAttribute="bottom" constant="10" id="sdq-D9-fu6"/>
+                                                   <constraint firstAttribute="trailing" secondItem="5Ir-yj-z6u" secondAttribute="trailing" id="t50-3N-gGA"/>
+                                                   <constraint firstItem="s9g-VB-ziL" firstAttribute="leading" secondItem="9jy-MS-ZpG" secondAttribute="leading" id="toY-q5-ltj"/>
+                                                   <constraint firstItem="cIW-Fl-rp7" firstAttribute="top" secondItem="hMz-wm-uEZ" secondAttribute="bottom" constant="10" id="ua2-Wc-FCy"/>
+                                                   <constraint firstItem="s9g-VB-ziL" firstAttribute="top" secondItem="xUS-Ph-bHP" secondAttribute="bottom" constant="10" id="uq4-iC-47s"/>
+                                                   <constraint firstItem="iME-Qb-tqR" firstAttribute="leading" secondItem="9jy-MS-ZpG" secondAttribute="leading" id="vBl-WW-AAe"/>
+                                                   <constraint firstItem="o5M-4f-XLT" firstAttribute="top" secondItem="iME-Qb-tqR" secondAttribute="bottom" constant="10" id="x7f-ZN-cqT"/>
+                                               </constraints>
+                                           </view>
+                                       </subviews>
+                                       <constraints>
+                                           <constraint firstItem="9jy-MS-ZpG" firstAttribute="leading" secondItem="Vsi-q0-dVO" secondAttribute="leading" id="3OZ-Pl-fre"/>
+                                           <constraint firstAttribute="bottom" secondItem="9jy-MS-ZpG" secondAttribute="bottom" id="S0Z-Gh-ktm"/>
+                                           <constraint firstItem="9jy-MS-ZpG" firstAttribute="top" secondItem="Vsi-q0-dVO" secondAttribute="top" id="dDP-IT-fZF"/>
+                                           <constraint firstAttribute="trailing" secondItem="9jy-MS-ZpG" secondAttribute="trailing" id="zEw-pc-Tcd"/>
+                                       </constraints>
+                                       <viewLayoutGuide key="contentLayoutGuide" id="qUs-ot-Yfy"/>
+                                       <viewLayoutGuide key="frameLayoutGuide" id="Ixo-s8-PA3"/>
+                                   </scrollView>
+                               </subviews>
+                               <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                               <constraints>
+                                   <constraint firstItem="BYA-zw-5EH" firstAttribute="top" secondItem="Vsi-q0-dVO" secondAttribute="top" id="JK1-c8-2nX"/>
+                                   <constraint firstItem="BYA-zw-5EH" firstAttribute="trailing" secondItem="Vsi-q0-dVO" secondAttribute="trailing" id="L4F-3v-LQh"/>
+                                   <constraint firstItem="BYA-zw-5EH" firstAttribute="bottom" secondItem="Vsi-q0-dVO" secondAttribute="bottom" id="Srk-6B-0Mf"/>
+                                   <constraint firstItem="Vsi-q0-dVO" firstAttribute="leading" secondItem="BYA-zw-5EH" secondAttribute="leading" id="f3w-J8-tJ4"/>
+                                   <constraint firstItem="9jy-MS-ZpG" firstAttribute="centerX" secondItem="BYA-zw-5EH" secondAttribute="centerX" id="pwv-Na-yel"/>
+                               </constraints>
+                               <viewLayoutGuide key="safeArea" id="BYA-zw-5EH"/>
+                           </view>
+                           <connections>
+                               <outlet property="averageTitleLabel" destination="lth-7R-89A" id="CCS-mL-V3u"/>
+                               <outlet property="explanationLabel" destination="FFf-B7-1CZ" id="dAg-Uy-4vr"/>
+                               <outlet property="progressDataViewAll" destination="5Ir-yj-z6u" id="bQP-zw-acK"/>
+                               <outlet property="progressDataViewUc1" destination="hMz-wm-uEZ" id="Zub-pG-JK0"/>
+                               <outlet property="progressDataViewUc2" destination="cIW-Fl-rp7" id="iPB-I0-taP"/>
+                               <outlet property="progressDataViewUc3" destination="iME-Qb-tqR" id="i8S-nE-fHa"/>
+                               <outlet property="progressDataViewUc4" destination="o5M-4f-XLT" id="0AM-GW-gRB"/>
+                               <outlet property="progressDataViewUc5" destination="xUS-Ph-bHP" id="CxI-SO-K4m"/>
+                               <outlet property="progressDataViewUc6" destination="s9g-VB-ziL" id="BEw-c8-FPT"/>
+                               <outlet property="usecasesTitleLabel" destination="uoz-0p-5AE" id="dDd-eS-qxU"/>
+                           </connections>
+                       </viewController>
+                       <placeholder placeholderIdentifier="IBFirstResponder" id="q0u-9j-Ryl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                   </objects>
+                   <point key="canvasLocation" x="842.02898550724649" y="138.61607142857142"/>
+               </scene>
     </scenes>
 </document>
