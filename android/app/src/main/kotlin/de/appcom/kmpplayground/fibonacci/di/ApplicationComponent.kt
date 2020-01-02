@@ -6,6 +6,7 @@ import dagger.Component
 import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
 import de.appcom.kmpplayground.PlaygroundApplication
+import de.appcom.kmpplayground.game.di.GameBindingsModule
 import de.appcom.kmpplayground.nasa.di.NasaBindingModule
 import de.appcom.kmpplayground.notes.di.NotesBindingModule
 import de.appcom.kmpplayground.pixelsort.di.PixelsortBindingModule

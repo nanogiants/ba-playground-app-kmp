@@ -10,7 +10,7 @@ import de.appcom.kmpplayground.fragments.base.BaseFragment
 import de.appcom.kmpplayground.fragments.base.BasePresenter
 import de.appcom.kmpplayground.models.appUseCases
 import de.appcom.kmpplayground.fibonacci.presentation.FibonacciActivity
-import de.appcom.kmpplayground.fibonacci.presentation.GameActivity
+import de.appcom.kmpplayground.game.presentation.GameActivity
 import de.appcom.kmpplayground.nasa.presentation.NasaActivity
 import de.appcom.kmpplayground.notes.presentation.NotesActivity
 import de.appcom.kmpplayground.pixelsort.presentation.PixelsortActivity

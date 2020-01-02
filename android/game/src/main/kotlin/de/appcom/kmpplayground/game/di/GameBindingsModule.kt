@@ -1,8 +1,8 @@
-package de.appcom.kmpplayground.fibonacci.di
+package de.appcom.kmpplayground.game.di
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
-import de.appcom.kmpplayground.fibonacci.presentation.GameActivity
+import de.appcom.kmpplayground.game.presentation.GameActivity
 
 @Module
 abstract class GameBindingsModule {

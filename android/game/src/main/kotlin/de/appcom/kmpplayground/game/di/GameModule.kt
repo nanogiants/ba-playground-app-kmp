@@ -1,8 +1,8 @@
-package de.appcom.kmpplayground.fibonacci.di
+package de.appcom.kmpplayground.game.di
 
 import dagger.Module
 import dagger.Provides
-import de.appcom.kmpplayground.fibonacci.presentation.GameActivity
+import de.appcom.kmpplayground.game.presentation.GameActivity
 import game.domain.Game
 import game.presentation.GameView
 

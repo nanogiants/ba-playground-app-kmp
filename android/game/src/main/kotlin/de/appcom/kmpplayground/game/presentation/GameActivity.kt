@@ -1,11 +1,11 @@
-package de.appcom.kmpplayground.fibonacci.presentation
+package de.appcom.kmpplayground.game.presentation
 
 import android.graphics.Color
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AlertDialog
 import dagger.android.support.DaggerAppCompatActivity
-import de.appcom.kmpplayground.R
+import de.appcom.kmpplayground.game.R
 import game.domain.Game
 import game.presentation.GameView
 import kotlinx.android.synthetic.main.activity_game.game_gridlayout
