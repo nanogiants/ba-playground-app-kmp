@@ -2,6 +2,6 @@
     package="de.appcom.kmpplayground">
 
   <application>
-    <activity android:name=".presentation.GameActivity" />
+    <activity android:name="de.appcom.kmpplayground.fibonacci.presentation.GameActivity" />
   </application>
 </manifest>
