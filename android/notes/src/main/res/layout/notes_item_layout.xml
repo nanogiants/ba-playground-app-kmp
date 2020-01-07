@@ -17,6 +17,7 @@
       android:textSize="16sp"
       android:textStyle="bold"
       tools:text="Title"
+      style="@style/Playground.TextView.Title"
       />
 
   <TextView
@@ -27,6 +28,7 @@
       android:lineSpacingMultiplier="1.2"
       android:textColor="@android:color/black"
       tools:text="Content"
+      style="@style/Playground.TextView.Text"
       />
 
 </LinearLayout>

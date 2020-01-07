@@ -78,7 +78,9 @@
                 android:layout_marginBottom="16dp"
                 android:textSize="20sp"
                 android:textColor="@android:color/black"
-                tools:text="Das hier ist der Title, auch der kann über meherer Zeilen gehen" />
+                tools:text="Das hier ist der Title, auch der kann über meherer Zeilen gehen"
+                style="@style/Playground.TextView.Title"/>
+
 
             <TextView
                 android:id="@+id/nasa_explanation_textview"
@@ -88,6 +90,7 @@
                 android:lineSpacingExtra="6dp"
                 android:lineSpacingMultiplier="1"
                 android:textColor="@android:color/black"
+                style="@style/Playground.TextView.Title"
                 tools:text="Title Lorem Ipsum dolor adsdfTitle Lorem Ipsum dolor adsdfTitle Lorem Ipsum dolor adsdfTitle Lorem Ipsum dolor adsdfTitle Lorem Ipsum dolor adsdfTitle Lorem Ipsum dolor adsdf" />
 
         </LinearLayout>
