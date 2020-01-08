@@ -39,21 +39,3 @@ class NasaPresenterImpl(
     }
   }
 }
-
-//try {
-//    view.setIsLoading(true)
-//    val pictureOfTheDay: PictureOfTheDay = withContext(Dispatchers.IO) {
-//        webDataSource.getPictureOfTheDay()
-//    }
-//    view.showPictureOfTheDay(pictureOfTheDay)
-//} catch (e: Exception) {
-//    Log.d("Nasa", "Exception: $e")
-//} finally {
-//    view.setIsLoading(false)
-//}
-
-//var jobList: MutableList<Job> = mutableListOf()
-//
-//private fun cancelableLaunch(outerBlock: suspend CoroutineScope.() -> Unit) {
-//    jobList.add(activity.lifecycleScope.launch(block = outerBlock))
-//}

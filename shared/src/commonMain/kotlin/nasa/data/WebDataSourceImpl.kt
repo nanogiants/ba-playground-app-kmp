@@ -46,13 +46,3 @@ class WebDataSourceImpl : WebDataSource {
     )
   }
 }
-
-// Actually we're able to just return the get()-call and Ktor's JsonFeature will automatically do the
-// JSON parsing for us. However, this currently doesn't work with Kotlin/Native as it doesn't support reflection
-// and we have to manually use PopularMoviesEntity.serializer()
-
-//private val client = HttpClient(clientEngine) {
-//    install(JsonFeature) {
-//        serializer = KotlinxSerializer()
-//    }
-//}

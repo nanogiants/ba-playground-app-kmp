@@ -18,14 +18,11 @@ class NasaActivity : DaggerAppCompatActivity(), NasaView {
   @Inject
   lateinit var presenter: NasaPresenter
 
-//  var presenter: NasaPresenter =
-//    NasaPresenterImpl(WebDataSourceImpl(), this)
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_nasa)
     setUpToolbar()
-//        lifecycle.addObserver(presenter)
   }
 
   override fun onResume() {

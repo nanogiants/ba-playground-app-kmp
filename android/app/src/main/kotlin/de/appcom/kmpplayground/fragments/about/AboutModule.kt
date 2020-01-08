@@ -12,19 +12,3 @@ interface AboutModule {
   @Binds
   fun provideAboutView(fragment: AboutFragment): AboutView
 }
-
-//@Module(includes = [AboutModuleBinds::class])
-//class AboutModule {
-//
-//  @Module
-//  interface AboutModuleBinds {
-//    @Binds
-//    fun provideAboutView(fragment: AboutFragment): AboutView
-//  }
-//
-//  @Provides
-//  fun provideAboutPresenter(presenterImpl: AboutPresenterImpl): AboutPresenter {
-//    presenterImpl.view.lifecycle.addObserver(presenterImpl)
-//    return presenterImpl
-//  }
-//}

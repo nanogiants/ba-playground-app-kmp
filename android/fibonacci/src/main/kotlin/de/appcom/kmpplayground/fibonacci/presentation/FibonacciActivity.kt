@@ -25,8 +25,6 @@ class FibonacciActivity : DaggerAppCompatActivity() {
 
   @Inject
   lateinit var workHelper: WorkHelper
-//
-//  var workHelper: WorkHelper? = null
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -37,7 +35,6 @@ class FibonacciActivity : DaggerAppCompatActivity() {
     supportActionBar?.setDisplayHomeAsUpEnabled(true)
     supportActionBar?.title = getString(R.string.fibonacci_title)
 
-//    workHelper = WorkHelper()
   }
 
   override fun onResume() {

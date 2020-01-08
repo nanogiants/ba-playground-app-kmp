@@ -24,8 +24,7 @@ kotlin {
     val ktorJsonVersion = "1.2.5"
     val sqldelightVersion = "1.2.0"
     val multiplatformSettingsVersion = "0.4"
-//    val coroutinesVersion = "1.3.2-1.3.60"// only temporary https://github.com/Kotlin/kotlinx.coroutines/issues/1690
-    val coroutinesVersion = "1.3.2"
+    val coroutinesVersion = "1.3.2" // "1.3.2-1.3.60" only temporary https://github.com/Kotlin/kotlinx.coroutines/issues/1690
 
     // target configurations
     // select iOS target platform depending on the Xcode environment variables
@@ -36,7 +35,7 @@ kotlin {
             ::iosArm64
         else
             ::iosX64
-
+    // configure target ios
     iOSTarget("ios") {
         binaries {
             framework {
@@ -53,14 +52,12 @@ kotlin {
 
                 // adds type information for generic parameters to Kotlin/Native
                 // added in 1.3.40, currently experimental
-//                freeCompilerArgs.add("-Xobjc-generics")
-//                debuggable = true
-//                freeCompilerArgs.add("-Xembed-bitcode-marker")
-//                freeCompilerArgs.add("-g")
+                // freeCompilerArgs.add("-Xobjc-generics")
+
             }
         }
     }
-
+    // configure target android
     android("android")
 
     // source set configurations
@@ -137,6 +134,8 @@ android {
     }
 }
 
+// Inspired by official Kotlin Multiplatform tutorial
+// https://play.kotlinlang.org/hands-on/Targeting%20iOS%20and%20Android%20with%20Kotlin%20Multiplatform/03_CreatingSharedCode
 val packForXcode by tasks.creating(Sync::class) {
     val targetDir = File(buildDir, "xcode-frameworks")
 
@@ -168,8 +167,8 @@ val packForXcode by tasks.creating(Sync::class) {
 
 tasks.getByName("build").dependsOn(packForXcode)
 
-
-// https://github.com/Kotlin/mpp-example/blob/master/greeting/build.gradle#L80
+// Inspired by official mpp-example
+// https://github.com/Kotlin/mpp-example/blob/0ace750ffd2ccb8dd4adf40f26b4d6ecc462c06a/greeting/build.gradle#L87
 val iosTest by tasks.registering {
     // other tasks that need to be executed before this one
     dependsOn("linkDebugTestIos")
