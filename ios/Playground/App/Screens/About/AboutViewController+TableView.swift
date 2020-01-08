@@ -16,11 +16,11 @@ extension AboutViewController: UITableViewDelegate {
 extension AboutViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FaqTableViewCell.identifier, for: indexPath) as! FaqTableViewCell
-
+        
         let faqEntry = faqEntries[indexPath.row]
         cell.questionLabel.text = faqEntry.question
         cell.answerLabel.text = faqEntry.answer
-
+        
         return cell
     }
     

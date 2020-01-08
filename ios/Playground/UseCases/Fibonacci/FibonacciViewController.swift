@@ -54,11 +54,6 @@ class FibonacciViewController : UIViewController {
             return Fibonacci().calculate(n: castedN) as Any
         }
         
-        //let task: (Any)-> Any = { input in
-        //           let castedN: Int32 =
-        //           Fibonacci().calculate(n: input as! Int32)  as Any
-        //       }
-        
         DispatchQueue.global(qos: .userInteractive).async {
             let timer1 = Timer()
             timer1.start()

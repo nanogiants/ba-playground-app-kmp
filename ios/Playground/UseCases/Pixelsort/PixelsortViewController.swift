@@ -77,13 +77,13 @@ class PixelsortViewController: UIViewController {
     }
     
     func showError() {
-           let alert = UIAlertController(title: "No Permission", message: "You need to allow Camera access",         preferredStyle: .alert)
-
-           alert.addAction(UIAlertAction(title: "Settings", style: .default, handler: { _ in
+        let alert = UIAlertController(title: "No Permission", message: "You need to allow Camera access",         preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Settings", style: .default, handler: { _ in
             UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
-           }))
-           alert.addAction(UIAlertAction(title: "ok", style: .default, handler: {(_: UIAlertAction!) in
-           }))
-           self.present(alert, animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "ok", style: .default, handler: {(_: UIAlertAction!) in
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
 }

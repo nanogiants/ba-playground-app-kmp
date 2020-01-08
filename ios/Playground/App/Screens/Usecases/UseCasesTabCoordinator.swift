@@ -82,7 +82,7 @@ class UseCasesTabCoordinator: Coordinator {
     }
     
     func navigateToGame() {
-      let viewController = GameViewController.instantiate(from: "Game")
+        let viewController = GameViewController.instantiate(from: "Game")
         viewController.tabBarItem = UITabBarItem(title: tabTitle, image: tabImage, tag: tabTag)
         viewController.coordinator = self
         viewController.navigationItem.largeTitleDisplayMode = .never // title small

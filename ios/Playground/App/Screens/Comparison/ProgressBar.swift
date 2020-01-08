@@ -16,7 +16,7 @@ class ProgressBar : UIView {
             setNeedsDisplay()
         }
     }
- 
+    
     
     // initializer if UIView is created in the code
     override init(frame: CGRect) {
@@ -31,7 +31,7 @@ class ProgressBar : UIView {
     }
     
     func setUpView() {
-         
+        
     }
     
     override func draw(_ rect: CGRect) {
@@ -60,9 +60,9 @@ class ProgressBar : UIView {
     }
     
     /*
-    do sth with subviews when layout bounds change
-    called by the system after setNeedsLayout
-    */
+     do sth with subviews when layout bounds change
+     called by the system after setNeedsLayout
+     */
     override func layoutSubviews() {
         super.layoutSubviews()
     }

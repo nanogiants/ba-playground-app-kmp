@@ -29,7 +29,7 @@ class NasaViewController: UIViewController, NasaView {
     
     func showPictureOfTheDay(pictureOfTheDay: PictureOfTheDay) {
         self.titleLabel.text = pictureOfTheDay.title
-//        self.contentLabel.text = pictureOfTheDay.explanation
+        //        self.contentLabel.text = pictureOfTheDay.explanation
         setAttributedContentLabel(text: pictureOfTheDay.explanation)
         if pictureOfTheDay.hasImage {
             load(pathToImage: URL(string: pictureOfTheDay.url))
@@ -48,17 +48,17 @@ class NasaViewController: UIViewController, NasaView {
     
     func load(pathToImage: URL?) {
         if let url = pathToImage {
-              imageSpinner.isHidden = false
+            imageSpinner.isHidden = false
             DispatchQueue.global().async { [weak self] in
-               if let data = try? Data(contentsOf: url) {
-                   if let image = UIImage(data: data) {
-                       DispatchQueue.main.async {
-                        self?.imageSpinner.isHidden = true
-                        self?.nasaImageView.image = image
-                       }
-                   }
-               }
-           }
+                if let data = try? Data(contentsOf: url) {
+                    if let image = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            self?.imageSpinner.isHidden = true
+                            self?.nasaImageView.image = image
+                        }
+                    }
+                }
+            }
         }
     }
     
@@ -67,6 +67,6 @@ class NasaViewController: UIViewController, NasaView {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 5
         attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
-         self.contentLabel.attributedText = attributedString
+        self.contentLabel.attributedText = attributedString
     }
 }
