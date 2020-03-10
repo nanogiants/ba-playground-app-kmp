@@ -27,6 +27,10 @@ class NasaViewController: UIViewController, NasaView {
         imageSpinner.isHidden = true
     }
     
+    func showError(exception: KotlinException) {
+        // TODO
+    }
+    
     func showPictureOfTheDay(pictureOfTheDay: PictureOfTheDay) {
         self.titleLabel.text = pictureOfTheDay.title
         //        self.contentLabel.text = pictureOfTheDay.explanation

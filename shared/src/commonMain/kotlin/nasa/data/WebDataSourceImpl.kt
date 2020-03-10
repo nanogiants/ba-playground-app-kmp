@@ -5,19 +5,18 @@ import io.ktor.client.request.HttpRequestBuilder
 import io.ktor.client.request.get
 import io.ktor.client.request.parameter
 import io.ktor.client.request.url
-import io.ktor.client.response.HttpResponse
-import io.ktor.client.response.readText
+import io.ktor.client.statement.HttpStatement
+import io.ktor.client.statement.readText
 import kotlinx.serialization.json.Json
 import nasa.domain.PictureOfTheDay
 import nasa.domain.PictureOfTheDayWebEntity
+import nasa.nasa.data.WebDataUtils
 import nasa.nasaApiKey
 
 @Suppress("EXPERIMENTAL_API_USAGE")
 class WebDataSourceImpl : WebDataSource {
 
-  val baseUrl: String = "https://api.nasa.gov/planetary/"
-  val pictureOfTheDayPath = "apod"
-  val apiKey = nasaApiKey
+  private val apiKey = nasaApiKey
 
   override suspend fun getPictureOfTheDay(): PictureOfTheDay {
 
@@ -25,16 +24,18 @@ class WebDataSourceImpl : WebDataSource {
     val client = HttpClient()
 
     // configure and send http-get request
-    val response = client.get<HttpResponse>(HttpRequestBuilder().apply {
-      url("$baseUrl/$pictureOfTheDayPath")
+    val httpStatement = client.get<HttpStatement>(HttpRequestBuilder().apply {
+      url(WebDataUtils.NasaApi.pictureOfTheDayUrl)
       parameter("api_key", apiKey)
     })
+    val response = httpStatement.execute()
 
     // close underlying engine
     client.close()
 
     // parse http jsonBody to web entity
-    val entity = Json.parse(PictureOfTheDayWebEntity.serializer(), response.readText())
+    val entity =
+      Json.parse(PictureOfTheDayWebEntity.serializer(), response.readText())
 
     // transform web entity to model
     return PictureOfTheDay(
@@ -42,7 +43,7 @@ class WebDataSourceImpl : WebDataSource {
       entity.explanation,
       entity.title,
       entity.url,
-      entity.media_type == "image"
+      entity.media_type == WebDataUtils.mediaTypeImage
     )
   }
 }

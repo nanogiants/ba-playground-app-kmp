@@ -1,6 +1,7 @@
 package de.appcom.kmpplayground.nasa.presentation
 
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
@@ -50,6 +51,10 @@ class NasaActivity : DaggerAppCompatActivity(), NasaView {
   override fun showError(message: String) {
     Toast.makeText(this, message, Toast.LENGTH_LONG)
         .show()
+  }
+
+  override fun showError(exception: Exception) {
+    Log.d("Web", exception.message, exception)
   }
 
   override fun setIsLoading(isLoading: Boolean) {

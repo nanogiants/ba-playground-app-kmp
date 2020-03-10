@@ -7,6 +7,7 @@ import kotlinx.coroutines.launch
 import nasa.data.WebDataSource
 import nasa.getUIDispatcher
 import kotlin.coroutines.CoroutineContext
+import kotlin.math.log
 
 class NasaPresenterImpl(
   val webDataSource: WebDataSource,
@@ -31,8 +32,8 @@ class NasaPresenterImpl(
         val pictureOfTheDay = webDataSource.getPictureOfTheDay()
         view.showPictureOfTheDay(pictureOfTheDay)
       } catch (e: Exception) {
-        //TODO log Exception
         view.showError("Something went wrong")
+        view.showError(e)
       } finally {
         view.setIsLoading(false)
       }

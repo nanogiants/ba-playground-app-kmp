@@ -90,7 +90,7 @@
                 android:lineSpacingExtra="6dp"
                 android:lineSpacingMultiplier="1"
                 android:textColor="@android:color/black"
-                style="@style/Playground.TextView.Title"
+                style="@style/Playground.TextView.Text"
                 tools:text="Title Lorem Ipsum dolor adsdfTitle Lorem Ipsum dolor adsdfTitle Lorem Ipsum dolor adsdfTitle Lorem Ipsum dolor adsdfTitle Lorem Ipsum dolor adsdfTitle Lorem Ipsum dolor adsdf" />
 
         </LinearLayout>

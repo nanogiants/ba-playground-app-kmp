@@ -10,5 +10,6 @@ interface NasaView {
   fun showPictureOfTheDay(pictureOfTheDay: PictureOfTheDay)
   fun setIsLoading(isLoading: Boolean)
   fun showError(message: String)
+  fun showError(exception: Exception)
 }
 
