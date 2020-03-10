@@ -3,13 +3,13 @@ package de.appcom.kmpplayground.game.presentation
 import android.graphics.Color
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AlertDialog
 import dagger.android.support.DaggerAppCompatActivity
 import de.appcom.kmpplayground.game.R
+import de.appcom.kmpplayground.game.databinding.ActivityGameBinding
 import game.domain.Game
 import game.presentation.GameView
-import kotlinx.android.synthetic.main.activity_game.game_gridlayout
-import kotlinx.android.synthetic.main.activity_game.game_toolbar
 import javax.inject.Inject
 
 class GameActivity : DaggerAppCompatActivity(), GameView {
@@ -17,14 +17,17 @@ class GameActivity : DaggerAppCompatActivity(), GameView {
   @Inject
   lateinit var game: Game
 
+  lateinit var binding: ActivityGameBinding
+
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_game)
+    binding = ActivityGameBinding.inflate(layoutInflater)
+    setContentView(binding.root)
     setUpToolbar()
   }
 
   private fun setUpToolbar() {
-    setSupportActionBar(game_toolbar)
+    setSupportActionBar(binding.gameToolbar)
     supportActionBar?.title = getString(R.string.game_title)
     supportActionBar?.setDisplayShowHomeEnabled(true)
     supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -42,25 +45,29 @@ class GameActivity : DaggerAppCompatActivity(), GameView {
     setUpGame()
   }
 
-  fun setUpGame() {
-    for (i in 0 until game_gridlayout.childCount) {
-      val childButton = game_gridlayout.getChildAt(i)
+  private fun setUpGame() {
+    forEachGameButton { childButton, index ->
       childButton.setOnClickListener {
-        game.onNewStonePlaced(i)
+        game.onNewStonePlaced(index)
       }
     }
   }
 
-  override fun invalidateBoard(board: Array<Int>) {
+  private fun forEachGameButton(action: (childButton: View, index: Int) -> Unit) {
+    for (i in 0 until binding.gameGridlayout.childCount) {
+      action(binding.gameGridlayout.getChildAt(i), i)
+    }
+  }
 
-    for (i in 0 until game_gridlayout.childCount) {
-      val childButton = game_gridlayout.getChildAt(i)
-      val backgroundColor = when (board[i]) {
-        -1 -> Color.parseColor("#ED765A")
-        1 -> Color.parseColor("#1a73e8")
-        else -> Color.parseColor("#FFFFFF")
-      }
-      childButton.setBackgroundColor(backgroundColor)
+  override fun invalidateBoard(board: Array<Int>) {
+    forEachGameButton { button, index ->
+      button.setBackgroundColor(
+        when (board[index]) {
+          -1 -> Color.parseColor(GameUtils.colorPlayer1)
+          1 -> Color.parseColor(GameUtils.colorPlayer2)
+          else -> Color.parseColor(GameUtils.colorClear)
+        }
+      )
     }
   }
 

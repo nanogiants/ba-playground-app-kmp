@@ -13,11 +13,7 @@ import android.widget.Toast
 import com.bumptech.glide.Glide
 import dagger.android.support.DaggerAppCompatActivity
 import de.appcom.kmpplayground.pixelsort.R
-import kotlinx.android.synthetic.main.activity_pixelsort.pixelsort_album_button
-import kotlinx.android.synthetic.main.activity_pixelsort.pixelsort_camera_button
-import kotlinx.android.synthetic.main.activity_pixelsort.pixelsort_imageview
-import kotlinx.android.synthetic.main.activity_pixelsort.pixelsort_textView
-import kotlinx.android.synthetic.main.activity_pixelsort.pixelsort_toolbar
+import de.appcom.kmpplayground.pixelsort.databinding.ActivityPixelsortBinding
 import javax.inject.Inject
 
 /**
@@ -30,14 +26,17 @@ class PixelsortActivity : DaggerAppCompatActivity(),
   @Inject
   lateinit var presenter: PixelsortPresenter
 
+  private lateinit var binding: ActivityPixelsortBinding
+
   val REQUEST_IMAGE_CAPTURE = 1
   val REQUEST_IMAGE_GALLERY = 2
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_pixelsort)
+    binding = ActivityPixelsortBinding.inflate(layoutInflater)
+    setContentView(binding.root)
     lifecycle.addObserver(presenter)
-    setSupportActionBar(pixelsort_toolbar)
+    setSupportActionBar(binding.pixelsortToolbar)
     supportActionBar?.title = getString(R.string.pixelsort_title)
     supportActionBar?.setDisplayShowHomeEnabled(true)
     supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -46,8 +45,8 @@ class PixelsortActivity : DaggerAppCompatActivity(),
   override fun onResume() {
     super.onResume()
     // setup click listener
-    pixelsort_camera_button.setOnClickListener { view -> presenter.takePicture() }
-    pixelsort_album_button.setOnClickListener { view -> presenter.choosePictureFromGallery() }
+    binding.pixelsortCameraButton.setOnClickListener { view -> presenter.takePicture() }
+    binding.pixelsortAlbumButton.setOnClickListener { view -> presenter.choosePictureFromGallery() }
   }
 
   override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -58,11 +57,11 @@ class PixelsortActivity : DaggerAppCompatActivity(),
   }
 
   override fun showImage(pathToImage: String) {
-    pixelsort_imageview.visibility = View.VISIBLE
-    pixelsort_camera_button.visibility = View.GONE
-    pixelsort_album_button.visibility = View.GONE
-    pixelsort_textView.visibility = View.GONE
-    Glide.with(this).load(pathToImage).into(pixelsort_imageview)
+    binding.pixelsortImageview.visibility = View.VISIBLE
+    binding.pixelsortCameraButton.visibility = View.GONE
+    binding.pixelsortAlbumButton.visibility = View.GONE
+    binding.pixelsortTextView.visibility = View.GONE
+    Glide.with(this).load(pathToImage).into(binding.pixelsortImageview)
   }
 
   override fun showError(message: String) {

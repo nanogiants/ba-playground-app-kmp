@@ -1,16 +1,18 @@
 package de.appcom.kmpplayground.activities.main
 
 import android.os.Bundle
+import android.view.View
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import de.appcom.kmpplayground.R
 import de.appcom.kmpplayground.activities.base.BaseActivity
-import kotlinx.android.synthetic.main.activity_main.main_bottom_navigation
-import kotlinx.android.synthetic.main.activity_main.main_toolbar
+import de.appcom.kmpplayground.databinding.ActivityMainBinding
 
-class MainActivity : BaseActivity(R.layout.activity_main) {
+class MainActivity : BaseActivity() {
+
+  private lateinit var binding: ActivityMainBinding
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -18,13 +20,18 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
     setUpToolbar()
   }
 
+  override fun contentView(): View {
+    binding = ActivityMainBinding.inflate(layoutInflater)
+    return binding.root
+  }
+
   private fun setUpBottomNavigation() {
     val navController = Navigation.findNavController(this, R.id.main_navhostfragment)
-    NavigationUI.setupWithNavController(main_bottom_navigation, navController)
+    NavigationUI.setupWithNavController(binding.mainBottomNavigation, navController)
   }
 
   private fun setUpToolbar() {
-    setSupportActionBar(main_toolbar)
+    setSupportActionBar(binding.mainToolbar)
   }
 
   fun configureToolbar(showUpNavigation: Boolean = false, @StringRes titleRes: Int) {

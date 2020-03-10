@@ -2,20 +2,22 @@ package de.appcom.kmpplayground.fragments.usecases
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import app.domain.UseCase
 import de.appcom.kmpplayground.R
+import de.appcom.kmpplayground.databinding.FragmentUsecasesBinding
+import de.appcom.kmpplayground.fibonacci.presentation.FibonacciActivity
 import de.appcom.kmpplayground.fragments.base.BaseFragment
 import de.appcom.kmpplayground.fragments.base.BasePresenter
-import de.appcom.kmpplayground.models.appUseCases
-import de.appcom.kmpplayground.fibonacci.presentation.FibonacciActivity
 import de.appcom.kmpplayground.game.presentation.GameActivity
+import de.appcom.kmpplayground.models.appUseCases
 import de.appcom.kmpplayground.nasa.presentation.NasaActivity
 import de.appcom.kmpplayground.notes.presentation.NotesActivity
 import de.appcom.kmpplayground.pixelsort.presentation.PixelsortActivity
 import de.appcom.kmpplayground.settings.presentation.SettingsActivity
-import kotlinx.android.synthetic.main.fragment_usecases.usecases_recyclerview
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -23,18 +25,30 @@ import javax.inject.Inject
  * Created by Fabian Heck on 2019-10-23.
  * Copyright (c) 2019 appcom interactive GmbH. All rights reserved.
  */
-class UseCasesFragment : BaseFragment(R.layout.fragment_usecases), UseCasesView {
+class UseCasesFragment : BaseFragment(), UseCasesView {
 
   @Inject
   lateinit var presenter: UseCasesPresenter
+
+  private var _binding: FragmentUsecasesBinding? = null
+  private val binding get() = _binding!!
 
   override val titleRes: Int
     get() = R.string.usecases_title
 
   override val adaptiveToolbarScrollContainer: View
-    get() = usecases_recyclerview
+    get() = binding.usecasesRecyclerview
 
   override fun providePresenterToParent(): BasePresenter = presenter
+
+  override fun contentView(
+    inflater: LayoutInflater,
+    container: ViewGroup?,
+    savedInstanceState: Bundle?
+  ): View {
+    _binding = FragmentUsecasesBinding.inflate(inflater, container, false)
+    return binding.root
+  }
 
   override fun onViewCreated(
     view: View,
@@ -51,13 +65,15 @@ class UseCasesFragment : BaseFragment(R.layout.fragment_usecases), UseCasesView 
         navigateToUseCase(useCase.id)
 
       }
-    val adapter = UseCasesAdapter(onUseCaseItemClickListener)
-    usecases_recyclerview.layoutManager = LinearLayoutManager(requireContext())
-    usecases_recyclerview.adapter = adapter
-    usecases_recyclerview.addItemDecoration(
-      UseCasesItemDecorator(resources.getDimension(R.dimen.usecases_bottom_spacing))
-    )
-    adapter.replaceAll(appUseCases)
+    val useCasesAdapter = UseCasesAdapter(onUseCaseItemClickListener)
+    binding.usecasesRecyclerview.apply {
+      layoutManager = LinearLayoutManager(requireContext())
+      adapter = useCasesAdapter
+      addItemDecoration(
+        UseCasesItemDecorator(resources.getDimension(R.dimen.usecases_bottom_spacing))
+      )
+    }
+    useCasesAdapter.replaceAll(appUseCases)
   }
 
   private fun navigateToUseCase(id: UseCase.Identifier) {
@@ -65,7 +81,8 @@ class UseCasesFragment : BaseFragment(R.layout.fragment_usecases), UseCasesView 
       UseCase.Identifier.NASA -> startActivity(
         Intent(
           requireContext(),
-          NasaActivity::class.java)
+          NasaActivity::class.java
+        )
       )
       UseCase.Identifier.SETTINGS -> startActivity(
         Intent(
@@ -76,7 +93,8 @@ class UseCasesFragment : BaseFragment(R.layout.fragment_usecases), UseCasesView 
       UseCase.Identifier.NOTES -> startActivity(
         Intent(
           requireContext(),
-          NotesActivity::class.java)
+          NotesActivity::class.java
+        )
       )
       UseCase.Identifier.FIBONACCI -> startActivity(
         Intent(
@@ -98,5 +116,4 @@ class UseCasesFragment : BaseFragment(R.layout.fragment_usecases), UseCasesView 
       )
     }
   }
-
 }

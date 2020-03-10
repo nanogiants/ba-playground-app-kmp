@@ -84,7 +84,7 @@ class PixelsortPresenterImpl @Inject constructor(
     if (uri == null) {
       view.showError("Image not found")
     } else {
-      writeImageToFile(uri) // TODO: auslagern auf eigenen thread?
+      writeImageToFile(uri)
       view.showImage(imagePath)
     }
   }

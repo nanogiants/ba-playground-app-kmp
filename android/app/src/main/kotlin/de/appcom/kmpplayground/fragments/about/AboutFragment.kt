@@ -3,7 +3,9 @@ package de.appcom.kmpplayground.fragments.about
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import de.appcom.kmpplayground.R
+import de.appcom.kmpplayground.databinding.FragmentAboutBinding
 import de.appcom.kmpplayground.fragments.base.BaseFragment
 import de.appcom.kmpplayground.fragments.base.BasePresenter
 import de.appcom.kmpplayground.models.AboutEntry
@@ -11,31 +13,45 @@ import de.appcom.kmpplayground.models.AboutEntry
 //import kotlinx.android.synthetic.main.about_fay_entry.about_entry_title
 import kotlinx.android.synthetic.main.about_fay_entry.view.about_entry_description
 import kotlinx.android.synthetic.main.about_fay_entry.view.about_entry_title
-import kotlinx.android.synthetic.main.fragment_about.about_faq_linearlayout
-import kotlinx.android.synthetic.main.fragment_about.about_nestedscrollview
 import javax.inject.Inject
 
 /**
  * Created by Fabian Heck on 2019-10-23.
  * Copyright (c) 2019 appcom interactive GmbH. All rights reserved.
  */
-class AboutFragment : BaseFragment(R.layout.fragment_about), AboutView {
+class AboutFragment : BaseFragment(), AboutView {
 
   @Inject
   lateinit var presenter: AboutPresenter
+
+  private var _binding: FragmentAboutBinding? = null
+  private val binding get() = _binding!!
 
   override val titleRes: Int
     get() = R.string.about_title
 
   override val adaptiveToolbarScrollContainer: View
-    get() = about_nestedscrollview
+    get() = binding.aboutNestedscrollview
 
   override fun providePresenterToParent(): BasePresenter = presenter
+
+  override fun contentView(
+    inflater: LayoutInflater,
+    container: ViewGroup?,
+    savedInstanceState: Bundle?
+  ): View {
+    _binding = FragmentAboutBinding.inflate(inflater, container, false)
+    return binding.root
+  }
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
     createFaqFromContent()
+  }
 
+  override fun onDestroyView() {
+    super.onDestroyView()
+    _binding = null
   }
 
   private fun createFaqFromContent() {
@@ -47,7 +63,7 @@ class AboutFragment : BaseFragment(R.layout.fragment_about), AboutView {
       AboutEntry(R.string.about_faq_q5, R.string.about_faq_a5),
       AboutEntry(R.string.about_faq_q6, R.string.about_faq_a6)
     ).forEach { faqEntry ->
-      about_faq_linearlayout.addView(
+      binding.aboutFaqLinearlayout.addView(
         LayoutInflater.from(requireContext())
           .inflate(R.layout.about_fay_entry, null, false)
           .apply {

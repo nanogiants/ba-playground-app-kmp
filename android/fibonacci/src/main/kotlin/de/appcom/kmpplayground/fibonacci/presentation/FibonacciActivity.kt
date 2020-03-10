@@ -6,6 +6,7 @@ import android.view.MenuItem
 import androidx.core.widget.doAfterTextChanged
 import dagger.android.support.DaggerAppCompatActivity
 import de.appcom.kmpplayground.fibonacci.R
+import de.appcom.kmpplayground.fibonacci.databinding.ActivityFibonacciBinding
 import fibonacci.domain.Fibonacci
 import fibonacci.domain.Timer
 import fibonacci.domain.WorkHelper
@@ -13,12 +14,6 @@ import fibonacci.domain.runOnCallerThread
 import fibonacci.domain.runWithCoroutinesOnUiDispatcher
 import fibonacci.domain.start
 import fibonacci.domain.stop
-import kotlinx.android.synthetic.main.fibonacci_activity.fibonacci_result_textview
-import kotlinx.android.synthetic.main.fibonacci_activity.fibonacci_textinputedittext
-import kotlinx.android.synthetic.main.fibonacci_activity.fibonacci_textinputlayout
-import kotlinx.android.synthetic.main.fibonacci_activity.fibonacci_time1_textview
-import kotlinx.android.synthetic.main.fibonacci_activity.fibonacci_time2_textview
-import kotlinx.android.synthetic.main.fibonacci_activity.fibonacci_toolbar
 import javax.inject.Inject
 
 class FibonacciActivity : DaggerAppCompatActivity() {
@@ -26,29 +21,31 @@ class FibonacciActivity : DaggerAppCompatActivity() {
   @Inject
   lateinit var workHelper: WorkHelper
 
+  private lateinit var binding: ActivityFibonacciBinding
+
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.fibonacci_activity)
+    binding = ActivityFibonacciBinding.inflate(layoutInflater)
+    setContentView(binding.root)
 
-    setSupportActionBar(fibonacci_toolbar)
+    setSupportActionBar(binding.fibonacciToolbar)
     supportActionBar?.setDisplayShowHomeEnabled(true)
     supportActionBar?.setDisplayHomeAsUpEnabled(true)
     supportActionBar?.title = getString(R.string.fibonacci_title)
-
   }
 
   override fun onResume() {
     super.onResume()
 
-    fibonacci_textinputedittext.doAfterTextChanged {
+    binding.fibonacciTextinputedittext.doAfterTextChanged {
       val textString = it.toString()
-      fibonacci_textinputlayout.error = ""
+      binding.fibonacciTextinputlayout.error = ""
       if (textString.contains(Regex("^[0-9]+$"))) {
         val inputInt = textString.toInt()
         if (inputInt in (0..35)) {
           runFibonacci(textString.toInt())
         } else {
-          fibonacci_textinputlayout.error = getString(R.string.fibonacci_error)
+          binding.fibonacciTextinputlayout.error = getString(R.string.fibonacci_error)
           resetUI()
         }
       } else {
@@ -58,9 +55,9 @@ class FibonacciActivity : DaggerAppCompatActivity() {
   }
 
   private fun resetUI() {
-    fibonacci_result_textview.text = ""
-    fibonacci_time1_textview.text = ""
-    fibonacci_time2_textview.text = ""
+    binding.fibonacciResultTextview.text = ""
+    binding.fibonacciTime1Textview.text = ""
+    binding.fibonacciTime2Textview.text = ""
   }
 
   private fun runFibonacci(n: Int) {
@@ -76,7 +73,7 @@ class FibonacciActivity : DaggerAppCompatActivity() {
       workHelper.runWithCoroutinesOnUiDispatcher(task, n,
         { result ->
           timer2.stop()
-          fibonacci_time2_textview.text = "Coroutines ${timer2.endTime} ms"
+          binding.fibonacciTime2Textview.text = "Coroutines ${timer2.endTime} ms"
         })
     }
   }
@@ -99,8 +96,8 @@ class FibonacciActivity : DaggerAppCompatActivity() {
 
     override fun onPostExecute(result: Int?) {
       timer.stop()
-      fibonacci_result_textview.text = "F($n) = ${result.toString()}"
-      fibonacci_time1_textview.text = "Platform Api ${timer.endTime} ms"
+      binding.fibonacciResultTextview.text = "F($n) = ${result.toString()}"
+      binding.fibonacciTime1Textview.text = "Platform Api ${timer.endTime} ms"
     }
   }
 

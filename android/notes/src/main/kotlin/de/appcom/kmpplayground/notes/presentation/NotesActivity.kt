@@ -8,11 +8,9 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import dagger.android.support.DaggerAppCompatActivity
-import de.appcom.kmpplayground.notes.presentation.NotesAdapter.NotesViewHolder
 import de.appcom.kmpplayground.notes.R
-import kotlinx.android.synthetic.main.activity_notes.notes_floatingactionbutton
-import kotlinx.android.synthetic.main.activity_notes.notes_recyclerview
-import kotlinx.android.synthetic.main.activity_notes.notes_toolbar
+import de.appcom.kmpplayground.notes.databinding.ActivityNotesBinding
+import de.appcom.kmpplayground.notes.presentation.NotesAdapter.NotesViewHolder
 import notes.domain.Note
 import notes.presentation.NotesPresenter
 import notes.presentation.NotesView
@@ -23,17 +21,20 @@ class NotesActivity : DaggerAppCompatActivity(), NotesView {
   @Inject
   lateinit var presenter: NotesPresenter
 
+  private lateinit var binding: ActivityNotesBinding
+
   var adapter: NotesAdapter? = null
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_notes)
-    setSupportActionBar(notes_toolbar)
+    binding = ActivityNotesBinding.inflate(layoutInflater)
+    setContentView(binding.root)
+    setSupportActionBar(binding.notesToolbar)
     supportActionBar?.title = getString(R.string.notes_title)
     supportActionBar?.setDisplayShowHomeEnabled(true)
     supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-    notes_floatingactionbutton.setOnClickListener {
+    binding.notesFloatingactionbutton.setOnClickListener {
       startActivity(Intent(this, AddNoteActivity::class.java))
     }
   }
@@ -41,8 +42,8 @@ class NotesActivity : DaggerAppCompatActivity(), NotesView {
   override fun onResume() {
     super.onResume()
     adapter = NotesAdapter()
-    notes_recyclerview.layoutManager = LinearLayoutManager(this)
-    notes_recyclerview.adapter = adapter
+    binding.notesRecyclerview.layoutManager = LinearLayoutManager(this)
+    binding.notesRecyclerview.adapter = adapter
     val itemTouchHelper = ItemTouchHelper(
       SwipeToDeleteCallback<Note, NotesViewHolder>(
         this,
@@ -54,16 +55,16 @@ class NotesActivity : DaggerAppCompatActivity(), NotesView {
           }
         })
     )
-    itemTouchHelper.attachToRecyclerView(notes_recyclerview)
+    itemTouchHelper.attachToRecyclerView(binding.notesRecyclerview)
     presenter.loadNotes()
 
-    notes_recyclerview.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+    binding.notesRecyclerview.addOnScrollListener(object : RecyclerView.OnScrollListener() {
       override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
         super.onScrollStateChanged(recyclerView, newState)
         if (newState == RecyclerView.SCROLL_STATE_DRAGGING) {
-          notes_floatingactionbutton?.shrink()
+          binding.notesFloatingactionbutton?.shrink()
         } else {
-          notes_floatingactionbutton?.extend()
+          binding.notesFloatingactionbutton?.extend()
         }
       }
     })

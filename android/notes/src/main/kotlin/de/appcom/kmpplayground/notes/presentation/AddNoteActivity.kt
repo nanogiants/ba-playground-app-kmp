@@ -7,9 +7,7 @@ import android.view.MenuItem
 import android.widget.Toast
 import dagger.android.support.DaggerAppCompatActivity
 import de.appcom.kmpplayground.notes.R
-import kotlinx.android.synthetic.main.activity_add_note.add_notes_content_textinputedittext
-import kotlinx.android.synthetic.main.activity_add_note.add_notes_title_textinputedittext
-import kotlinx.android.synthetic.main.activity_add_note.add_notes_toolbar
+import de.appcom.kmpplayground.notes.databinding.ActivityAddNoteBinding
 import notes.domain.Note
 import notes.presentation.AddNotePresenter
 import notes.presentation.AddNoteView
@@ -25,10 +23,13 @@ class AddNoteActivity : DaggerAppCompatActivity(), AddNoteView {
   @Inject
   lateinit var presenter: AddNotePresenter
 
+  lateinit var binding: ActivityAddNoteBinding
+
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_add_note)
-    setSupportActionBar(add_notes_toolbar)
+    binding = ActivityAddNoteBinding.inflate(layoutInflater)
+    setContentView(binding.root)
+    setSupportActionBar(binding.addNotesToolbar)
     supportActionBar?.title = getString(R.string.notes_title_add)
     supportActionBar?.setDisplayShowHomeEnabled(true)
     supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -50,15 +51,15 @@ class AddNoteActivity : DaggerAppCompatActivity(), AddNoteView {
 
   override fun onResume() {
     super.onResume()
-    add_notes_title_textinputedittext.requestFocus()
+    binding.addNotesTitleTextinputedittext.requestFocus()
   }
 
   fun addNote() {
     presenter.addNote(
       Note(
         Date().time,
-        add_notes_title_textinputedittext.text.toString(),
-        add_notes_content_textinputedittext.text.toString(),
+        binding.addNotesTitleTextinputedittext.text.toString(),
+        binding.addNotesContentTextinputedittext.text.toString(),
         Date().time
       )
     )

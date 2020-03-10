@@ -1,12 +1,9 @@
 package de.appcom.kmpplayground.notes.presentation
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import de.appcom.kmpplayground.notes.R
+import de.appcom.kmpplayground.notes.databinding.NotesItemLayoutBinding
 import de.appcom.kmpplayground.notes.presentation.NotesAdapter.NotesViewHolder
-import kotlinx.android.synthetic.main.notes_item_layout.view.notes_content_textview
-import kotlinx.android.synthetic.main.notes_item_layout.view.notes_title_textview
 import notes.domain.Note
 
 /**
@@ -19,10 +16,13 @@ class NotesAdapter : BaseAdapter<Note, NotesViewHolder>() {
     parent: ViewGroup,
     viewType: Int
   ): NotesViewHolder {
-    val view =
-      LayoutInflater.from(parent.context)
-          .inflate(R.layout.notes_item_layout, parent, false)
-    return NotesViewHolder(view)
+    return NotesViewHolder(
+      NotesItemLayoutBinding.inflate(
+        LayoutInflater.from(parent.context),
+        parent,
+        false
+      )
+    )
   }
 
   override fun getItemCount(): Int = itemList.size
@@ -34,10 +34,11 @@ class NotesAdapter : BaseAdapter<Note, NotesViewHolder>() {
     holder.bindTo(itemList[position])
   }
 
-  inner class NotesViewHolder(val view: View) : BaseViewHolder<Note>(view) {
+  inner class NotesViewHolder(private val binding: NotesItemLayoutBinding) :
+    BaseViewHolder<Note>(binding.root) {
     override fun bindTo(item: Note) {
-      view.notes_title_textview.text = item.title
-      view.notes_content_textview.text = item.content
+      binding.notesTitleTextview.text = item.title
+      binding.notesContentTextview.text = item.content
     }
   }
 }
