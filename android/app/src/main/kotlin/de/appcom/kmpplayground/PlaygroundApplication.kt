@@ -2,7 +2,7 @@ package de.appcom.kmpplayground
 
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
-import de.appcom.kmpplayground.fibonacci.di.DaggerApplicationComponent
+import de.appcom.kmpplayground.di.DaggerApplicationComponent
 import timber.log.Timber
 
 /**

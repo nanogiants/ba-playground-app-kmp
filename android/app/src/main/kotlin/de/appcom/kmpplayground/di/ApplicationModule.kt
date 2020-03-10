@@ -1,4 +1,4 @@
-package de.appcom.kmpplayground.fibonacci.di
+package de.appcom.kmpplayground.di
 
 import android.content.Context
 import dagger.Binds

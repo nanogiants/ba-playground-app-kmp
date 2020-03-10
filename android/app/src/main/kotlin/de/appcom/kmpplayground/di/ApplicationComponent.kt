@@ -1,4 +1,4 @@
-package de.appcom.kmpplayground.fibonacci.di
+package de.appcom.kmpplayground.di
 
 import android.content.Context
 import dagger.BindsInstance
@@ -6,6 +6,7 @@ import dagger.Component
 import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
 import de.appcom.kmpplayground.PlaygroundApplication
+import de.appcom.kmpplayground.fibonacci.di.FibonacciBindingModule
 import de.appcom.kmpplayground.game.di.GameBindingsModule
 import de.appcom.kmpplayground.nasa.di.NasaBindingModule
 import de.appcom.kmpplayground.notes.di.NotesBindingModule
