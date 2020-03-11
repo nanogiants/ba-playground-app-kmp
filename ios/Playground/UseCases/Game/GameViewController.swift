@@ -53,7 +53,7 @@ class GameViewController : UIViewController, GameView {
     func invalidateBoard(board: KotlinArray) {
         var index: Int32 = 0
         gameButtonCollection.forEach{ button in
-            var stone = board.get(index: index) as! Int
+            let stone = board.get(index: index) as! Int
             button.backgroundColor = getColorForStone(stone: stone)
             index += 1
         }

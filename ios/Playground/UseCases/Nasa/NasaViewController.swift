@@ -22,22 +22,20 @@ class NasaViewController: UIViewController, NasaView {
     
     override func viewDidLoad() {
         self.title = NSLocalizedString("nasa_title", comment: "")
-        var presenter: NasaPresenter = NasaPresenterImpl(webDataSource: WebDataSourceImpl(), view: self )
+        let presenter: NasaPresenter = NasaPresenterImpl(webDataSource: WebDataSourceImpl(), view: self )
         presenter.initializeView()
         imageSpinner.isHidden = true
     }
     
     func showError(exception: KotlinException) {
-        // TODO
+       //
     }
     
     func showPictureOfTheDay(pictureOfTheDay: PictureOfTheDay) {
         self.titleLabel.text = pictureOfTheDay.title
-        //        self.contentLabel.text = pictureOfTheDay.explanation
         setAttributedContentLabel(text: pictureOfTheDay.explanation)
         if pictureOfTheDay.hasImage {
             load(pathToImage: URL(string: pictureOfTheDay.url))
-            // TODO download and show image
         }
     }
     
@@ -46,7 +44,6 @@ class NasaViewController: UIViewController, NasaView {
     }
     
     func showError(message: String) {
-        //Todo
         print("\(message)")
     }
     

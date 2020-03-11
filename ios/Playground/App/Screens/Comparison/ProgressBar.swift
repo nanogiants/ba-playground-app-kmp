@@ -17,7 +17,6 @@ class ProgressBar : UIView {
         }
     }
     
-    
     // initializer if UIView is created in the code
     override init(frame: CGRect) {
         super.init(frame: frame)

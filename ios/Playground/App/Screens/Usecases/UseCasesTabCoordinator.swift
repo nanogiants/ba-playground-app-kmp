@@ -25,10 +25,14 @@ class UseCasesTabCoordinator: Coordinator {
         self.childCoordinators = []
     }
     
+    private func navigateToUseCase(viewController: UIViewController) {
+        viewController.navigationItem.largeTitleDisplayMode = .never // small title
+        navigationController.show(viewController, sender: self)
+        navigationController.tabBarController?.tabBar.isHidden = true
+    }
+    
     func start() {
         let viewController = UseCasesViewController.instantiate()
-        // setup viewmodel
-        // setup Services
         viewController.tabBarItem = UITabBarItem(title: tabTitle, image: tabImage, tag: tabTag)
         viewController.coordinator = self
         navigationController.show(viewController, sender: self)
@@ -38,55 +42,39 @@ class UseCasesTabCoordinator: Coordinator {
     func navigateToPixelsort() {
         let viewController = PixelsortViewController.instantiate(from: "Pixelsort")
         viewController.coordinator = self
-        navigationController.show(viewController, sender: self)
-        navigationController.tabBarController?.tabBar.isHidden = true
-        viewController.navigationItem.largeTitleDisplayMode = .never // small title
+        navigateToUseCase(viewController: viewController)
     }
     
     func navigateToSettings() {
         let viewController = UIHostingController(rootView: ContentView())
-        viewController.navigationItem.largeTitleDisplayMode = .never // small title
-        // navigationController.navigationBar.prefersLargeTitles = true -> results in a bug in the animation
-        navigationController.show(viewController, sender: self)
-        navigationController.tabBarController?.tabBar.isHidden = true
+        navigateToUseCase(viewController: viewController)
     }
     
     func navigateToNasa() {
         let viewController = NasaViewController.instantiate(from: "Nasa")
-        //        viewController.tabBarItem = UITabBarItem(title: tabTitle, image: tabImage, tag: tabTag)
         viewController.coordinator = self
-        viewController.navigationItem.largeTitleDisplayMode = .never // title small
-        navigationController.show(viewController, sender: self)
-        navigationController.tabBarController?.tabBar.isHidden = true
+        navigateToUseCase(viewController: viewController)
     }
     
     func navigateToNotes() {
-        // inject presenter
         let viewModel = NotesViewModel()
         let notesContentView = NotesContentView(viewModel: viewModel)
         viewModel.view = notesContentView
-        // UIHostingController is an adapter between UIKit and SwiftUI
         let viewController = UIHostingController(rootView: notesContentView)
-        viewController.navigationItem.largeTitleDisplayMode = .never // title small
-        navigationController.show(viewController, sender: self)
-        navigationController.tabBarController?.tabBar.isHidden = true
+        navigateToUseCase(viewController: viewController)
     }
     
     func navigateToFibonacci() {
         let viewController = FibonacciViewController.instantiate(from: "Fibonacci")
         viewController.tabBarItem = UITabBarItem(title: tabTitle, image: tabImage, tag: tabTag)
         viewController.coordinator = self
-        viewController.navigationItem.largeTitleDisplayMode = .never // title small
-        navigationController.show(viewController, sender: self)
-        navigationController.tabBarController?.tabBar.isHidden = true
+        navigateToUseCase(viewController: viewController)
     }
     
     func navigateToGame() {
         let viewController = GameViewController.instantiate(from: "Game")
         viewController.tabBarItem = UITabBarItem(title: tabTitle, image: tabImage, tag: tabTag)
         viewController.coordinator = self
-        viewController.navigationItem.largeTitleDisplayMode = .never // title small
-        navigationController.show(viewController, sender: self)
-        navigationController.tabBarController?.tabBar.isHidden = true
+        navigateToUseCase(viewController: viewController)
     }
 }

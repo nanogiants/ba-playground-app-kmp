@@ -21,7 +21,6 @@ struct UseCase {
         case Pixelsort
         case Nasa
         case Notes
-        case Locating
         case Settings
         case Fibonacci
         case Game

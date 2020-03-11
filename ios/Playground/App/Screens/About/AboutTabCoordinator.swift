@@ -25,10 +25,7 @@ class AboutTabCoordinator: Coordinator {
 
     func start() {
         let viewController = AboutViewController.instantiate()
-        // setup tabbar item
         viewController.tabBarItem = UITabBarItem(title: tabTitle, image: tabImage, tag: tabTag)
-        // setup viewmodel
-        // setup Services
         viewController.coordinator = self
         navigationController.show(viewController, sender: self)
         navigationController.navigationBar.prefersLargeTitles = true

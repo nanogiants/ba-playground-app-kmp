@@ -13,12 +13,9 @@ extension UseCasesViewController : UICollectionViewDelegate {
     
     // onClick
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("You selected cell #\(indexPath.item)!")
         switch useCase(for: indexPath).id {
         case .Pixelsort:
             coordinator?.navigateToPixelsort()
-            break
-        case .Locating:
             break
         case .Nasa:
             coordinator?.navigateToNasa()
@@ -65,17 +62,12 @@ extension UseCasesViewController: UICollectionViewDataSource {
     }
     
     func bindView(_ useCase: UseCase, to useCaseCell: UseCaseCell) -> UseCaseCell {
-        //        useCaseCell.contentView.backgroundColor = UIColor(named: String)
-        //        useCaseCell.contentView.backgroundColor = UIColor.gray
         useCaseCell.contentView.backgroundColor = useCase.color
         useCaseCell.titleLabel.text = useCase.title
         useCaseCell.descriptionLabel.text = useCase.description
-        
         useCaseCell.imageView.image = UIImage(named: useCase.imageName)
-        // TODO
         useCaseCell.titleLabel.preferredMaxLayoutWidth = 290
         useCaseCell.descriptionLabel.preferredMaxLayoutWidth = 290
-        
         
         return useCaseCell
     }

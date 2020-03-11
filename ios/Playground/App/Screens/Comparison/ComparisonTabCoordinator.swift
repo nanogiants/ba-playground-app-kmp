@@ -25,8 +25,6 @@ class ComparisonTabCoordinator: Coordinator {
     
     func start() {
         let viewController = ComparisonViewController.instantiate()
-        // setup viewmodel
-        // setup Services
         viewController.tabBarItem = UITabBarItem(title: tabTitle, image: tabImage, tag: tabTag)
         viewController.coordinator = self
         navigationController.show(viewController, sender: self)
