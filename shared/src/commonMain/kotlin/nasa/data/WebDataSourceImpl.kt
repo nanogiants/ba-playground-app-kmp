@@ -11,12 +11,12 @@ import kotlinx.serialization.json.Json
 import nasa.domain.PictureOfTheDay
 import nasa.domain.PictureOfTheDayWebEntity
 import nasa.nasa.data.WebDataUtils
-import nasa.nasaApiKey
 
 @Suppress("EXPERIMENTAL_API_USAGE")
 class WebDataSourceImpl : WebDataSource {
 
-  private val apiKey = nasaApiKey
+//  private val apiKey = nasaApiKey
+  private val apiKey = "DEMO_KEY"
 
   override suspend fun getPictureOfTheDay(): PictureOfTheDay {
 
@@ -37,13 +37,18 @@ class WebDataSourceImpl : WebDataSource {
     val entity =
       Json.parse(PictureOfTheDayWebEntity.serializer(), response.readText())
 
+    var showImage = entity.media_type == WebDataUtils.mediaTypeImage
+    if(entity.copyright != "") {
+      showImage = false // do not show non public images
+    }
+
     // transform web entity to model
     return PictureOfTheDay(
       entity.date,
       entity.explanation,
       entity.title,
       entity.url,
-      entity.media_type == WebDataUtils.mediaTypeImage
+      showImage
     )
   }
 }
