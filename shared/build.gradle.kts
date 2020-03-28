@@ -27,16 +27,7 @@ kotlin {
   iOSTarget("ios") {
     binaries {
       framework {
-        // name, is used in swift to import the framework
         baseName = "SharedPlayground"
-
-        // dependencies
-        export(Deps.MultiplatformSettings.multiplatformSettings)
-        if (isDevice) {
-          export(Deps.MultiplatformSettings.iosarm64)
-        } else {
-          export(Deps.MultiplatformSettings.iosx64)
-        }
       }
     }
   }
@@ -50,7 +41,6 @@ kotlin {
     implementation(Deps.Ktor.core)
     implementation(Deps.Ktor.json)
     implementation(Deps.Ktor.serialization)
-
     implementation(Deps.Coroutines.coreCommon)
   }
   sourceSets["androidMain"].dependencies {

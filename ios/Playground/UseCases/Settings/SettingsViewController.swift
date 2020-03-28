@@ -14,7 +14,7 @@ struct ContentView: View {
     
     @State private var message: String = ""
     
-    private var localKeyValueStorage = LocalKeyValueStorageImpl(settings: AppleSettings(delegate: UserDefaults.standard))
+    private var localKeyValueStorage = SettingsProvider().instantiate()
     
     var body: some View {
         Form {
