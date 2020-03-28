@@ -1,5 +1,5 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-
+//
 def androidProjectPath = project.rootDir.absolutePath + "/android"
 def iosProjectPath = project.rootDir.absolutePath + "/ios"
 def localizationPath = project.rootDir.absolutePath + "/localization"
@@ -147,35 +147,11 @@ task clean(type: Delete) {
   delete rootProject.buildDir
 }
 
-// Generates strings with twine for the project
-task generateProjectStrings {
-  def totalScript = ""
-  def source = localizationPath + "/localization.txt"
-
-  // Strings for android are added to the specific submodule, according to the given tag
-  androidModules.each { moduleName ->
-    def destinationAndroid = androidProjectPath + "/" + moduleName + "/src/main/res"
-    totalScript += "twine generate-all-localization-files " + source +
-        " " +
-        destinationAndroid +
-        " --tags " +
-        moduleName +
-        " --validate --format android; "
-  }
-
-  // ios Strings are added to an resource folder
-  def destinationIos = iosProjectPath + "/Playground/Resources"
-  totalScript += "twine generate-all-localization-files " + source +
-      " " +
-      destinationIos +
-      " --validate --format apple; "
-
-  def script = 'if hash twine 2>/dev/null; then ' + totalScript + ' fi'
-  doLast {
-    // print(script)
-    exec {
-      executable "sh"
-      args '-c', script
-    }
-  }
+task generateProjectStrings(type: TwineStringGeneratingTask) {
+  //group = "resources"
+  description = "Generates string resources from localization.txt file"
+  localizationFilePath = project.rootDir.absolutePath + "/localization/localization.txt"
+  androidProjectRoot = project.rootDir.absolutePath + "/android"
+  androidSubProjects = androidModules
+  iosProjectRoot = project.rootDir.absolutePath + "/ios"
 }
