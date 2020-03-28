@@ -1,10 +1,10 @@
 package tasks
 
-import tasks.TwineStringGeneratingTask.TwineFormat.ANDROID
-import tasks.TwineStringGeneratingTask.TwineFormat.IOS
 import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.TaskAction
+import tasks.TwineStringGeneratingTask.TwineFormat.ANDROID
+import tasks.TwineStringGeneratingTask.TwineFormat.IOS
 
 open class TwineStringGeneratingTask : DefaultTask() {
 
@@ -12,8 +12,6 @@ open class TwineStringGeneratingTask : DefaultTask() {
     ANDROID("android"),
     IOS("apple")
   }
-
-
 
   private var totalScript: String = ""
 
@@ -29,16 +27,11 @@ open class TwineStringGeneratingTask : DefaultTask() {
   @Input
   var iosProjectRoot: String = ""
 
-
   @TaskAction
   fun generateProjectStrings() {
-
-
-      print("generateProjectStrings")
-      print("haha - - - - haha - - - - - haha")
-      appendIosScript()
-      appendAndroidScript()
-      executeTotalScript()
+    appendIosScript()
+    appendAndroidScript()
+    executeTotalScript()
   }
 
   private fun appendIosScript() {
