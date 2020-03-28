@@ -1,5 +1,7 @@
-import TwineStringGeneratingTask.TwineFormat.ANDROID
-import TwineStringGeneratingTask.TwineFormat.IOS
+package tasks
+
+import tasks.TwineStringGeneratingTask.TwineFormat.ANDROID
+import tasks.TwineStringGeneratingTask.TwineFormat.IOS
 import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.TaskAction

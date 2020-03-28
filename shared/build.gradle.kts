@@ -14,14 +14,6 @@ plugins {
 }
 
 kotlin {
-
-  // versions from parent project
-  val kotlin_version: String by rootProject.extra
-  val ktor_version: String by rootProject.extra
-  val sqldelight_version: String by rootProject.extra
-  val multiplatformSettings_version: String by rootProject.extra
-  val coroutines_version: String by rootProject.extra
-
   // target configurations
   // select iOS target platform depending on the Xcode environment variables
   val isDevice = System.getenv("SDK_NAME")?.startsWith("iphoneos") == true
@@ -39,11 +31,11 @@ kotlin {
         baseName = "SharedPlayground"
 
         // dependencies
-        export("com.russhwolf:multiplatform-settings:$multiplatformSettings_version")
+        export(Deps.MultiplatformSettings.multiplatformSettings)
         if (isDevice) {
-          export("com.russhwolf:multiplatform-settings-iosarm64:$multiplatformSettings_version")
+          export(Deps.MultiplatformSettings.iosarm64)
         } else {
-          export("com.russhwolf:multiplatform-settings-iosx64:$multiplatformSettings_version")
+          export(Deps.MultiplatformSettings.iosx64)
         }
       }
     }
@@ -53,45 +45,43 @@ kotlin {
 
   // source set configurations
   sourceSets["commonMain"].dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
-    api("com.russhwolf:multiplatform-settings:$multiplatformSettings_version")
-    implementation("io.ktor:ktor-client-core:$ktor_version")
-    implementation("io.ktor:ktor-client-json:$ktor_version")
-    implementation("io.ktor:ktor-client-serialization:$ktor_version")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$coroutines_version")
+    implementation(Deps.Kotlin.stdlibCommon)
+    api(Deps.MultiplatformSettings.multiplatformSettings)
+    implementation(Deps.Ktor.core)
+    implementation(Deps.Ktor.json)
+    implementation(Deps.Ktor.serialization)
+
+    implementation(Deps.Coroutines.coreCommon)
   }
   sourceSets["androidMain"].dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib")
-    implementation("io.ktor:ktor-client-android:$ktor_version")
-    implementation("io.ktor:ktor-client-core-jvm:$ktor_version")
-    implementation("io.ktor:ktor-client-json-jvm:$ktor_version")
-    implementation("io.ktor:ktor-client-serialization-jvm:$ktor_version")
-    implementation("com.squareup.sqldelight:android-driver:$sqldelight_version")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version")
+    implementation(Deps.Kotlin.stdlib)
+    implementation(Deps.Ktor.android)
+    implementation(Deps.Ktor.coreJvm)
+    implementation(Deps.Ktor.jsonJvm)
+    implementation(Deps.Ktor.serializationJvm)
+    implementation(Deps.SqlDelight.androidDriver)
+    implementation(Deps.Coroutines.android)
   }
   sourceSets["iosMain"].dependencies {
-    implementation("io.ktor:ktor-client-ios:$ktor_version")
-    implementation("io.ktor:ktor-client-core-native:$ktor_version")
-    implementation("io.ktor:ktor-client-json-native:$ktor_version")
-    implementation("io.ktor:ktor-client-serialization-native:$ktor_version")
+    implementation(Deps.Ktor.ios)
+    implementation(Deps.Ktor.coreNative)
+    implementation(Deps.Ktor.jsonNative)
+    implementation(Deps.Ktor.serializationNative)
     if (isDevice) {
-      implementation("io.ktor:ktor-client-serialization-iosarm64:$ktor_version")
+      implementation(Deps.Ktor.serializationIosarm64)
     } else {
-      implementation("io.ktor:ktor-client-serialization-iosx64:$ktor_version")
+      implementation(Deps.Ktor.serializationIosx64)
     }
-    implementation("com.squareup.sqldelight:ios-driver:$sqldelight_version")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:$coroutines_version")
+    implementation(Deps.SqlDelight.iosDriver)
+    implementation(Deps.Coroutines.coreNative)
   }
   sourceSets["commonTest"].dependencies {
-    // kotlin.test
-    // placeholder for test frameworks
-    implementation("org.jetbrains.kotlin:kotlin-test-common:$kotlin_version")
-    implementation("org.jetbrains.kotlin:kotlin-test-annotations-common:$kotlin_version")
+    implementation(DepsTest.KotlinTest.common)
+    implementation(DepsTest.KotlinTest.annotationsCommon)
   }
   sourceSets["androidTest"].dependencies {
-    // specific implementation of test framework
-    implementation("org.jetbrains.kotlin:kotlin-test:$kotlin_version")
-    implementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
+    implementation(DepsTest.KotlinTest.test)
+    implementation(DepsTest.KotlinTest.junit)
   }
   sourceSets["iosTest"].dependencies {
     // no dependencies required. kotlin.test implementation is build in kotlin/native
@@ -111,8 +101,7 @@ sqldelight {
 
 android {
   defaultConfig {
-    val androidCompileSdkVersion: Int by rootProject.extra // rootProject.extra.properties["androidCompileSdkVersion"] as Int
-    compileSdkVersion(androidCompileSdkVersion)
+    compileSdkVersion(AndroidConstants.androidCompileSdkVersion)
   }
 }
 
