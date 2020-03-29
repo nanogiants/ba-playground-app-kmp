@@ -27,9 +27,6 @@ class AboutFragment : BaseFragment(), AboutView {
   private var _binding: FragmentAboutBinding? = null
   private val binding get() = _binding!!
 
-  override val titleRes: Int
-    get() = R.string.about_title
-
   override val adaptiveToolbarScrollContainer: View
     get() = binding.aboutNestedscrollview
 
@@ -69,12 +66,9 @@ class AboutFragment : BaseFragment(), AboutView {
           .apply {
             this.about_entry_title?.text = getString(faqEntry.titleStringRes)
             this.about_entry_description?.text = getString(faqEntry.descriptionStringRes)
-//            this.about_entry_title.text = getString(faqEntry.titleStringRes)
-//            this.about_entry_description.text = getString(faqEntry.descriptionStringRes)
           }
       )
     }
   }
 
 }
-

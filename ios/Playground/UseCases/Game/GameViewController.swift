@@ -12,7 +12,7 @@ import shared
 
 class GameViewController : UIViewController, GameView {
     
-    weak var coordinator: UseCasesTabCoordinator?
+    weak var coordinator: UseCasesCoordinator?
     var game: Game?
     @IBOutlet weak var gameExplanationLabel: UILabel!
     @IBOutlet var gameButtonCollection: [UIButton]!

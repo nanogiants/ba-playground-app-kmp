@@ -12,7 +12,7 @@ import shared
 
 class NasaViewController: UIViewController, NasaView {
     
-    weak var coordinator: UseCasesTabCoordinator?
+    weak var coordinator: UseCasesCoordinator?
     
     @IBOutlet weak var nasaImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!

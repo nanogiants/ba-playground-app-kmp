@@ -11,11 +11,11 @@ import UIKit
 import SwiftUI
 import shared
 
-class UseCasesTabCoordinator: Coordinator {
+class UseCasesCoordinator: Coordinator {
     
-    let tabTitle = NSLocalizedString("usecases_title", comment:"")
-    let tabImage = UIImage(named: "ic_category")
-    let tabTag = 0
+    //let tabTitle = NSLocalizedString("usecases_title", comment:"")
+    //let tabImage = UIImage(named: "ic_category")
+    //let tabTag = 0
     
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator]
@@ -28,12 +28,10 @@ class UseCasesTabCoordinator: Coordinator {
     private func navigateToUseCase(viewController: UIViewController) {
         viewController.navigationItem.largeTitleDisplayMode = .never // small title
         navigationController.show(viewController, sender: self)
-        navigationController.tabBarController?.tabBar.isHidden = true
     }
     
     func start() {
         let viewController = UseCasesViewController.instantiate()
-        viewController.tabBarItem = UITabBarItem(title: tabTitle, image: tabImage, tag: tabTag)
         viewController.coordinator = self
         navigationController.show(viewController, sender: self)
         navigationController.navigationBar.prefersLargeTitles = true
@@ -66,15 +64,19 @@ class UseCasesTabCoordinator: Coordinator {
     
     func navigateToFibonacci() {
         let viewController = FibonacciViewController.instantiate(from: "Fibonacci")
-        viewController.tabBarItem = UITabBarItem(title: tabTitle, image: tabImage, tag: tabTag)
         viewController.coordinator = self
         navigateToUseCase(viewController: viewController)
     }
     
     func navigateToGame() {
         let viewController = GameViewController.instantiate(from: "Game")
-        viewController.tabBarItem = UITabBarItem(title: tabTitle, image: tabImage, tag: tabTag)
         viewController.coordinator = self
+        navigateToUseCase(viewController: viewController)
+    }
+    
+    func navigateToAbout() {
+        let viewController = AboutViewController.instantiate()
+        //viewController.coordinator = self
         navigateToUseCase(viewController: viewController)
     }
 }

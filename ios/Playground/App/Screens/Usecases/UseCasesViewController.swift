@@ -11,7 +11,7 @@ import UIKit
 
 class UseCasesViewController: UIViewController {
     
-    weak var coordinator: UseCasesTabCoordinator?
+    var coordinator: UseCasesCoordinator?
     
     let sectionInsets = UIEdgeInsets(top: 10.0,
                                      left: 20.0,
@@ -34,11 +34,19 @@ class UseCasesViewController: UIViewController {
         self.title = NSLocalizedString("usecases_title", comment: "")
         useCasesCollectionView.delegate = self
         useCasesCollectionView.dataSource = self
+        
+        let button1 = UIBarButtonItem(image: UIImage(named: "ic_info"), style: .plain, target: self, action: #selector(info)) // action:#selector(Class.MethodName) for swift 3
+        self.navigationItem.rightBarButtonItem  = button1
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
         coordinator?.navigationController.navigationBar.prefersLargeTitles = true
+    }
+    
+    @objc func info(){
+        coordinator?.navigateToAbout()
     }
 }

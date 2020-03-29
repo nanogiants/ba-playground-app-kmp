@@ -5,10 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
-import androidx.viewbinding.ViewBinding
 import dagger.android.support.DaggerFragment
 import de.appcom.kmpplayground.activities.main.MainActivity
-import de.appcom.kmpplayground.databinding.FragmentAboutBinding
 import kotlinx.android.synthetic.main.activity_main.main_toolbar
 
 /**
@@ -38,7 +36,6 @@ abstract class BaseFragment : DaggerFragment() {
   }
 
   private fun configureParentToolbar() {
-    (activity as MainActivity).configureToolbar(titleRes = titleRes)
     adaptiveToolbarScrollContainer?.let { scrollableView ->
       toolbarElevationHelper =
         ToolbarElevationHelper(requireContext(), (activity as MainActivity).main_toolbar)

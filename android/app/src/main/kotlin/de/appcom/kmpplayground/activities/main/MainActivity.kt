@@ -1,11 +1,15 @@
 package de.appcom.kmpplayground.activities.main
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
-import androidx.annotation.DrawableRes
-import androidx.annotation.StringRes
-import androidx.navigation.Navigation
-import androidx.navigation.ui.NavigationUI
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.onNavDestinationSelected
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import de.appcom.kmpplayground.R
 import de.appcom.kmpplayground.activities.base.BaseActivity
 import de.appcom.kmpplayground.databinding.ActivityMainBinding
@@ -13,11 +17,11 @@ import de.appcom.kmpplayground.databinding.ActivityMainBinding
 class MainActivity : BaseActivity() {
 
   private lateinit var binding: ActivityMainBinding
+  private lateinit var appBarConfiguration: AppBarConfiguration
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setUpBottomNavigation()
-    setUpToolbar()
+    setUpNavigation()
   }
 
   override fun contentView(): View {
@@ -25,25 +29,27 @@ class MainActivity : BaseActivity() {
     return binding.root
   }
 
-  private fun setUpBottomNavigation() {
-    val navController = Navigation.findNavController(this, R.id.main_navhostfragment)
-    NavigationUI.setupWithNavController(binding.mainBottomNavigation, navController)
-  }
-
-  private fun setUpToolbar() {
+  private fun setUpNavigation() {
+    val navController = findNavController(this, R.id.main_navhostfragment)
+    appBarConfiguration = AppBarConfiguration(navController.graph)
+    binding.mainToolbar.setupWithNavController(navController, appBarConfiguration)
     setSupportActionBar(binding.mainToolbar)
+    setupActionBarWithNavController(navController, appBarConfiguration)
   }
 
-  fun configureToolbar(showUpNavigation: Boolean = false, @StringRes titleRes: Int) {
-    supportActionBar?.setDisplayHomeAsUpEnabled(showUpNavigation)
-    supportActionBar?.setDisplayShowHomeEnabled(showUpNavigation)
-    supportActionBar?.title = getString(titleRes)
+  override fun onSupportNavigateUp(): Boolean {
+    val navController = findNavController(this, R.id.main_navhostfragment)
+    return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
   }
 
-  fun configureCustomToolbar(@DrawableRes navigationIconRes: Int, @StringRes titleRes: Int) {
-    supportActionBar?.setDisplayHomeAsUpEnabled(true)
-    supportActionBar?.setDisplayShowHomeEnabled(true)
-    supportActionBar?.setHomeAsUpIndicator(navigationIconRes)
-    supportActionBar?.title = getString(titleRes)
+  override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    val navController = findNavController(this, R.id.main_navhostfragment)
+    return item.onNavDestinationSelected(navController) || super.onOptionsItemSelected(item)
+  }
+
+  override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    val inflater = menuInflater
+    inflater.inflate(R.menu.menu_main, menu)
+    return true
   }
 }

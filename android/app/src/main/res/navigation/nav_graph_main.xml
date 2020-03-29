@@ -8,19 +8,13 @@
   <fragment
       android:id="@+id/aboutFragment"
       android:name="de.appcom.kmpplayground.fragments.about.AboutFragment"
-      android:label=""
+      android:label="@string/about_title"
       tools:layout="@layout/fragment_about" />
-
-  <fragment
-      android:id="@+id/comparisonFragment"
-      android:name="de.appcom.kmpplayground.fragments.comparison.ComparisonFragment"
-      android:label=""
-      tools:layout="@layout/fragment_comparison" />
 
   <fragment
       android:id="@+id/usecasesFragment"
       android:name="de.appcom.kmpplayground.fragments.usecases.UseCasesFragment"
-      android:label=""
+      android:label="@string/usecases_title"
       tools:layout="@layout/fragment_usecases" />
 
 </navigation>

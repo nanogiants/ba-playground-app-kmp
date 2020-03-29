@@ -12,7 +12,7 @@ import UIKit
 
 class PixelsortViewController: UIViewController {
     
-    weak var coordinator: UseCasesTabCoordinator?
+    weak var coordinator: UseCasesCoordinator?
     
     @IBOutlet weak var startCameraButton: UIButton!
     @IBOutlet weak var startGalleryButton: UIButton!

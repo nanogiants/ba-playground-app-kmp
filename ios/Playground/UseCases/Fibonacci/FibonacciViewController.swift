@@ -12,7 +12,7 @@ import shared
 
 class FibonacciViewController : UIViewController {
     
-    weak var coordinator: UseCasesTabCoordinator?
+    weak var coordinator: UseCasesCoordinator?
     private var workHelper: WorkHelper = WorkHelper()
     
     @IBOutlet weak var explanationLabel: UILabel!
