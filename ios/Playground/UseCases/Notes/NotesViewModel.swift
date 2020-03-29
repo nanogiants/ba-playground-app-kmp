@@ -8,7 +8,7 @@
 
 import Foundation
 import SwiftUI
-import SharedPlayground
+import shared
 
 class NotesViewModel: ObservableObject, NotesView, AddNoteView {
     

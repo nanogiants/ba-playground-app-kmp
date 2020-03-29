@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
-
 plugins {
   // kotlin multiplatform plugin
   kotlin("multiplatform")
@@ -11,26 +9,31 @@ plugins {
   // android plugin and android extensions are necessary for the android target
   id("com.android.library")
   id("kotlin-android-extensions")
+
+  id("org.jetbrains.kotlin.native.cocoapods")
 }
+
+// CocoaPods requires version
+version = "1.0"
 
 kotlin {
   // target configurations
   // select iOS target platform depending on the Xcode environment variables
-  val isDevice = System.getenv("SDK_NAME")?.startsWith("iphoneos") == true
 
-  val iOSTarget: (String, KotlinNativeTarget.() -> Unit) -> KotlinNativeTarget =
-    if (isDevice)
-      ::iosArm64
-    else
-      ::iosX64
-  // configure target ios
-  iOSTarget("ios") {
-    binaries {
-      framework {
-        baseName = "SharedPlayground"
-      }
-    }
-  }
+  val isDevice = System.getenv("SDK_NAME")?.startsWith("iphoneos") == true
+  if (isDevice)
+    iosArm64("ios")
+  else
+    iosX64("ios")
+
+  // Setting the link flag seems not to work
+  // As a result it needs to be set manually in the ios project
+  // Playground - Linking - Other Linker Flags - "-lsqlite3"
+  // https://github.com/cashapp/sqldelight/issues/1442
+//  targets.getByName<KotlinNativeTarget>("ios").compilations.forEach {
+//    it.kotlinOptions.freeCompilerArgs += listOf("-linker-options", "-lsqlite3")
+//  }
+
   // configure target android
   android("android")
 
@@ -95,35 +98,9 @@ android {
   }
 }
 
-// Inspired by official Kotlin Multiplatform tutorial
-// https://play.kotlinlang.org/hands-on/Targeting%20iOS%20and%20Android%20with%20Kotlin%20Multiplatform/03_CreatingSharedCode
-val packForXcode by tasks.creating(Sync::class) {
-  val targetDir = File(buildDir, "xcode-frameworks")
-
-  // selecting the right configuration for the iOS
-  // framework depending on the environment
-  // variables set by Xcode build
-  val mode = System.getenv("CONFIGURATION") ?: "DEBUG"
-  val framework = kotlin.targets
-    .getByName<KotlinNativeTarget>("ios")
-    .binaries.getFramework(mode)
-  inputs.property("mode", mode)
-  dependsOn(framework.linkTask)
-
-  from({ framework.outputDirectory })
-  into(targetDir)
-
-  // generate a helpful ./gradlew wrapper with embedded Java path
-  doLast {
-    val gradlew = File(targetDir, "gradlew")
-    gradlew.writeText(
-      "#!/bin/bash\n"
-          + "export 'JAVA_HOME=${System.getProperty("java.home")}'\n"
-          + "cd '${rootProject.rootDir}'\n"
-          + "./gradlew \$@\n"
-    )
-    gradlew.setExecutable(true)
+kotlin {
+  cocoapods {
+    summary = "Shared code for playground project"
+    homepage = "Link to homepage"
   }
 }
-
-tasks.getByName("build").dependsOn(packForXcode)

@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import SharedPlayground
+import shared
 
 class FibonacciViewController : UIViewController {
     

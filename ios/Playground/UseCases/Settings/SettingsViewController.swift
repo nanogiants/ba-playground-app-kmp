@@ -8,7 +8,7 @@
 
 import Foundation
 import SwiftUI
-import SharedPlayground
+import shared
 
 struct ContentView: View {
     

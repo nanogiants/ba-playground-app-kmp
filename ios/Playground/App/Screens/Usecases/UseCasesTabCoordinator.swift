@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import SwiftUI
-import SharedPlayground
+import shared
 
 class UseCasesTabCoordinator: Coordinator {
     

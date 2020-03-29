@@ -43,25 +43,13 @@
 		BDDEF2B123A80FA0002F89B5 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDEF2B023A80FA0002F89B5 /* ProgressBar.swift */; };
 		BDFE596D2371DFE2002A1F94 /* NasaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFE596C2371DFE2002A1F94 /* NasaViewController.swift */; };
 		BDFE596F2371DFEF002A1F94 /* Nasa.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDFE596E2371DFEF002A1F94 /* Nasa.storyboard */; };
-		BDFE597723722DDE002A1F94 /* SharedPlayground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDFE597623722DDE002A1F94 /* SharedPlayground.framework */; };
-		BDFE597823722DDE002A1F94 /* SharedPlayground.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BDFE597623722DDE002A1F94 /* SharedPlayground.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DFD7DCE1BBA025A7054012FF /* Pods_Playground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF96B218DDFF76CBF46DC97 /* Pods_Playground.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		BDFE597923722DDE002A1F94 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				BDFE597823722DDE002A1F94 /* SharedPlayground.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		2AF96B218DDFF76CBF46DC97 /* Pods_Playground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Playground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D5E717F614CBAE1411829C7 /* Pods-Playground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Playground.release.xcconfig"; path = "Target Support Files/Pods-Playground/Pods-Playground.release.xcconfig"; sourceTree = "<group>"; };
+		6F525428A4F1D9511153092A /* Pods-Playground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Playground.debug.xcconfig"; path = "Target Support Files/Pods-Playground/Pods-Playground.debug.xcconfig"; sourceTree = "<group>"; };
 		BD53923F237826BD0046B659 /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
 		BD53924123783DA60046B659 /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
 		BD64D0C623884C0700304565 /* Pixelsort.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pixelsort.storyboard; sourceTree = "<group>"; };
@@ -105,7 +93,6 @@
 		BDDEF2B023A80FA0002F89B5 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		BDFE596C2371DFE2002A1F94 /* NasaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaViewController.swift; sourceTree = "<group>"; };
 		BDFE596E2371DFEF002A1F94 /* Nasa.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Nasa.storyboard; sourceTree = "<group>"; };
-		BDFE597623722DDE002A1F94 /* SharedPlayground.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SharedPlayground.framework; path = "../shared/build/xcode-frameworks/SharedPlayground.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,13 +100,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDFE597723722DDE002A1F94 /* SharedPlayground.framework in Frameworks */,
+				DFD7DCE1BBA025A7054012FF /* Pods_Playground.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6932BA960D97E907B427FDC2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6F525428A4F1D9511153092A /* Pods-Playground.debug.xcconfig */,
+				4D5E717F614CBAE1411829C7 /* Pods-Playground.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		BD53923E2378269E0046B659 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +160,7 @@
 				BDB1B90823607C2F001F3529 /* Playground */,
 				BDB1B90723607C2F001F3529 /* Products */,
 				BDBC58D623706C8A00F7E535 /* Frameworks */,
+				6932BA960D97E907B427FDC2 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -252,7 +249,7 @@
 		BDBC58D623706C8A00F7E535 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BDFE597623722DDE002A1F94 /* SharedPlayground.framework */,
+				2AF96B218DDFF76CBF46DC97 /* Pods_Playground.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -324,11 +321,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BDB1B91A23607C2F001F3529 /* Build configuration list for PBXNativeTarget "Playground" */;
 			buildPhases = (
+				46E36A4E6E5EA1FA119F35FE /* [CP] Check Pods Manifest.lock */,
 				BDBC58DB23706E0100F7E535 /* ShellScript */,
 				BDB1B90223607C2F001F3529 /* Sources */,
 				BDB1B90323607C2F001F3529 /* Frameworks */,
 				BDB1B90423607C2F001F3529 /* Resources */,
-				BDFE597923722DDE002A1F94 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -394,6 +391,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		46E36A4E6E5EA1FA119F35FE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Playground-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		BDBC58DB23706E0100F7E535 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -409,7 +428,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncd \"$SRCROOT/../shared/build/xcode-frameworks\"\n./gradlew :shared:packForXcode -PXCODE_CONFIGURATION=${CONFIGURATION}\n\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# cd \"$SRCROOT/../shared/build/xcode-frameworks\"\n# ./gradlew :shared:packForXcode -PXCODE_CONFIGURATION=${CONFIGURATION}\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -539,6 +558,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-lsqlite3";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -594,6 +614,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-lsqlite3";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -603,6 +624,7 @@
 		};
 		BDB1B91B23607C2F001F3529 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F525428A4F1D9511153092A /* Pods-Playground.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -621,6 +643,7 @@
 		};
 		BDB1B91C23607C2F001F3529 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D5E717F614CBAE1411829C7 /* Pods-Playground.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
