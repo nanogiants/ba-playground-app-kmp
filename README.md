@@ -1,21 +1,37 @@
 
-# Kotlin Multiplatform - Analyse und Vergleich zur nativen App-Entwicklung
+# Kotlin Multiplatform - Analyse und Vergleich zur nativen App Entwicklung
 
-Die Programmiersprache Kotlin wird von JetBrains entwickelt, die erste Version erschien im Jahr 2016. 
-Eine vorläufige Unterstützung für Multiplattform-Projekte (auch Kotlin Multiplatform genannt) ist seit Version 1.2 Bestandteil der Sprache, befindet sich zurzeit noch in der Entwicklung. Sie ermöglicht es, die Sprache für eine plattformübergreifende Anwendungsentwicklung einzusetzen. 
-Programmcode kann einmal geschrieben und zwischen Android, iOS, Web, Desktop oder Backend geteilt werden.
+> INFO: Diese Ausarbeitung wurde im Dezember 2019 erstellt. Kotlin Multipaltform befindet sich derzeit im Status *experimental* und somit noch in der Entwicklung.
 
-Grundlage für den Cross-Plattform-Einsatz von Kotlin ist, dass die Sprache zu JVM Bytecode, JavaScript und mit der 
-Technologie Kotlin/Native zu nativen Binärdateien (z.B. für iOS arm32, arm64) kompiliert werden kann. 
+Analyse der Technologie Kotlin-Multiplatform für die Entwicklung mobiler Anwendungen und Vergleich zur nativen App-Entwicklung.
 
-## Inhalt
-In diesem Repository wird eine App entwickelt, um die Technologie zu untersuchen. Sie besteht aus einer Vielzahl an Use-Cases, die vom Nutzer ausgeführt werden können. Unter einem Use-Case ist eine typische Funktionalität mobiler Anwendungen zu verstehen, z.B. die Verwendung der Camera oder das Speichern eines Eintrags in der Datenbank.
+# Zusammenfassung
+Apps stellen Entwickler vor die Herausforderung, dass mit Android und iOS zwei unterschiedliche und inkompatible Betriebssysteme verbreitet sind. Es kann zwar auf Cross-Plattform Frameworks und hybride Technologien zurückgegriffen werden um nicht jede App doppelt entwickeln zu müssen, aber diese ersetzen die native Entwicklung nicht gleichwertig. Die Programmiersprache Kotlin bietet mit Kotlin Multiplatform eine neue Alternative zu bestehenden Vorgehensweisen.
 
-Die App entsteht im Rahmen meiner Bachelorarbeit *"Kotlin Multiplatform - Analyse und Vergleich zur nativen App-Entwicklung"*. Wer Interesse an der Thematik hat kann gerne auf mich (Fabian Heck) zukommen. Ich freue mich über Anmerkungen, Tipps und Kritik.
+Deshalb wird hier untersucht, ob sich Kotlin Multiplatform für die professionelle Entwicklung mobiler Anwendungen eignet. Dies kann als eine Entscheidungsgrundlage dienen, inwieweit sich ein Umstieg von der nativen Entwicklung zu Kotlin Multiplatform aktuell (Stand Dezember 2019) für die professionelle Entwicklung von Apps im Bereich B2B und B2C lohnt.
 
-## Weiterführende Links
-[Building Multiplatform Projects with Gradle](https://kotlinlang.org/docs/reference/building-mpp-with-gradle.html)
+Zunächst werden dazu Kriterien identifiziert, die eine Technologie für die App-Entwicklung erfüllen muss. Im nächsten Schritt wird eine mobile Anwendung konzipiert. Diese wird nativ für Android, nativ für iOS und mit Kotlin Multiplatform implementiert. Im Folgenden werden die Technologien anhand der zuvor entwickelten Kriterien verglichen.
 
-[Multiplatform Programming](https://kotlinlang.org/docs/reference/multiplatform.html)
+Es stellt sich heraus, dass Kotlin Multiplatform zurzeit nicht alle Anforderungen ausreichend erfüllt. Die Technologie bietet großes Potential, denn sie reduziert insbesondere durch das Teilen von Code zwischen Android und iOS den Entwicklungs- und Wartungsaufwand. Die jederzeit möglichen Änderungen am Software Development Kit (zurzeit experimental) und die eingeschränkte Unterstützung durch Entwicklungswerkzeuge verhindern aktuell jedoch noch den produktiven Einsatz. In Zukunft wird eine erneute Evaluation stattfinden.
 
-[Targeting iOS and Android with Kotlin Multiplatform](https://play.kotlinlang.org/hands-on/Targeting%20iOS%20and%20Android%20with%20Kotlin%20Multiplatform/01_Introduction)
+# Inhalt
+* Das [Wiki](https://github.com/nanogiants/ba-playground-app-kmp/wiki) beeinhaltet die ausführliche Analyse von Kotlin Multiplatform
+* Das Repository enthält die dafür erstellen Beispielanwendungen.
+
+
+# Lizenz
+```
+Copyright (C) 2020 NanoGiants GmbH
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
