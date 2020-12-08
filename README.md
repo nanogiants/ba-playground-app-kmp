@@ -15,8 +15,15 @@ Zunächst werden dazu Kriterien identifiziert, die eine Technologie für die App
 Es stellt sich heraus, dass Kotlin Multiplatform zurzeit nicht alle Anforderungen ausreichend erfüllt. Die Technologie bietet großes Potential, denn sie reduziert insbesondere durch das Teilen von Code zwischen Android und iOS den Entwicklungs- und Wartungsaufwand. Die jederzeit möglichen Änderungen am Software Development Kit (zurzeit experimental) und die eingeschränkte Unterstützung durch Entwicklungswerkzeuge verhindern aktuell jedoch noch den produktiven Einsatz. In Zukunft wird eine erneute Evaluation stattfinden.
 
 # Inhalt
-* Das [Wiki](https://github.com/nanogiants/ba-playground-app-kmp/wiki) beeinhaltet die ausführliche Analyse von Kotlin Multiplatform
-* Das Repository enthält die dafür erstellen Beispielanwendungen.
+Das [Wiki](https://github.com/nanogiants/ba-playground-app-kmp/wiki) beeinhaltet die ausführliche Analyse von Kotlin Multiplatform
+* [Einleitung](https://github.com/nanogiants/ba-playground-app-kmp/wiki/1-Einleitung)
+* [Grundlagen](https://github.com/nanogiants/ba-playground-app-kmp/wiki/2-Grundlagen)
+* [Definition der Anforderungen](https://github.com/nanogiants/ba-playground-app-kmp/wiki/3-Definition-der-Anforderungen)
+* [Konzeption einer Beispielanwendung](https://github.com/nanogiants/ba-playground-app-kmp/wiki/4-Konzeption-einer-Beispielanwendung)
+* [Auswertung und Vergleich](https://github.com/nanogiants/ba-playground-app-kmp/wiki/5-Auswertung-und-Vergleich)
+* [Fazit](https://github.com/nanogiants/ba-playground-app-kmp/wiki/6-Fazit)
+
+Das Repository enthält die dafür erstellen Beispielanwendungen.
 
 
 # Lizenz
